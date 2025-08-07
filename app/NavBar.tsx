@@ -9,7 +9,7 @@ const NavBar = () => {
   const { status, data: session } = useSession();
 
   return (
-    <div className="navbar bg-black space-x-5">
+    <div className="navbar bg-black space-x-5 border-b-2 border-orange-800">
       <Link href="/" className="text-xl mr-5 mb-1">
         <Image src={logo} alt="Savage worlds logo" width={100} height={110} />
         {/* My App */}
