@@ -6,7 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed:sources": "ts-node --project tsconfig.local.json prisma/seeds/sources.ts",
+    "seed:core-tags": "ts-node --project tsconfig.local.json prisma/seeds/core/core-tags.ts",
+    "seed:core-hindrances": "ts-node --project tsconfig.local.json prisma/seeds/core/core-hindrances.ts",
+    "seed:core-edges": "ts-node --project tsconfig.local.json prisma/seeds/core/core-edges.ts",
+    "seed:core-powers": "ts-node --project tsconfig.local.json prisma/seeds/core/core-powers.ts",
+    "seed:core-racial-abilities": "ts-node --project tsconfig.local.json prisma/seeds/core/core-racial-abilities.ts",
+    "seed:core-items": "ts-node --project tsconfig.local.json prisma/seeds/core/core-items.ts",
+    "seed:all": "ts-node --project tsconfig.local.json prisma/seed.ts"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -27,11 +35,15 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^20",
+    "@types/node": "^20.19.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "prisma": {
+    "seed": "ts-node --project tsconfig.local.json prisma/seed.ts"
   }
 }

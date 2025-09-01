@@ -2,7 +2,7 @@ import { prisma } from "@/prisma/client";
 import { hindranceSchema } from "../hindranceSchema";
 import { NextRequest, NextResponse } from "next/server";
 
-// PATCH - update one hindrance in the master list
+// GET - get one hindrance in the master list
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }

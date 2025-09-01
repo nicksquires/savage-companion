@@ -12,7 +12,7 @@ const ErrorPage = ({ error, reset }: Props) => {
 
   return (
     <>
-      <div>ErrorPage</div>
+      <div>Global Error Page</div>
       <button className="btn btn-info" onClick={() => reset()}>
         Retry
       </button>

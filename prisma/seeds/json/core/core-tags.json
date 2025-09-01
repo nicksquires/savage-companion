@@ -1,0 +1,851 @@
+[
+  {
+    "name": "Academic"
+  },
+  {
+    "name": "Accuracy"
+  },
+  {
+    "name": "Action Card"
+  },
+  {
+    "name": "Adaptable"
+  },
+  {
+    "name": "Advancement"
+  },
+  {
+    "name": "Advantage"
+  },
+  {
+    "name": "Aggressive"
+  },
+  {
+    "name": "Aggro"
+  },
+  {
+    "name": "Agility"
+  },
+  {
+    "name": "Aim"
+  },
+  {
+    "name": "Ally"
+  },
+  {
+    "name": "Ambidextrous"
+  },
+  {
+    "name": "Animal"
+  },
+  {
+    "name": "Anti-Magic"
+  },
+  {
+    "name": "Appearance"
+  },
+  {
+    "name": "Arcane"
+  },
+  {
+    "name": "Area of Effect"
+  },
+  {
+    "name": "Army"
+  },
+  {
+    "name": "Assassin"
+  },
+  {
+    "name": "Athletics"
+  },
+  {
+    "name": "Attack of Opportunity"
+  },
+  {
+    "name": "Attribute"
+  },
+  {
+    "name": "Aura"
+  },
+  {
+    "name": "Automatic Fire"
+  },
+  {
+    "name": "Awareness"
+  },
+  {
+    "name": "Backstab"
+  },
+  {
+    "name": "Background"
+  },
+  {
+    "name": "Balance"
+  },
+  {
+    "name": "Barbarian"
+  },
+  {
+    "name": "Battle"
+  },
+  {
+    "name": "Benny"
+  },
+  {
+    "name": "Big Game Hunter"
+  },
+  {
+    "name": "Bleeding Out"
+  },
+  {
+    "name": "Blood Magic"
+  },
+  {
+    "name": "Boating"
+  },
+  {
+    "name": "Boost"
+  },
+  {
+    "name": "Buff"
+  },
+  {
+    "name": "Burst Fire"
+  },
+  {
+    "name": "Celebrity"
+  },
+  {
+    "name": "Charisma"
+  },
+  {
+    "name": "Chase"
+  },
+  {
+    "name": "Cheat Death"
+  },
+  {
+    "name": "Cleric"
+  },
+  {
+    "name": "Cleave"
+  },
+  {
+    "name": "Climbing"
+  },
+  {
+    "name": "Combat"
+  },
+  {
+    "name": "Commander"
+  },
+  {
+    "name": "Communication"
+  },
+  {
+    "name": "Companion"
+  },
+  {
+    "name": "Contacts"
+  },
+  {
+    "name": "Control"
+  },
+  {
+    "name": "Courage"
+  },
+  {
+    "name": "Crafting"
+  },
+  {
+    "name": "Criminal"
+  },
+  {
+    "name": "Critical"
+  },
+  {
+    "name": "Damage"
+  },
+  {
+    "name": "Damage Reduction"
+  },
+  {
+    "name": "Death"
+  },
+  {
+    "name": "Debuff"
+  },
+  {
+    "name": "Defense"
+  },
+  {
+    "name": "Demon Hunter"
+  },
+  {
+    "name": "Detective"
+  },
+  {
+    "name": "Diplomacy"
+  },
+  {
+    "name": "Disengage"
+  },
+  {
+    "name": "Distracted"
+  },
+  {
+    "name": "Divine"
+  },
+  {
+    "name": "Dodge"
+  },
+  {
+    "name": "Driver"
+  },
+  {
+    "name": "Druid"
+  },
+  {
+    "name": "Dual-Wielding"
+  },
+  {
+    "name": "Durability"
+  },
+  {
+    "name": "Drunken Master"
+  },
+  {
+    "name": "Efficiency"
+  },
+  {
+    "name": "Enchanting"
+  },
+  {
+    "name": "Encumbrance"
+  },
+  {
+    "name": "Endurance"
+  },
+  {
+    "name": "Engineer"
+  },
+  {
+    "name": "Etiquette"
+  },
+  {
+    "name": "Evasion"
+  },
+  {
+    "name": "Execution"
+  },
+  {
+    "name": "Extra Attack"
+  },
+  {
+    "name": "Extras"
+  },
+  {
+    "name": "Faction"
+  },
+  {
+    "name": "Faith"
+  },
+  {
+    "name": "Fatigue"
+  },
+  {
+    "name": "Fear"
+  },
+  {
+    "name": "Find"
+  },
+  {
+    "name": "Finisher"
+  },
+  {
+    "name": "Firearms"
+  },
+  {
+    "name": "Focus"
+  },
+  {
+    "name": "Follower"
+  },
+  {
+    "name": "Fortune"
+  },
+  {
+    "name": "Free Attack"
+  },
+  {
+    "name": "Frenzy"
+  },
+  {
+    "name": "Gunslinger"
+  },
+  {
+    "name": "Guard"
+  },
+  {
+    "name": "Gear"
+  },
+  {
+    "name": "Generosity"
+  },
+  {
+    "name": "Gifted"
+  },
+  {
+    "name": "Grappling"
+  },
+  {
+    "name": "Healing"
+  },
+  {
+    "name": "Help"
+  },
+  {
+    "name": "Holy"
+  },
+  {
+    "name": "Improved"
+  },
+  {
+    "name": "Improvement"
+  },
+  {
+    "name": "Improvise"
+  },
+  {
+    "name": "Improvised Weapon"
+  },
+  {
+    "name": "Influence"
+  },
+  {
+    "name": "Initiative"
+  },
+  {
+    "name": "Intellect"
+  },
+  {
+    "name": "Intimidation"
+  },
+  {
+    "name": "Invention"
+  },
+  {
+    "name": "Investigation"
+  },
+  {
+    "name": "Joker"
+  },
+  {
+    "name": "Keen Senses"
+  },
+  {
+    "name": "Ki"
+  },
+  {
+    "name": "Knowledge"
+  },
+  {
+    "name": "Languages"
+  },
+  {
+    "name": "Leadership"
+  },
+  {
+    "name": "Luck"
+  },
+  {
+    "name": "Lucky"
+  },
+  {
+    "name": "Mage Hunter"
+  },
+  {
+    "name": "Magic"
+  },
+  {
+    "name": "Magic Item"
+  },
+  {
+    "name": "Magic Resistance"
+  },
+  {
+    "name": "Mastery"
+  },
+  {
+    "name": "Mechanic"
+  },
+  {
+    "name": "Medic"
+  },
+  {
+    "name": "Melee"
+  },
+  {
+    "name": "Mental"
+  },
+  {
+    "name": "Might"
+  },
+  {
+    "name": "Military"
+  },
+  {
+    "name": "Miracles"
+  },
+  {
+    "name": "Mobility"
+  },
+  {
+    "name": "Money"
+  },
+  {
+    "name": "Monk"
+  },
+  {
+    "name": "Monster Slayer"
+  },
+  {
+    "name": "Morale"
+  },
+  {
+    "name": "Movement"
+  },
+  {
+    "name": "Multi-Attack"
+  },
+  {
+    "name": "Mystical"
+  },
+  {
+    "name": "Nature"
+  },
+  {
+    "name": "Networking"
+  },
+  {
+    "name": "Noble"
+  },
+  {
+    "name": "Notice"
+  },
+  {
+    "name": "Observant"
+  },
+  {
+    "name": "Off-Hand"
+  },
+  {
+    "name": "Opposed Roll"
+  },
+  {
+    "name": "Pace"
+  },
+  {
+    "name": "Paladin"
+  },
+  {
+    "name": "Parkour"
+  },
+  {
+    "name": "Parry"
+  },
+  {
+    "name": "Penalty"
+  },
+  {
+    "name": "Perception"
+  },
+  {
+    "name": "Performance"
+  },
+  {
+    "name": "Persuasion"
+  },
+  {
+    "name": "Pet"
+  },
+  {
+    "name": "Physical"
+  },
+  {
+    "name": "Pilot"
+  },
+  {
+    "name": "Power Attack"
+  },
+  {
+    "name": "Power Points"
+  },
+  {
+    "name": "Powers"
+  },
+  {
+    "name": "Precognition"
+  },
+  {
+    "name": "Professional"
+  },
+  {
+    "name": "Psionics"
+  },
+  {
+    "name": "Psychic"
+  },
+  {
+    "name": "Rage"
+  },
+  {
+    "name": "Ranger"
+  },
+  {
+    "name": "Range"
+  },
+  {
+    "name": "Ranged"
+  },
+  {
+    "name": "Rate of Fire"
+  },
+  {
+    "name": "Reaction"
+  },
+  {
+    "name": "Reach"
+  },
+  {
+    "name": "Recall"
+  },
+  {
+    "name": "Recoil"
+  },
+  {
+    "name": "Recovery"
+  },
+  {
+    "name": "Reflexes"
+  },
+  {
+    "name": "Regeneration"
+  },
+  {
+    "name": "Reliable"
+  },
+  {
+    "name": "Reroll"
+  },
+  {
+    "name": "Research"
+  },
+  {
+    "name": "Resilience"
+  },
+  {
+    "name": "Resistance"
+  },
+  {
+    "name": "Resource"
+  },
+  {
+    "name": "Resourceful"
+  },
+  {
+    "name": "Reputation"
+  },
+  {
+    "name": "Riposte"
+  },
+  {
+    "name": "Rogue"
+  },
+  {
+    "name": "Running"
+  },
+  {
+    "name": "Scholar"
+  },
+  {
+    "name": "Scout"
+  },
+  {
+    "name": "Shield"
+  },
+  {
+    "name": "Shooting"
+  },
+  {
+    "name": "Sidekick"
+  },
+  {
+    "name": "Size"
+  },
+  {
+    "name": "Skill"
+  },
+  {
+    "name": "Skills"
+  },
+  {
+    "name": "Smarts"
+  },
+  {
+    "name": "Sneaky"
+  },
+  {
+    "name": "Sniper"
+  },
+  {
+    "name": "Soak"
+  },
+  {
+    "name": "Social"
+  },
+  {
+    "name": "Sorcery"
+  },
+  {
+    "name": "Specialization"
+  },
+  {
+    "name": "Speed"
+  },
+  {
+    "name": "Spellcasting"
+  },
+  {
+    "name": "Spirit"
+  },
+  {
+    "name": "Stamina"
+  },
+  {
+    "name": "Stealth"
+  },
+  {
+    "name": "Strength"
+  },
+  {
+    "name": "Stunned"
+  },
+  {
+    "name": "Summoner"
+  },
+  {
+    "name": "Supernatural"
+  },
+  {
+    "name": "Support"
+  },
+  {
+    "name": "Surprise"
+  },
+  {
+    "name": "Survival"
+  },
+  {
+    "name": "Swashbuckler"
+  },
+  {
+    "name": "Tactics"
+  },
+  {
+    "name": "Tank"
+  },
+  {
+    "name": "Taunt"
+  },
+  {
+    "name": "Teamwork"
+  },
+  {
+    "name": "Tech"
+  },
+  {
+    "name": "Telepathy"
+  },
+  {
+    "name": "Test"
+  },
+  {
+    "name": "The Drop"
+  },
+  {
+    "name": "Thievery"
+  },
+  {
+    "name": "Threatening"
+  },
+  {
+    "name": "Throwing"
+  },
+  {
+    "name": "Toughness"
+  },
+  {
+    "name": "Tracking"
+  },
+  {
+    "name": "Trappings"
+  },
+  {
+    "name": "Tumbling"
+  },
+  {
+    "name": "Two-Weapon Fighting"
+  },
+  {
+    "name": "Unarmed"
+  },
+  {
+    "name": "Unconventional"
+  },
+  {
+    "name": "Underworld"
+  },
+  {
+    "name": "Unholy"
+  },
+  {
+    "name": "Upper-Class"
+  },
+  {
+    "name": "Urban"
+  },
+  {
+    "name": "Utility"
+  },
+  {
+    "name": "Vehicles"
+  },
+  {
+    "name": "Versatility"
+  },
+  {
+    "name": "Vigor"
+  },
+  {
+    "name": "Vulnerable"
+  },
+  {
+    "name": "Warlock"
+  },
+  {
+    "name": "Wealth"
+  },
+  {
+    "name": "Weapon"
+  },
+  {
+    "name": "Weird"
+  },
+  {
+    "name": "Weird Science"
+  },
+  {
+    "name": "Wild Card"
+  },
+  {
+    "name": "Wild Die"
+  },
+  {
+    "name": "Wilderness"
+  },
+  {
+    "name": "Willpower"
+  },
+  {
+    "name": "Withdraw"
+  },
+  {
+    "name": "Witty"
+  },
+  {
+    "name": "Wizard"
+  },
+  {
+    "name": "Wounds"
+  },
+{
+"name": "Fire"
+},
+{
+"name": "Ice"
+},
+{
+"name": "Nature"
+},
+{
+"name": "Necromancy"
+},
+{
+"name": "Eldritch"
+},
+{
+"name": "Light"
+},
+{
+"name": "Darkness"
+},
+{
+"name": "Earth"
+},
+{
+"name": "Electricity"
+},
+{
+"name": "Air"
+},
+{
+"name": "Detection"
+},
+{
+"name": "Concealment"
+},
+{
+"name": "Deception"
+},
+{
+"name": "Dispel"
+},
+{
+"name": "Demonic"
+},
+{
+"name": "Elemental"
+},
+{
+"name": "Water"
+},
+{
+"name": "Illusion"
+},
+{
+"name": "Shadow"
+},
+{
+"name": "Ghost"
+},
+{
+"name": "Invisibility"
+},
+{
+"name": "Sound"
+},
+{
+"name": "Transformation"
+},
+{
+"name": "Chaos"
+},
+{
+"name": "Conjuration"
+},
+{
+"name": "Undead"
+}
+]

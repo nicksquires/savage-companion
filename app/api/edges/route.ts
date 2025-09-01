@@ -24,16 +24,15 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-
-    // Validate input using zod
     const parsed = edgeSchema.safeParse(body);
+    
     if (!parsed.success) {
       return NextResponse.json(parsed.error.errors, { status: 400 });
     }
 
-    const edge = await prisma.edge.create({ data: body });
+    const newEdge = await prisma.edge.create({ data: body });
 
-    return NextResponse.json(edge, { status: 201 });
+    return NextResponse.json(newEdge, { status: 201 });
     
   } catch (err) {
     return NextResponse.json(

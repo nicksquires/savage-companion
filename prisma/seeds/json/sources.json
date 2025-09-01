@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Savage Worlds Adventure Edition",
+    "type": "CORE",
+    "abbreviation": "SWADE",
+    "description": "The core ruleset for Savage Worlds, providing fast, fun, and furious rules for narrative and miniature-based games across various genres.",
+    "publisher": "Pinnacle Entertainment Group",
+    "url": "https://www.peginc.com/product/savage-worlds-adventure-edition/",
+    "isHomebrew": false
+  },
+  {
+    "name": "Fantasy Companion",
+    "type": "COMPANION",
+    "abbreviation": "FC",
+    "description": "A 272-page book with setting rules, races, items, monsters, and spells for medieval fantasy settings, compatible with Savage Worlds Adventure Edition.",
+    "publisher": "Pinnacle Entertainment Group",
+    "url": "https://www.peginc.com/product/fantasy-companion-swade/",
+    "isHomebrew": false
+  },
+  {
+    "name": "Science Fiction Companion",
+    "type": "COMPANION",
+    "abbreviation": "SFC",
+    "description": "A 300+ page book with character ancestries, gear, arcane backgrounds, setting rules, and a bestiary for sci-fi adventures, updated for Savage Worlds Adventure Edition.",
+    "publisher": "Pinnacle Entertainment Group",
+    "url": "https://www.peginc.com/product/savage-worlds-science-fiction-companion/",
+    "isHomebrew": false
+  },
+  {
+    "name": "Horror Companion",
+    "type": "COMPANION",
+    "abbreviation": "HC",
+    "description": "A 202-page book with rules for monsters, signs, portents, and settings for horror genres, from classic monster movies to cosmic horror, compatible with Savage Worlds Adventure Edition.",
+    "publisher": "Pinnacle Entertainment Group",
+    "url": "https://www.peginc.com/product/horror-companion-swade/",
+    "isHomebrew": false
+  },
+  {
+    "name": "Super Powers Companion",
+    "type": "COMPANION",
+    "abbreviation": "SPC",
+    "description": "A companion book with rules for creating superheroes, villains, powers, and settings for superhero campaigns, compatible with Savage Worlds Adventure Edition.",
+    "publisher": "Pinnacle Entertainment Group",
+    "url": "https://www.peginc.com",
+    "isHomebrew": false
+  }
+]

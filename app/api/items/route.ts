@@ -8,17 +8,22 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
-  const parsed = itemSchema.safeParse(body);
+  try { 
+     const body = await request.json();
+     const parsed = itemSchema.safeParse(body);
 
-  if (!parsed.success) {
-    return NextResponse.json(parsed.error.errors, { status: 400 });
-  }
+    if (!parsed.success) {
+      return NextResponse.json(parsed.error.errors, { status: 400 });
+    }
 
-  try {
-    const newItem = await prisma.item.create({ data: parsed.data });
+    const newItem = await prisma.item.create({ data: body });
+
     return NextResponse.json(newItem, { status: 201 });
+
   } catch (error) {
-    return NextResponse.json({ error: "Failed to create item" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create item" }, 
+      { status: 500 }
+    );
   }
 }

@@ -1,0 +1,3339 @@
+[
+  {
+    "slug": "alertness",
+    "name": "Alertness",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Not much gets by this hero. He's very observant and perceptive, and adds +2 to his Notice rolls to hear, see, or otherwise sense the world around him.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Perception",
+      "Notice",
+      "Awareness",
+      "Observant",
+      "Keen Senses"
+    ]
+  },
+  {
+    "slug": "ambidextrous",
+    "name": "Ambidextrous",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "Your warrior is as deft with his left hand as he is with his right. He ignores the Off-Hand penalty and may stack Parry bonuses from both weapons when dual-wielding.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Ambidextrous",
+      "Dual-Wielding",
+      "Off-Hand",
+      "Parry",
+      "Two-Weapon Fighting",
+      "Melee",
+      "Combat"
+    ]
+  },
+  {
+    "slug": "arcane-background",
+    "name": "Arcane Background",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Grants access to supernatural abilities through exposure to strange energies, studies, or divine gifts. See Chapter Five for details on using Arcane Backgrounds.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Background",
+      "Cleric",
+      "Divine",
+      "Mystical",
+      "Paladin",
+      "Weird",
+      "Magic",
+      "Sorcery",
+      "Powers",
+      "Supernatural",
+      "Gifted",
+      "Psionics",
+      "Wizard"
+    ]
+  },
+  {
+    "slug": "arcane-resistance",
+    "name": "Arcane Resistance",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Reduces the effect of arcane attacks by causing arcane skills to suffer a −2 penalty and reducing magical damage by 2.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Magic",
+      "Resistance",
+      "Defense",
+      "Anti-Magic",
+      "Supernatural",
+      "Mage Hunter"
+    ]
+  },
+  {
+    "slug": "improved-arcane-resistance",
+    "name": "Improved Arcane Resistance",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-resistance"
+    },
+    "effects": "Further enhances resistance to arcane attacks, increasing penalties to −4 for skills and damage.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Magic",
+      "Resistance",
+      "Defense",
+      "Anti-Magic",
+      "Supernatural",
+      "Mage Hunter",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "aristocrat",
+    "name": "Aristocrat",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "This individual walks in elite social circles. Adds +2 to Persuasion when Networking with elites and +2 to Common Knowledge rolls about upper-class etiquette, heraldry, and gossip.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Noble",
+      "Persuasion",
+      "Networking",
+      "Etiquette",
+      "Diplomacy",
+      "Upper-Class"
+    ]
+  },
+  {
+    "slug": "attractive",
+    "name": "Attractive",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D6"
+    },
+    "effects": "Adds +1 to Performance and Persuasion rolls if the target is attracted to the character's type.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Charisma",
+      "Appearance",
+      "Persuasion",
+      "Performance"
+    ]
+  },
+  {
+    "slug": "very-attractive",
+    "name": "Very Attractive",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "attractive"
+    },
+    "effects": "Increases the bonus from the Attractive Edge to +2.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Charisma",
+      "Appearance",
+      "Persuasion",
+      "Performance",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "berserk",
+    "name": "Berserk",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Allows the character to go berserk after taking a Wound or Shaken result, increasing Strength and Toughness but requiring Wild Attacks and adding risks.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Combat",
+      "Rage",
+      "Melee",
+      "Damage",
+      "Barbarian",
+      "Frenzy"
+    ]
+  },
+  {
+    "slug": "brave",
+    "name": "Brave",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D6"
+    },
+    "effects": "Adds +2 to Fear checks and subtracts 2 from Fear Table results.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Fear",
+      "Courage",
+      "Spirit",
+      "Mental",
+      "Resistance",
+      "Willpower"
+    ]
+  },
+  {
+    "slug": "brawny",
+    "name": "Brawny",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "STRENGTH",
+        "dieType": "D6"
+      },
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "VIGOR",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Increases Size and Toughness by 1, and treats Strength as one die type higher for Encumbrance and Minimum Strength requirements.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Strength",
+      "Toughness",
+      "Size",
+      "Encumbrance",
+      "Physical"
+    ]
+  },
+  {
+    "slug": "brute",
+    "name": "Brute",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "STRENGTH",
+        "dieType": "D6"
+      },
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "VIGOR",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Links Athletics to Strength for Advancement, allows resisting Athletics Tests with Strength, and extends the range of thrown items.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Strength",
+      "Athletics",
+      "Throwing",
+      "Physical",
+      "Might"
+    ]
+  },
+  {
+    "slug": "charismatic",
+    "name": "Charismatic",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Grants a free reroll on Persuasion rolls.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Persuasion",
+      "Charisma",
+      "Influence",
+      "Reroll"
+    ]
+  },
+  {
+    "slug": "elan",
+    "name": "Elan",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Adds +2 to rerolls on Trait rolls when spending a Benny.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Benny",
+      "Reroll",
+      "Luck",
+      "Spirit"
+    ]
+  },
+  {
+    "slug": "fame",
+    "name": "Fame",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Makes the character a minor celebrity, doubling performance pay and adding +1 to Persuasion rolls with friendly individuals who recognize her.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Reputation",
+      "Celebrity",
+      "Persuasion",
+      "Performance"
+    ]
+  },
+  {
+    "slug": "famous",
+    "name": "Famous",
+    "category": "background",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "fame"
+    },
+    "effects": "The character becomes widely known, increasing earnings and Persuasion bonuses but attracting more attention and obligations.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Reputation",
+      "Celebrity",
+      "Persuasion",
+      "Performance",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "fast-healer",
+    "name": "Fast Healer",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D8"
+    },
+    "effects": "Adds +2 to Vigor rolls for natural healing and reduces the healing check interval to three days.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Healing",
+      "Recovery",
+      "Vigor",
+      "Stamina",
+      "Regeneration"
+    ]
+  },
+  {
+    "slug": "fleet-footed",
+    "name": "Fleet-Footed",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D6"
+    },
+    "effects": "Increases Pace by +2 and upgrades the running die by one step.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Movement",
+      "Speed",
+      "Pace",
+      "Running",
+      "Agility"
+    ]
+  },
+  {
+    "slug": "linguist",
+    "name": "Linguist",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D6"
+    },
+    "effects": "Grants knowledge of half the Smarts die type in Language skills at d6.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Languages",
+      "Smarts",
+      "Intellect",
+      "Communication",
+      "Scholar"
+    ]
+  },
+  {
+    "slug": "luck",
+    "name": "Luck",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Grants one extra Benny at the start of each session.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Benny",
+      "Luck",
+      "Fortune",
+      "Reroll"
+    ]
+  },
+  {
+    "slug": "great-luck",
+    "name": "Great Luck",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "luck"
+    },
+    "effects": "Increases the Bennies granted by Luck to two.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Benny",
+      "Luck",
+      "Fortune",
+      "Reroll",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "quick",
+    "name": "Quick",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "Allows the character to discard Action Cards of Five or lower and draw again until receiving a higher card.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Initiative",
+      "Action Card",
+      "Speed",
+      "Combat",
+      "Agility",
+      "Reflexes"
+    ]
+  },
+  {
+    "slug": "rich",
+    "name": "Rich",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Starts with three times the normal starting funds and an annual income equivalent to $150,000 if appropriate.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Wealth",
+      "Money",
+      "Resources",
+      "Social",
+      "Gear"
+    ]
+  },
+  {
+    "slug": "filthy-rich",
+    "name": "Filthy Rich",
+    "category": "background",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "rich"
+    },
+    "effects": "Starts with five times the normal starting funds and an annual income equivalent to $500,000 if appropriate.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Wealth",
+      "Money",
+      "Resources",
+      "Social",
+      "Gear",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "block",
+    "name": "Block",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "The hero's Parry increases by +1, and any Gang Up bonus against him is reduced by one.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Parry",
+      "Melee",
+      "Fighting",
+      "Shield",
+      "Guard"
+    ]
+  },
+  {
+    "slug": "improved-block",
+    "name": "Improved Block",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "block"
+    },
+    "effects": "The hero's Parry bonus is now +2, and the Gang Up bonus against him is reduced by 2.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Parry",
+      "Melee",
+      "Fighting",
+      "Shield",
+      "Guard",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "brawler",
+    "name": "Brawler",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "STRENGTH",
+        "dieType": "D8"
+      },
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "VIGOR",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "Brawlers increase their Toughness by 1 and roll Strength +d4 when hitting with their fists or feet (or claws if they have them). If they already have a damage die from other sources, increase the damage die type by one.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Unarmed",
+      "Melee",
+      "Fighting",
+      "Damage",
+      "Toughness",
+      "Monk"
+    ]
+  },
+  {
+    "slug": "bruiser",
+    "name": "Bruiser",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "brawler"
+    },
+    "effects": "The fighter increases his Toughness by an additional +1, and the damage caused with his fists or claws increases another die type.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Unarmed",
+      "Melee",
+      "Fighting",
+      "Damage",
+      "Toughness",
+      "Monk",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "calculating",
+    "name": "Calculating",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D8"
+    },
+    "effects": "When the hero's Action Card is a Five or less, he ignores up to 2 points of penalties on one action that turn, including Multi-Action, cover, Range, or Wound penalties.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Penalty",
+      "Smarts",
+      "Tactics",
+      "Initiative",
+      "Accuracy"
+    ]
+  },
+  {
+    "slug": "combat-reflexes",
+    "name": "Combat Reflexes",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": null,
+    "effects": "The hero adds +2 to rolls when attempting to recover from being Shaken or Stunned.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shaken",
+      "Stunned",
+      "Recovery",
+      "Defense",
+      "Resilience"
+    ]
+  },
+  {
+    "slug": "counterattack",
+    "name": "Counterattack",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "Once per round, if not Shaken or Stunned, the character receives a Free Attack against one failed Fighting attack against him.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Reaction",
+      "Defense",
+      "Riposte"
+    ]
+  },
+  {
+    "slug": "improved-counterattack",
+    "name": "Improved Counterattack",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "counterattack"
+    },
+    "effects": "The hero gets a Free Attack against up to three failed attacks each round.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Reaction",
+      "Defense",
+      "Riposte",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "dead-shot",
+    "name": "Dead Shot",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "ATHLETICS",
+      "dieType": "D8"
+    },
+    "effects": "When the hero's Action Card is a Joker, double the total damage of the first successful Athletics or Shooting roll that round.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Ranged",
+      "Damage",
+      "Critical",
+      "Joker",
+      "Shooting",
+      "Athletics",
+      "Sniper"
+    ]
+  },
+  {
+    "slug": "dodge",
+    "name": "Dodge",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "Subtracts 2 from all ranged attacks made against the character unless the victim of a surprise attack.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Ranged",
+      "Agility",
+      "Evasion"
+    ]
+  },
+  {
+    "slug": "improved-dodge",
+    "name": "Improved Dodge",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "dodge"
+    },
+    "effects": "The hero adds +2 when Evading area effect attacks.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Ranged",
+      "Agility",
+      "Evasion",
+      "Area of Effect",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "double-tap",
+    "name": "Double Tap",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "SHOOTING",
+      "dieType": "D6"
+    },
+    "effects": "Adds +1 to hit and damage when firing two shots in rapid succession, expending an extra bullet. Provides higher bonuses for weapons with Three Round Burst.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shooting",
+      "Ranged",
+      "Firearms",
+      "Accuracy",
+      "Damage",
+      "Burst Fire"
+    ]
+  },
+  {
+    "slug": "extraction",
+    "name": "Extraction",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "When withdrawing from melee, one adjacent attacker (player's choice) does not get a free Fighting attack.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Movement",
+      "Melee",
+      "Tactics",
+      "Withdraw",
+      "Disengage"
+    ]
+  },
+  {
+    "slug": "improved-extraction",
+    "name": "Improved Extraction",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "extraction"
+    },
+    "effects": "Up to three foes (player's choice) don't get attacks when the hero moves out of melee with them.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Movement",
+      "Melee",
+      "Tactics",
+      "Withdraw",
+      "Disengage",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "feint",
+    "name": "Feint",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "When performing a Test with the Fighting skill, the hero can make the foe resist with Smarts instead of Agility.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Test",
+      "Fighting",
+      "Melee",
+      "Tactics",
+      "Debuff",
+      "Swashbuckler"
+    ]
+  },
+  {
+    "slug": "first-strike",
+    "name": "First Strike",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "Once per round, the hero gets a free Fighting attack against a foe immediately after they move into Reach.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Reaction",
+      "Attack of Opportunity",
+      "Guard",
+      "Reach"
+    ]
+  },
+  {
+    "slug": "improved-first-strike",
+    "name": "Improved First Strike",
+    "category": "combat",
+    "rank": "HEROIC",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "first-strike"
+    },
+    "effects": "The hero may attack up to three foes each turn as they move into Reach.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Reaction",
+      "Attack of Opportunity",
+      "Guard",
+      "Reach",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "free-runner",
+    "name": "Free Runner",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "AGILITY",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "ATHLETICS",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "The hero moves at full Pace on Difficult Ground when on foot and adds +2 to Athletics rolls for climbing and in foot Chases.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Movement",
+      "Parkour",
+      "Athletics",
+      "Climbing",
+      "Chase",
+      "Agility"
+    ]
+  },
+  {
+    "slug": "frenzy",
+    "name": "Frenzy",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "Rolls a second Fighting die with one of the hero's Fighting attacks for the turn, which may be allocated to the same or a different target.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Multi-Attack",
+      "Extra Attack",
+      "Barbarian"
+    ]
+  },
+  {
+    "slug": "improved-frenzy",
+    "name": "Improved Frenzy",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "frenzy"
+    },
+    "effects": "The fighter rolls an extra Fighting die with up to two Fighting attacks in the same turn.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Multi-Attack",
+      "Extra Attack",
+      "Barbarian",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "giant-killer",
+    "name": "Giant Killer",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": null,
+    "effects": "The hero adds +1d6 damage when attacking creatures who are three or more Sizes larger than himself. For example, a human (Size 0) gains the bonus against creatures of Size 3 or greater.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Damage",
+      "Big Game Hunter",
+      "Monster Slayer",
+      "Size"
+    ]
+  },
+  {
+    "slug": "hard-to-kill",
+    "name": "Hard To Kill",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "The hero ignores Wound penalties when making Vigor rolls to avoid Bleeding Out.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Survival",
+      "Durability",
+      "Bleeding Out",
+      "Toughness",
+      "Resilience"
+    ]
+  },
+  {
+    "slug": "harder-to-kill",
+    "name": "Harder to Kill",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "hard-to-kill"
+    },
+    "effects": "If the hero is 'killed,' roll a die. On an odd result, they are dead. On an even result, they are Incapacitated but escape death, potentially being captured or left for dead instead.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Survival",
+      "Durability",
+      "Death",
+      "Cheat Death",
+      "Resilience",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "improvisational-fighter",
+    "name": "Improvisational Fighter",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D6"
+    },
+    "effects": "The hero ignores the usual −2 penalty when wielding improvised weapons.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Improvised Weapon",
+      "Melee",
+      "Fighting",
+      "Unconventional",
+      "Resourceful"
+    ]
+  },
+  {
+    "slug": "iron-jaw",
+    "name": "Iron Jaw",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D8"
+    },
+    "effects": "The hero adds +2 to Soak rolls and Vigor rolls to avoid Knockout Blows.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Soak",
+      "Damage Reduction",
+      "Toughness",
+      "Durability",
+      "Vigor"
+    ]
+  },
+  {
+    "slug": "killer-instinct",
+    "name": "Killer Instinct",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": null,
+    "effects": "The hero gets a free reroll in any opposed Test they initiate.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Test",
+      "Opposed Roll",
+      "Reroll",
+      "Aggressive",
+      "Advantage"
+    ]
+  },
+  {
+    "slug": "level-headed",
+    "name": "Level Headed",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D8"
+    },
+    "effects": "The hero draws an additional Action Card in combat and chooses which to use.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Initiative",
+      "Action Card",
+      "Tactics",
+      "Smarts",
+      "Reflexes"
+    ]
+  },
+  {
+    "slug": "improved-level-headed",
+    "name": "Improved Level Headed",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "level-headed"
+    },
+    "effects": "The hero draws two additional Action Cards in combat and chooses which to keep.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Initiative",
+      "Action Card",
+      "Tactics",
+      "Smarts",
+      "Reflexes",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "marksman",
+    "name": "Marksman",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "ATHLETICS",
+      "dieType": "D8"
+    },
+    "effects": "The hero adds +1 to an Athletics (throwing) or Shooting roll, or ignores up to 2 points of penalties, if she doesn't move and fires a weapon with a Rate of Fire of 1 as her first action.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Ranged",
+      "Shooting",
+      "Athletics",
+      "Accuracy",
+      "Sniper",
+      "Aim"
+    ]
+  },
+  {
+    "slug": "martial-artist",
+    "name": "Martial Artist",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D6"
+    },
+    "effects": "The hero's fists and feet become weapons, causing Strength+d4 damage and adding +1 to attacks. This does not apply to other natural weapons.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Unarmed",
+      "Melee",
+      "Fighting",
+      "Damage",
+      "Monk",
+      "Accuracy"
+    ]
+  },
+  {
+    "slug": "martial-warrior",
+    "name": "Martial Warrior",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "martial-artist"
+    },
+    "effects": "The hero's Fighting bonus increases to +2 and her damage die steps up one additional level.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Unarmed",
+      "Melee",
+      "Fighting",
+      "Damage",
+      "Monk",
+      "Accuracy",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "mighty-blow",
+    "name": "Mighty Blow",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "If the hero's Action Card is a Joker, the damage of their first successful Fighting attack that round is doubled.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Damage",
+      "Critical",
+      "Joker",
+      "Fighting",
+      "Power Attack"
+    ]
+  },
+  {
+    "slug": "nerves-of-steel",
+    "name": "Nerves of Steel",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D8"
+    },
+    "effects": "The hero ignores 1 point of Wound penalties.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Wounds",
+      "Penalty",
+      "Toughness",
+      "Durability",
+      "Resilience"
+    ]
+  },
+  {
+    "slug": "improved-nerves-of-steel",
+    "name": "Improved Nerves of Steel",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "nerves-of-steel"
+    },
+    "effects": "The hero ignores 2 points of Wound penalties.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Wounds",
+      "Penalty",
+      "Toughness",
+      "Durability",
+      "Resilience",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "no-mercy",
+    "name": "No Mercy",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": null,
+    "effects": "When spending a Benny to reroll damage, the hero adds +2 to the final total.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Damage",
+      "Benny",
+      "Reroll",
+      "Finisher",
+      "Execution"
+    ]
+  },
+  {
+    "slug": "rapid-fire",
+    "name": "Rapid Fire",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "SHOOTING",
+      "dieType": "D6"
+    },
+    "effects": "The hero may increase their weapon's Rate of Fire by 1 for one of their Shooting attacks during the turn.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shooting",
+      "Ranged",
+      "Firearms",
+      "Rate of Fire",
+      "Extra Attack"
+    ]
+  },
+  {
+    "slug": "improved-rapid-fire",
+    "name": "Improved Rapid Fire",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "rapid-fire"
+    },
+    "effects": "The hero may increase their weapon's Rate of Fire by 1 twice in the same turn, using a Multi-Action.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shooting",
+      "Ranged",
+      "Firearms",
+      "Rate of Fire",
+      "Extra Attack",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "rock-and-roll",
+    "name": "Rock and Roll!",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "SHOOTING",
+      "dieType": "D8"
+    },
+    "effects": "If the hero doesn't move, they ignore the Recoil penalty when firing at a Rate of Fire of 2 or higher.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shooting",
+      "Ranged",
+      "Firearms",
+      "Rate of Fire",
+      "Recoil",
+      "Automatic Fire"
+    ]
+  },
+  {
+    "slug": "steady-hands",
+    "name": "Steady Hands",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "The hero ignores the Unstable Platform penalty and reduces the running penalty to -1.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Shooting",
+      "Ranged",
+      "Penalty",
+      "Movement",
+      "Accuracy"
+    ]
+  },
+  {
+    "slug": "sweep",
+    "name": "Sweep",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "STRENGTH",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "FIGHTING",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "The hero makes a single Fighting attack against all targets in Reach with a -2 penalty. Damage is resolved separately.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Area of Effect",
+      "Multi-Attack",
+      "Cleave"
+    ]
+  },
+  {
+    "slug": "improved-sweep",
+    "name": "Improved Sweep",
+    "category": "combat",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "sweep"
+    },
+    "effects": "The hero ignores the -2 penalty when making a Sweep attack.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Area of Effect",
+      "Multi-Attack",
+      "Cleave",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "trademark-weapon",
+    "name": "Trademark Weapon",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D8"
+    },
+    "effects": "The hero gains +1 to attack rolls and Parry when using their chosen weapon. This bonus applies only after a few days if the weapon is replaced.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Weapon",
+      "Specialization",
+      "Accuracy",
+      "Parry",
+      "Fighting",
+      "Melee",
+      "Ranged"
+    ]
+  },
+  {
+    "slug": "improved-trademark-weapon",
+    "name": "Improved Trademark Weapon",
+    "category": "combat",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "trademark-weapon"
+    },
+    "effects": "The bonuses for the hero's chosen weapon increase to +2.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Weapon",
+      "Specialization",
+      "Accuracy",
+      "Parry",
+      "Fighting",
+      "Melee",
+      "Ranged",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "two-fisted",
+    "name": "Two-Fisted",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "The hero avoids Multi-Action penalties when making Fighting attacks with each hand on separate actions. Off-Hand penalties still apply unless Ambidextrous.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Dual-Wielding",
+      "Melee",
+      "Fighting",
+      "Multi-Attack",
+      "Two-Weapon Fighting"
+    ]
+  },
+  {
+    "slug": "two-gun-kid",
+    "name": "Two-Gun Kid",
+    "category": "combat",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "The hero avoids Multi-Action penalties when using ranged weapons in each hand on separate actions. Can combine with Two-Fisted for melee and ranged attacks.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Dual-Wielding",
+      "Ranged",
+      "Shooting",
+      "Multi-Attack",
+      "Gunslinger"
+    ]
+  },
+  {
+    "slug": "command",
+    "name": "Command",
+    "category": "leadership",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D6"
+    },
+    "effects": "Extras in Command Range add +1 to Spirit rolls when attempting to recover from being Shaken and to Vigor rolls when recovering from being Stunned.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Morale",
+      "Extras",
+      "Commander"
+    ]
+  },
+  {
+    "slug": "command-presence",
+    "name": "Command Presence",
+    "category": "leadership",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "command"
+    },
+    "effects": "The hero's Command Range increases to 10\" (20 yards).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Aura",
+      "Range",
+      "Commander"
+    ]
+  },
+  {
+    "slug": "fervor",
+    "name": "Fervor",
+    "category": "leadership",
+    "rank": "VETERAN",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SPIRIT",
+        "dieType": "D8"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "command"
+      }
+    ],
+    "effects": "Extras in Command Range add +1 to their Fighting damage rolls.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Damage",
+      "Melee",
+      "Extras"
+    ]
+  },
+  {
+    "slug": "hold-the-line",
+    "name": "Hold the Line!",
+    "category": "leadership",
+    "rank": "SEASONED",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SMARTS",
+        "dieType": "D8"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "command"
+      }
+    ],
+    "effects": "Extras in Command Range add +1 to their Toughness.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Toughness",
+      "Defense",
+      "Extras"
+    ]
+  },
+  {
+    "slug": "inspire",
+    "name": "Inspire",
+    "category": "leadership",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "command"
+    },
+    "effects": "Once per turn, the hero may roll their Battle skill to Support a type of Trait roll for all allied Extras in Command Range. Requires communication.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Battle",
+      "Extras",
+      "Morale"
+    ]
+  },
+  {
+    "slug": "natural-leader",
+    "name": "Natural Leader",
+    "category": "leadership",
+    "rank": "SEASONED",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SPIRIT",
+        "dieType": "D8"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "command"
+      }
+    ],
+    "effects": "Leadership Edges that apply only to Extras now also apply to Wild Cards.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Buff",
+      "Support",
+      "Wild Card",
+      "Aura",
+      "Commander"
+    ]
+  },
+  {
+    "slug": "tactician",
+    "name": "Tactician",
+    "category": "leadership",
+    "rank": "SEASONED",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SMARTS",
+        "dieType": "D8"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "command"
+      },
+      {
+        "type": "SKILL",
+        "skill": "BATTLE",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "The hero is dealt an extra Action Card each round and may give it to any allied Extra in Command Range.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Tactics",
+      "Initiative",
+      "Action Card",
+      "Support",
+      "Extras"
+    ]
+  },
+  {
+    "slug": "master-tactician",
+    "name": "Master Tactician",
+    "category": "leadership",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "tactician"
+    },
+    "effects": "The hero is dealt two extra Action Cards each round to distribute to allies.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Tactics",
+      "Initiative",
+      "Action Card",
+      "Support",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "artificer",
+    "name": "Artificer",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "Allows the creation of Arcane Devices that can be given to allies.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Magic Item",
+      "Crafting",
+      "Enchanting",
+      "Support"
+    ]
+  },
+  {
+    "slug": "channeling",
+    "name": "Channeling",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "Reduces Power Point cost by 1 (to a minimum of 0) when getting a raise on an arcane skill roll or activating an arcane device.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Efficiency",
+      "Magic",
+      "Wizard"
+    ]
+  },
+  {
+    "slug": "concentration",
+    "name": "Concentration",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "Doubles the base Duration of any non-Instant power, including maintained powers.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Powers",
+      "Duration",
+      "Magic",
+      "Buff"
+    ]
+  },
+  {
+    "slug": "extra-effort",
+    "name": "Extra Effort",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FOCUS",
+      "dieType": "D6"
+    },
+    "effects": "Spend 1 Power Point to add +1 to a Focus total or 3 Power Points to add +2. Cannot improve a Critical Failure.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Gifted",
+      "Focus",
+      "Power Points",
+      "Boost"
+    ]
+  },
+  {
+    "slug": "gadgeteer",
+    "name": "Gadgeteer",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "WEIRD SCIENCE",
+      "dieType": "D6"
+    },
+    "effects": "Allows the hero to create jury-rigged devices that activate powers available to Weird Scientists of their Rank or lower.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Weird Science",
+      "Crafting",
+      "Invention",
+      "Improvise"
+    ]
+  },
+  {
+    "slug": "holy-unholy-warrior",
+    "name": "Holy/Unholy Warrior",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FAITH",
+      "dieType": "D6"
+    },
+    "effects": "Adds +1 to the total of a final Soak roll for each Power Point spent, up to a maximum of +4.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Miracles",
+      "Divine",
+      "Soak",
+      "Defense",
+      "Paladin",
+      "Cleric"
+    ]
+  },
+  {
+    "slug": "mentalist",
+    "name": "Mentalist",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "PSIONICS",
+      "dieType": "D6"
+    },
+    "effects": "Adds +2 to opposed Psionics rolls, whether using powers against a foe or defending against a rival.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Psionics",
+      "Psychic",
+      "Mental",
+      "Telepathy"
+    ]
+  },
+  {
+    "slug": "new-powers",
+    "name": "New Powers",
+    "category": "power",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "An arcane character may learn two new powers by choosing this Edge (which may be taken multiple times). He may choose from any powers of his Rank or lower normally available to his particular Arcane Background. A character can add a new Trapping on a power she already has instead of gaining a new one.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Powers",
+      "Versatility",
+      "Magic",
+      "Wizard",
+      "Psionics"
+    ]
+  },
+  {
+    "slug": "power-points",
+    "name": "Power Points",
+    "category": "power",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "This Edge grants an additional 5 Power Points. Power Points may be selected more than once, but only once per Rank. It may be taken as often as desired at Legendary Rank, but each grants only 2 additional points.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Resources",
+      "Magic",
+      "Wizard"
+    ]
+  },
+  {
+    "slug": "power-surge",
+    "name": "Power Surge",
+    "category": "power",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "The character recovers 10 Power Points when his Action Card is a Joker. This may not exceed his usual limit.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Recovery",
+      "Joker",
+      "Magic"
+    ]
+  },
+  {
+    "slug": "rapid-recharge",
+    "name": "Rapid Recharge",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SPIRIT",
+        "dieType": "D6"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "arcane-background"
+      }
+    ],
+    "effects": "Increases Power Points recharge rate to 10 every hour.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Recovery",
+      "Magic"
+    ]
+  },
+  {
+    "slug": "improved-rapid-recharge",
+    "name": "Improved Rapid Recharge",
+    "category": "power",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "rapid-recharge"
+    },
+    "effects": "Increases Power Points recharge rate to 20 every hour.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Recovery",
+      "Magic",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "soul-drain",
+    "name": "Soul Drain",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "arcane-background"
+    },
+    "effects": "Allows a character to take Fatigue to recover Power Points. Fatigue levels cannot incapacitate the character and recover only naturally.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Power Points",
+      "Recovery",
+      "Fatigue",
+      "Blood Magic",
+      "Warlock"
+    ]
+  },
+  {
+    "slug": "wizard",
+    "name": "Wizard",
+    "category": "power",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "SPELLCASTING",
+      "dieType": "D6"
+    },
+    "effects": "Allows a Wizard to spend 1 extra Power Point to change a spell's Trapping, which can have significant consequences if a foe has resistance or weakness to the spell's usual Trapping.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Arcane",
+      "Magic",
+      "Wizard",
+      "Spellcasting",
+      "Trappings",
+      "Versatility"
+    ]
+  },
+  {
+    "slug": "ace",
+    "name": "Ace",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "AGILITY",
+      "dieType": "D8"
+    },
+    "effects": "Aces ignore two points of penalties to any Boating, Driving, or Piloting roll, and may spend Bennies to Soak damage for any vehicle they control or command.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Vehicles",
+      "Pilot",
+      "Driver",
+      "Boating",
+      "Penalty",
+      "Soak"
+    ]
+  },
+  {
+    "slug": "acrobat",
+    "name": "Acrobat",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "AGILITY",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "ATHLETICS",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "Acrobats get one free reroll on Athletics totals involving balance, tumbling, or grappling.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Athletics",
+      "Agility",
+      "Movement",
+      "Reroll",
+      "Balance",
+      "Tumbling",
+      "Grappling"
+    ]
+  },
+  {
+    "slug": "combat-acrobat",
+    "name": "Combat Acrobat",
+    "category": "professional",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "acrobat"
+    },
+    "effects": "Attacks against a Combat Acrobat suffer a −1 penalty if the character is aware of the attack, can reasonably move, and isn't suffering Encumbrance or Minimum Strength penalties.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Combat",
+      "Movement",
+      "Evasion",
+      "Agility",
+      "Dodge"
+    ]
+  },
+  {
+    "slug": "assassin",
+    "name": "Assassin",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "AGILITY",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "FIGHTING",
+        "dieType": "D6"
+      },
+      {
+        "type": "SKILL",
+        "skill": "STEALTH",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "Assassins add +2 to damage rolls when their foe is Vulnerable or they have The Drop.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Damage",
+      "Stealth",
+      "Surprise",
+      "The Drop",
+      "Rogue",
+      "Backstab"
+    ]
+  },
+  {
+    "slug": "investigator",
+    "name": "Investigator",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SMARTS",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "RESEARCH",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "Investigators add +2 to Research rolls and Notice rolls made to search through clutter or spy hidden items.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Investigation",
+      "Research",
+      "Notice",
+      "Detective",
+      "Smarts"
+    ]
+  },
+  {
+    "slug": "jack-of-all-trades",
+    "name": "Jack-Of-All-Trades",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D10"
+    },
+    "effects": "Allows the character to make a Smarts roll to temporarily gain a skill, lasting until a different subject is studied.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Skills",
+      "Versatility",
+      "Smarts",
+      "Adaptable"
+    ]
+  },
+  {
+    "slug": "mcgyver",
+    "name": "McGyver",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SMARTS",
+        "dieType": "D6"
+      },
+      {
+        "type": "SKILL",
+        "skill": "NOTICE",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "REPAIR",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Allows the character to craft improvised devices using a Repair roll, such as explosives, weapons, or tools.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Improvise",
+      "Crafting",
+      "Repair",
+      "Invention",
+      "Resourceful"
+    ]
+  },
+  {
+    "slug": "mr-fix-it",
+    "name": "Mr. Fix It",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "REPAIR",
+      "dieType": "D8"
+    },
+    "effects": "Adds +2 to Repair rolls and halves the time required to fix something with a raise.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Repair",
+      "Crafting",
+      "Mechanic",
+      "Engineer",
+      "Tech"
+    ]
+  },
+  {
+    "slug": "scholar",
+    "name": "Scholar",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "RESEARCH",
+      "dieType": "D8"
+    },
+    "effects": "Adds +2 to a chosen Smarts-based skill. May be taken multiple times for different skills.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Smarts",
+      "Skills",
+      "Knowledge",
+      "Academic",
+      "Specialization"
+    ]
+  },
+  {
+    "slug": "soldier",
+    "name": "Soldier",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "STRENGTH",
+        "dieType": "D6"
+      },
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "VIGOR",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Professional soldiers get used to carrying heavy loads and enduring harsh conditions. After a few days getting used to their gear (GM's call), they treat their Strength as one die type higher when determining Encumbrance and Minimum Strength to use armor, weapons, and equipment without a penalty. This stacks with the Brawny Edge. They also get a free reroll on Vigor rolls made to survive environmental hazards.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Military",
+      "Encumbrance",
+      "Strength",
+      "Survival",
+      "Endurance"
+    ]
+  },
+  {
+    "slug": "thief",
+    "name": "Thief",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "AGILITY",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "STEALTH",
+        "dieType": "D6"
+      },
+      {
+        "type": "SKILL",
+        "skill": "THIEVERY",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Thieves specialize in deceit, treachery, and acrobatics. They add +1 to Athletics rolls made to climb in urban areas, +1 to Stealth rolls in urban environments, and +1 to Thievery rolls in all circumstances.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Rogue",
+      "Stealth",
+      "Thievery",
+      "Urban",
+      "Climbing",
+      "Sneaky"
+    ]
+  },
+  {
+    "slug": "woodsman",
+    "name": "Woodsman",
+    "category": "professional",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SPIRIT",
+        "dieType": "D6"
+      },
+      {
+        "type": "SKILL",
+        "skill": "SURVIVAL",
+        "dieType": "D8"
+      }
+    ],
+    "effects": "Woodsmen are rangers, scouts, and hunters. They add +2 to Survival rolls and Stealth rolls made in the wild.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Ranger",
+      "Survival",
+      "Stealth",
+      "Wilderness",
+      "Tracking",
+      "Nature"
+    ]
+  },
+  {
+    "slug": "bolster",
+    "name": "Bolster",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "When this character successfully Tests a foe, he may also remove the Distracted or Vulnerable state from one of his allies.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Support",
+      "Test",
+      "Debuff",
+      "Teamwork",
+      "Social"
+    ]
+  },
+  {
+    "slug": "common-bond",
+    "name": "Common Bond",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "A character with this Edge may freely give her Bennies to any other character she can communicate with.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Support",
+      "Benny",
+      "Teamwork",
+      "Social",
+      "Generosity"
+    ]
+  },
+  {
+    "slug": "connections",
+    "name": "Connections",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Your heroine is connected to people or organizations who can help her when the chips are down. She can call on her friends for a favor once per session.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Networking",
+      "Contacts",
+      "Faction",
+      "Resources"
+    ]
+  },
+  {
+    "slug": "humiliate",
+    "name": "Humiliate",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "TAUNT",
+      "dieType": "D8"
+    },
+    "effects": "Your hero gets a free reroll on Taunt Tests.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Taunt",
+      "Debuff",
+      "Test",
+      "Reroll",
+      "Mental"
+    ]
+  },
+  {
+    "slug": "menacing",
+    "name": "Menacing",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "The goon adds +2 to her Intimidation rolls.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Intimidation",
+      "Fear",
+      "Threatening"
+    ]
+  },
+  {
+    "slug": "provoke",
+    "name": "Provoke",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "TAUNT",
+      "dieType": "D6"
+    },
+    "effects": "Once per turn, when your hero uses Taunt for a Test and gets a raise, the enemy suffers a −2 penalty to affect any other target besides the one who provoked her.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Taunt",
+      "Debuff",
+      "Aggro",
+      "Tank",
+      "Control"
+    ]
+  },
+  {
+    "slug": "rabble-rouser",
+    "name": "Rabble-Rouser",
+    "category": "social",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Once per turn, a character with this Edge can make a social Test with Intimidation or Taunt against all enemies in a Medium Blast Template. Each defender resists and is affected separately.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Area of Effect",
+      "Intimidation",
+      "Taunt",
+      "Debuff",
+      "Control"
+    ]
+  },
+  {
+    "slug": "reliable",
+    "name": "Reliable",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "He gets a free reroll on any Support roll.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Support",
+      "Reroll",
+      "Teamwork",
+      "Social",
+      "Help"
+    ]
+  },
+  {
+    "slug": "retort",
+    "name": "Retort",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "TAUNT",
+      "dieType": "D6"
+    },
+    "effects": "If a character with Retort gets a raise when resisting an Intimidation or Taunt Test, the foe is Distracted.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Defense",
+      "Debuff",
+      "Taunt",
+      "Intimidation",
+      "Witty"
+    ]
+  },
+  {
+    "slug": "streetwise",
+    "name": "Streetwise",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SMARTS",
+      "dieType": "D6"
+    },
+    "effects": "Streetwise characters add +2 to Intimidation or Persuasion rolls made to Network with shady or criminal elements and add +2 to Common Knowledge rolls related to disreputable activities.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Social",
+      "Urban",
+      "Criminal",
+      "Networking",
+      "Underworld"
+    ]
+  },
+  {
+    "slug": "strong-willed",
+    "name": "Strong Willed",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "He adds +2 to his total when resisting Tests with Smarts or Spirit.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Mental",
+      "Spirit",
+      "Smarts",
+      "Willpower",
+      "Resistance"
+    ]
+  },
+  {
+    "slug": "iron-will",
+    "name": "Iron Will",
+    "category": "social",
+    "rank": "SEASONED",
+    "requirements": [
+      {
+        "type": "EDGE",
+        "edgeReqId": "brave"
+      },
+      {
+        "type": "EDGE",
+        "edgeReqId": "strong-willed"
+      }
+    ],
+    "effects": "The hero now adds his Strong Willed bonus to resist powers and negate their effects. Iron Will doesn't stack with Brave.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Defense",
+      "Mental",
+      "Powers",
+      "Magic Resistance",
+      "Willpower"
+    ]
+  },
+  {
+    "slug": "work-the-room",
+    "name": "Work the Room",
+    "category": "social",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Once per turn, you can roll an additional skill die when Supporting with Persuasion or Performance. The additional die Supports any other ally who can see or hear your hero.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Support",
+      "Social",
+      "Persuasion",
+      "Performance",
+      "Buff",
+      "Teamwork"
+    ]
+  },
+  {
+    "slug": "work-the-crowd",
+    "name": "Work the Crowd",
+    "category": "social",
+    "rank": "SEASONED",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "work-the-room"
+    },
+    "effects": "As Work the Room but the hero now can Support another on up to two of her Support actions.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Support",
+      "Social",
+      "Persuasion",
+      "Performance",
+      "Buff",
+      "Teamwork",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "beast-bond",
+    "name": "Beast Bond",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "These characters may spend their own Bennies for any animals under their control, including mounts, pets, familiars, and so on.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Animal",
+      "Pet",
+      "Companion",
+      "Benny",
+      "Support",
+      "Druid"
+    ]
+  },
+  {
+    "slug": "beast-master",
+    "name": "Beast Master",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Animals take to your hero quickly and easily, and he gains a loyal animal companion. Beast Master may be taken more than once to gain additional benefits such as stronger pets or additional companions.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Animal",
+      "Pet",
+      "Companion",
+      "Druid",
+      "Ranger",
+      "Summoner"
+    ]
+  },
+  {
+    "slug": "champion",
+    "name": "Champion",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": [
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "SPIRIT",
+        "dieType": "D8"
+      },
+      {
+        "type": "SKILL",
+        "skill": "FIGHTING",
+        "dieType": "D6"
+      }
+    ],
+    "effects": "Champions add +2 damage when attacking supernaturally evil (or good, if they're evil) creatures. This applies to all forms of damage, including area effects and powers.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Damage",
+      "Supernatural",
+      "Holy",
+      "Unholy",
+      "Paladin",
+      "Demon Hunter"
+    ]
+  },
+  {
+    "slug": "chi",
+    "name": "Chi",
+    "category": "weird",
+    "rank": "VETERAN",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "martial-warrior"
+    },
+    "effects": "At the start of each combat encounter, the hero gains a Chi Point that can be spent to reroll failed attacks, force an enemy to reroll an attack, or add +d6 damage to a successful Fighting attack.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Monk",
+      "Unarmed",
+      "Ki",
+      "Mystical",
+      "Reroll",
+      "Damage",
+      "Resource"
+    ]
+  },
+  {
+    "slug": "danger-sense",
+    "name": "Danger Sense",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": null,
+    "effects": "Adds +2 to Notice rolls for Surprise. In other situations, allows a Notice roll at −2 to detect hazards.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Surprise",
+      "Notice",
+      "Perception",
+      "Precognition",
+      "Awareness"
+    ]
+  },
+  {
+    "slug": "healer",
+    "name": "Healer",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "SPIRIT",
+      "dieType": "D8"
+    },
+    "effects": "Adds +2 to all Healing rolls, whether natural or magical.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Healing",
+      "Support",
+      "Medic",
+      "Cleric"
+    ]
+  },
+  {
+    "slug": "liquid-courage",
+    "name": "Liquid Courage",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D8"
+    },
+    "effects": "After consuming alcohol, Vigor increases one die type, and one level of Wound penalties can be ignored. However, Smarts, Agility, and linked skills suffer a −1 penalty. Effect lasts for one hour.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Drunken Master",
+      "Buff",
+      "Debuff",
+      "Vigor",
+      "Wounds"
+    ]
+  },
+  {
+    "slug": "scavenger",
+    "name": "Scavenger",
+    "category": "weird",
+    "rank": "NOVICE",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "luck"
+    },
+    "effects": "Once per encounter, the hero may find or recall a needed piece of equipment or resource.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Utility",
+      "Gear",
+      "Resourceful",
+      "Lucky",
+      "Find"
+    ]
+  },
+  {
+    "slug": "followers",
+    "name": "Followers",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": null,
+    "effects": "Grants five followers who fight by the hero's side. Use Soldier profiles for followers.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Leadership",
+      "Companion",
+      "Follower",
+      "Army"
+    ]
+  },
+  {
+    "slug": "professional",
+    "name": "Professional",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": null,
+    "effects": "Increases the chosen Trait and its limit by one step.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Attribute",
+      "Skill",
+      "Improvement",
+      "Advancement",
+      "Mastery"
+    ]
+  },
+  {
+    "slug": "expert",
+    "name": "Expert",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "professional"
+    },
+    "effects": "Increases the chosen Trait and its limit by an additional step.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Attribute",
+      "Skill",
+      "Improvement",
+      "Advancement",
+      "Mastery"
+    ]
+  },
+  {
+    "slug": "master",
+    "name": "Master",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "expert"
+    },
+    "effects": "The Wild Die for the selected Trait increases to d10.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Wild Die",
+      "Improvement",
+      "Advancement",
+      "Mastery"
+    ]
+  },
+  {
+    "slug": "sidekick",
+    "name": "Sidekick",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": null,
+    "effects": "Grants a Novice Rank sidekick who is a Wild Card and advances alongside the hero.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Companion",
+      "Follower",
+      "Sidekick",
+      "Ally"
+    ]
+  },
+  {
+    "slug": "tough-as-nails",
+    "name": "Tough As Nails",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": {
+      "type": "ATTRIBUTE",
+      "attribute": "VIGOR",
+      "dieType": "D8"
+    },
+    "effects": "Allows the character to take four Wounds before being Incapacitated.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Toughness",
+      "Durability",
+      "Wounds",
+      "Survival"
+    ]
+  },
+  {
+    "slug": "tougher-than-nails",
+    "name": "Tougher Than Nails",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": [
+      {
+        "type": "EDGE",
+        "edgeReqId": "tough-as-nails"
+      },
+      {
+        "type": "ATTRIBUTE",
+        "attribute": "VIGOR",
+        "dieType": "D12"
+      }
+    ],
+    "effects": "Allows the character to take five Wounds before being Incapacitated.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Toughness",
+      "Durability",
+      "Wounds",
+      "Survival",
+      "Improved"
+    ]
+  },
+  {
+    "slug": "weapon-master",
+    "name": "Weapon Master",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": {
+      "type": "SKILL",
+      "skill": "FIGHTING",
+      "dieType": "D12"
+    },
+    "effects": "Increases Parry by +1, and the bonus damage die for Fighting rolls becomes a d8.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Parry",
+      "Damage",
+      "Mastery"
+    ]
+  },
+  {
+    "slug": "master-of-arms",
+    "name": "Master of Arms",
+    "category": "legendary",
+    "rank": "LEGENDARY",
+    "requirements": {
+      "type": "EDGE",
+      "edgeReqId": "weapon-master"
+    },
+    "effects": "Increases Parry by an additional +1, and the Fighting bonus damage die becomes a d10.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "isHomebrew": false,
+    "isPublic": true,
+    "ownerId": null,
+    
+    "tags": [
+      "Melee",
+      "Fighting",
+      "Parry",
+      "Damage",
+      "Mastery",
+      "Improved"
+    ]
+  }
+]

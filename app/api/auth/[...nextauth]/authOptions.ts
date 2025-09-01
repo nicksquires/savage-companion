@@ -17,10 +17,12 @@ export const authOptions: NextAuthOptions = {
         async authorize(credentials, req) {
           if (!credentials?.email || !credentials?.password) return null;
 
+          // Check email
           const user = await prisma.user.findUnique({ where: { email: credentials.email }});
 
           if (!user) return null;
 
+          // Check password
           const passwordsMatch = await bcrypt.compare(credentials.password, user.hashedPassword!);
 
           return passwordsMatch ? user : null;
@@ -42,6 +44,28 @@ export const authOptions: NextAuthOptions = {
       strategy: 'jwt'
     },
     callbacks: {
+      // First login — attach role from user object
+      // Runs when user logs in or token is refreshed
+      async jwt({ token, user }) {
+
+      if (user) {
+
+      // Attach role from DB to the token
+        const dbUser = await prisma.user.findUnique({
+          where: { email: user.email ?? undefined},
+        });
+
+        token.role = dbUser?.role ?? "n/a";
+      }
+
+      return token;
+    },
+      async session({ session, token }) {
+        if (session.user) {
+          session.user.role = token.role;
+        }
+      return session;
+    },
       async redirect({url, baseUrl}) {
         return baseUrl + '/';
       }

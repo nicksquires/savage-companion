@@ -10,9 +10,209 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+
+///////////////////////
+//      ENUMS       //
+/////////////////////
+
+enum Role {
+  FREE
+  BASIC
+  PREMIUM
+  ADMIN
+}
+
+enum Rank {
+  NOVICE
+  SEASONED
+  VETERAN
+  HEROIC
+  LEGENDARY
+}
+
+enum Attribute {
+  AGILITY
+  SMARTS
+  SPIRIT
+  STRENGTH
+  VIGOR
+}
+
+enum RequirementType {
+  ATTRIBUTE
+  SKILL
+  EDGE
+}
+
+enum SpecialAbilityCategory {
+  MOVEMENT
+  OFFENSE
+  DEFENSE
+  IMMUNITIES
+  RESISTANCE
+  WEAKNESS
+  SENSES
+  TRAITS
+  RECOVERY
+  STATUSEFFECT
+  COMBAT
+  DURABILITY
+  HAZARD
+}
+
+enum SourceType {
+  CORE
+  COMPANION
+  HOMEBREW
+  THIRD_PARTY
+}
+
+enum DieType {
+  D4
+  D6
+  D8
+  D10
+  D12
+  D20
+  D30
+  D50
+  D100
+}
+
+enum HindranceType {
+  MINOR
+  MAJOR
+}
+
+enum EventType {
+  NARRATIVE
+  COMBAT
+  EXPLORATION
+  PUZZLE
+  SOCIAL
+  TRAVEL
+}
+
+enum ItemType {
+  WEAPON
+  ARMOR
+  GEAR
+  CONSUMABLE
+  TOOL
+  MISC
+}
+
+enum SessionStatus {
+  PLANNED
+  ACTIVE
+  PAUSED
+  ENDED
+}
+
+enum EntityType {
+  PC
+  CREATURE
+}
+
+enum ConditionType {
+  // --- Core Savage Worlds Conditions ---
+  // May be isolated to game logic, but enum exists for
+  // potential state management on game session save/load
+  SHAKEN
+  DISTRACTED
+  VULNERABLE
+  ENTANGLED
+  BOUND
+  PRONE
+  STUNNED
+  FATIGUED
+  EXHAUSTED
+  INCAPACITATED
+
+  // --- Environmental & Physical Conditions ---
+  POISONED
+  DRENCHED
+  FROZEN
+  BURNING
+  HOT
+  BLEEDING
+  BLINDED
+  DEAFENED
+  SICKENED
+  SUFFOCATING
+
+  // --- Mental & Social Conditions ---
+  FRIGHTENED
+  ENRAGED
+  CONFUSED
+  CHARMED
+  DOMINATED
+  HOPELESS
+  SHAMED
+
+  // --- Supernatural & Arcane Conditions ---
+  CURSED
+  PETRIFIED
+  WEAKENED
+  HAUNTED
+  ETHEREAL
+
+  // --- Sci-Fi & Technological Conditions ---
+  IRRADIATED
+  HACKED
+  MAGNETIZED
+  SYSTEM_SHOCK
+  JAMMED
+
+  // --- Special / Custom ---
+  CUSTOM // For homebrew conditions
+}
+
+// enum PowerGeneralModifier {
+//   ARMOR_PIERCING
+//   FATIGUE
+//   GLOW_SHROUD
+//   HEAVY_WEAPON
+//   HINDER_HURRY
+//   LINGERING_DAMAGE
+//   RANGE
+//   SELECTIVE
+// }
+
+// enum PowerModifier { 
+//   ADDITIONAL_RECIPIENTS 
+//   ADDITIONAL_ZOMBIES 
+//   AREA_EFFECT 
+//   ARMED 
+//   ARMOR 
+//   BITE_CLAW 
+//   CRIPPLING_INJURIES 
+//   DAMAGE 
+//   EDIT 
+//   FAST_CAST 
+//   FLIGHT 
+//   GREATER_HEALING 
+//   HARDENED 
+//   MIND_RIDER 
+//   MOBILE 
+//   MORE_ARMOR 
+//   NEUTRALIZE_POISON_OR_DISEASE 
+//   PERMANENT 
+//   POWER 
+//   QUICKNESS 
+//   SHAPED 
+//   SIZE 
+//   SOUND 
+//   SPEECH 
+//   STRONG 
+//   TARGETED 
+//   TELEPORT_FOE 
+//   TOUGHNESS 
+//   }
 
 // The Account model in your schema is intended to support multiple 
 // login providers per user. This doesn’t mean a user can log in as 
@@ -49,33 +249,54 @@ model Session {
 }
 
 model User {
-  id               String            @id @default(cuid())
+  id               String                     @id @default(cuid())
   name             String?
-  email            String?           @unique
-  emailVerified    DateTime?         @map("email_verified")
+  email            String                     @unique
+  emailVerified    DateTime?                  @map("email_verified")
   hashedPassword   String?
   image            String?
+  role             Role                       @default(FREE)
   accounts         Account[]
   sessions         Session[]
-  registeredAt     DateTime          @default(now())
+  registeredAt     DateTime                   @default(now())
   campaigns        Campaign[]
+  campaignTemplate CampaignStartingTemplate[]
+  campaignGMs      CampaignGM[] // Campaigns where user is GM (promoted) 
   PlayerCharacters PlayerCharacter[]
+  subscriptions    Subscription[] // Link to subscriptions 
 
-  // Homebrew Content
-  customEdges            Edge[]
-  customPowers           Power[]
-  customCreatures        Creature[]
-  customSpecialAbilities SpecialAbility[]
-  customItems            Item[]
-  customSkills           Skill[]
-  //customWildCards WildCard[]
-  Hindrance              Hindrance[]
-  CampaignSession        CampaignSession[]
-  PlayerJournalEntry     PlayerJournalEntry[]
-  GMJournalEntry         GMJournalEntry[]
-  Race                   Race[]
+  // Homebrew Content (unchanged, but consolidated) 
+  customEdges             Edge[]
+  customPowers            Power[]
+  customCreatures         Creature[]
+  customSpecialAbilities  SpecialAbility[]
+  customItems             Item[]
+  customSkills            Skill[]
+  customHindrances        Hindrance[]
+  customRaces             Race[]
+  customArcaneBackgrounds ArcaneBackground[]
 
+  // Journals/Sessions 
+  gmJournalEntries     GMJournalEntry[]
+  playerJournalEntries PlayerJournalEntry[]
+  campaignSession      CampaignSession[]
+
+  @@index([email, role])
   @@map("users")
+}
+
+model Subscription {
+  id        String    @id @default(cuid())
+  userId    String
+  tier      Role // BASIC, PREMIUM (sync with User.role) 
+  startDate DateTime  @default(now())
+  endDate   DateTime? // Null for lifetime or active 
+  status    String    @default("ACTIVE") // ACTIVE, EXPIRED, CANCELED 
+  paymentId String? // Stripe ID or similar 
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId, status])
 }
 
 model VerificationToken {
@@ -92,77 +313,155 @@ model VerificationToken {
 /////////////////////////////////////
 
 model Campaign {
-  id        String   @id @default(cuid())
-  name      String
-  summary   String? // Short description or blurb
-  setting   String? // E.g., "Fantasy", "Sci-Fi"
-  genre     String? // Optional: sword & sorcery, weird west, etc.
-  isActive  Boolean  @default(true)
+  id                 String  @id @default(cuid())
+  name               String
+  description        String? @db.Text // Short description or blurb
+  setting            String? // E.g., "Fantasy", "Sci-Fi"
+  isActive           Boolean @default(true)
+  startingTemplateId String?
+  ownerId            String // Primary GM/creator 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Ownership & Permissions
-  ownerId String
-  gm      User   @relation(fields: [ownerId], references: [id])
+  // Relations
+  owner            User                      @relation(fields: [ownerId], references: [id])
+  gms              CampaignGM[] // Multiple GMs 
+  // players          CampaignPlayerCharacter[] // Join model
+  creatures        CampaignCreature[] // Campaign wildcard NPCs
+  sources          CampaignSource[] // Join model
+  sessions         CampaignSession[] // NEW: linked play sessions
+  edges            CampaignEdge[] // campaign-specific edge selection
+  powers           CampaignPower[]
+  items            CampaignItem[]
+  hindrances       CampaignHindrance[]
+  skills           CampaignSkill[]
+  startingTemplate CampaignStartingTemplate? @relation(fields: [startingTemplateId], references: [id])
+  assets           CampaignAsset[] // Arbitrary images 
+  campaignNote     CampaignNote[]
+  playerCharacters PlayerCharacter[]
 
-  // Campaign contents
-  charTemplate        CharacterTemplate? // Optional for campaigns that use defaults
-  players             CampaignPlayerCharacter[] // Join model
-  npcs                CampaignWildCard[] // Optional: GM-created creatures for this campaign
-  sources             CampaignSource[] // Join model
-  sessions            CampaignSession[] // NEW: linked play sessions
-  notes               CampaignNote[] // Optional: for shared or GM notes
-  edges               CampaignEdge[] // campaign-specific edge selection
-  powers              CampaignPower[]
-  items               CampaignItem[]
-  hindrances          CampaignHindrance[]
-  creatures           CampaignCreature[]
-  skills              CampaignSkill[]
-  characterTemplateId String
+  @@index([name, ownerId])
+}
+
+model CampaignGM {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String
+  promotedAt DateTime @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@unique([campaignId, userId])
+  @@index([campaignId])
+}
+
+model CampaignStartingTemplate {
+  id          String  @id @default(cuid())
+  name        String // e.g., "Psionics Heavy | The Last Parsec"
+  description String?
+  bonuses     Json? // Flexible: { "extraSkillPoints": 3, "autoSkills": [{ "skillId": "psionics-id", "dieType": "D4", "modifier": 0 }], "extraAttributePoints": 1, "autoEdges": ["arcane-resistance-id"], "extraWealth": 500 }
+
+  isHomebrew Boolean  @default(false)
+  ownerId    String? // GM who created it
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  owner     User?      @relation(fields: [ownerId], references: [id])
+  campaigns Campaign[] // Back-relation: templates can be reused
+
+  @@index([name, ownerId])
 }
 
 model CampaignSession {
-  id         String   @id @default(cuid())
+  id         String        @id @default(cuid())
   title      String
   summary    String? // Quick recap of the session
-  date       DateTime @default(now())
-  duration   Int? // In minutes, optional
-  notes      String? // Session log or GM notes
+  date       DateTime      @default(now())
+  duration   Int? // In minutes, optional, or format later to (days,hours,minutes)
+  status     SessionStatus @default(PLANNED) // PLANNED, ACTIVE, ENDED 
   gmId       String? // GM for the session
   campaignId String
 
   campaign Campaign @relation(fields: [campaignId], references: [id])
   gm       User?    @relation(fields: [gmId], references: [id])
 
-  highlights    SessionEvent[] // Optional: individual events or milestones
-  playerJournal PlayerJournalEntry[]
-  gmJournal     GMJournalEntry[]
+  highlights      SessionEvent[] // Optional: individual events or milestones
+  playerJournals  PlayerJournalEntry[]
+  gmJournals      GMJournalEntry[]
+  characterStates SessionCharacterState[] // New relation for state snapshots
+
+  @@index([campaignId, date])
 }
 
 model SessionEvent {
   id          String    @id @default(cuid())
   sessionId   String
   timestamp   DateTime  @default(now())
-  description String
-  type        EventType @default(Narrative) // e.g., Combat, RP, Travel
+  description String    @db.Text
+  type        EventType @default(NARRATIVE) // e.g., Combat, RP, Travel
 
   session CampaignSession @relation(fields: [sessionId], references: [id])
+
+  @@index([sessionId])
+}
+
+//   Expected json format for 'conditions'
+// [
+//   { "type": "SHAKEN", 
+//   "notes": "Failed Spirit roll", 
+//   "duration": "Until recovery" 
+//   }, 
+//   { "type": "CUSTOM", 
+//   "name": "Cursed", 
+//   "notes": "From ritual", 
+//   "duration": "1 session" }
+// ]
+model SessionCharacterState {
+  id         String     @id @default(cuid())
+  sessionId  String
+  entityId   String // References either CampaignPlayerCharacter.id or CampaignCreature.id
+  entityType EntityType // PC or CREATURE
+  bennies    Int        @default(3) // Wild Cards only; Extras typically 0
+  wounds     Int        @default(0) // Max 3 for Wild Cards
+  conditions Json?
+  notes      String?    @db.Text // Additional GM notes
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  session CampaignSession @relation(fields: [sessionId], references: [id])
+
+  // CampaignPlayerCharacter   CampaignPlayerCharacter? @relation(fields: [campaignPlayerCharacterId], references: [id])
+  // campaignPlayerCharacterId String?
+  playerCharacter    PlayerCharacter?  @relation(fields: [playerCharacterId], references: [id])
+  playerCharacterId  String?
+  campaignCreature   CampaignCreature? @relation(fields: [campaignCreatureId], references: [id])
+  campaignCreatureId String?
+
+  @@unique([sessionId, entityId, entityType])
+  @@index([sessionId, entityId, entityType])
 }
 
 model PlayerJournalEntry {
-  id        String   @id @default(cuid())
-  sessionId String
-  userId    String
-  title     String
-  content   String
-  isPrivate Boolean  @default(true) // Players can choose to share or keep it private
+  id          String  @id @default(cuid())
+  sessionId   String
+  userId      String
+  characterId String? // Added for per-character journals 
+  title       String
+  body        String
+
+  isPrivate Boolean  @default(true) // Players may choose to share or keep it private
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  session CampaignSession @relation(fields: [sessionId], references: [id])
-  user    User            @relation(fields: [userId], references: [id])
+  session   CampaignSession  @relation(fields: [sessionId], references: [id])
+  user      User             @relation(fields: [userId], references: [id])
+  character PlayerCharacter? @relation(fields: [characterId], references: [id]) // Optional link 
 
-  @@unique([sessionId, userId]) // Prevent duplicate journal entries per player/session
+  @@unique([sessionId, userId, characterId]) // Allow per-character/session uniqueness 
+  @@index([userId, characterId])
 }
 
 model GMJournalEntry {
@@ -170,389 +469,430 @@ model GMJournalEntry {
   sessionId String
   gmId      String
   title     String
-  content   String
+  body      String
+  isPublic  Boolean  @default(false) // Added for public/private 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   session CampaignSession @relation(fields: [sessionId], references: [id])
   gm      User            @relation(fields: [gmId], references: [id])
-}
 
-model CharacterTemplate {
-  id                  String @id @default(cuid())
-  campaignId          String @unique
-  startingWealth      Int    @default(500)
-  startingSkillPoints Int    @default(12)
-  startingEdges       Int    @default(1)
-  startingHindrances  Int    @default(3)
-
-  // Optional extra flexibility
-  startingPace    Int @default(6)
-  startingBennies Int @default(3)
-
-  // Bonus skills, racial bonuses, etc.
-  bonusSkills     CampaignSkill[]
-  bonusEdges      CampaignEdge[]
-  bonusHindrances CampaignHindrance[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // RELATION TO CAMPAIGN
-  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  @@index([sessionId, gmId])
 }
 
 model PlayerCharacter {
-  id               String  @id @default(cuid())
-  name             String
-  concept          String? // Optional character concept or tagline
-  userId           String // Owner of the character (user)
-  raceId           String
-  arcaneBackground String? // Optional arcane background
+  id         String  @id @default(cuid())
+  name       String
+  concept    String? // Optional character concept or tagline
+  userId     String // Owner of the character (user)
+  raceId     String
+  isActive   Boolean @default(true)
+  imageUrl   String? // Added for optional images 
+  campaignId String?
 
   // Advancement
-  rank       Rank // e.g., "Novice", "Seasoned"
-  experience Int  @default(0)
-  advances   Int  @default(0) // Number of advances taken
+  rank            Rank @default(NOVICE) // e.g., "NOVICE", "Seasoned"
+  advancesSpent   Int  @default(0) // Taken/applied
+  advancesUnspent Int  @default(0)
+  experience      Int? @default(0) // Optional progress tracking between advances
 
   // Attributes
-  agility  DieType @default(d4)
-  smarts   DieType @default(d4)
-  spirit   DieType @default(d4)
-  strength DieType @default(d4)
-  vigor    DieType @default(d4)
+  agility  DieType @default(D4)
+  smarts   DieType @default(D4)
+  spirit   DieType @default(D4)
+  strength DieType @default(D4)
+  vigor    DieType @default(D4)
 
-  // Derived Stats
+  // Derived/Combat Stats
   pace      Int @default(6)
   parry     Int @default(0)
   toughness Int
   armor     Int @default(0)
-  bennies   Int @default(3)
-  wounds    Int @default(0)
-  fatigue   Int @default(0)
 
-  // Inventory / Equipment / Powers / Edges
-  wealth Int?    @default(500)
-  gear   Json? // Optional JSON blob of carried items
-  notes  String? // Background, personality, etc.
+  // Transient stats
+  startingBennies Int @default(3)
+  bennies         Int @default(3)
+  wounds          Int @default(0)
+  fatigue         Int @default(0)
+  wealth          Int @default(500)
 
-  // Modifiers for temporary in-game stat adjustments
-  // woundModifier Int // Can be plus or minus to affect max health
-  // skillModifier  Int // Plus or minus to affect skill rolls
-  // 
-
-  // Status + Meta
-  // isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // RELATIONS
-  user       User                       @relation(fields: [userId], references: [id])
-  Race       Race                       @relation(fields: [raceId], references: [id])
-  campaigns  CampaignPlayerCharacter[]
-  edges      PlayerCharacterEdge[]
-  powers     PlayerCharacterPower[]
-  skills     PlayerCharacterSkill[]
-  items      PlayerCharacterItem[]
-  hindrances PlayerCharacterHindrance[]
-}
-
-model WildCard {
-  id               String  @id @default(cuid())
-  name             String
-  concept          String? // Optional character concept or tagline
-  raceId           String
-  arcaneBackground String? // Optional arcane background
-
-  // Advancement
-  rank       Rank // e.g., "Novice", "Seasoned"
-  experience Int  @default(0)
-  advances   Int  @default(0) // Number of advances taken
-
-  // Attributes
-  agility  DieType @default(d4)
-  smarts   DieType @default(d4)
-  spirit   DieType @default(d4)
-  strength DieType @default(d4)
-  vigor    DieType @default(d4)
-
-  // Derived Stats
-  pace      Int @default(6)
-  parry     Int @default(0)
-  toughness Int
-  armor     Int @default(0)
-  bennies   Int @default(3)
-  wounds    Int @default(0)
-  fatigue   Int @default(0)
-
-  // Inventory / Equipment / Powers / Edges
-  gear  Json? // Optional JSON blob of carried items
-  notes String? // Background, personality, etc.
-
-  // Modifiers for temporary in-game stat adjustments
-  // woundModifier  Int  @default(0) // Can be plus or minus to affect max health
-  // skillModifier  Int  @default(0) // Plus or minus to affect skill rolls
-
-  // Homebrew / Visibility
-  isHomebrew Boolean  @default(false)
-  isPublic   Boolean  @default(false)
-  ownerId    String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  // isActive  Boolean  @default(true)
-
-  // RELATIONS
-  wildCardCampaigns CampaignWildCard[]
-  wildCardEdges     WildCardEdge[]
-  wildCardPowers    WildCardPower[]
-  wildCardSkills    WildCardSkill[]
-  WildCardItem      WildCardItem[]
-  WildCardHindrance WildCardHindrance[]
-}
-
-model Race {
-  id          String  @id @default(cuid())
-  name        String  @unique
-  description String?
-  ancestry    String? // Optional field for grouping (e.g., Elf, Human, etc.)
-  sourceId    String? // Reference to source book
-  ownerId     String? // For homebrew authorship
-  isHomebrew  Boolean @default(false)
-  isPublic    Boolean @default(true)
-  parentId    String? // For forking variants
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Relations
-  source         Source?              @relation(fields: [sourceId], references: [id])
-  owner          User?                @relation(fields: [ownerId], references: [id])
-  characters     PlayerCharacter[]
-  raceEdges      RaceEdge[]
-  racePowers     RacePower[]
-  raceSkills     RaceSkill[]
-  raceAbilities  RaceSpecialAbility[]
-  raceHindrances RaceHindrance[]
-}
-
-model Skill {
-  id              String  @id @default(cuid())
-  name            String  @unique
-  linkedAttribute String // "Agility", "Smarts", etc.
-  description     String?
-
-  // Homebrew / Visibility
-  isHomebrew Boolean  @default(false)
-  isPublic   Boolean  @default(false)
-  ownerId    String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  owner User? @relation(fields: [ownerId], references: [id])
-
-  // RELATIONS
-  characterSkills PlayerCharacterSkill[]
-  creatureSkills  CreatureSkill[]
-  campaignSkills  CampaignSkill[]
-  SkillTag        SkillTag[]
-  WildCardSkill   WildCardSkill[]
-  RaceSkill       RaceSkill[]
-}
-
-model Edge {
-  id           String  @id @default(cuid())
-  name         String  @unique
-  category     String? // e.g., Background, Combat, Social
-  rank         Rank    @default(Novice)
-  requirements Json? // Flexible requirements (e.g., { agility: "d8", rank: "Novice" })
-  effects      String // Core effect or summary
+  description String? // Background, personality, etc.
 
   // Metadata
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(true)
-  ownerId    String?
-  parentId   String?
-  sourceId   String?
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // RELATIONS
-  source         Source?               @relation(fields: [sourceId], references: [id])
-  owner          User?                 @relation(fields: [ownerId], references: [id])
-  campaignEdges  CampaignEdge[]
-  characterEdges PlayerCharacterEdge[]
-  creatureEdges  CreatureEdge[]
-  edgeTags       EdgeTag[]
-  WildCardEdge   WildCardEdge[]
-  RaceEdge       RaceEdge[]
+  user              User                              @relation(fields: [userId], references: [id])
+  race              Race                              @relation(fields: [raceId], references: [id])
+  campaign          Campaign?                         @relation(fields: [campaignId], references: [id])
+  edges             PlayerCharacterEdge[]
+  powers            PlayerCharacterPower[]
+  skills            PlayerCharacterSkill[]
+  gear              PlayerCharacterItem[]
+  hindrances        PlayerCharacterHindrance[]
+  arcaneBackgrounds PlayerCharacterArcaneBackground[]
+  modifiers         PlayerCharacterModifier[] // For temporary effects
+  journals          PlayerJournalEntry[] // Back-relation for per-character notes 
+  // campaigns         CampaignPlayerCharacter[]
+
+  advancementLogs       AdvancementLog[] // Tracks advances
+  SessionCharacterState SessionCharacterState[]
+
+  @@index([userId, name, raceId])
 }
 
-model Power {
-  id          String  @id @default(cuid())
-  name        String  @unique
-  rank        Rank    @default(Novice) // enum: Novice, Seasoned, etc.
-  powerPoints Int?
-  duration    String
-  effect      String
-  trapping    String? // optional text description
-
-  // Metadata
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(true)
-  ownerId    String?
-  parentId   String?
-  sourceId   String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Relations
-  source          Source?                @relation(fields: [sourceId], references: [id])
-  owner           User?                  @relation(fields: [ownerId], references: [id])
-  campaignPowers  CampaignPower[]
-  characterPowers PlayerCharacterPower[]
-  WildCardPower   WildCardPower[]
-  powerTags       PowerTag[]
-  RacePower       RacePower[]
+// NEW: Optional log for auditability
+model AdvancementLog {
+  id                String          @id @default(cuid())
+  playerCharacterId String
+  spentAt           DateTime        @default(now())
+  description       String // e.g., "Edge: Quick" or "Attribute: Agility d6"
+  playerCharacter   PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
 }
 
-model SpecialAbility {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  description String
-  category    String // e.g., Movement, Defense, Offense, etc.
-  parameters  Json? // e.g., { pace: "6", breathTemplate: "Cone", etc. }
-  notes       String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+// Optional: For temporary stat adjustments
+model PlayerCharacterModifier {
+  id                String   @id @default(cuid())
+  playerCharacterId String
+  type              String // e.g., "WOUND", "FATIGUE", "BUFF"
+  value             Int // e.g., -1 for wound penalty, +2 for buff
+  description       String?
+  duration          String? // e.g., "1 session", "until healed"
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
-  // Homebrew / Visibility
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(false)
-  ownerId    String?
-  parentId   String? // For variants or forks
-  sourceId   String?
+  character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
 
-  // RELATIONS
-  source Source? @relation(fields: [sourceId], references: [id])
-  owner  User?   @relation(fields: [ownerId], references: [id])
-  // mechanicalEffectId String?
-  // mechanicalEffect   MechanicalEffect? @relation(fields: [mechanicalEffectId], references: [id])
-
-  // Join Tables
-  creatureAbilities  CreatureAbility[]
-  specialAbilityTags SpecialAbilityTag[]
-  RaceSpecialAbility RaceSpecialAbility[]
-}
-
-model Hindrance {
-  id          String        @id @default(cuid())
-  name        String        @unique
-  severity    HindranceType // Enum: Major, Minor
-  description String
-  notes       String?
-
-  // Metadata
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(true)
-  ownerId    String?
-  parentId   String?
-  sourceId   String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Relations
-  source Source? @relation(fields: [sourceId], references: [id])
-  owner  User?   @relation(fields: [ownerId], references: [id])
-
-  characterHindrances PlayerCharacterHindrance[]
-  wildCardHindrances  WildCardHindrance[]
-  CampaignHindrance   CampaignHindrance[]
-  RaceHindrance       RaceHindrance[]
-}
-
-model Item {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  description String
-  cost        Int?
-  weight      Float? // e.g., '15', '(1/20)'
-  type        ItemType // e.g., weapon, armor, tool - try to create 'enum itemType'
-
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(true)
-  ownerId    String?
-  parentId   String?
-  sourceId   String?
-
-  source        Source?               @relation(fields: [sourceId], references: [id])
-  owner         User?                 @relation(fields: [ownerId], references: [id])
-  CharacterItem PlayerCharacterItem[]
-  WildCardItem  WildCardItem[]
-  CreatureItem  CreatureItem[]
-  ItemTag       ItemTag[]
-  CampaignItem  CampaignItem[]
+  @@index([playerCharacterId, type])
 }
 
 model Creature {
   id          String  @id @default(cuid())
   name        String
-  description String?
+  description String? @db.Text
+  raceId      String? // If creature has race
+  imageUrl    String? // Added for images 
+  notes       String?
 
   // Attributes
-  agility  DieType @default(d4)
-  smarts   DieType @default(d4)
-  spirit   DieType @default(d4)
-  strength DieType @default(d4)
-  vigor    DieType @default(d4)
+  agility  DieType @default(D4)
+  smarts   DieType @default(D4)
+  spirit   DieType @default(D4)
+  strength DieType @default(D4)
+  vigor    DieType @default(D4)
 
   // Derived Stats
   pace      Int @default(6)
   parry     Int @default(0)
   toughness Int
-
-  // Bonus/variable stats
-  armor   Int @default(0)
-  wounds  Int @default(0)
-  fatigue Int @default(0)
+  armor     Int @default(0)
 
   // Homebrew / Visibility
   isHomebrew Boolean @default(false)
   isPublic   Boolean @default(false)
   ownerId    String?
-  parentId   String?
-  sourceId   String?
-
-  source Source? @relation(fields: [sourceId], references: [id])
-  owner  User?   @relation(fields: [ownerId], references: [id])
+  sourceName String?
 
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  campaigns CampaignCreature[]
-  abilities CreatureAbility[]
-  skills    CreatureSkill[]
-  edges     CreatureEdge[]
-  tags      CreatureTag[]
-  items     CreatureItem[]
+  owner  User?   @relation(fields: [ownerId], references: [id])
+  source Source? @relation(fields: [sourceName], references: [name])
+  race   Race?   @relation(fields: [raceId], references: [id])
+
+  campaigns         CampaignCreature[]
+  abilities         CreatureAbility[]
+  edges             CreatureEdge[]
+  powers            CreaturePower[] // New, if creatures can have powers (merged from WildCardPower) 
+  skills            CreatureSkill[]
+  items             CreatureItem[]
+  tags              CreatureTag[]
+  CreatureHindrance CreatureHindrance[]
+
+  @@index([name, ownerId, sourceName])
+}
+
+model Race {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String? @db.Text
+  ancestry    String? // Optional field for grouping (e.g., Elf, Human, etc.)
+
+  sourceName String? // Reference to source book
+  ownerId    String? // For homebrew authorship
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  source          Source?           @relation(fields: [sourceName], references: [name])
+  owner           User?             @relation(fields: [ownerId], references: [id])
+  characters      PlayerCharacter[]
+  creatures       Creature[] // For wildcard races
+  racialAbilities RacialAbility[]
+
+  @@index([name, sourceName, ownerId])
+}
+
+model RacialAbility {
+  id                String  @id @default(cuid())
+  value             Int // Point cost: positive (benefit) or negative (drawback)
+  maxUses           Int? // Null if unlimited(U) or special condition
+  customName        String? // Optional rename for flavor (e.g., "Blessed Miracles" for Arcane Background)
+  customDescription String? @db.Text // Optional override or additional details
+  slug              String  @unique
+
+  // Homebrew / Visibility
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String? // Reference to owner if homebrew
+  sourceName String? // Reference to source book
+
+  // Optional references (populate based on type enum)
+  edgeId           String? // Edge value based on rank, max uses based on Natural Racial ability (U) 
+  hindranceId      String? // Hindrance value based on severity, max uses 1
+  skillId          String? // Skill value 1/2, max uses 1/skill
+  attribute        String? // Value in SWADE pg.18-20, attribute increase maxUses (U) and attribute penalty maxUses once per attribute
+  powerId          String? // Value in SWADE, grants Arcane Background edge + power
+  specialAbilityId String? // Value set by GM, field for convenience as alternative to homebrew
+
+  // Additional fields for granularity (optional, based on type)
+  // bonusAmount Int? // e.g., +2 for attribute/skill die types, or starting die value
+  // isMajor     Boolean? @default(false) // For hindrances: true = Major (-2), false = Minor (-1)... omitted for now since severity can be determined by hindranceId
+  // extraConfig Json? // Arbitrary JSON for ability-specific configurations
+
+  // Relations
+  race           Race[]
+  edge           Edge?           @relation(fields: [edgeId], references: [id])
+  hindrance      Hindrance?      @relation(fields: [hindranceId], references: [id])
+  skill          Skill?          @relation(fields: [skillId], references: [id])
+  power          Power?          @relation(fields: [powerId], references: [id])
+  specialAbility SpecialAbility? @relation(fields: [specialAbilityId], references: [id])
+  source         Source?         @relation(fields: [sourceName], references: [name])
+}
+
+model Skill {
+  id              String    @id @default(cuid())
+  name            String    @unique
+  slug            String    @unique
+  linkedAttribute Attribute // "AGILITY", "SMARTS", etc.
+  description     String?   @db.Text
+
+  // Homebrew / Visibility
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String? // Reference to owner if homebrew
+  sourceName String? // Reference to source book
+
+  // Metadata
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  owner            User?                  @relation(fields: [ownerId], references: [id])
+  source           Source?                @relation(fields: [sourceName], references: [name])
+  characterSkills  PlayerCharacterSkill[]
+  creatureSkills   CreatureSkill[]
+  campaignSkills   CampaignSkill[]
+  tags             SkillTag[]
+  racialSkill      RacialAbility[]
+  arcaneBackground ArcaneBackground[]
+
+  @@index([name, sourceName, ownerId])
+}
+
+model Edge {
+  id           String  @id @default(cuid())
+  name         String  @unique
+  slug         String  @unique
+  category     String? // e.g., Background, Combat, Social
+  rank         Rank    @default(NOVICE)
+  requirements Json?
+  effects      String  @db.Text
+  summary      String? @db.Text
+
+  // Metadata
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String?
+  sourceName String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // RELATIONS
+  owner          User?                 @relation(fields: [ownerId], references: [id])
+  source         Source?               @relation(fields: [sourceName], references: [name])
+  campaignEdges  CampaignEdge[]
+  characterEdges PlayerCharacterEdge[]
+  creatureEdges  CreatureEdge[]
+  tags           EdgeTag[]
+  racialEdge     RacialAbility[]
+
+  @@index([name, rank, category, sourceName])
+}
+
+model ArcaneBackground {
+  id             String  @id @default(cuid()) // Changed for consistency
+  name           String  @unique // Ensure unique names for easy lookup
+  arcaneSkillId  String
+  startingPowers Int
+  powerPoints    Int
+  description    String  @db.Text
+  summary        String? @db.Text
+
+  // Metadata
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true) // Default true for core visibility
+  ownerId    String?
+  sourceName String?
+
+  createdAt DateTime @default(now()) // Added for consistency
+  updatedAt DateTime @updatedAt // Added for consistency
+
+  // Relations
+  arcaneSkill Skill   @relation(fields: [arcaneSkillId], references: [id])
+  source      Source? @relation(fields: [sourceName], references: [name])
+  owner       User?   @relation(fields: [ownerId], references: [id])
+
+  playerCharacters PlayerCharacterArcaneBackground[] // Back-relation for many-to-many
+
+  @@index([name, sourceName])
+}
+
+model Power {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  slug        String  @unique
+  rank        Rank    @default(NOVICE) // enum: NOVICE, Seasoned, etc.
+  powerPoints Int // Power cost
+  // range       Int? // Usually derived from SMARTS
+  duration    String?
+  trappings   String? // Suggested trappings
+  description String  @db.Text
+  summary     String? @db.Text
+  modifiers   String? // Possible modifiers (i.e., DAMAGE(+1) or SIZE (+1))
+
+  // Metadata
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String?
+  sourceName String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  source          Source?                @relation(fields: [sourceName], references: [name])
+  owner           User?                  @relation(fields: [ownerId], references: [id])
+  campaignPowers  CampaignPower[]
+  characterPowers PlayerCharacterPower[]
+  creaturePowers  CreaturePower[]
+  racialPower     RacialAbility[]
+  tags            PowerTag[]
+
+  @@index([name, rank, sourceName])
+}
+
+model SpecialAbility {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String  @db.Text
+  summary     String? @db.Text
+  category    String // e.g., Movement, Defense, Offense, etc.
+  parameters  Json? // e.g., { pace: "6", breathTemplate: "Cone", etc. }
+  notes       String? @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Homebrew / Visibility
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(false)
+  ownerId    String?
+  sourceName String?
+
+  // RELATIONS
+  source            Source?             @relation(fields: [sourceName], references: [name])
+  owner             User?               @relation(fields: [ownerId], references: [id])
+  creatureAbilities CreatureAbility[]
+  racialAbilities   RacialAbility[]
+  tags              SpecialAbilityTag[]
+}
+
+model Hindrance {
+  id          String        @id @default(cuid())
+  name        String        @unique
+  slug        String        @unique
+  severity    HindranceType // Enum: MAJOR | MINOR
+  description String        @db.Text
+  summary     String?       @db.Text
+  notes       String?       @db.Text
+
+  // Metadata
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String?
+  sourceName String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  source Source? @relation(fields: [sourceName], references: [name])
+  owner  User?   @relation(fields: [ownerId], references: [id])
+
+  characterHindrances PlayerCharacterHindrance[]
+  creatureHindrances  CreatureHindrance[]
+  campaignHindrances  CampaignHindrance[]
+  racialHindrance     RacialAbility[]
+
+  @@index([name, severity, sourceName])
+}
+
+model Item {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String   @db.Text
+  type        ItemType // e.g., weapon, armor, tool
+  cost        Int?
+  weight      Float? // e.g., '15', '(1/20)'
+  imageUrl    String?
+
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String?
+  sourceName String?
+
+  source         Source?               @relation(fields: [sourceName], references: [name])
+  owner          User?                 @relation(fields: [ownerId], references: [id])
+  characterItems PlayerCharacterItem[]
+  creatureItems  CreatureItem[]
+  campaignItems  CampaignItem[]
+  tags           ItemTag[]
+
+  @@index([name, type, sourceName])
 }
 
 model Tag {
-  id          String  @id @default(cuid())
-  name        String  @unique
-  description String?
+  id   String @id @default(cuid())
+  name String @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Join Tables
-  edgeTags          EdgeTag[]
-  powerTags         PowerTag[]
-  creatureTags      CreatureTag[]
-  specialAbilityTag SpecialAbilityTag[]
-  skillTag          SkillTag[]
-  ItemTag           ItemTag[]
+  edgeTags           EdgeTag[]
+  powerTags          PowerTag[]
+  creatureTags       CreatureTag[]
+  specialAbilityTags SpecialAbilityTag[]
+  skillTags          SkillTag[]
+  itemTags           ItemTag[]
+
+  @@index([name])
 }
 
 model CampaignNote {
@@ -569,63 +909,70 @@ model Source {
   name         String     @unique // e.g., "Core Rules", "Fantasy Companion"
   type         SourceType @default(CORE) // Enum to distinguish source type
   abbreviation String? // e.g., "SWADE", "FC"
-  description  String? // Optional longer description
+  description  String?    @db.Text
   publisher    String? // e.g., "Pinnacle Entertainment Group"
   url          String? // Optional link to official site or PDF
   isHomebrew   Boolean    @default(false)
   createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  updatedAt    DateTime?  @updatedAt
 
   // RELATIONS
 
-  abilities  SpecialAbility[]
-  edges      Edge[]
-  powers     Power[]
-  creatures  Creature[]
-  items      Item[]
-  hindrances Hindrance[]
+  abilities         SpecialAbility[]
+  edges             Edge[]
+  arcaneBackgrounds ArcaneBackground[]
+  skills            Skill[]
+  powers            Power[]
+  creatures         Creature[]
+  items             Item[]
+  hindrances        Hindrance[]
+  races             Race[]
+  racialAbilities   RacialAbility[]
 
   campaigns CampaignSource[]
-  Race      Race[]
+
+  @@index([name, type])
 }
 
-// model MechanicalEffect {
-//   id               String           @id @default(cuid())
-//   text             String
-//   specialAbilities SpecialAbility[] @relation("AbilityEffects")
-//   SpecialAbility   SpecialAbility?  @relation(fields: [specialAbilityId], references: [id])
-//   specialAbilityId String?
-// }
+model CampaignAsset {
+  id         String  @id @default(cuid())
+  campaignId String
+  name       String // e.g., "Town Map", "NPC Portrait" 
+  imageUrl   String
+  type       String? // e.g., "LOCATION", "NPC", "PROP" 
+  notes      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+
+  @@index([campaignId, name])
+}
 
 //////////////////////////////////////
 //      CAMPAIGN JOIN TABLES       //
 ////////////////////////////////////
 
-model CampaignPlayerCharacter {
-  id          String  @id @default(cuid())
-  campaignId  String
-  characterId String
-  nickname    String?
-  notes       String?
+// model CampaignPlayerCharacter {
+//   id          String  @id @default(cuid())
+//   campaignId  String
+//   characterId String
+//   nickname    String?
+//   notes       String?
 
-  campaign Campaign        @relation(fields: [campaignId], references: [id])
-  creature PlayerCharacter @relation(fields: [characterId], references: [id])
+//   // Campaign stats
+//   bennies Int @default(3)
+//   wounds  Int @default(0)
+//   fatigue Int @default(0)
 
-  @@unique([campaignId, characterId])
-}
+//   campaign      Campaign                @relation(fields: [campaignId], references: [id])
+//   creature      PlayerCharacter         @relation(fields: [characterId], references: [id])
+//   sessionStates SessionCharacterState[] // Back-relation for PC states
 
-model CampaignWildCard {
-  id         String  @id @default(cuid())
-  campaignId String
-  wildCardId String
-  nickname   String?
-  notes      String?
-
-  campaign Campaign @relation(fields: [campaignId], references: [id])
-  creature WildCard @relation(fields: [wildCardId], references: [id])
-
-  @@unique([campaignId, wildCardId])
-}
+//   @@unique([campaignId, characterId])
+//   @@index([campaignId, characterId])
+// }
 
 model CampaignCreature {
   id         String  @id @default(cuid())
@@ -634,10 +981,19 @@ model CampaignCreature {
   nickname   String?
   notes      String?
 
-  campaign Campaign @relation(fields: [campaignId], references: [id])
-  creature Creature @relation(fields: [creatureId], references: [id])
+  // Campaign stats
+  isWildCard Boolean @default(false) // Merged from WildCard
+  isNpc      Boolean @default(false)
+  bennies    Int     @default(3)
+  wounds     Int     @default(0)
+  fatigue    Int     @default(0)
+
+  campaign      Campaign                @relation(fields: [campaignId], references: [id])
+  creature      Creature                @relation(fields: [creatureId], references: [id])
+  sessionStates SessionCharacterState[] // Back-relation for creature states
 
   @@unique([campaignId, creatureId])
+  @@index([campaignId, creatureId])
 }
 
 model CampaignEdge {
@@ -646,25 +1002,26 @@ model CampaignEdge {
   edgeId     String
   isEnabled  Boolean @default(true)
 
-  campaign            Campaign           @relation(fields: [campaignId], references: [id])
-  edge                Edge               @relation(fields: [edgeId], references: [id])
-  CharacterTemplate   CharacterTemplate? @relation(fields: [characterTemplateId], references: [id])
-  characterTemplateId String?
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+  edge     Edge     @relation(fields: [edgeId], references: [id])
 
   @@unique([campaignId, edgeId])
+  @@index([campaignId])
 }
 
 model CampaignPower {
-  id         String  @id @default(cuid())
-  campaignId String
-  powerId    String
-  isEnabled  Boolean @default(true)
-  notes      String?
+  id                String  @id @default(cuid())
+  campaignId        String
+  powerId           String
+  isEnabled         Boolean @default(true)
+  customPowerPoints Int? // Optional override per campaign
+  notes             String?
 
   campaign Campaign @relation(fields: [campaignId], references: [id])
   power    Power    @relation(fields: [powerId], references: [id])
 
   @@unique([campaignId, powerId])
+  @@index([campaignId])
 }
 
 model CampaignSkill {
@@ -673,43 +1030,43 @@ model CampaignSkill {
   skillId    String
   isEnabled  Boolean @default(true)
 
-  campaign            Campaign           @relation(fields: [campaignId], references: [id])
-  skill               Skill              @relation(fields: [skillId], references: [id])
-  CharacterTemplate   CharacterTemplate? @relation(fields: [characterTemplateId], references: [id])
-  characterTemplateId String?
+  campaign Campaign @relation(fields: [campaignId], references: [id])
+  skill    Skill    @relation(fields: [skillId], references: [id])
 
   @@unique([campaignId, skillId])
+  @@index([campaignId])
 }
 
 model CampaignHindrance {
-  id          String @id @default(cuid())
+  id          String  @id @default(cuid())
   campaignId  String
   hindranceId String
+  isEnabled   Boolean @default(true)
 
-  campaign            Campaign           @relation(fields: [campaignId], references: [id])
-  hindrance           Hindrance          @relation(fields: [hindranceId], references: [id])
-  CharacterTemplate   CharacterTemplate? @relation(fields: [characterTemplateId], references: [id])
-  characterTemplateId String?
+  campaign  Campaign  @relation(fields: [campaignId], references: [id])
+  hindrance Hindrance @relation(fields: [hindranceId], references: [id])
 
   @@unique([campaignId, hindranceId])
+  @@index([campaignId])
 }
 
 model CampaignSource {
   id         String @id @default(cuid())
   campaignId String
-  sourceId   String
+  sourceName String
 
   campaign Campaign @relation(fields: [campaignId], references: [id])
-  source   Source   @relation(fields: [sourceId], references: [id])
+  source   Source   @relation(fields: [sourceName], references: [name])
 
-  @@unique([campaignId, sourceId])
+  @@unique([campaignId, sourceName])
+  @@index([campaignId])
 }
 
 model CampaignItem {
   id         String  @id @default(cuid())
   campaignId String
   itemId     String
-  dieType    DieType @default(d4)
+  dieType    DieType @default(D4)
   modifier   Int     @default(0)
   notes      String?
 
@@ -717,6 +1074,7 @@ model CampaignItem {
   item     Item     @relation(fields: [itemId], references: [id])
 
   @@unique([campaignId, itemId]) // Prevent duplicates
+  @@index([campaignId])
 }
 
 ///////////////////////////////////////
@@ -733,7 +1091,22 @@ model PlayerCharacterEdge {
   character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
   edge      Edge            @relation(fields: [edgeId], references: [id])
 
-  @@unique([playerCharacterId, edgeId])
+  @@unique([playerCharacterId, edgeId]) // Prevent duplicates
+  @@index([playerCharacterId])
+}
+
+model PlayerCharacterArcaneBackground {
+  id                 String  @id @default(cuid())
+  playerCharacterId  String
+  arcaneBackgroundId String
+  notes              String? // Optional, for any per-assignment notes
+  isEnabled          Boolean @default(true) // e.g., For toggling in campaigns
+
+  character        PlayerCharacter  @relation(fields: [playerCharacterId], references: [id])
+  arcaneBackground ArcaneBackground @relation(fields: [arcaneBackgroundId], references: [id])
+
+  @@unique([playerCharacterId, arcaneBackgroundId]) // Prevent duplicates
+  @@index([playerCharacterId])
 }
 
 model PlayerCharacterPower {
@@ -741,43 +1114,51 @@ model PlayerCharacterPower {
   playerCharacterId String
   powerId           String
   customName        String? // e.g., "Frozen Blast" instead of "Blast"
-  notes             String?
   trapping          String?
-  isEnabled         Boolean @default(true)
+  notes             String?
+  isEnabled         Boolean @default(true) // For character-specific toggles, not availability
+
+  createdAt DateTime @default(now()) // Added for consistency
+  updatedAt DateTime @updatedAt // Added for consistency
 
   character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
   power     Power           @relation(fields: [powerId], references: [id])
 
-  @@unique([playerCharacterId, powerId])
+  @@unique([playerCharacterId, powerId]) // Prevent duplicates
+  @@index([playerCharacterId]) // Optimize queries by character
 }
 
 model PlayerCharacterSkill {
   id                String  @id @default(cuid())
   playerCharacterId String
   skillId           String
-  dieType           DieType @default(d4)
-  modifier          Int     @default(0)
-  notes             String?
+  dieType           DieType @default(D4)
+  // modifier          Int     @default(0)
+  // notes             String?
 
   character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
   skill     Skill           @relation(fields: [skillId], references: [id])
 
   @@unique([playerCharacterId, skillId]) // Prevent duplicates
+  @@index([playerCharacterId])
 }
 
 model PlayerCharacterItem {
-  id                String  @id @default(cuid())
+  id                String @id @default(cuid())
   playerCharacterId String
   itemId            String
-  quantity          Int     @default(1)
-  dieType           DieType @default(d4)
-  modifier          Int     @default(0)
-  notes             String?
+
+  quantity   Int      @default(1)
+  isEquipped Boolean? @default(false)
+  dieType    DieType? @default(D4)
+  modifier   Int?     @default(0)
+  notes      String?
 
   character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
   item      Item            @relation(fields: [itemId], references: [id])
 
-  @@unique([playerCharacterId, itemId]) // Prevent duplicates
+  @@unique([playerCharacterId, itemId])
+  @@index([playerCharacterId])
 }
 
 model PlayerCharacterHindrance {
@@ -789,141 +1170,24 @@ model PlayerCharacterHindrance {
   hindrance Hindrance       @relation(fields: [hindranceId], references: [id])
 
   @@unique([playerCharacterId, hindranceId])
-}
-
-////////////////////////////////////////////////
-//      WILDCARD CHARACTER JOIN TABLES       //
-//////////////////////////////////////////////
-
-model WildCardEdge {
-  id         String  @id @default(cuid())
-  wildCardId String
-  edgeId     String
-  notes      String?
-  isEnabled  Boolean @default(true)
-
-  wildCard WildCard @relation(fields: [wildCardId], references: [id])
-  edge     Edge     @relation(fields: [edgeId], references: [id])
-
-  @@unique([wildCardId, edgeId])
-}
-
-model WildCardPower {
-  id         String  @id @default(cuid())
-  wildCardId String
-  powerId    String
-  customName String? // e.g., "Frozen Blast" instead of "Blast"
-  notes      String?
-  trapping   String?
-  isEnabled  Boolean @default(true)
-
-  wildCard WildCard @relation(fields: [wildCardId], references: [id])
-  power    Power    @relation(fields: [powerId], references: [id])
-
-  @@unique([wildCardId, powerId])
-}
-
-model WildCardSkill {
-  id         String  @id @default(cuid())
-  wildCardId String
-  skillId    String
-  dieType    DieType @default(d4)
-  modifier   Int     @default(0)
-  notes      String?
-
-  charawildCardcter WildCard @relation(fields: [wildCardId], references: [id])
-  skill             Skill    @relation(fields: [skillId], references: [id])
-
-  @@unique([wildCardId, skillId]) // Prevent duplicates
-}
-
-model WildCardItem {
-  id         String  @id @default(cuid())
-  wildCardId String
-  itemId     String
-  dieType    DieType @default(d4)
-  modifier   Int     @default(0)
-  notes      String?
-
-  wildCard WildCard @relation(fields: [wildCardId], references: [id])
-  item     Item     @relation(fields: [itemId], references: [id])
-
-  @@unique([wildCardId, itemId]) // Prevent duplicates
-}
-
-model WildCardHindrance {
-  id          String @id @default(cuid())
-  wildCardId  String
-  hindranceId String
-
-  wildCard  WildCard  @relation(fields: [wildCardId], references: [id])
-  hindrance Hindrance @relation(fields: [hindranceId], references: [id])
-
-  @@unique([wildCardId, hindranceId])
-}
-
-//////////////////////////////////////
-//      CREATURE JOIN TABLES       //
-////////////////////////////////////
-
-model RaceEdge {
-  id     String @id @default(cuid())
-  raceId String
-  edgeId String
-
-  race Race @relation(fields: [raceId], references: [id])
-  edge Edge @relation(fields: [edgeId], references: [id])
-
-  @@unique([raceId, edgeId])
-}
-
-model RacePower {
-  id      String @id @default(cuid())
-  raceId  String
-  powerId String
-
-  race  Race  @relation(fields: [raceId], references: [id])
-  power Power @relation(fields: [powerId], references: [id])
-
-  @@unique([raceId, powerId])
-}
-
-model RaceSkill {
-  id      String @id @default(cuid())
-  raceId  String
-  skillId String
-
-  race  Race  @relation(fields: [raceId], references: [id])
-  skill Skill @relation(fields: [skillId], references: [id])
-
-  @@unique([raceId, skillId])
-}
-
-model RaceSpecialAbility {
-  id               String @id @default(cuid())
-  raceId           String
-  specialAbilityId String
-
-  race           Race           @relation(fields: [raceId], references: [id])
-  specialAbility SpecialAbility @relation(fields: [specialAbilityId], references: [id])
-
-  @@unique([raceId, specialAbilityId])
-}
-
-model RaceHindrance {
-  id          String @id @default(cuid())
-  raceId      String
-  hindranceId String
-
-  race      Race      @relation(fields: [raceId], references: [id])
-  hindrance Hindrance @relation(fields: [hindranceId], references: [id])
-
-  @@unique([raceId, hindranceId])
+  @@index([playerCharacterId])
 }
 
 /////////////////////////////////
-//      RACE JOIN TABLES      //
+//      CREATURE JOIN TABLES      //
 ///////////////////////////////
+
+model CreatureHindrance {
+  id          String @id @default(cuid())
+  creatureId  String
+  hindranceId String
+
+  creature  Creature  @relation(fields: [creatureId], references: [id])
+  hindrance Hindrance @relation(fields: [hindranceId], references: [id])
+
+  @@unique([creatureId, hindranceId])
+  @@index([creatureId])
+}
 
 model CreatureAbility {
   id               String @id @default(cuid())
@@ -934,6 +1198,7 @@ model CreatureAbility {
   specialAbility SpecialAbility @relation(fields: [specialAbilityId], references: [id])
 
   @@unique([creatureId, specialAbilityId])
+  @@index([creatureId])
 }
 
 model CreatureEdge {
@@ -946,26 +1211,44 @@ model CreatureEdge {
   edge     Edge     @relation(fields: [edgeId], references: [id])
 
   @@unique([creatureId, edgeId])
+  @@index([creatureId])
+}
+
+model CreaturePower {
+  id         String  @id @default(cuid())
+  creatureId String
+  powerId    String
+  customName String?
+  notes      String?
+  trapping   String?
+  isEnabled  Boolean @default(true)
+
+  creature Creature @relation(fields: [creatureId], references: [id])
+  power    Power    @relation(fields: [powerId], references: [id])
+
+  @@unique([creatureId, powerId])
+  @@index([creatureId])
 }
 
 model CreatureSkill {
   id         String  @id @default(cuid())
   creatureId String
   skillId    String
-  dieType    DieType @default(d4)
+  dieType    DieType @default(D4)
   modifier   Int     @default(0)
 
   creature Creature @relation(fields: [creatureId], references: [id])
   skill    Skill    @relation(fields: [skillId], references: [id])
 
   @@unique([creatureId, skillId])
+  @@index([creatureId])
 }
 
 model CreatureItem {
   id         String  @id @default(cuid())
   creatureId String
   itemId     String
-  dieType    DieType @default(d4)
+  dieType    DieType @default(D4)
   modifier   Int     @default(0)
   notes      String?
 
@@ -973,6 +1256,7 @@ model CreatureItem {
   item     Item     @relation(fields: [itemId], references: [id])
 
   @@unique([creatureId, itemId]) // Prevent duplicates
+  @@index([creatureId])
 }
 
 /////////////////////////////////
@@ -988,6 +1272,7 @@ model EdgeTag {
   tag  Tag  @relation(fields: [tagId], references: [id])
 
   @@unique([edgeId, tagId])
+  @@index([edgeId])
 }
 
 model PowerTag {
@@ -999,6 +1284,7 @@ model PowerTag {
   tag   Tag   @relation(fields: [tagId], references: [id])
 
   @@unique([powerId, tagId])
+  @@index([powerId])
 }
 
 model CreatureTag {
@@ -1010,6 +1296,7 @@ model CreatureTag {
   tag      Tag      @relation(fields: [tagId], references: [id])
 
   @@unique([creatureId, tagId])
+  @@index([creatureId])
 }
 
 model SpecialAbilityTag {
@@ -1021,6 +1308,7 @@ model SpecialAbilityTag {
   tag            Tag            @relation(fields: [tagId], references: [id])
 
   @@unique([specialAbilityId, tagId])
+  @@index([specialAbilityId])
 }
 
 model SkillTag {
@@ -1032,6 +1320,7 @@ model SkillTag {
   tag   Tag   @relation(fields: [tagId], references: [id])
 
   @@unique([skillId, tagId])
+  @@index([skillId])
 }
 
 model ItemTag {
@@ -1043,80 +1332,5 @@ model ItemTag {
   tag  Tag  @relation(fields: [tagId], references: [id])
 
   @@unique([itemId, tagId])
-}
-
-///////////////////////
-//      ENUMS       //
-/////////////////////
-
-enum Role {
-  basic
-  premium
-  admin
-}
-
-enum Rank {
-  Novice
-  Seasoned
-  Veteran
-  Heroic
-  Legendary
-}
-
-enum SpecialAbilityCategory {
-  Movement
-  Offense
-  Defense
-  Immunities
-  Resistance
-  Weakness
-  Senses
-  Traits
-  Recovery
-  StatusEffect
-  Combat
-  Durability
-  Hazard
-}
-
-enum SourceType {
-  CORE
-  COMPANION
-  HOMEBREW
-  THIRD_PARTY
-}
-
-enum DieType {
-  d4
-  d6
-  d8
-  d10
-  d12
-  d20
-  d30
-  d50
-  d100
-}
-
-enum HindranceType {
-  Minor
-  Major
-}
-
-enum EventType {
-  Narrative
-  Combat
-  Exploration
-  Puzzle
-  Social
-  Travel
-}
-
-enum ItemType {
-  Weapon
-  Armor
-  Gear
-  Consumable
-  Tool
-  Misc
+  @@index([itemId])
 }
