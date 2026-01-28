@@ -1,3 +1,4 @@
+// Dependencies: core-tags
 import { prisma } from "../../client";
 import { Rank } from "@prisma/client";
 import edges from "../json/core/core-edges.json";

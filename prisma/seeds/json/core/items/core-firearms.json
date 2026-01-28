@@ -1,0 +1,53 @@
+[
+  {
+    "item": {
+      "name": "Colt 1911",
+      "description": "A reliable semi-automatic pistol.",
+      "type": "WEAPON",
+      "cost": 200,
+      "weight": 3,
+      "isHomebrew": false,
+      "isPublic": true,
+      "sourceName": "Savage Worlds Adventure Edition"
+    },
+    "weapon": {
+      "damage": "2d6+1",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 1,
+      "caliber": 0.45
+    },
+    "firearm": {
+      "firearmType": "PISTOL",
+      "ammoCapacity": 7,
+      "reloadActions": 1,
+      "mountType": "NONE"
+    }
+  },
+  {
+    "item": {
+      "name": "Double-Barrel Shotgun",
+      "description": "A side-by-side shotgun for devastating close-range blasts.",
+      "type": "WEAPON",
+      "cost": 300,
+      "weight": 8,
+      "isHomebrew": false,
+      "isPublic": true,
+      "sourceName": "Savage Worlds Adventure Edition"
+    },
+    "weapon": {
+      "damage": "3d6/2d6/1d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 0,
+      "caliber": 12
+    },
+    "firearm": {
+      "firearmType": "SHOTGUN",
+      "ammoCapacity": 2,
+      "reloadActions": 1,
+      "mountType": "NONE",
+      "specialAmmo": "{\"slug\": {\"damage\": \"2d10\", \"noShotgunBonus\": true}}"
+    }
+  }
+]

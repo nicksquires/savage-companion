@@ -2,7 +2,7 @@ import { prisma } from "../../client";
 import { Rank } from "@prisma/client";
 import powers from "../json/core/core-powers.json";
 
-export async function seedCoreEdges() {
+export async function seedCorePowers() {
   console.log("🌱 Seeding powers...");
 
   // Counters
@@ -12,7 +12,7 @@ export async function seedCoreEdges() {
 
   for (const powerData of powers) {
     try {
-      // Create Edge with requirements
+      // Create power
       const power = await prisma.power.create({
         data: {
           name: powerData.name,
@@ -70,7 +70,7 @@ export async function seedCoreEdges() {
 
 // Allow standalone execution
 if (require.main === module) {
-  seedCoreEdges()
+  seedCorePowers()
     .then(async () => {
       await prisma.$disconnect();
     })

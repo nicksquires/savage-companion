@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Armor Piercing (AP)",
+    "slug": "armor-piercing",
+    "description": "Ignores a number of armor points equal to its AP value (e.g., AP 2 ignores 2 points of armor)."
+  },
+  {
+    "name": "Heavy Weapon",
+    "slug": "heavy-weapon",
+    "description": "Can damage vehicles or targets with Heavy Armor. Typically requires Strength d8 or higher."
+  },
+  {
+    "name": "Two-Handed",
+    "slug": "two-handed",
+    "description": "Requires both hands to wield, often increasing damage (e.g., +d8 for greatswords)."
+  },
+  {
+    "name": "Reach",
+    "slug": "reach",
+    "description": "Extends melee range by +1 inch or more, allowing attacks from further away."
+  },
+  {
+    "name": "Parry Penalty",
+    "slug": "parry-penalty",
+    "description": "Reduces the wielder's Parry score by 1 or more when equipped."
+  },
+  {
+    "name": "Minimum Strength",
+    "slug": "minimum-strength",
+    "description": "Requires a minimum Strength die (e.g., d8) to use without penalties to attack or Pace."
+  },
+  {
+    "name": "Rate of Fire (RoF)",
+    "slug": "rate-of-fire",
+    "description": "Allows multiple attack rolls per round (e.g., RoF 3 for three attacks)."
+  },
+  {
+    "name": "Reload",
+    "slug": "reload",
+    "description": "Requires one or more actions to reload before firing again."
+  },
+  {
+    "name": "Snapfire",
+    "slug": "snapfire",
+    "description": "Imposes a -2 penalty to attack rolls if the wielder moves in the same turn."
+  },
+  {
+    "name": "Double Tap",
+    "slug": "double-tap",
+    "description": "Fires two rounds, granting +1 to hit and +1 to damage."
+  },
+  {
+    "name": "Three-Round Burst",
+    "slug": "three-round-burst",
+    "description": "Fires three rounds, granting +2 to hit and +1 to damage."
+  },
+  {
+    "name": "Fragile",
+    "slug": "fragile",
+    "description": "Breaks on a critical failure or under specific conditions, rendering it unusable."
+  },
+  {
+    "name": "Cumbersome",
+    "slug": "cumbersome",
+    "description": "Imposes a -1 penalty to Agility-based rolls when equipped."
+  },
+  {
+    "name": "Noisy",
+    "slug": "noisy",
+    "description": "Makes stealth difficult, imposing a -2 penalty to Stealth rolls or alerting enemies."
+  },
+  {
+    "name": "Concealable",
+    "slug": "concealable",
+    "description": "Grants a +2 bonus to checks to hide the item on the user's person."
+  },
+  {
+    "name": "Silvered",
+    "slug": "silvered",
+    "description": "Effective against supernatural creatures like werewolves, bypassing their resistances."
+  },
+  {
+    "name": "Blessed",
+    "slug": "blessed",
+    "description": "Deals +2 damage to unholy creatures (e.g., demons, undead)."
+  },
+  {
+    "name": "Cold Iron",
+    "slug": "cold-iron",
+    "description": "Effective against fae or magical creatures, ignoring their magical resistances."
+  },
+  {
+    "name": "Armor Bonus",
+    "slug": "armor-bonus",
+    "description": "Increases wearer's Toughness by a specified amount (e.g., +2)."
+  },
+  {
+    "name": "Partial Protection",
+    "slug": "partial-protection",
+    "description": "Covers specific body areas (e.g., torso), leaving others vulnerable."
+  },
+  {
+    "name": "Full Protection",
+    "slug": "full-protection",
+    "description": "Covers all body areas, maximizing Toughness bonus."
+  },
+  {
+    "name": "Heavy Armor",
+    "slug": "heavy-armor",
+    "description": "Protects against Heavy Weapons, requiring Heavy Weapon to damage."
+  },
+  {
+    "name": "Encumbering",
+    "slug": "encumbering",
+    "description": "Reduces Pace by 1 or increases Fatigue when worn for extended periods."
+  },
+  {
+    "name": "Quick Draw",
+    "slug": "quick-draw",
+    "description": "Reduces time to ready the weapon, ignoring multi-action penalties for drawing."
+  },
+  {
+    "name": "Improvised",
+    "slug": "improvised",
+    "description": "Suffers -2 to attack rolls unless the user has the Improvised Weapon Edge."
+  },
+  {
+    "name": "Nonlethal",
+    "slug": "nonlethal",
+    "description": "Deals Fatigue instead of Wounds, used for incapacitating without killing."
+  },
+  {
+    "name": "Poisoned",
+    "slug": "poisoned",
+    "description": "Forces a Vigor roll on hit or inflicts Fatigue or other poison effects."
+  },
+  {
+    "name": "Entangling",
+    "slug": "entangling",
+    "description": "Traps or slows the target, requiring a Strength or Agility roll to escape."
+  },
+  {
+    "name": "Defensive",
+    "slug": "defensive",
+    "description": "Grants +1 to Parry when equipped, enhancing defensive capability."
+  },
+  {
+    "name": "Glowing",
+    "slug": "glowing",
+    "description": "Emits light in a Small Burst Template, negating illumination penalties."
+  },
+  {
+    "name": "Power Point Drain",
+    "slug": "power-point-drain",
+    "description": "Drains 1d4 Power Points from the target on a successful hit."
+  },
+  {
+    "name": "Spell Focus",
+    "slug": "spell-focus",
+    "description": "Grants +1 to Spellcasting rolls when used as a focus for arcane powers."
+  },
+  {
+    "name": "Unstable",
+    "slug": "unstable",
+    "description": "May malfunction or explode on a critical failure, causing damage to the user."
+  },
+  {
+    "name": "Shock",
+    "slug": "shock",
+    "description": "Forces a Vigor roll or the target becomes Shaken on a successful hit."
+  },
+  {
+    "name": "Fire-Based",
+    "slug": "fire-based",
+    "description": "Ignites flammable targets on a damage roll of 6, causing ongoing damage."
+  },
+  {
+    "name": "Cold-Based",
+    "slug": "cold-based",
+    "description": "Slows target or inflicts Fatigue on hit, requiring a Vigor roll."
+  }
+]

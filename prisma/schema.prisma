@@ -48,22 +48,6 @@ enum RequirementType {
   EDGE
 }
 
-enum SpecialAbilityCategory {
-  MOVEMENT
-  OFFENSE
-  DEFENSE
-  IMMUNITIES
-  RESISTANCE
-  WEAKNESS
-  SENSES
-  TRAITS
-  RECOVERY
-  STATUSEFFECT
-  COMBAT
-  DURABILITY
-  HAZARD
-}
-
 enum SourceType {
   CORE
   COMPANION
@@ -98,13 +82,22 @@ enum EventType {
 }
 
 enum ItemType {
-  WEAPON
-  ARMOR
-  GEAR
-  CONSUMABLE
-  TOOL
-  MISC
+  WEAPON // Swords, guns, bows, claws
+  ARMOR // Armor, shields, protective gear
+  CONSUMABLE // Potions, ammo, food, drugs, scrolls
+  TOOL // Utility items: rope, lockpicks, lanterns, crafting kits
+  ARTIFACT // Unique magical/technological devices (magic device, relics, advanced tech)
+  KEY_ITEM // Campaign-specific items: plot keys, quest tokens, one-off puzzle items
+  COMPONENT // Mods/upgrades/crafting components to a void TOOL bloat
+  MATERIAL // Crafting/building materials (may use COMPONENT instead)
+  MISC // Truly trivial/flavor items with no structured mechanics
 }
+
+// enum ArmorLayer {
+//   NATURAL
+//   LESSER
+//   WORN
+// }
 
 enum SessionStatus {
   PLANNED
@@ -172,6 +165,7 @@ enum ConditionType {
   CUSTOM // For homebrew conditions
 }
 
+// Examine this and PowerModifier for suitability in game logic vs schema
 // enum PowerGeneralModifier {
 //   ARMOR_PIERCING
 //   FATIGUE
@@ -213,6 +207,101 @@ enum ConditionType {
 //   TELEPORT_FOE 
 //   TOUGHNESS 
 //   }
+
+enum TargetType {
+  SELF // Applies to the user/wielder
+  ALLY // Applies to friendly targets
+  ENEMY // Applies to hostile targets
+  MULTI // Applies to multiple (e.g., allies or enemies in range)
+  AREA // Applies to an area template (e.g., Small Burst)
+  OBJECT // Applies to items/objects (rare, e.g., repair effects)
+}
+
+enum TriggerType {
+  PASSIVE // Always active (e.g., +2 damage vs unholy)
+  ON_HIT // Triggers on successful attack
+  ON_EQUIP // Triggers when equipped/worn
+  ON_USE // Triggers when activated (e.g., consumable)
+  ON_ROLL // Triggers based on a roll outcome
+  ON_CONDITION // Triggers when a condition is met (e.g., target is supernatural)
+}
+
+// May be replaced by EffectType
+enum SpecialAbilityCategory {
+  MOVEMENT
+  OFFENSE
+  DEFENSE
+  IMMUNITIES
+  RESISTANCE
+  WEAKNESS
+  SENSES
+  TRAITS
+  RECOVERY
+  STATUSEFFECT
+  COMBAT
+  DURABILITY
+  HAZARD
+}
+
+// Consider replacing XXX_ROLL types with 'TRIGGER' and the trigger can be a 'roll' or 'test'
+enum EffectType {
+  DAMAGE // Modifies damage roll (e.g., +2 for Blessed)
+  TOUGHNESS // Modifies Toughness (e.g., +2 for Armor Bonus)
+  PARRY // Modifies Parry score (e.g., -1 for Parry Penalty, +1 for Defensive)
+  PACE // Modifies Pace (e.g., -1 for Encumbering)
+  RESISTANCE_BYPASS // Ignores armor/resistances (e.g., Silvered, Cold Iron, Armor Piercing)
+  ILLUMINATION_PENALTY // Modifies penalties due to lighting (e.g., negated by Glowing)
+  SKILL_ROLL // Modifies skill rolls (e.g., +1 to Spellcasting for Spell Focus, -2 to Stealth for Noisy)
+  POWER_POINTS // Modifies Power Point pool or usage (e.g., drained by Power Point Drain)
+  ATTACK_ROLL // Modifies attack rolls (e.g., +2 for Three-Round Burst, -2 for Snapfire)
+  AGILITY_ROLL // Modifies Agility-based rolls (e.g., -1 for Cumbersome)
+  STEALTH_ROLL // Modifies Stealth rolls specifically (e.g., -2 for Noisy)
+  CONCEALMENT_ROLL // Modifies rolls to hide items (e.g., +2 for Concealable)
+  MULTI_ACTION_PENALTY // Modifies penalties for multi-actions (e.g., negated by Quick Draw)
+  FATIGUE // Modifies Fatigue levels (e.g., +1 for Encumbering, Nonlethal, Cold-Based)
+  STRENGTH_MINIMUM // Enforces minimum Strength die (e.g., d8 for Heavy Weapon)
+  RATE_OF_FIRE // Modifies number of attack rolls per round (e.g., RoF 3 for Rate of Fire)
+  RELOAD_TIME // Modifies actions needed to reload (e.g., +1 action for Reload)
+  RANGE // Modifies weapon range (e.g., +1" for Reach)
+  DAMAGE_ONGOING // Applies ongoing damage (e.g., fire for Fire-Based)
+  MOVEMENT_PENALTY // Modifies movement penalties (e.g., -1 Pace for Entangling)
+  SPELLCASTING_ROLL // Modifies Spellcasting rolls specifically (e.g., +1 for Spell Focus)
+  BREAKAGE_CHANCE // Increases chance of item breaking (e.g., for Fragile)
+  MALFUNCTION_CHANCE // Increases chance of malfunction (e.g., for Unstable)
+
+  // Additional Savage Worlds mechanics
+  WOUND_MODIFIER // Modifies Wound penalties (e.g., reduce penalty by 1)
+  BENNY_COST // Modifies Benny usage cost (e.g., for rerolls or soak rolls)
+  RUN_DIE // Modifies Run die roll (e.g., +1 to Running roll)
+  SIZE_MODIFIER // Modifies Size for combat calculations (e.g., for large weapons)
+  ARMOR_PENETRATION // Explicit AP value (complements RESISTANCE_BYPASS for specific AP points)
+  HEALING_ROLL // Modifies Healing skill rolls
+  INTIMIDATION_ROLL // Modifies Intimidation skill rolls
+  TAUNT_ROLL // Modifies Taunt skill rolls
+  NOTICE_ROLL // Modifies Notice skill rolls
+  SURVIVAL_ROLL // Modifies Survival skill rolls
+  TRACKING_ROLL // Modifies Tracking skill rolls
+  INITIATIVE_CARD // Modifies Initiative card draws (e.g., +1 card or redraw)
+}
+
+enum FirearmType {
+  PISTOL
+  RIFLE
+  SHOTGUN
+  MACHINE_GUN
+  LASER
+  GATLING
+  BLACK_POWDER
+  IMPROVISED
+  // Add more for settings 
+}
+
+enum FirearmMountType {
+  NONE
+  BIPOD
+  TRIPOD
+  VEHICLE
+}
 
 // The Account model in your schema is intended to support multiple 
 // login providers per user. This doesn’t mean a user can log in as 
@@ -275,6 +364,7 @@ model User {
   customHindrances        Hindrance[]
   customRaces             Race[]
   customArcaneBackgrounds ArcaneBackground[]
+  customEffects           Effect[]
 
   // Journals/Sessions 
   gmJournalEntries     GMJournalEntry[]
@@ -408,17 +498,6 @@ model SessionEvent {
   @@index([sessionId])
 }
 
-//   Expected json format for 'conditions'
-// [
-//   { "type": "SHAKEN", 
-//   "notes": "Failed Spirit roll", 
-//   "duration": "Until recovery" 
-//   }, 
-//   { "type": "CUSTOM", 
-//   "name": "Cursed", 
-//   "notes": "From ritual", 
-//   "duration": "1 session" }
-// ]
 model SessionCharacterState {
   id         String     @id @default(cuid())
   sessionId  String
@@ -608,7 +687,8 @@ model Creature {
   skills            CreatureSkill[]
   items             CreatureItem[]
   tags              CreatureTag[]
-  CreatureHindrance CreatureHindrance[]
+  creatureHindrance CreatureHindrance[]
+  creatureCategory  CreatureCategory[]
 
   @@index([name, ownerId, sourceName])
 }
@@ -618,6 +698,7 @@ model Race {
   name        String  @unique
   description String? @db.Text
   ancestry    String? // Optional field for grouping (e.g., Elf, Human, etc.)
+  imageUrl    String? // Added for images 
 
   sourceName String? // Reference to source book
   ownerId    String? // For homebrew authorship
@@ -856,7 +937,7 @@ model Hindrance {
 model Item {
   id          String   @id @default(cuid())
   name        String   @unique
-  description String   @db.Text
+  description String?  @db.Text
   type        ItemType // e.g., weapon, armor, tool
   cost        Int?
   weight      Float? // e.g., '15', '(1/20)'
@@ -867,14 +948,302 @@ model Item {
   ownerId    String?
   sourceName String?
 
-  source         Source?               @relation(fields: [sourceName], references: [name])
-  owner          User?                 @relation(fields: [ownerId], references: [id])
-  characterItems PlayerCharacterItem[]
-  creatureItems  CreatureItem[]
-  campaignItems  CampaignItem[]
+  source Source? @relation(fields: [sourceName], references: [name])
+  owner  User?   @relation(fields: [ownerId], references: [id])
+
+  // Relations to specialized models (1-to-1 optional)
+  weapon      Weapon?
+  armor       Armor?
+  consumable  Consumable?
+  tool        Tool?
+  artifact    Artifact?
+  magicDevice MagicDevice?
+
+  // Relations to game entities
+  characterItems PlayerCharacterItem[] // Join table relation for PC items
+  creatureItems  CreatureItem[] // Join table relation for NPC items
+  campaignItems  CampaignItem[] // Join table relation for campaign-specific items
   tags           ItemTag[]
+  ItemEffect     ItemEffect[]
+  itemInstances  ItemInstance[]
 
   @@index([name, type, sourceName])
+}
+
+model ItemInstance {
+  id String @id @default(cuid())
+
+  itemId     String
+  campaignId String?
+
+  // ownership (only one should be set)
+  characterId String?
+  creatureId  String?
+
+  quantity Int     @default(1)
+  notes    String?
+
+  item           Item            @relation(fields: [itemId], references: [id])
+  weaponInstance WeaponInstance?
+
+  @@index([itemId, campaignId])
+}
+
+model Weapon {
+  id     String @id @default(cuid())
+  itemId String @unique
+
+  damage      String? // e.g., "Str+d6" or "2d8"
+  range       String? // e.g., "3/6/12" or "Melee"
+  rof         Int? // Rate of Fire
+  ap          Int? // Armor Piercing
+  caliber     Float? // e.g., ".30" or "5.7"
+  minStrength String? // e.g., "d6"
+
+  firearm Firearm?
+  item    Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model WeaponInstance {
+  id             String @id @default(cuid())
+  itemInstanceId String @unique
+
+  isBroken Boolean @default(false)
+  isJammed Boolean @default(false)
+
+  itemInstance    ItemInstance     @relation(fields: [itemInstanceId], references: [id])
+  firearmInstance FirearmInstance?
+}
+
+model Firearm {
+  id       String @id @default(cuid())
+  weaponId String @unique
+
+  firearmType   FirearmType? // e.g., SHOTGUN, LASER, SMG, BLACK POWDER
+  ammoCapacity  Int? // e.g., 6 for revolver, 50 for machine gun belt
+  reloadActions Int? // Number of actions to reload (e.g., 2 for Reload 2)
+
+  mountType     FirearmMountType? // Affects Recoil, Strength requirements
+  blastTemplate String? // e.g., "Small Burst" for HE rounds
+  overchargeDie String? // e.g., "d6" for laser overcharge damage
+  specialAmmo   String?           @db.Text // JSON or text for slugs, tracers, etc.
+
+  weapon Weapon @relation(fields: [weaponId], references: [id], onDelete: Cascade)
+
+  @@index([firearmType, mountType])
+}
+
+model FirearmInstance {
+  id               String @id @default(cuid())
+  weaponInstanceId String @unique
+
+  currentAmmo   Int
+  chamberLoaded Boolean @default(true)
+
+  weaponInstance WeaponInstance @relation(fields: [weaponInstanceId], references: [id])
+}
+
+model Armor {
+  id         String @id @default(cuid())
+  itemId     String @unique
+  armorBonus Int // e.g., +2 toughness
+
+  covers       String? // e.g., "Torso, Arms, Legs" for querying coverage
+  minStrength  String? // e.g., "d8"
+  parryPenalty Int? // If applicable
+  special      String? @db.Text // Free-text or relations for effects like "Noisy"
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model Effect {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String @db.Text
+
+  isHomebrew Boolean @default(false)
+  isPublic   Boolean @default(true)
+  ownerId    String?
+
+  // New fields for programmatic handling
+  targetType     TargetType? // e.g., ENEMY for Silvered, ENEMY, SELF, OBJECT, AREA, MULTI
+  triggerType    TriggerType? // e.g., ON_HIT for Shock
+  areaTemplate   String? // e.g., "Small Burst" for Glowing; use for AREA targets
+  applicableData Json? // Fallback for ad-hoc data (e.g., { "customBonus": "+1 vs fire" })
+
+  // Relations
+  owner      User?             @relation(fields: [ownerId], references: [id])
+  items      ItemEffect[]
+  bonuses    EffectBonus[] // Modifiers (e.g., +2 damage)
+  rolls      EffectRoll[] // Required rolls (e.g., Vigor roll for Shock)
+  conditions EffectCondition[] // Outcomes (e.g., Shaken on failure)
+  categories EffectCategory[] // Categories this effect applies to (e.g., UNHOLY for Blessed)
+
+  // For active application in VTT (optional, see below)
+  activeEffects ActiveEffect[]
+
+  // @@index([slug, targetType, triggerType])
+}
+
+model EffectBonus {
+  id         String      @id @default(cuid())
+  effectId   String
+  attribute  EffectType?
+  value      Int
+  isNegative Boolean     @default(false) // True for penalties (e.g., armor reducing Pace)
+
+  // Optional condition (e.g., only vs certain categories; link to categories below)
+  condition String? @db.Text // Free-text or JSON for complex logic (e.g., "vs UNHOLY")
+
+  effect Effect @relation(fields: [effectId], references: [id], onDelete: Cascade)
+}
+
+model EffectRoll {
+  id           String  @id @default(cuid())
+  effectId     String
+  skill        String // e.g., "VIGOR", "STRENGTH" (link to a Skill model if you have one)
+  targetNumber Int? // Default 4 in SW, but overrideable
+  onSuccess    String? @db.Text // Free-text outcome or link to another Effect/Condition
+  onFailure    String? @db.Text // e.g., "Apply Shaken"
+
+  effect Effect @relation(fields: [effectId], references: [id], onDelete: Cascade)
+}
+
+model EffectCondition {
+  id       String        @id @default(cuid())
+  effectId String
+  type     ConditionType
+  duration String? // e.g., "1 round", "Until recovery roll"
+  onApply  String?       @db.Text // Additional effects (e.g., -2 to actions while Shaken)
+
+  effect Effect @relation(fields: [effectId], references: [id], onDelete: Cascade)
+  // For chaining: conditions can trigger other effects
+  //childEffects Effect[]  // Recursive, but use sparingly to avoid cycles
+}
+
+model ItemEffect {
+  itemId   String
+  effectId String
+
+  item   Item   @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  effect Effect @relation(fields: [effectId], references: [id])
+
+  @@id([itemId, effectId])
+}
+
+model ActiveEffect {
+  id         String    @id @default(cuid())
+  effectId   String
+  targetId   String // Polymorphic: could be Creature.id, PlayerCharacter.id, etc.
+  targetType String // e.g., "CREATURE", "PLAYER"
+  startTime  DateTime? // Consider modifying to string or json for 'Round 3' or something
+  endTime    DateTime? // For timed effects
+
+  effect Effect @relation(fields: [effectId], references: [id], onDelete: Cascade)
+  // Link to combat/session?
+}
+
+model Category {
+  id          String  @id @default(cuid())
+  name        String  @unique // e.g., "UNHOLY", "SUPERNATURAL"
+  slug        String  @unique
+  description String? @db.Text
+
+  // Many-to-many with Effect (effects that apply to this category)
+  effects EffectCategory[]
+
+  // Many-to-many with Creature (creatures belonging to categories)
+  creatures CreatureCategory[]
+}
+
+model EffectCategory {
+  effectId   String
+  categoryId String
+
+  effect   Effect   @relation(fields: [effectId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([effectId, categoryId])
+}
+
+model CreatureCategory {
+  creatureId String
+  categoryId String
+
+  creature Creature @relation(fields: [creatureId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([creatureId, categoryId])
+}
+
+model Consumable {
+  id          String  @id @default(cuid())
+  itemId      String  @unique
+  description String  @db.Text // Healing, buff, etc.
+  maxUses     Int? // e.g., 3 charges
+  isStackable Boolean @default(true)
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model Tool {
+  id     String @id @default(cuid())
+  itemId String @unique
+
+  // Type-specific fields, e.g.,
+  skillBonus Int? // Bonus to a specific skill
+  uses       Int? // Limited uses
+  durability Int? // Durability test fail = -1 durability
+
+  special String? @db.Text
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model Artifact {
+  id          String  @id @default(cuid())
+  itemId      String  @unique
+  rarity      String? // Common, Rare, Legendary
+  description String  @db.Text // What it does mechanically
+  charges     Int? // Uses, if applicable
+  boundTo     String? // Optional: character ID if attuned
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+// TO-DO: Examine Artificer specifics for model accuracy/necessity
+model MagicDevice {
+  id          String  @id @default(cuid())
+  itemId      String  @unique
+  powerPoints Int? // Starting PP pool
+  recharge    String? // e.g., "1 PP/hour"
+  special     String? @db.Text // Custom rules
+
+  item   Item               @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  spells MagicDeviceSpell[] // Relation to spells it can cast (see below)
+}
+
+// If devices can cast spells, add a many-to-many or one-to-many relation
+model Spell {
+  id             String @id @default(cuid())
+  name           String
+  description    String @db.Text
+  rank           String // e.g., "Novice"
+  powerPointCost Int
+  // Other spell fields...
+
+  magicDeviceSpells MagicDeviceSpell[]
+}
+
+model MagicDeviceSpell {
+  magicDeviceId String
+  spellId       String
+
+  magicDevice MagicDevice @relation(fields: [magicDeviceId], references: [id], onDelete: Cascade)
+  spell       Spell       @relation(fields: [spellId], references: [id], onDelete: Cascade)
+
+  @@id([magicDeviceId, spellId])
 }
 
 model Tag {

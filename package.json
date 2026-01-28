@@ -13,7 +13,9 @@
     "seed:core-edges": "ts-node --project tsconfig.local.json prisma/seeds/core/core-edges.ts",
     "seed:core-powers": "ts-node --project tsconfig.local.json prisma/seeds/core/core-powers.ts",
     "seed:core-racial-abilities": "ts-node --project tsconfig.local.json prisma/seeds/core/core-racial-abilities.ts",
+    "seed:core-effects": "ts-node --project tsconfig.local.json prisma/seeds/core/core-effects",
     "seed:core-items": "ts-node --project tsconfig.local.json prisma/seeds/core/core-items.ts",
+    "seed:core-firearms": "ts-node --project tsconfig.local.json prisma/seeds/core/items/core-firearms.ts",
     "seed:all": "ts-node --project tsconfig.local.json prisma/seed.ts"
   },
   "dependencies": {

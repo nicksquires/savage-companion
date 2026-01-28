@@ -11,7 +11,7 @@ export async function seedCoreRacialAbilities() {
 
   for (const racialAbilityData of racialAbilities) {
     try {
-      // Create Edge with requirements
+      // Create racial ability
       const racialAbility = await prisma.racialAbility.create({
         data: {
           customName: racialAbilityData.customName,

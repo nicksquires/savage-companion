@@ -12,7 +12,7 @@ export async function seedCoreHindrances() {
 
   for (const hindranceData of hindrances) {
     try {
-      // Create Edge with requirements
+      // Create hindrance
       const hindrance = await prisma.hindrance.create({
         data: {
           name: hindranceData.name,
