@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { skillSchema } from "@/app/api/skills/skillSchema";
+import { skillSchema } from "@/lib/schemas/api/skill.schema";
 
 // GET - get all skills belonging to player [id]
 export async function GET(

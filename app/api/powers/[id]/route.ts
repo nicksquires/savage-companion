@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { updatePowerSchema } from "../powerSchema";
+import { powerUpdateSchema } from "../../../../lib/schemas/api/power.schema";
 
 // GET - get one power from the master list
 export async function GET(
@@ -30,7 +30,7 @@ export async function PATCH(
   try {
 
   const body = await request.json();
-  const validation = updatePowerSchema.safeParse(body);
+  const validation = powerUpdateSchema.safeParse(body);
 
   if (!validation.success) {
     return NextResponse.json(validation.error.errors, { status: 400 });

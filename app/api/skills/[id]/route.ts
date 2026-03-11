@@ -1,5 +1,5 @@
 import { prisma } from "@/prisma/client";
-import { skillSchema } from "../skillSchema";
+import { skillSchema } from "../../../../lib/schemas/api/skill.schema";
 import { NextRequest, NextResponse } from "next/server";
 
 // GET - get one skill from the master list

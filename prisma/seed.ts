@@ -12,11 +12,12 @@ async function main() {
   
   await seedCoreHindrances();
   await seedCoreEdges();
-  await seedCoreEffects();
-  await seedCorePowers();
-  await seedCoreRacialAbilities();
+  // await seedCoreEffects();
+  // await seedCorePowers();
+  // await seedCoreRacialAbilities();
 
-//   await seedItems();
+//   await seedCoreItems();
+//   await seedCoreFirearms();
 }
 
 main()

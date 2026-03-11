@@ -16,7 +16,8 @@ export async function seedCoreEffects() {
         data: {
           name: effectData.name,
           slug: effectData.slug,
-          description: effectData.description
+          description: effectData.description,
+          // definitions: effectData.definitions
         },
       });
 

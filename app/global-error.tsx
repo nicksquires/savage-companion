@@ -12,10 +12,17 @@ const ErrorPage = ({ error, reset }: Props) => {
 
   return (
     <>
-      <div>Global Error Page</div>
-      <button className="btn btn-info" onClick={() => reset()}>
-        Retry
-      </button>
+      {/** Global-error needs html/body tags since it
+       * replaces the entire root layout when triggered
+       */}
+      <html>
+        <body>
+          <div>Global Error Page</div>
+          <button className="btn btn-info" onClick={() => reset()}>
+            Retry
+          </button>
+        </body>
+      </html>
     </>
   );
 };

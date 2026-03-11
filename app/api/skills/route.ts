@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextResponse, NextRequest } from "next/server";
-import { skillSchema } from "./skillSchema";
+import { skillSchema } from "../../../lib/schemas/api/skill.schema";
 
 export async function GET() {
   const skills = await prisma.skill.findMany();

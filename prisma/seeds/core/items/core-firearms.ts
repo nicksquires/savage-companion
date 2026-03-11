@@ -1,4 +1,4 @@
-import { FirearmMountType, FirearmType, ItemType } from "@prisma/client";
+import { FirearmMountType, ItemType, SettingType } from "@prisma/client";
 import { prisma } from "../../../client";
 import firearms from "../../json/core/items/core-firearms.json";
 
@@ -14,6 +14,8 @@ interface ItemSeed {
 }
 
 interface WeaponSeed {
+  setting?: SettingType;
+  // categories?: WeaponCategoryAssignment;
   damage?: string;
   range?: string;
   rof?: number;
@@ -22,7 +24,7 @@ interface WeaponSeed {
 }
 
 interface FirearmSeed {
-  firearmType: FirearmType;
+  // firearmType: FirearmType;
   ammoCapacity?: number;
   reloadActions?: number;
   mountType?: FirearmMountType;
@@ -74,7 +76,7 @@ export async function seedCoreFirearms() {
             // Firearm (child of Weapon)
             firearm: {
                   create: {
-                    firearmType: firearmData.firearm.firearmType as FirearmType,
+                    // firearmType: firearmData.firearm.firearmType as FirearmType,
                     ammoCapacity: firearmData.firearm.ammoCapacity,
                     reloadActions: firearmData.firearm.reloadActions,
                     mountType: firearmData.firearm.mountType as FirearmMountType,

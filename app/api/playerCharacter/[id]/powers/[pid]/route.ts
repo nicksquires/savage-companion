@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { updatePowerSchema } from "@/app/api/powers/powerSchema";
+import { updatePowerSchema } from "@/lib/schemas/api/power.schema";
 
 // PATCH: Update the player character power
 export async function PATCH(

@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import schema from "../../register/schema";
+import schema from "../../../../lib/schemas/api/register.schema";
 import { prisma } from "@/prisma/client";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   // fetch data from db
   const user = await prisma.user.findUnique({
@@ -21,7 +21,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   // Validate request body
   const body = await request.json();
@@ -58,7 +58,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   // Attempt fetch user
   const user = await prisma.user.findUnique({

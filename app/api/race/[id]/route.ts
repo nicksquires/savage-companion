@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { updateRaceSchema } from "../raceSchema";
+import { updateRaceSchema } from "../../../../lib/schemas/api/race.schema";
 
 export async function GET(
   request: NextRequest,

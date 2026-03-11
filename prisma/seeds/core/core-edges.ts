@@ -14,17 +14,21 @@ export async function seedCoreEdges() {
   for (const edgeData of edges) {
     try {
       // Create Edge with requirements
+      // Each seed according to source
+      // i.e: core infers homebrew=false and isPublic=true 
       const edge = await prisma.edge.create({
         data: {
           name: edgeData.name,
           slug: edgeData.slug,
+          sourceName: edgeData.sourceName,
           category: edgeData.category,
           rank: edgeData.rank as Rank,
-          effects: edgeData.effects,
-          sourceName: edgeData.sourceName,
-          isHomebrew: edgeData.isHomebrew,
-          isPublic: edgeData.isPublic,
           requirements: edgeData.requirements ?? [],
+          description: edgeData.description,
+          // summary: edgeData.summary,
+          // effectDefinitions: edgeData.effectDefinitions,
+          isPublic: edgeData.isPublic,
+          ownerId: edgeData.ownerId,
         },
       });
 

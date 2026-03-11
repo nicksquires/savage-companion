@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { powerSchema } from "./powerSchema";
+import { powerSchema } from "../../../lib/schemas/api/power.schema";
 
 export async function GET() {
   const powers = await prisma.power.findMany();

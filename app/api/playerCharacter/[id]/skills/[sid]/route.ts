@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { updateSkillSchema } from "@/app/api/skills/skillSchema";
+import { updateSkillSchema } from "@/lib/schemas/api/skill.schema";
 
 // PATCH – Update optional data in join (if needed)
 export async function PATCH( request: NextRequest,

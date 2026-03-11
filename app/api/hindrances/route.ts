@@ -1,6 +1,6 @@
 import { prisma } from "@/prisma/client";
 import { NextResponse, NextRequest } from "next/server";
-import { hindranceSchema } from "./hindranceSchema";
+import { hindranceSchema } from "../../../lib/schemas/api/hindrance.schema";
 
 // GET - get all hindrances from master list
 export async function GET(req: NextRequest) {

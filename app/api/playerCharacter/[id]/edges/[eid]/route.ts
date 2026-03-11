@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { edgeUpdateSchema } from "@/app/api/edges/edgeSchema";
+import { edgeUpdateSchema } from "@/lib/schemas/api/edge.schema";
 
 
 // PATCH: Update the edge details (name, requirements, etc.)

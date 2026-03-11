@@ -1,34 +1,654 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
+@theme {
+  /* 1. Dynamic Font Utilities */
+  /* These map to Tailwind classes like 'font-header' and 'font-body' */
+  --font-header: var(--theme-font-header);
+  --font-body: var(--theme-font-body);
+
+  /* Custom Navbar Utilities */
+  --color-navbar: var(--theme-navbar);
+  --color-navbar-content: var(--theme-navbar-content);
+}
+
+/* FALLBACK ROOT BLOCK */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --theme-font-header: var(--font-poppins);
+  --theme-font-body: var(--font-inter);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================================
+   1. STANDARD (Modern/Clean)
+========================================= */
+[data-theme="standard-light"] {
+  --theme-font-header: var(--font-poppins);
+  --theme-font-body: var(--font-inter);
+  
+  --color-base-100: #fdfdfd;
+  --color-base-200: #f3f1ee;
+  --color-base-300: #eae8e4;
+  --color-base-content: #0f172a;
+
+    /*   PUMPKIN ROSE 
+  --color-base-50: #ffe5e3;
+  --color-base-100: #fabdb9;
+  --color-base-200: #f0998e;
+  --color-base-300: #e97562;
+  --color-base-400: #e25336;
+  --color-base-500: #c9401d;
+  --color-base-600: #9d3516;
+  --color-base-700: #711f0f;
+  --color-base-800: #450d06;
+  --color-base-900: #1d0001; */
+
+    /*   DARK ROSE BROWN
+  --color-base-50: #fde9e8;
+  --color-base-100: #ebcbc7;
+  --color-base-200: #dbaaa3;
+  --color-base-300: #cd8c7e;
+  --color-base-400: #c06e5a;
+  --color-base-500: #a65840;
+  --color-base-600: #824732;
+  --color-base-700: #5d3524;
+  --color-base-800: #382014;
+  --color-base-900: #170802; */
+  
+  --theme-navbar: #090503; /* High contrast dark header */
+  --theme-navbar-content: #f8fafc;
+
+  --color-primary: #ef830e;      --color-primary-content: #ffffff;
+  --color-secondary: #3b82f6;    --color-secondary-content: #ffffff;
+  --color-accent: #8b5cf6;       --color-accent-content: #ffffff;
+  --color-neutral: #848fa0;      --color-neutral-content: #ffffff;
+  
+  --color-info: #0ea5e9;         --color-info-content: #ffffff;
+  --color-success: #28b35b;      --color-success-content: #ffffff;
+  --color-warning: #c8c200;      --color-warning-content: #ffffff;
+  --color-error: #ef4444;        --color-error-content: #ffffff;
+}
+[data-theme="standard-dark"] {
+  --theme-font-header: var(--font-poppins);
+  --theme-font-body: var(--font-inter);
+
+  --color-base-100: #1c1917;
+  --color-base-200: #292524;
+  --color-base-300: #44403c;
+  --color-base-content: #f8fafc;
+  
+  --theme-navbar: #0c0a09; /* Darker than base-100 */
+  --theme-navbar-content: #f8fafc;
+
+  --color-primary: #e2991a;      --color-primary-content: #000000;
+  --color-secondary: #62c4d1;    --color-secondary-content: #000000;
+  --color-accent: #a78bfa;       --color-accent-content: #000000;
+  --color-neutral: #a8a29e;      --color-neutral-content: #000000;
+  
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #4ade80;      --color-success-content: #000000;
+  --color-warning: #fbbf24;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* =========================================
+   2. CYBERPUNK (High Tech / Low Life)
+========================================= */
+[data-theme="cyberpunk-light"] {
+  --theme-font-header: var(--font-orbitron);
+  --theme-font-body: var(--font-rajdhani);
+
+  --color-base-100: #fefce8;
+  --color-base-200: #fff4a1;
+  --color-base-300: #ffe564;
+  --color-base-content: #111827;
+  --font-weight-base: 400;
+  --font-scale: 1.10;
+
+  --theme-navbar: #111827; /* Stark black against yellow */
+  --theme-navbar-content: #fcee0a;
+
+  --color-primary: #ff3ade;      --color-primary-content: #ffffff;
+  --color-secondary: #00f0ff;    --color-secondary-content: #1e1e1ee3;
+  --color-accent: #c061ff;       --color-accent-content: #ffffff;
+  --color-neutral: #374151;      --color-neutral-content: #ffffff;
+
+  --color-info: #00f0ff;         --color-info-content: #1e1e1ee3;
+  --color-success: #14ff76;      --color-success-content: #1e1e1ee3;
+  --color-warning: #fcee0a;      --color-warning-content: #1e1e1ee3;
+  --color-error: #ff003c;        --color-error-content: #ffffff;
+}
+[data-theme="cyberpunk-dark"] {
+  --theme-font-header: var(--font-orbitron);
+  --theme-font-body: var(--font-rajdhani);
+
+  --color-base-100: #180122;
+  --color-base-200: #20032e;
+  --color-base-300: #2d0440;
+  --color-base-content: #51e4efd1;
+  --font-scale: 1.10;
+  --font-letter-spacing: 0.025em;
+  
+  --theme-navbar: #06000a; /* Pure void */
+  --theme-navbar-content: #fcee0a;
+
+  --color-primary: #d862fff1;      --color-primary-content: #000000;
+  --color-secondary: #1ce4ffd1;    --color-secondary-content: #000000;
+  --color-accent: #ff38d7d1;       --color-accent-content: #000000;
+  --color-neutral: #4f106d;      --color-neutral-content: #ffffff;
+
+  --color-info: #00f0ff;         --color-info-content: #000000;
+  --color-success: #39ff14d1;      --color-success-content: #000000;
+  --color-warning: #ffdd1e;      --color-warning-content: #000000;
+  --color-error: #ff003c;        --color-error-content: #ffffff;
+}
+
+/* =========================================
+   3. ELDRITCH (Cosmic Horror)
+========================================= */
+[data-theme="eldritch-light"] {
+  --theme-font-header: var(--font-cinzel);
+  --theme-font-body: var(--font-crimson);
+
+  --color-base-100: #e5e7eb;
+  --color-base-200: #d1d5db;
+  --color-base-300: #9ca3af;
+  --color-base-content: #1e1b4b;
+  
+  --theme-navbar: #251b3f; /* Deep cultist purple */
+  --theme-navbar-content: #e0e7ff;
+
+  --color-primary: #4338ca;      --color-primary-content: #ffffff;
+  --color-secondary: #0f766e;    --color-secondary-content: #ffffff;
+  --color-accent: #be185d;       --color-accent-content: #ffffff;
+  --color-neutral: #4b5563;      --color-neutral-content: #ffffff;
+
+  --color-info: #6366f1;         --color-info-content: #ffffff;
+  --color-success: #10b981;      --color-success-content: #000000;
+  --color-warning: #ca8a04;      --color-warning-content: #ffffff;
+  --color-error: #9f1239;        --color-error-content: #ffffff;
+}
+[data-theme="eldritch-dark"] {
+  --theme-font-header: var(--font-cinzel);
+  --theme-font-body: var(--font-crimson);
+
+  --color-base-100: #0f0a1c;
+  --color-base-200: #1e1b4b;
+  --color-base-300: #312e81;
+  --color-base-content: #a5b4fc;
+  
+  --theme-navbar: #05020a; /* Darker than the void */
+  --theme-navbar-content: #2dd4bf;
+
+  --color-primary: #818cf8;      --color-primary-content: #000000;
+  --color-secondary: #2dd4bf;    --color-secondary-content: #000000;
+  --color-accent: #f472b6;       --color-accent-content: #000000;
+  --color-neutral: #3730a3;      --color-neutral-content: #a5b4fc;
+
+  --color-info: #818cf8;         --color-info-content: #000000;
+  --color-success: #34d399;      --color-success-content: #000000;
+  --color-warning: #fbbf24;      --color-warning-content: #000000;
+  --color-error: #e11d48;        --color-error-content: #ffffff;
+}
+
+/* =========================================
+   4. AQUATICA (Nautical/Abyssal)
+========================================= */
+[data-theme="aquatica-light"] {
+  --theme-font-header: var(--font-righteous);
+  --theme-font-body: var(--font-lato);
+
+  --color-base-100: #ecfdf5;
+  --color-base-200: #d1fae5;
+  --color-base-300: #a7f3d0;
+  --color-base-content: #064e3b;
+  
+  --theme-navbar: rgb(10, 172, 213); /* Deep ocean */
+  --theme-navbar-content: #ffffff;
+
+  --color-primary: #0ea5e9;      --color-primary-content: #ffffff;
+  --color-secondary: #14b8a6;    --color-secondary-content: #ffffff;
+  --color-accent: #6366f1;       --color-accent-content: #ffffff;
+  --color-neutral: #0f766e;      --color-neutral-content: #ffffff;
+
+  --color-info: #3b82f6;         --color-info-content: #ffffff;
+  --color-success: #10b981;      --color-success-content: #ffffff;
+  --color-warning: #f59e0b;      --color-warning-content: #ffffff;
+  --color-error: #ef4444;        --color-error-content: #ffffff;
+}
+[data-theme="aquatica-dark"] {
+  --theme-font-header: var(--font-righteous);
+  --theme-font-body: var(--font-lato);
+
+  --color-base-100: #082f49;
+  --color-base-200: #0c4a6e;
+  --color-base-300: #075985;
+  --color-base-content: #bae6fd;
+  
+  --theme-navbar: #041e30; /* Trench depth */
+  --theme-navbar-content: #38bdf8;
+
+  --color-primary: #38bdf8;      --color-primary-content: #000000;
+  --color-secondary: #f472b6;    --color-secondary-content: #000000;
+  --color-accent: #818cf8;       --color-accent-content: #000000;
+  --color-neutral: #164e63;      --color-neutral-content: #bae6fd;
+
+  --color-info: #7dd3fc;         --color-info-content: #000000;
+  --color-success: #34d399;      --color-success-content: #000000;
+  --color-warning: #fbbf24;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   5. FANTASY (Classic RPG/Parchment)
+========================================= */
+[data-theme="fantasy-light"] {
+  --theme-font-header: var(--font-lora);
+  --theme-font-body: var(--font-merriweather);
+
+  --color-base-100: #fef3c7;
+  --color-base-200: #fde68a;
+  --color-base-300: #fcd34d;
+  --color-base-content: #451a03;
+  
+  --theme-navbar: #78350f; /* Old Leather binding */
+  --theme-navbar-content: #fef3c7;
+
+  --color-primary: #b45309;      --color-primary-content: #ffffff;
+  --color-secondary: #15803d;    --color-secondary-content: #ffffff;
+  --color-accent: #7e22ce;       --color-accent-content: #ffffff;
+  --color-neutral: #57534e;      --color-neutral-content: #ffffff;
+
+  --color-info: #0284c7;         --color-info-content: #ffffff;
+  --color-success: #16a34a;      --color-success-content: #ffffff;
+  --color-warning: #d97706;      --color-warning-content: #ffffff;
+  --color-error: #dc2626;        --color-error-content: #ffffff;
+}
+[data-theme="fantasy-dark"] {
+  --theme-font-header: var(--font-lora);
+  --theme-font-body: var(--font-merriweather);
+
+  --color-base-100: #14532d;
+  --color-base-200: #064e3b;
+  --color-base-300: #065f46;
+  --color-base-content: #ecfdf5;
+  
+  --theme-navbar: #022c22; /* Deep shadows */
+  --theme-navbar-content: #fcd34d;
+
+  --color-primary: #f59e0b;      --color-primary-content: #000000;
+  --color-secondary: #fbbf24;    --color-secondary-content: #000000;
+  --color-accent: #c084fc;       --color-accent-content: #000000;
+  --color-neutral: #043a2b;      --color-neutral-content: #ecfdf5;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #4ade80;      --color-success-content: #000000;
+  --color-warning: #fde047;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   6. BLOOD (Gothic/Vampiric)
+========================================= */
+[data-theme="blood-light"] {
+  --theme-font-header: var(--font-creepster);
+  --theme-font-body: var(--font-roboto-slab);
+
+  --color-base-100: #fafaf9;
+  --color-base-200: #f5f5f4;
+  --color-base-300: #e7e5e4;
+  --color-base-content: #450a0a;
+  
+  --theme-navbar: #450a0a; /* Dried blood */
+  --theme-navbar-content: #fafaf9;
+
+  --color-primary: #991b1b;      --color-primary-content: #ffffff;
+  --color-secondary: #1c1917;    --color-secondary-content: #ffffff;
+  --color-accent: #7f1d1d;       --color-accent-content: #ffffff;
+  --color-neutral: #57534e;      --color-neutral-content: #ffffff;
+
+  --color-info: #475569;         --color-info-content: #ffffff;
+  --color-success: #3f6212;      --color-success-content: #ffffff;
+  --color-warning: #b45309;      --color-warning-content: #ffffff;
+  --color-error: #dc2626;        --color-error-content: #ffffff;
+}
+[data-theme="blood-dark"] {
+  --theme-font-header: var(--font-creepster);
+  --theme-font-body: var(--font-roboto-slab);
+
+  --color-base-100: #450a0a;
+  --color-base-200: #7f1d1d;
+  --color-base-300: #991b1b;
+  --color-base-content: #fca5a5;
+  
+  --theme-navbar: #280404; /* Pitch black red */
+  --theme-navbar-content: #ef4444;
+
+  --color-primary: #ef4444;      --color-primary-content: #000000;
+  --color-secondary: #000000;    --color-secondary-content: #ef4444;
+  --color-accent: #b91c1c;       --color-accent-content: #ffffff;
+  --color-neutral: #292524;      --color-neutral-content: #fca5a5;
+
+  --color-info: #94a3b8;         --color-info-content: #000000;
+  --color-success: #84cc16;      --color-success-content: #000000;
+  --color-warning: #f59e0b;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   7. FOREST (Nature/Druidic)
+========================================= */
+[data-theme="forest-light"] {
+  --theme-font-header: var(--font-amatic);
+  --theme-font-body: var(--font-quicksand);
+  --font-scale: 1;
+  --font-letter-spacing: 0em;
+  --font-weight-base: 500;
+
+  --color-base-100: #f0fdf4;
+  --color-base-200: #dcfce7;
+  --color-base-300: #bbf7d0;
+  --color-base-content: #14532d;
+  
+  --theme-navbar: #186737; /* Bark/Deep green */
+  --theme-navbar-content: #f0fdf4;
+
+  --color-primary: #2bc459;      --color-primary-content: #ffffff;
+  --color-secondary: #3dc414;    --color-secondary-content: #ffffff;
+  --color-accent: #14b8a6;       --color-accent-content: #ffffff;
+  --color-neutral: #176c4a;      --color-neutral-content: #ffffff;
+
+  --color-info: #0ea5e9;         --color-info-content: #ffffff;
+  --color-success: #16a34a;      --color-success-content: #ffffff;
+  --color-warning: #eab308;      --color-warning-content: #ffffff;
+  --color-error: #ef4444;        --color-error-content: #ffffff;
+}
+[data-theme="forest-dark"] {
+  --theme-font-header: var(--font-amatic);
+  --theme-font-body: var(--font-quicksand);
+  --font-scale: 1;
+  --font-letter-spacing: 0em;
+  --font-weight-base: 500;
+
+  --color-base-100: #022c22;
+  --color-base-200: #064e3b;
+  --color-base-300: #065f46;
+  --color-base-content: #dcfce7;
+  
+  --theme-navbar: #011812; /* Deepest canopy */
+  --theme-navbar-content: #4ade80;
+
+  --color-primary: #4ade80;      --color-primary-content: #000000;
+  --color-secondary: #16a34a;    --color-secondary-content: #000000;
+  --color-accent: #2dd4bf;       --color-accent-content: #000000;
+  --color-neutral: #258b62;      --color-neutral-content: #000000;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #22c55e;      --color-success-content: #000000;
+  --color-warning: #fde047;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   8. STEAM (Steampunk/Brass)
+========================================= */
+[data-theme="steam-light"] {
+  --theme-font-header: var(--font-playfair);
+  --theme-font-body: var(--font-pt-serif);
+
+  --color-base-100: #fef08a;
+  --color-base-200: #fde047;
+  --color-base-300: #facc15;
+  --color-base-content: #422006;
+  
+  --theme-navbar: #422006; /* Dark leather */
+  --theme-navbar-content: #fef08a;
+
+  --color-primary: #92400e;      --color-primary-content: #ffffff;
+  --color-secondary: #713f12;    --color-secondary-content: #ffffff;
+  --color-accent: #0f766e;       --color-accent-content: #ffffff; /* Patina green */
+  --color-neutral: #57534e;      --color-neutral-content: #ffffff;
+
+  --color-info: #0284c7;         --color-info-content: #ffffff;
+  --color-success: #16a34a;      --color-success-content: #ffffff;
+  --color-warning: #d97706;      --color-warning-content: #ffffff;
+  --color-error: #b91c1c;        --color-error-content: #ffffff;
+}
+[data-theme="steam-dark"] {
+  --theme-font-header: var(--font-playfair);
+  --theme-font-body: var(--font-pt-serif);
+
+  --color-base-100: #292524;
+  --color-base-200: #1c1917;
+  --color-base-300: #0c0a09;
+  --color-base-content: #eab308;
+  
+  --theme-navbar: #0c0a09; /* Oiled iron */
+  --theme-navbar-content: #ca8a04;
+
+  --color-primary: #ca8a04;      --color-primary-content: #000000;
+  --color-secondary: #d97706;    --color-secondary-content: #000000;
+  --color-accent: #2dd4bf;       --color-accent-content: #000000; /* Glowing patina */
+  --color-neutral: #44403c;      --color-neutral-content: #eab308;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #4ade80;      --color-success-content: #000000;
+  --color-warning: #fcd34d;      --color-warning-content: #000000;
+  --color-error: #ef4444;        --color-error-content: #000000;
+}
+
+/* =========================================
+   9. ATOMIC (Diesel-punk/Post-Apoc)
+========================================= */
+[data-theme="atomic-light"] {
+  --theme-font-header: var(--font-anton);
+  --theme-font-body: var(--font-courier);
+
+  --color-base-100: #d6d3d1;
+  --color-base-200: #a8a29e;
+  --color-base-300: #78716c;
+  --color-base-content: #1c1917;
+  
+  --theme-navbar: #1e40af; /* Vault blue */
+  --theme-navbar-content: #facc15;
+
+  --color-primary: #15803d;      --color-primary-content: #ffffff;
+  --color-secondary: #1e40af;    --color-secondary-content: #ffffff;
+  --color-accent: #ca8a04;       --color-accent-content: #ffffff;
+  --color-neutral: #44403c;      --color-neutral-content: #ffffff;
+
+  --color-info: #0284c7;         --color-info-content: #ffffff;
+  --color-success: #16a34a;      --color-success-content: #ffffff;
+  --color-warning: #eab308;      --color-warning-content: #000000;
+  --color-error: #dc2626;        --color-error-content: #ffffff;
+}
+[data-theme="atomic-dark"] {
+  --theme-font-header: var(--font-anton);
+  --theme-font-body: var(--font-courier);
+
+  --color-base-100: #1c1917;
+  --color-base-200: #0c0a09;
+  --color-base-300: #000000;
+  --color-base-content: #22c55e;
+  
+  --theme-navbar: #000000; /* CRT Off */
+  --theme-navbar-content: #4ade80;
+
+  --color-primary: #166534;      --color-primary-content: #ffffff;
+  --color-secondary: #fbbf24;    --color-secondary-content: #000000;
+  --color-accent: #ea580c;       --color-accent-content: #ffffff;
+  --color-neutral: #292524;      --color-neutral-content: #22c55e;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #4ade80;      --color-success-content: #000000;
+  --color-warning: #fde047;      --color-warning-content: #000000;
+  --color-error: #ef4444;        --color-error-content: #000000;
+}
+
+/* =========================================
+   10. NOIR (Detective/Sin City)
+========================================= */
+[data-theme="noir-light"] {
+  --theme-font-header: var(--font-bebas);
+  --theme-font-body: var(--font-baskerville);
+
+  --color-base-100: #f5f5f4;
+  --color-base-200: #e7e5e4;
+  --color-base-300: #d6d3d1;
+  --color-base-content: #1c1917;
+  
+  --theme-navbar: #1c1917; /* High contrast black */
+  --theme-navbar-content: #f5f5f4;
+
+  --color-primary: #000000;      --color-primary-content: #ffffff;
+  --color-secondary: #ef4444;    --color-secondary-content: #ffffff; /* Splash of red */
+  --color-accent: #52525b;       --color-accent-content: #ffffff;
+  --color-neutral: #78716c;      --color-neutral-content: #ffffff;
+
+  --color-info: #52525b;         --color-info-content: #ffffff;
+  --color-success: #000000;      --color-success-content: #ffffff;
+  --color-warning: #78716c;      --color-warning-content: #ffffff;
+  --color-error: #dc2626;        --color-error-content: #ffffff;
+}
+[data-theme="noir-dark"] {
+  --theme-font-header: var(--font-bebas);
+  --theme-font-body: var(--font-baskerville);
+
+  --color-base-100: #09090b;
+  --color-base-200: #18181b;
+  --color-base-300: #27272a;
+  --color-base-content: #ffffff;
+  
+  --theme-navbar: #000000; /* Pure black */
+  --theme-navbar-content: #ef4444;
+
+  --color-primary: #ef4444;      --color-primary-content: #000000;
+  --color-secondary: #52525b;    --color-secondary-content: #000000;
+  --color-accent: #a1a1aa;       --color-accent-content: #000000;
+  --color-neutral: #3f3f46;      --color-neutral-content: #000000;
+
+  --color-info: #a1a1aa;         --color-info-content: #000000;
+  --color-success: #ffffff;      --color-success-content: #000000;
+  --color-warning: #71717a;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   11. FROST (Tundra/Lich King)
+========================================= */
+[data-theme="frost-light"] {
+  --theme-font-header: var(--font-montserrat);
+  --theme-font-body: var(--font-open-sans);
+
+  --color-base-100: #f0f9ff;
+  --color-base-200: #e0f2fe;
+  --color-base-300: #bae6fd;
+  --color-base-content: #0c4a6e;
+  
+  --theme-navbar: #0369a1; /* Deep ice blue */
+  --theme-navbar-content: #f0f9ff;
+
+  --color-primary: #38bdf8;      --color-primary-content: #ffffff;
+  --color-secondary: #0d97d6;    --color-secondary-content: #ffffff;
+  --color-accent: #818cf8;       --color-accent-content: #ffffff;
+  --color-neutral: #0284c7;      --color-neutral-content: #ffffff;
+
+  --color-info: #0ea5e9;         --color-info-content: #ffffff;
+  --color-success: #10b981;      --color-success-content: #ffffff;
+  --color-warning: #fbbf24;      --color-warning-content: #ffffff;
+  --color-error: #ef4444;        --color-error-content: #ffffff;
+}
+[data-theme="frost-dark"] {
+  --theme-font-header: var(--font-montserrat);
+  --theme-font-body: var(--font-open-sans);
+
+  --color-base-100: #0c4a6e;
+  --color-base-200: #082f49;
+  --color-base-300: #041e30;
+  --color-base-content: #e0f2fe;
+  
+  --theme-navbar: #041e30; /* Night sky/glacier shadow */
+  --theme-navbar-content: #7dd3fc;
+
+  --color-primary: #7dd3fc;      --color-primary-content: #000000;
+  --color-secondary: #bae6fd;    --color-secondary-content: #000000;
+  --color-accent: #a5b4fc;       --color-accent-content: #000000;
+  --color-neutral: #0369a1;      --color-neutral-content: #ffffff;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #34d399;      --color-success-content: #000000;
+  --color-warning: #fde047;      --color-warning-content: #000000;
+  --color-error: #f87171;        --color-error-content: #000000;
+}
+
+/* =========================================
+   12. SYNTHWAVE (Retro 80s)
+========================================= */
+[data-theme="synthwave-light"] {
+  --theme-font-header: var(--font-press-start);
+  --theme-font-body: var(--font-space-mono);
+
+  --color-base-100: #fce7f3;
+  --color-base-200: #fbcfe8;
+  --color-base-300: #ffb4dd;
+  --color-base-content: #701a75;
+  
+  --theme-navbar: #86198f; /* Intense purple/magenta */
+  --theme-navbar-content: #fce7f3;
+
+  --color-primary: #ef46ec;      --color-primary-content: #ffffff;
+  --color-secondary: #06b6d4;    --color-secondary-content: #ffffff;
+  --color-accent: #ec4899;       --color-accent-content: #ffffff;
+  --color-neutral: #9d174d;      --color-neutral-content: #ffffff;
+
+  --color-info: #0ea5e9;       --color-info-content: #ffffff;
+  --color-success: #10b981;      --color-success-content: #ffffff;
+  --color-warning: #f59e0b;      --color-warning-content: #ffffff;
+  --color-error: #e11d48;        --color-error-content: #ffffff;
+}
+[data-theme="synthwave-dark"] {
+  --theme-font-header: var(--font-press-start);
+  --theme-font-body: var(--font-space-mono);
+
+  --color-base-100: #1e1b4b;
+  --color-base-200: #312e81;
+  --color-base-300: #4338ca;
+  --color-base-content: #ffb7dc;
+  
+  --theme-navbar: #110e2e; /* Midnight synth grid */
+  --theme-navbar-content: #22d3ee;
+
+  --color-primary: #ec4899;      --color-primary-content: #000000;
+  --color-secondary: #22d3ee;    --color-secondary-content: #000000;
+  --color-accent: #d946ef;       --color-accent-content: #000000;
+  --color-neutral: #3730a3;      --color-neutral-content: #ffb7dc;
+
+  --color-info: #38bdf8;         --color-info-content: #000000;
+  --color-success: #34d399;      --color-success-content: #000000;
+  --color-warning: #fbbf24;      --color-warning-content: #000000;
+  --color-error: #f43f5e;        --color-error-content: #ffffff;
+}
+
+html {
+  font-size: calc(16px * var(--font-scale));
+  letter-spacing: var(--font-letter-spacing);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height, 1.5);
+}
+
+/* body {
+  background-image: url(../public/images/carbon-pattern.svg);
+  background-repeat: repeat-y;
+  background-size:cover;
+  background-blend-mode:lighten;
+} */
+
+/* @layer base {
+  :where(.font-header) {
+    font-family: var(--font-header);
+    font-size: calc(1em * var(--heading-scale, 1));
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer base {
-  h1 {
-    @apply font-extrabold text-2xl mb-3 font-poppins;
+  
+  .font-body {
+    font-family: var(--font-body);
   }
-}
+} */

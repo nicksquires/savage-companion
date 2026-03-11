@@ -1,6 +1,9 @@
 import { prisma } from "@/prisma/client";
-import { hindranceSchema } from "../hindranceSchema";
+import { hindranceSchema } from "../../../../lib/schemas/api/hindrance.schema";
 import { NextRequest, NextResponse } from "next/server";
+
+// Next.js 15 requires typing params as a Promise
+type Params = { params: Promise<{ slug: string }> };
 
 // GET - get one hindrance in the master list
 export async function GET(

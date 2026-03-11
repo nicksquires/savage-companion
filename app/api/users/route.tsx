@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import schema from "../register/schema";
+import schema from "../../../lib/schemas/api/register.schema";
 import { prisma } from "@/prisma/client";
 
 export async function GET(request: NextRequest) {

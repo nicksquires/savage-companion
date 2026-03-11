@@ -1,15 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { edgeSchema } from "../edgeSchema";
+import { edgeSchema } from "../../../../lib/schemas/api/edge.schema";
+
+// Next.js 15 requires typing params as a Promise
+type Params = { params: Promise<{ id: string }> };
 
 // GET - get one edge from the master list
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET({ params }: Params) {
   try {
+    // AWAIT the params before using them!
+    const { id } = await params;
+
     const edge = await prisma.edge.findUnique({
-      where: { id: params.id },
+      where: { id: id },
       // include: { source: true },
     });
 
@@ -26,9 +29,10 @@ export async function GET(
 // PATCH - update one edge in the master list
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: Params
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
     const validation = edgeSchema.partial().safeParse(body);
 
@@ -37,7 +41,7 @@ export async function PATCH(
     }
 
     const updatedEdge = await prisma.edge.update({
-      where: { id: params.id },
+      where: { id: id },
       data: body,
     });
 
@@ -49,19 +53,18 @@ export async function PATCH(
 }
 
 // DELETE - delete one edge from the master list
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE({ params }: Params) {
+  const { id } = await params;
+
   const edge = await prisma.edge.findUnique({
-    where: { id: params.id },
+    where: { id: id },
   });
 
   if (!edge)
     return NextResponse.json({ error: "Edge not found" }, { status: 404 });
 
   try {
-    await prisma.edge.delete({ where: { id: params.id } });
+    await prisma.edge.delete({ where: { id: id } });
   
     return NextResponse.json({ message: "Edge deleted" }, { status: 204 });
   } catch (err) {

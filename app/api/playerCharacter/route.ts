@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { playerCharacterSchema } from "./playerCharacterSchema";
+import { playerCharacterSchema } from "../../../lib/schemas/api/playerCharacter.schema";
 
 // GET - get all player characters from the master list
 export async function GET() {

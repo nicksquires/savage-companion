@@ -1,16 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { edgeSchema } from "./edgeSchema";
+import { edgeSchema } from "../../../lib/schemas/api/edge.schema";
 
 // GET - get all edges from master list
 export async function GET(req: NextRequest) {
   try {
     const edges = await prisma.edge.findMany({
-      include: { source: true }, // OPTIONAL: include related data
+      include: { 
+        source: true,
+        tags: {
+          include: {
+            tag:true
+          },
+        },
+       }, // OPTIONAL: include related data
       orderBy: { name: "asc" },
     });
 
-    return NextResponse.json(edges);
+    // Shape edges to structure edgeTag join table
+    const shapedEdges = edges.map(edge => ({...edge,
+      tags: edge.tags.map(et => et.tag),
+    }));
+
+    return NextResponse.json(shapedEdges);
 
   } catch (err) {
     return NextResponse.json(

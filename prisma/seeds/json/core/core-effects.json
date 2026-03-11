@@ -1,182 +1,408 @@
 [
   {
-    "name": "Armor Piercing (AP)",
+    "name": "Armor Piercing",
     "slug": "armor-piercing",
-    "description": "Ignores a number of armor points equal to its AP value (e.g., AP 2 ignores 2 points of armor)."
+    "description": "Ignores a specified number of armor points when dealing damage.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": { "armorIgnored": "AP_VALUE" }
   },
   {
     "name": "Heavy Weapon",
     "slug": "heavy-weapon",
-    "description": "Can damage vehicles or targets with Heavy Armor. Typically requires Strength d8 or higher."
+    "description": "Can damage vehicles and targets with Heavy Armor.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": ["HEAVY"]
   },
   {
     "name": "Two-Handed",
     "slug": "two-handed",
-    "description": "Requires both hands to wield, often increasing damage (e.g., +d8 for greatswords)."
+    "description": "Requires both hands to wield effectively.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": { "requiresHands": 2 }
   },
   {
     "name": "Reach",
     "slug": "reach",
-    "description": "Extends melee range by +1 inch or more, allowing attacks from further away."
+    "description": "Extends melee attack range.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "SELF",
+    "definitions": { "reachBonus": "+1" }
   },
   {
     "name": "Parry Penalty",
     "slug": "parry-penalty",
-    "description": "Reduces the wielder's Parry score by 1 or more when equipped."
+    "description": "Reduces the wielder’s Parry while equipped.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "PARRY", "value": -1 }
+    ]
   },
   {
     "name": "Minimum Strength",
     "slug": "minimum-strength",
-    "description": "Requires a minimum Strength die (e.g., d8) to use without penalties to attack or Pace."
+    "description": "Using without sufficient Strength incurs penalties.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": { "minStrength": "DIE_VALUE" }
   },
   {
-    "name": "Rate of Fire (RoF)",
+    "name": "Rate of Fire",
     "slug": "rate-of-fire",
-    "description": "Allows multiple attack rolls per round (e.g., RoF 3 for three attacks)."
+    "description": "Allows multiple attacks in one action.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "SELF",
+    "definitions": { "rof": "NUMBER" }
   },
   {
     "name": "Reload",
     "slug": "reload",
-    "description": "Requires one or more actions to reload before firing again."
+    "description": "Requires actions to reload after firing.",
+    "triggerType": "ON_EMPTY",
+    "targetType": "ITEM",
+    "definitions": { "reloadActions": "NUMBER" }
   },
   {
     "name": "Snapfire",
     "slug": "snapfire",
-    "description": "Imposes a -2 penalty to attack rolls if the wielder moves in the same turn."
+    "description": "Moving and firing in the same turn incurs a penalty.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "ATTACK", "value": -2 }
+    ]
   },
   {
     "name": "Double Tap",
     "slug": "double-tap",
-    "description": "Fires two rounds, granting +1 to hit and +1 to damage."
+    "description": "Fires two rounds for increased accuracy and damage.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "SELF",
+    "definitions": [
+      { "stat": "ATTACK", "value": 1 },
+      { "stat": "DAMAGE", "value": 1 }
+    ]
   },
   {
     "name": "Three-Round Burst",
     "slug": "three-round-burst",
-    "description": "Fires three rounds, granting +2 to hit and +1 to damage."
+    "description": "Fires three rounds for increased accuracy and damage.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "SELF",
+    "definitions": [
+      { "stat": "ATTACK", "value": 2 },
+      { "stat": "DAMAGE", "value": 1 }
+    ]
   },
   {
     "name": "Fragile",
     "slug": "fragile",
-    "description": "Breaks on a critical failure or under specific conditions, rendering it unusable."
+    "description": "Breaks on a critical failure.",
+    "triggerType": "ON_CRITICAL_FAILURE",
+    "targetType": "ITEM",
+    "definitions": [
+      { "type": "BROKEN", "duration": "PERMANENT" }
+    ]
   },
   {
     "name": "Cumbersome",
     "slug": "cumbersome",
-    "description": "Imposes a -1 penalty to Agility-based rolls when equipped."
+    "description": "Imposes penalties to Agility-based actions.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "AGILITY", "value": -1 }
+    ]
   },
   {
     "name": "Noisy",
     "slug": "noisy",
-    "description": "Makes stealth difficult, imposing a -2 penalty to Stealth rolls or alerting enemies."
+    "description": "Makes stealth difficult when worn or used.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "STEALTH", "value": -2 }
+    ]
   },
   {
     "name": "Concealable",
     "slug": "concealable",
-    "description": "Grants a +2 bonus to checks to hide the item on the user's person."
+    "description": "Easier to hide on the person.",
+    "triggerType": "PASSIVE",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "NOTICE", "value": -2 }
+    ]
   },
   {
     "name": "Silvered",
     "slug": "silvered",
-    "description": "Effective against supernatural creatures like werewolves, bypassing their resistances."
+    "description": "Bypasses resistances of supernatural creatures.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": ["SUPERNATURAL"]
   },
   {
     "name": "Blessed",
     "slug": "blessed",
-    "description": "Deals +2 damage to unholy creatures (e.g., demons, undead)."
+    "description": "Deals extra damage to unholy creatures.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": [
+      { "stat": "DAMAGE", "value": 2 },
+      {"category": "UNHOLY"}
+    ]
+    
   },
   {
     "name": "Cold Iron",
     "slug": "cold-iron",
-    "description": "Effective against fae or magical creatures, ignoring their magical resistances."
-  },
-  {
-    "name": "Armor Bonus",
-    "slug": "armor-bonus",
-    "description": "Increases wearer's Toughness by a specified amount (e.g., +2)."
-  },
-  {
-    "name": "Partial Protection",
-    "slug": "partial-protection",
-    "description": "Covers specific body areas (e.g., torso), leaving others vulnerable."
-  },
-  {
-    "name": "Full Protection",
-    "slug": "full-protection",
-    "description": "Covers all body areas, maximizing Toughness bonus."
-  },
-  {
-    "name": "Heavy Armor",
-    "slug": "heavy-armor",
-    "description": "Protects against Heavy Weapons, requiring Heavy Weapon to damage."
+    "description": "Effective against fae and magical beings.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": ["FAE"]
   },
   {
     "name": "Encumbering",
     "slug": "encumbering",
-    "description": "Reduces Pace by 1 or increases Fatigue when worn for extended periods."
-  },
-  {
-    "name": "Quick Draw",
-    "slug": "quick-draw",
-    "description": "Reduces time to ready the weapon, ignoring multi-action penalties for drawing."
-  },
-  {
-    "name": "Improvised",
-    "slug": "improvised",
-    "description": "Suffers -2 to attack rolls unless the user has the Improvised Weapon Edge."
-  },
-  {
-    "name": "Nonlethal",
-    "slug": "nonlethal",
-    "description": "Deals Fatigue instead of Wounds, used for incapacitating without killing."
-  },
-  {
-    "name": "Poisoned",
-    "slug": "poisoned",
-    "description": "Forces a Vigor roll on hit or inflicts Fatigue or other poison effects."
-  },
-  {
-    "name": "Entangling",
-    "slug": "entangling",
-    "description": "Traps or slows the target, requiring a Strength or Agility roll to escape."
+    "description": "Reduces Pace or causes Fatigue over time.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "PACE", "value": -1 }
+    ]
   },
   {
     "name": "Defensive",
     "slug": "defensive",
-    "description": "Grants +1 to Parry when equipped, enhancing defensive capability."
+    "description": "Improves Parry when equipped.",
+    "triggerType": "ON_EQUIPPED",
+    "targetType": "WIELDER",
+    "definitions": [
+      { "stat": "PARRY", "value": 1 }
+    ]
   },
   {
     "name": "Glowing",
     "slug": "glowing",
-    "description": "Emits light in a Small Burst Template, negating illumination penalties."
-  },
-  {
-    "name": "Power Point Drain",
-    "slug": "power-point-drain",
-    "description": "Drains 1d4 Power Points from the target on a successful hit."
-  },
-  {
-    "name": "Spell Focus",
-    "slug": "spell-focus",
-    "description": "Grants +1 to Spellcasting rolls when used as a focus for arcane powers."
+    "description": "Emits light, negating illumination penalties.",
+    "triggerType": "PASSIVE",
+    "targetType": "AREA",
+    "areaTemplate": "SMALL_BURST"
   },
   {
     "name": "Unstable",
     "slug": "unstable",
-    "description": "May malfunction or explode on a critical failure, causing damage to the user."
+    "description": "May malfunction or explode on a critical failure.",
+    "triggerType": "ON_CRITICAL_FAILURE",
+    "targetType": "SELF",
+    "definitions": [
+      { "type": "DAMAGED", "duration": "INSTANT" }
+    ]
   },
   {
     "name": "Shock",
     "slug": "shock",
-    "description": "Forces a Vigor roll or the target becomes Shaken on a successful hit."
+    "description": "Forces a Vigor roll or the target becomes Shaken.",
+    "triggerType": "ON_HIT",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "skill": "VIGOR",
+        "onFailure": "SHAKEN"
+      }
+    ]
+  },
+  {
+    "name": "Armor Bonus",
+    "slug": "armor-bonus",
+    "description": "Increases the wearer's Toughness by a specified amount.",
+    "triggerType": "PASSIVE",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "stat": "TOUGHNESS",
+        "mode": "ADD",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "Partial Protection",
+    "slug": "partial-protection",
+    "description": "Covers specific body areas, leaving others vulnerable.",
+    "triggerType": "PASSIVE",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "type": "HIT_LOCATION",
+        "coverage": "PARTIAL"
+      }
+    ]
+  },
+  {
+    "name": "Full Protection",
+    "slug": "full-protection",
+    "description": "Covers all body areas.",
+    "triggerType": "PASSIVE",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "type": "HIT_LOCATION",
+        "coverage": "FULL"
+      }
+    ]
+  },
+  {
+    "name": "Heavy Armor",
+    "slug": "heavy-armor",
+    "description": "Only Heavy Weapons can damage the wearer.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "type": "REQUIRES_WEAPON_TAG",
+        "tag": "HEAVY_WEAPON"
+      }
+    ]
+  },
+  {
+    "name": "Quick Draw",
+    "slug": "quick-draw",
+    "description": "Ignoring multi-action penalties for drawing this weapon.",
+    "triggerType": "ON_DRAW",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "type": "IGNORE_DRAW_PENALTY"
+      }
+    ]
+  },
+  {
+    "name": "Improvised",
+    "slug": "improvised",
+    "description": "Suffers a -2 attack penalty unless trained.",
+    "triggerType": "ON_ATTACK",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "stat": "ATTACK",
+        "mode": "ADD",
+        "value": -2,
+        "ignoredIfEdge": "IMPROVISED_WEAPON"
+      }
+    ]
+  },
+  {
+    "name": "Nonlethal",
+    "slug": "nonlethal",
+    "description": "Deals Fatigue instead of Wounds.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "type": "DAMAGE_TYPE_OVERRIDE",
+        "value": "FATIGUE"
+      }
+    ]
+  },
+  {
+    "name": "Poisoned",
+    "slug": "poisoned",
+    "description": "Forces a Vigor roll or inflicts Fatigue.",
+    "triggerType": "ON_HIT",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "skill": "VIGOR",
+        "onFailure": {
+          "apply": "FATIGUE",
+          "amount": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Entangling",
+    "slug": "entangling",
+    "description": "Restrains the target until they escape.",
+    "triggerType": "ON_HIT",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "type": "APPLY_CONDITION",
+        "condition": "ENTANGLED"
+      },
+      {
+        "skill": "STRENGTH"
+      },
+      {
+        "skill": "AGILITY"
+      }
+    ]
+  },
+  {
+    "name": "Power Point Drain",
+    "slug": "power-point-drain",
+    "description": "Drains Power Points on a hit.",
+    "triggerType": "ON_HIT",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "type": "DRAIN_POWER_POINTS",
+        "dice": "1d4"
+      }
+    ]
+  },
+  {
+    "name": "Spell Focus",
+    "slug": "spell-focus",
+    "description": "Grants +1 to Spellcasting when used as a focus.",
+    "triggerType": "PASSIVE",
+    "targetType": "SELF",
+    "definitions": [
+      {
+        "stat": "SPELLCASTING",
+        "mode": "ADD",
+        "value": 1
+      }
+    ]
   },
   {
     "name": "Fire-Based",
     "slug": "fire-based",
-    "description": "Ignites flammable targets on a damage roll of 6, causing ongoing damage."
+    "description": "May ignite targets, causing ongoing fire damage.",
+    "triggerType": "ON_DAMAGE",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "type": "DAMAGE_ROLL_AT_LEAST",
+        "value": 6
+      },
+      {
+        "type": "APPLY_CONDITION",
+        "condition": "ON_FIRE",
+        "ongoingDamage": "1d6"
+      }
+    ]
   },
   {
     "name": "Cold-Based",
     "slug": "cold-based",
-    "description": "Slows target or inflicts Fatigue on hit, requiring a Vigor roll."
+    "description": "Slows or fatigues the target.",
+    "triggerType": "ON_HIT",
+    "targetType": "TARGET",
+    "definitions": [
+      {
+        "skill": "VIGOR",
+        "onFailure": {
+          "apply": "FATIGUE",
+          "amount": 1
+        }
+      }
+    ]
   }
 ]

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { itemSchema } from "./itemSchema";
+import { itemSchema } from "../../../lib/schemas/api/item.schema";
 
 export async function GET() {
   const items = await prisma.item.findMany({ include: { source: true } });

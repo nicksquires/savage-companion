@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { updateHindranceSchema } from "@/app/api/hindrances/hindranceSchema";
+import { updateHindranceSchema } from "@/lib/schemas/api/hindrance.schema";
 
 // PATCH – Update optional data in join (if needed)
 export async function PATCH( request: NextRequest,
