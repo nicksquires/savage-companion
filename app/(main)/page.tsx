@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import bg from "../public/images/old_paper.jpg";
+// import bg from "../public/images/old_paper.jpg";
 
 export default function Home() {
   return (

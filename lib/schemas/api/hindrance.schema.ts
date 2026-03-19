@@ -14,7 +14,7 @@ export const hindranceSchema = z.object({
 });
 
 // For updates (allow partials)
-export const updateHindranceSchema = hindranceSchema.partial().refine(
+export const hindranceUpdateSchema = hindranceSchema.partial().refine(
   (data) => Object.keys(data).length > 0,
   { message: "At least one field must be provided" }
 );

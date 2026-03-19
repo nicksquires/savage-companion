@@ -2,15 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import schema from "../../../lib/schemas/api/register.schema";
 import { prisma } from "@/prisma/client";
 
-export async function GET(request: NextRequest) {
+export async function GET(_req: NextRequest) {
   // fetch users from a db
   const users = await prisma.user.findMany();
 
   return NextResponse.json(users);
 }
 
-export async function POST(request: NextRequest) {
-  const body = await request.json();
+export async function POST(req: NextRequest) {
+  const body = await req.json();
   const validation = schema.safeParse(body);
 
   if (!validation.success)

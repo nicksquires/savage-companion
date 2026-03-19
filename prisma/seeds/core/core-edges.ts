@@ -25,7 +25,7 @@ export async function seedCoreEdges() {
           rank: edgeData.rank as Rank,
           requirements: edgeData.requirements ?? [],
           description: edgeData.description,
-          // summary: edgeData.summary,
+          summary: edgeData.summary,
           // effectDefinitions: edgeData.effectDefinitions,
           isPublic: edgeData.isPublic,
           ownerId: edgeData.ownerId,

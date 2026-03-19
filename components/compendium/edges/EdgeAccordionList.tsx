@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Edge } from "@/lib/types/Edge";
+import { EdgeSummary } from "@/lib/types/EdgeSummary";
 import {
   ChevronUp,
   ChevronDown,
@@ -15,9 +16,11 @@ import {
   Dice5,
 } from "lucide-react";
 import { PrerequisiteList } from "./PrerequisiteList";
+import { EdgeRequirement } from "@/lib/types/EdgeRequirement";
 
 interface Props {
   edges: Edge[];
+  edgeSummaries: EdgeSummary[];
   onSort: (field: "name" | "category" | "rank" | "sourceName") => void;
   sortBy: string;
   sortDir: "asc" | "desc";
@@ -25,6 +28,7 @@ interface Props {
 
 export default function EdgeAccordionList({
   edges,
+  edgeSummaries,
   onSort,
   sortBy,
   sortDir,
@@ -234,7 +238,12 @@ export default function EdgeAccordionList({
               <div className="w-1/3">
                 <p className="font-bold md:text-lg">Prerequisites</p>
 
-                <PrerequisiteList requirements={edge.requirements as any} />
+                <PrerequisiteList
+                  requirements={
+                    edge.requirements as EdgeRequirement[] | null | undefined
+                  }
+                  edgeSummaries={edgeSummaries}
+                />
               </div>
               <div className="w-1/3">
                 <p className="font-bold md:text-lg">Category</p>

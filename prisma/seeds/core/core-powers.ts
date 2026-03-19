@@ -22,7 +22,7 @@ export async function seedCorePowers() {
           duration: powerData.duration,
           description: powerData.description,
           summary: powerData.summary,
-          modifiers: powerData.modifiers,
+          modifierData: powerData.modifierData,
           slug: powerData.slug,
           isHomebrew: powerData.isHomebrew,
           isPublic: powerData.isPublic,

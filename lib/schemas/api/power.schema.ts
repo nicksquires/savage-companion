@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const powerSchema = z.object({
   name: z.string().min(1),
-  rank: z.enum(["Novice", "Seasoned", "Veteran", "Heroic", "Legendary"]),
+  rank: z.enum(["NOVICE", "SEASONED", "VETERAN", "HEROIC", "LEGENDARY"]),
   powerPoints: z.number().min(0).optional(),
   duration: z.string().min(1),
   effect: z.string().min(1),

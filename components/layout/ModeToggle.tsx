@@ -34,13 +34,13 @@ const ModeToggle = () => {
   return (
     <button
       onClick={toggleMode}
-      className="btn btn-ghost btn-circle"
+      className="btn btn-ghost btn-circle border-none"
       aria-label="Toggle Mode"
     >
       {isDark ? (
-        <Sun className="h-5 w-5 text-warning" />
+        <Sun className="h-6 w-6 text-warning" />
       ) : (
-        <Moon className="h-5 w-5 text-warning" />
+        <Moon className="h-6 w-6 text-warning" />
       )}
     </button>
   );

@@ -1,24 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
 import { edgeSchema } from "../../../lib/schemas/api/edge.schema";
+import { Rank } from "@prisma/client";
 
 // GET - get all edges from master list
 export async function GET(req: NextRequest) {
+  // 1. Extract the searchParams from the request URL
+  const { searchParams } = new URL(req.url);
+  
+  // 2. Grab the specific filters you care about
+  const category = searchParams.get("category");          // e.g., "COMBAT", "WEIRD"
+  const rank = searchParams.get("rank") as Rank | null;   // e.g., "NOVICE"
+  const search = searchParams.get("search");              // e.g., "frenzy"
+
   try {
     const edges = await prisma.edge.findMany({
+      where: {
+        category: category ?? undefined,
+        rank: rank ?? undefined,
+        name: search ? { contains: search } : undefined,
+      },
+      // OPTIONAL: include related data
       include: { 
-        source: true,
-        tags: {
-          include: {
-            tag:true
-          },
-        },
-       }, // OPTIONAL: include related data
-      orderBy: { name: "asc" },
+        tags: { include: { tag:true }, },
+      },
+
+      orderBy: 
+      { name: "asc" },
     });
 
     // Shape edges to structure edgeTag join table
-    const shapedEdges = edges.map(edge => ({...edge,
+    const shapedEdges = edges.map(edge => ({
+      ...edge,
       tags: edge.tags.map(et => et.tag),
     }));
 
@@ -26,7 +39,7 @@ export async function GET(req: NextRequest) {
 
   } catch (err) {
     return NextResponse.json(
-      { error: "Failed to fetch edges - internal server error." },
+      { error: "Failed to fetch edges - internal server error.", details: String(err) },
       { status: 500 }
     );
   }
@@ -48,7 +61,7 @@ export async function POST(req: NextRequest) {
     
   } catch (err) {
     return NextResponse.json(
-      { error: "Failed to add edge" },
+      { error: "Failed to add edge", details: String(err) },
       { status: 500 }
     );
   }

@@ -7,7 +7,7 @@ import React from "react";
 import logo from "/public/images/SW_LOGO_FP_2018.png";
 import ModeToggle from "./ModeToggle";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { ChevronDown } from "lucide-react";
+import { UserCircle, ChevronDown } from "lucide-react";
 import BurgerDrawer from "./BurgerDrawer";
 
 const NavBar = () => {
@@ -15,8 +15,9 @@ const NavBar = () => {
 
   return (
     <div
-      className="navbar bg-navbar text-navbar-content md:sticky lg:static
-                    border-b-2 border-primary px-2"
+      className="navbar bg-navbar text-navbar-content 
+      md:sticky lg:static
+      border-b-2 border-primary px-2 z-40"
     >
       {/* LEFT — Logo */}
       <div className="navbar-start">
@@ -24,7 +25,7 @@ const NavBar = () => {
           <Image
             src={logo}
             alt="Savage Worlds Fan Product logo"
-            className="w-30 h-20"
+            className="sm:min-w-30 sm:w-30 min-w-22 w-22"
           />
         </Link>
       </div>
@@ -47,7 +48,7 @@ const NavBar = () => {
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-navbar 
-            rounded-box z-1 w-52 p-2 shadow border border-primary/10"
+            rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
               <Link href="#">New Campaign</Link>
@@ -74,7 +75,7 @@ const NavBar = () => {
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-navbar 
-            rounded-box z-1 w-52 p-2 shadow border border-primary/10"
+            rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
               <Link href="#">Character Builder</Link>
@@ -101,7 +102,7 @@ const NavBar = () => {
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-navbar 
-            rounded-box z-1 w-52 p-2 shadow border border-primary/10"
+            rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
               <Link href="#">Bestiary</Link>
@@ -125,45 +126,123 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* RIGHT — Auth & Mode Toggle */}
-      <div className="navbar-end gap-2">
-        {/* Burger menu */}
-        <div className="flex lg:hidden mr-2">
-          <BurgerDrawer />
+      {/* RIGHT — Theme & Mode Toggle + Auth */}
+      <div
+        className="navbar-end flex items-center gap-3 md:gap-4 lg:gap-5 
+                lg:min-w-2/5 min-w-5/6"
+      >
+        {/* Main action icons — 4 slots, evenly spaced */}
+        <div className="flex items-center justify-end flex-1 gap-4 lg:gap-6 min-w-0">
+          {/* 1. Burger – hidden on lg+ */}
+          <div className="lg:hidden items-center justify-center">
+            <BurgerDrawer />
+          </div>
+
+          <div
+            className="lg:hidden divider divider-horizontal border-l border-navbar-content/15
+           m-0 py-0 px-0 w-0"
+          />
+
+          {/* 2. Theme Family Selector */}
+          <div className="flex items-center justify-center">
+            <ThemeSwitcher />
+          </div>
+
+          <div
+            className="divider divider-horizontal border-l border-navbar-content/15
+           my-0 py-0 mx-0 w-0"
+          />
+          {/* 3. Light/Dark Toggle */}
+          <div className="flex items-center justify-center">
+            <ModeToggle />
+          </div>
+
+          <div
+            className="divider divider-horizontal border-l border-navbar-content/15
+           my-0 py-0 mx-0 w-0 sm:hidden"
+          />
+
+          {/* 4. User Dropdown Button – authenticated only */}
+          {status === "authenticated" ? (
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-circle btn-md 
+                flex items-center justify-between gap-2 
+                bg-navbar border-navbar sm:bg-base-300
+                sm:p-3 p-0 ml-1 mr-3 
+                min-w-11rem sm:w-44 
+                shadow-sm hover:brightness-110 transition-all"
+              >
+                <div className="avatar placeholder">
+                  <div
+                    className="sm:bg-base-300 bg-navbar sm:text-base-content text-navbar-content/85 
+                  rounded-full w-full h-full hover:text-navbar-content"
+                  >
+                    <UserCircle className="w-9 h-9 sm:w-7 sm:h-7" />
+                    {/* smaller icon */}
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 flex-1 justify-between">
+                  <span className="text-sm font-medium hidden sm:inline truncate max-w-9rem">
+                    {session.user?.name || session.user?.email?.split("@")[0]}
+                  </span>
+                  <span className="sm:inline hidden">
+                    <ChevronDown size={15} className="sm:opacity-70" />
+                  </span>
+                </div>
+              </div>
+
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-navbar
+                rounded-box z-50 w-56 p-2 shadow-lg 
+                border border-base-300/30 mt-1"
+              >
+                <li>
+                  <Link href="#">Notifications</Link>
+                </li>
+                <li>
+                  <Link href="#">Messages</Link>
+                </li>
+                <li>
+                  <Link href="#">Profile</Link>
+                </li>
+                <li>
+                  <Link href="#">My Characters</Link>
+                </li>
+                <li>
+                  <Link href="#">Settings</Link>
+                </li>
+                <li className="mt-2 pt-2 border-t-2 border-base-200/40">
+                  <Link href="#" className="text-navbar-content">
+                    Account
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/api/auth/signout" className="text-error">
+                    Sign Out
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : null}
         </div>
 
-        {/* 1. Theme Family Selector */}
-        <ThemeSwitcher />
-
-        {/* 2. Light/Dark Toggle */}
-        <ModeToggle />
-
-        <div className="divider divider-horizontal mx-0"></div>
-
-        {/* ... Auth section ... */}
+        {/* Auth fallback when unauthenticated */}
         {status === "loading" && (
-          <span className="loading loading-spinner loading-sm" />
+          <span className="loading loading-spinner loading-md opacity-70" />
         )}
-        {status === "authenticated" && (
-          <div className="flex items-center gap-4">
-            <span className="text-md text-center font-medium hidden sm:inline">
-              {session.user?.name || session.user?.email}
-            </span>
-            <Link
-              href="/api/auth/signout"
-              className="btn btn-sm btn-outline mr-2"
-            >
-              Sign Out
-            </Link>
-          </div>
-        )}
+
         {status === "unauthenticated" && (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mr-2">
             <Link href="/api/auth/signin" className="btn btn-sm btn-ghost">
-              Login
+              LOGIN
             </Link>
-            <Link href="/users/new" className="btn btn-sm btn-primary mr-2">
-              Sign Up
+            <Link href="/users/new" className="btn btn-sm btn-primary">
+              SIGN UP
             </Link>
           </div>
         )}

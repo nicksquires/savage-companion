@@ -44,8 +44,6 @@ export default function BurgerDrawer() {
   };
 
   return (
-    // The drawer wrapper. 'drawer-end' puts it on the right side.
-    // 'lg:hidden' ensures it only shows on smaller screens where your main nav is hidden.
     <div className="drawer drawer-end lg:hidden z-50">
       <input id="mobile-nav-drawer" type="checkbox" className="drawer-toggle" />
 
@@ -69,7 +67,10 @@ export default function BurgerDrawer() {
         ></label>
 
         {/* Drawer Content */}
-        <div className="menu p-4 w-90 min-h-full bg-navbar text-base-content flex flex-col gap-3 pt-12">
+        <div
+          className="menu p-4 w-90 min-h-full bg-navbar text-base-content
+         flex flex-col gap-3 pt-12"
+        >
           {navSections.map((section) => {
             const isOpen = openSection === section.title;
 
@@ -78,7 +79,7 @@ export default function BurgerDrawer() {
                 {/* Parent Link / Accordion Trigger */}
                 <button
                   onClick={() => toggleSection(section.title)}
-                  className="btn btn-ghost w-full justify-start font-header 
+                  className="btn btn-ghost btn-xl w-full justify-start font-header 
                   text-lg text-navbar-content bg-navbar transition-all"
                 >
                   {/* Left-aligned Chevron that flips on open */}

@@ -1,12 +1,15 @@
 import { z } from "zod";
 
 export const itemTypeEnum = z.enum([
-  "Weapon",
-  "Armor",
-  "Gear",
-  "Consumable",
-  "Tool",
-  "Misc",
+  "WEAPON",
+  "ARMOR",
+  "CONSUMABLE",
+  "TOOL",
+  "ARTIFACT",
+  "KEY_ITEM",
+  "COMPONENT",
+  "MATERIAL",
+  "MISC",
 ]);
 
 // Base item Schema

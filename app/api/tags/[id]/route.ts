@@ -1,56 +1,72 @@
-import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { tagUpdateSchema } from "../../../../lib/schemas/api/tag.schema";
+import { prisma } from "@/prisma/client";
+import { tagSchema } from "../../../../lib/schemas/api/tag.schema";
 
 // GET - get one tag from the master list
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  _req: NextRequest,
+  context: { params: Promise<{ id: string }> } 
 ) {
   try {
-    const tag = await prisma.tag.findUnique({ 
-      where: { id: params.id } 
-      // Optional includes
+    const params = await context.params;
+
+    const tag = await prisma.tag.findUnique({
+      where: { id: params.id },
+      // include: { source: true },
     });
 
-  if (!tag) return NextResponse.json({ error: "Tag not found" }, { status: 404 });
-  
-  return NextResponse.json(tag);
+    if (!tag) {
+      return NextResponse.json(
+        { error: "Tag not found" }, 
+        { status: 404 }
+      );
+    }
 
-   } catch (err) {
-    return NextResponse.json({ error: "Failed to fetch tag" }, { status: 500 });
+    return NextResponse.json(tag);
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to fetch tag", details: String(err) }, 
+      { status: 500 }
+    );
   }
 }
 
 // PATCH - update one tag in the master list
 export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  req: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
-  try {
-
-  const body = await request.json();
-  const validation = tagUpdateSchema.safeParse(body);
+  const params = await context.params;
+  const body = await req.json();
+  const validation = tagSchema.partial().safeParse(body);
 
   if (!validation.success) {
-    return NextResponse.json(validation.error.errors, { status: 400 });
+      return NextResponse.json(validation.error.errors, { status: 400 });
   }
 
-  const updatedTag = await prisma.tag.update({
-    where: { id: params.id },
-    data: body,
-  });
-  return NextResponse.json(updatedTag);
+  try {
+    const updatedTag = await prisma.tag.update({
+      where: { id: params.id },
+      data: validation.data,
+    });
+
+    return NextResponse.json(updatedTag);
+
   } catch (err) {
-    return NextResponse.json({ error: "Failed to update tag" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to update tag", details: String(err) }, 
+      { status: 500 }
+    );
   }
 }
 
-// DELETE - remove selected tag from  the master list
+// DELETE - delete one tag from the master list
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  _req: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params;
+
   const tag = await prisma.tag.findUnique({
     where: { id: params.id },
   });
@@ -58,7 +74,18 @@ export async function DELETE(
   if (!tag)
     return NextResponse.json({ error: "Tag not found" }, { status: 404 });
 
-  await prisma.tag.delete({ where: { id: params.id } });
+  try {
+    await prisma.tag.delete({ where: { id: params.id } });
 
-  return NextResponse.json({ status: 204 });
+    return NextResponse.json(
+      { message: "Tag deleted" }, 
+      { status: 204 }
+    );
+    
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to delete tag", details: String(err) }, 
+      { status: 500 }
+    );
+  }
 }

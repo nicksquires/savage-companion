@@ -19,7 +19,7 @@ export default withAuth(
   },
   {
     callbacks: {
-      // This ensures the middleware function above only runs if 'authorized' is true
+      // Ensures middleware function above only runs if 'authorized' is true
       authorized: ({ token }) => !!token, 
     },
   }
@@ -27,7 +27,7 @@ export default withAuth(
 
 export const config = {
   // Add all protected routes here
-  matcher: ["/admin/:path*", "/characters/builder/:path*"],
+  matcher: ["/admin/:path*",],
 };
 
 

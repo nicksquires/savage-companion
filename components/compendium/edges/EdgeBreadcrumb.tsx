@@ -1,9 +1,11 @@
 import React from "react";
+import Link from "next/link";
+
 import {
-  LucideHouseHeart,
+  // LucideHouseHeart,
+  // FoldHorizontal,
   BookIcon,
   PlusIcon,
-  FoldHorizontal,
   HomeIcon,
 } from "lucide-react";
 
@@ -17,11 +19,11 @@ const EdgeBreadcrumb = () => {
       <ul className="">
         <li className="gap-1">
           <HomeIcon />
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
         </li>
         <li className="gap-1">
           <BookIcon />
-          <a href="/reference">Reference</a>
+          <Link href="/reference">Reference</Link>
         </li>
         <li>
           <span className="inline-flex items-center gap-2">

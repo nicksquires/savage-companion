@@ -1,5 +1,7 @@
-// Extended NextAuth’s types so ‘role’ doesn’t cause type errors by creating: /app/types/next-auth.d.ts
-import NextAuth from "next-auth";
+// Extended NextAuth’s types so ‘role’ doesn’t cause type 
+// errors by creating: /app/types/next-auth.d.ts
+// TODO: Examine necessity
+import _NextAuth from "next-auth";
 
 declare module "next-auth" {
   interface Session {

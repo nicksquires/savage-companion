@@ -4,10 +4,9 @@
     "slug": "all-thumbs-minor",
     "severity": "MINOR",
     "description": "Due to upbringing, lack of exposure, or pure bad luck, some individuals are 'all thumbs' when it comes to mechanical or technological devices. All Thumbs inflicts a -2 penalty when using mechanical or electrical devices. If he rolls a Critical Failure while using such a device (and it doesn't already have a built-in effect), it's broken. If the GM feels it's appropriate, it can be fixed with a Repair roll and 1d6 hours.",
-    "notes": null,
+    "summary": "The adventurer is a walking disaster around anything with buttons, cogs, or circuits. They suffer a -2 penalty on rolls involving mechanical or electrical devices, and a Critical Failure usually leaves the poor thing in pieces (repairable with a Repair roll and 1d6 hours, if the GM is feeling generous).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -15,21 +14,19 @@
     "slug": "anemic-minor",
     "severity": "MINOR",
     "description": "Anemic characters are particularly susceptible to sickness, disease, environmental effects, and fatigue. They subtract 2 from Vigor rolls made to resist Fatigue (see Hazards, starting on page 125).",
-    "notes": null,
+    "summary": "The adventurer is rather delicate and tires easily. They subtract 2 from all Vigor rolls made to resist Fatigue, sickness, disease, or nasty environmental effects.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Arrogant (Major)",
     "slug": "arrogant-major",
     "severity": "MAJOR",
-    "description": "Your hero doesn't think he's the best--he knows he is. Whether it's swordsmanship, kung fu, or painting, few compare to his skills and he flaunts it every chance he gets. Winning isn't enough for this champion. He wants to dominate his opponent and prove there's no one better. He's the kind of fighter who disarms an opponent in a duel just to pick the sword up and hand it back with a smirk. Arrogant individuals look for the greatest threat in battle, hacking their way through lesser minions only because they're in the way.",
-    "notes": null,
+    "description": "Your hero doesn't think he's the best-he knows he is. Whether it's swordsmanship, kung fu, or painting, few compare to his skills and he flaunts it every chance he gets. Winning isn't enough for this champion. He wants to dominate his opponent and prove there's no one better. He's the kind of fighter who disarms an opponent in a duel just to pick the sword up and hand it back with a smirk. Arrogant individuals look for the greatest threat in battle, hacking their way through lesser minions only because they're in the way.",
+    "summary": "The adventurer is utterly convinced of their own superiority and makes sure everyone knows it. They constantly seek the biggest challenge, show off at every opportunity, and have a habit of making powerful enemies by rubbing salt in the wound.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -38,9 +35,9 @@
     "severity": "MINOR",
     "description": "Your hero's eyes aren't what they used to be. He suffers a -1 penalty to any Trait roll dependent on vision (such as ranged attacks and Notice rolls). In settings where glasses are available, they negate the penalty when worn. If lost or broken during a combat (generally a 50% chance when he's Wounded, falls, or suffers some other trauma), the character is Distracted until the end of their next turn.",
     "notes": "Also exists as Bad Eyes (Major).",
+    "summary": "The adventurer's eyesight is rather poor. They suffer a -1 penalty to any vision-dependent rolls (shooting, Notice, etc.). Glasses fix it nicely - until they get smashed in a fight, at which point the adventurer becomes Distracted for the rest of the round.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -49,9 +46,9 @@
     "severity": "MAJOR",
     "description": "Your hero's eyes aren't what they used to be. He suffers a -2 penalty to any Trait roll dependent on vision (such as ranged attacks and Notice rolls). In settings where glasses are available, they negate the penalty when worn. If lost or broken during a combat (generally a 50% chance when he's Wounded, falls, or suffers some other trauma), the character is Distracted and Vulnerable until the end of their next turn.",
     "notes": "Also exists as Bad Eyes (Minor).",
+    "summary": "The adventurer is seriously short-sighted. They suffer a -2 penalty to any vision-dependent rolls. Glasses help - until combat inevitably sends them flying, leaving the adventurer both Distracted and Vulnerable for the rest of the round.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -59,10 +56,9 @@
     "slug": "bad-luck-major",
     "severity": "MAJOR",
     "description": "Your hero is a little less lucky than most. He gets one less Benny per game session than normal. A character cannot have both Bad Luck and the Luck Edge.",
-    "notes": null,
+    "summary": "Lady Luck has decided the adventurer is not her favourite. They start each session with one fewer Benny than everyone else (and cannot take the Luck or Great Luck Edges).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -70,10 +66,9 @@
     "slug": "big-mouth-minor",
     "severity": "MINOR",
     "description": "Loose lips sink ships, the saying goes. This hero's mouth could drown an armada. The blabbermouth can't keep a secret very well. He reveals plans and gives away things best kept among friends, usually at the worst possible times.",
-    "notes": null,
+    "summary": "The adventurer has a remarkable talent for saying exactly the wrong thing at exactly the wrong time. Secrets, plans, and anything remotely confidential tend to slip out at the most inconvenient moments.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -81,10 +76,9 @@
     "slug": "blind-major",
     "severity": "MAJOR",
     "description": "The individual is completely without sight. He suffers a -6 to all physical tasks that require vision (GM's call). On the plus side, Blind characters gain their choice of a free Edge to compensate for this particularly difficult Hindrance.",
-    "notes": null,
+    "summary": "The adventurer is completely blind. They suffer a -6 penalty to any physical task that requires sight, but in exchange they may immediately take one free Edge of their choice to help compensate.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -92,10 +86,9 @@
     "slug": "bloodthirsty-major",
     "severity": "MAJOR",
     "description": "Your hero never takes prisoners unless under the direct supervision of a superior. His cold-blooded ruthlessness causes enemies to respond in kind, often costs vital information, creates constant enemies, and may get him in trouble with his superiors or the authorities, depending on the setting.",
-    "notes": null,
+    "summary": "The adventurer never takes prisoners unless strictly ordered to. Their ruthless streak tends to make enemies fight to the death, lose valuable intelligence, and generally get the adventurer in hot water with anyone in charge.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -103,10 +96,9 @@
     "slug": "cant-swim-minor",
     "severity": "MINOR",
     "description": "Most people in the 21st century can swim thanks to swimming pools, easy travel to lakes and beaches, or educational efforts. Historically, however, those who weren't raised around a temperate body of water could not. Characters with this Hindrance suffer a -2 penalty to the Athletics skill when swimming and each inch moved in water costs 3\" of Pace. See Movement (page 92) for more details and Drowning (page 126).",
-    "notes": null,
+    "summary": "The adventurer never quite got the hang of swimming. They suffer a -2 penalty to Athletics rolls while swimming and move at only one-third normal Pace in water (each inch costs 3\" of Pace).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -114,10 +106,9 @@
     "slug": "cautious-minor",
     "severity": "MINOR",
     "description": "This planner personifies restraint and carefulness. He never makes rash decisions and likes to plot things out in detail long before any action is taken.",
-    "notes": null,
+    "summary": "The adventurer is the very soul of caution. They never act without a detailed plan and prefer to think things through very, very thoroughly before doing anything.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -125,10 +116,9 @@
     "slug": "clueless-major",
     "severity": "MAJOR",
     "description": "Your hero doesn't pay much attention to the world around him and can't seem to find a haystack in a small pile of needles.",
-    "notes": null,
+    "summary": "The adventurer is gloriously oblivious to the world around them. Common sense, social cues, and obvious clues tend to sail straight over their head.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -136,10 +126,9 @@
     "slug": "clumsy-major",
     "severity": "MAJOR",
     "description": "Your hero is an uncoordinated klutz who trips over air and is always the last one picked for sports. He subtracts 2 from Athletics and Stealth rolls.",
-    "notes": null,
+    "summary": "The adventurer is a walking comedy of errors who trips over perfectly flat surfaces. They suffer a -2 penalty to all Athletics and Stealth rolls.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -147,10 +136,9 @@
     "slug": "code-of-honor-major",
     "severity": "MAJOR",
     "description": "Honor is very important to your character. He keeps his word, doesn't abuse or kill prisoners, and generally tries to operate within his world's particular notion of proper gentlemanly or ladylike behavior.",
-    "notes": null,
+    "summary": "The adventurer lives by a strict personal code of honour. They keep their word, treat prisoners decently, and generally behave like a proper gentle-person even when it's terribly inconvenient.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -158,21 +146,19 @@
     "slug": "curious-major",
     "severity": "MAJOR",
     "description": "It killed the cat, and it might kill your warrior as well. Curious characters have to check out everything and always want to know what's behind a potential mystery or secret.",
-    "notes": null,
+    "summary": "The adventurer simply must investigate every mysterious door, glowing artefact, and suspicious noise. Curiosity may not have killed this particular cat yet… but it's certainly trying.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Death Wish (Minor)",
     "slug": "death-wish-minor",
     "severity": "MINOR",
-    "description": "Having a death wish doesn't mean your adventurer is suicidal--he might just think his life is worth less than some noble but clearly deadly goal. Those with a Death Wish don't throw their lives away for no reason, but when there's a chance to complete a goal they do anything--and take any risk--to achieve it.",
-    "notes": null,
+    "description": "Having a death wish doesn't mean your adventurer is suicidal-he might just think his life is worth less than some noble but clearly deadly goal. Those with a Death Wish don't throw their lives away for no reason, but when there's a chance to complete a goal they do anything-and take any risk-to achieve it.",
+    "summary": "The adventurer has a noble but rather dangerous goal that makes them willing to take truly heroic (or foolhardy) risks when the opportunity arises.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -181,9 +167,9 @@
     "severity": "MINOR",
     "description": "Your hero believes something that is considered quite strange by everyone else. Minor Delusions are harmless or the character generally keeps it to himself (the government puts sedatives in soft drinks, dogs can talk, we're all just characters in some bizarre game, etc.).",
     "notes": "Also exists as Delusional (Major).",
+    "summary": "The adventurer harbours a harmless but eccentric belief that most people find rather odd (the government is spiking the tea, dogs secretly run the world, etc.). They usually keep it to themselves… usually.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -192,9 +178,9 @@
     "severity": "MAJOR",
     "description": "Your hero believes something that is considered quite strange by everyone else. With a Major Delusion, he expresses his view on the situation frequently and it can occasionally lead to danger (the government is run by aliens, hospitals are deadly, I'm allergic to armor, zombies are my friends).",
     "notes": "Also exists as Delusional (Minor).",
+    "summary": "The adventurer is firmly convinced of something quite mad and happily shares it with anyone who will listen. The belief is often dangerous and can get them (and their friends) into serious trouble.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -202,10 +188,9 @@
     "slug": "doubting-thomas-minor",
     "severity": "MINOR",
     "description": "Some people don't believe in the supernatural until they're halfway down some creature's gullet. Doubting Thomases are skeptics who try their best to rationalize supernatural events. They walk right into danger they don't believe in and look for alternate explanations to every supernatural event. Even after being confronted with undeniable truth, the doubter's mind eventually begins to doubt what he saw, rationalizes it away, or compartmentalizes the event as 'one of a kind' while continuing to doubt the next mystery.",
-    "notes": null,
+    "summary": "The adventurer refuses to believe in anything supernatural until it's actively chewing on their leg. They constantly rationalise away the impossible and stroll confidently into danger they insist 'can't possibly be real.'",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -214,9 +199,9 @@
     "severity": "MINOR",
     "description": "A vow is a commitment to others. Driven characters want something for themselves. It may be to protect the realm, become a decorated officer, prove you're the best gladiator in Rome, or the best pilot in the galactic fleet. The Minor version shapes the character and pushes his decisions but either happens rarely or is fairly harmless.",
     "notes": "Also exists as Driven (Major).",
+    "summary": "The adventurer has a personal goal that quietly drives most of their decisions. It's not all-consuming, but it certainly influences what they do.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -225,9 +210,9 @@
     "severity": "MAJOR",
     "description": "A vow is a commitment to others. Driven characters want something for themselves. It may be to protect the realm, become a decorated officer, prove you're the best gladiator in Rome, or the best pilot in the galactic fleet. As a Major Hindrance it's an overriding desire that comes up frequently or causes peril for the heroine and those around her.",
     "notes": "Also exists as Driven (Minor).",
+    "summary": "The adventurer is utterly consumed by a personal goal that frequently overrides common sense and occasionally puts both them and their companions in grave danger.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -235,10 +220,9 @@
     "slug": "elderly-major",
     "severity": "MAJOR",
     "description": "Your adventurer is getting on in years, but he's not quite ready for the nursing home yet. His Pace is reduced by 1, and he subtracts 1 from running rolls (minimum 1). He also suffers a -1 penalty to Agility, Strength (including damage), and Vigor rolls, but not linked skills. On the plus side, the wisdom of his years grants the hero 5 extra skill points which may be used for any skills linked to Smarts.",
-    "notes": null,
+    "summary": "The adventurer is getting on a bit. Pace is reduced by 1, running die drops one step, and they suffer -1 to Agility, Strength, and Vigor rolls (but not linked skills). In return, age and wisdom grant 5 extra skill points for any Smarts-linked skills.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -247,9 +231,9 @@
     "severity": "MINOR",
     "description": "Someone out there hates the character and wants him ruined, locked away, or dead. A Minor Enemy might be a lone gunslinger out for vengeance or a betrayed brotherhood that's deadly but appears rarely.",
     "notes": "Also exists as Enemy (Major).",
+    "summary": "Someone out there really doesn't like the adventurer and would be delighted to see them ruined, imprisoned, or quietly removed. The enemy is dangerous but only shows up occasionally.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -258,9 +242,9 @@
     "severity": "MAJOR",
     "description": "Someone out there hates the character and wants him ruined, locked away, or dead. A Major Enemy might represent powerful authorities, a band of outlaws, or a single very powerful and relentless rival. If the enemy is one day defeated, the GM should gradually work in a replacement, or the hero may buy off the Hindrance by sacrificing an Advance.",
     "notes": "Also exists as Enemy (Minor).",
+    "summary": "The adventurer has made a powerful and persistent enemy - authorities, a criminal syndicate, or a relentless personal rival. Defeating them once usually just means another takes their place… or the adventurer can spend an Advance to finally shake them off.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -269,9 +253,9 @@
     "severity": "MINOR",
     "description": "A miser measures worth in material possessions or wealth. If a Minor Hindrance, he argues bitterly for more than his fair share of any loot or reward the party might come across.",
     "notes": "Also exists as Greedy (Major).",
+    "summary": "The adventurer has a rather strong attachment to money and shiny things. They tend to argue quite passionately for a larger slice of any reward the group receives.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -280,9 +264,9 @@
     "severity": "MAJOR",
     "description": "A miser measures worth in material possessions or wealth. As a Major Hindrance, he fights over anything he considers unfair, and may even kill for it if he feels slighted or covets something he cannot have.",
     "notes": "Also exists as Greedy (Minor).",
+    "summary": "The adventurer is consumed by greed. They will fight, scheme, and occasionally do very unwise things to get what they believe is rightfully theirs - or even what isn't.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -291,9 +275,9 @@
     "severity": "MINOR",
     "description": "Your warrior has an annoying or dangerous compulsion. A Minor Habit irritates those around her but isn't dangerous. Maybe she picks her nose, can't stop fiddling with her phone, says 'y'know' in the middle of every sentence, or chews and smacks her gum loudly and often. Allies avoid her if possible.",
     "notes": "Also exists as Habit (Major).",
+    "summary": "The adventurer has an irritating little habit that gets on everyone's nerves - constant gum-smacking, saying 'y'know' every other word, or some other harmless but deeply annoying tic.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -302,9 +286,9 @@
     "severity": "MAJOR",
     "description": "Your warrior has an annoying or dangerous compulsion. A Major Habit is a physical or mental addiction of some sort that is debilitating or possibly even deadly. This includes drug use, chronic drinking, or perhaps even an addiction to virtual reality in a high-tech setting. An addict who doesn't get his fix must make a Vigor roll every 24 hours he goes without or take a level of Fatigue (see page 100). Once every 24 hours, a Healing roll with some sort of appropriate medicine removes one level of Fatigue for four hours. After that the Fatigue returns and can only be recovered with the addicting substance.",
     "notes": "Also exists as Habit (Minor).",
+    "summary": "The adventurer has a serious and potentially dangerous addiction (alcohol, drugs, gambling, etc.). Without their fix they must make a Vigor roll every 24 hours or gain a level of Fatigue. A successful Healing roll with the right substance can temporarily relieve it, but the craving always returns.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -313,9 +297,9 @@
     "severity": "MINOR",
     "description": "Characters who have lost some or all of their hearing have this disadvantage. As a Minor Hindrance, it subtracts 4 from all Notice rolls made to hear, including awaking due to loud noises. Hearing aids reduce the penalty by 2, but require batteries and have a 50% chance of falling out when he's Wounded, falls, or suffers some other trauma.",
     "notes": "Also exists as Hard of Hearing (Major).",
+    "summary": "The adventurer is a bit hard of hearing. They suffer -4 to any Notice rolls that rely on sound (including waking up to loud noises). Hearing aids help - until they inevitably get lost or broken in a fight.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -324,9 +308,9 @@
     "severity": "MAJOR",
     "description": "Characters who have lost some or all of their hearing have this disadvantage. A Major Hindrance means the character is deaf. She cannot hear and automatically fails all Notice rolls that depend on hearing. Hearing aids reduce the penalty by 2, but require batteries and have a 50% chance of falling out when he's Wounded, falls, or suffers some other trauma.",
     "notes": "Also exists as Hard of Hearing (Minor).",
+    "summary": "The adventurer is completely deaf. They automatically fail all hearing-based Notice rolls. Hearing aids help a little, but they tend to get smashed or run out of batteries at the worst possible moment.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -334,10 +318,9 @@
     "slug": "heroic-major",
     "severity": "MAJOR",
     "description": "This noble soul never says no to a person in need. She doesn't have to be happy about it, but she always comes to the rescue of those she feels can't help themselves. She's the first one to run into a burning building, usually agrees to hunt monsters for little or no pay, and is generally a pushover for a sob story.",
-    "notes": null,
+    "summary": "The adventurer is a proper hero - the sort who simply cannot walk past someone in trouble without rushing in to help, often for little or no reward. They're a terrible pushover for a good sob story.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -345,10 +328,9 @@
     "slug": "hesitant-minor",
     "severity": "MINOR",
     "description": "Your hero hesitates in stressful situations. Draw two Action Cards in combat and act on the lowest. If you draw a Joker, use it normally and ignore the Hindrance for the round (hence this being a Minor Hindrance, it actually increases your chances of drawing a Joker!) Hesitant characters cannot take the Quick or Level Headed Edges.",
-    "notes": null,
+    "summary": "The adventurer tends to hesitate when things get tense. In combat they draw two Action Cards and must act on the lower one (though a Joker still works normally and cancels the penalty for that round). They may not take Quick or Level Headed.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -356,10 +338,9 @@
     "slug": "illiterate-minor",
     "severity": "MINOR",
     "description": "Your hero cannot read. He can sign his name and knows what a STOP sign says, but little else. He also doesn't know much about math. He can probably do 2 + 2 = 4, but multiplication and the like are beyond him. Illiterate characters can't read or write in any language, by the way, no matter how many they actually speak.",
-    "notes": null,
+    "summary": "The adventurer never learned to read or write. They can sign their name and recognise a few basic signs, but anything more complicated is a mystery.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -367,10 +348,9 @@
     "slug": "impulsive-major",
     "severity": "MAJOR",
     "description": "The daredevil almost always leaps before he looks. He rarely thinks things through before taking action.",
-    "notes": null,
+    "summary": "The adventurer acts first and thinks later - usually much later. They rarely pause to consider consequences before charging headlong into trouble.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -379,9 +359,9 @@
     "severity": "MINOR",
     "description": "Insecurity leads to envy of others' accomplishments or being overly possessive of what this disgruntled soul feels belongs to him. He often complains, pouts, covets others' possessions or accolades, claims credit for another's work, disobeys commands, and generally causes problems. As a Minor Hindrance, the character's jealousy is focused on one particular subject (such as his 'unrivaled' skill as a pilot or a romantic interest).",
     "notes": "Also exists as Jealous (Major).",
+    "summary": "The adventurer is rather possessive and easily jealous, especially about one particular thing (their 'unrivalled' skill, a romantic interest, etc.). They tend to complain and sulk when they feel slighted.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -390,20 +370,19 @@
     "severity": "MAJOR",
     "description": "Insecurity leads to envy of others' accomplishments or being overly possessive of what this disgruntled soul feels belongs to him. He often complains, pouts, covets others' possessions or accolades, claims credit for another's work, disobeys commands, and generally causes problems. As a Major Hindrance, the character is jealous of anyone and everyone he feels outshines him. He consistently bad-mouths his rivals, tries to upstage them, or actively plots to discredit those who threaten his ego.",
     "notes": "Also exists as Jealous (Minor).",
+    "summary": "The adventurer is consumed by jealousy toward anyone who might possibly outshine them. They bad-mouth rivals, try to steal the spotlight, and generally make life difficult for everyone around them.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Loyal (Minor)",
     "slug": "loyal-minor",
     "severity": "MINOR",
-    "description": "This stalwart defender risks her life for her friends without hesitation. Some Loyal heroes may not act that way, but are the first to come to their friends' rescue when they're threatened.",
-    "notes": null,
+    "description": "This stalwart defender risks her life for her friends without hesitation. Some Loyal heroes may not act that way, but are the first one to come to their friends' rescue when they're threatened.",
+    "summary": "The adventurer is fiercely loyal to their friends and will risk life and limb to help them without a second thought.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -411,10 +390,9 @@
     "slug": "mean-minor",
     "severity": "MINOR",
     "description": "This curmudgeon is ill-tempered and disagreeable. He has trouble doing anything kind for anyone else, must be paid for his troubles, and doesn't accept awards or favors graciously. Besides the obvious roleplaying issues, Mean characters subtract 1 from Persuasion rolls.",
-    "notes": null,
+    "summary": "The adventurer is grumpy, disagreeable, and generally not very nice. They suffer a -1 penalty to all Persuasion rolls and tend to make people regret asking for favours.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -422,10 +400,9 @@
     "slug": "mild-mannered-minor",
     "severity": "MINOR",
     "description": "Your milquetoast just isn't threatening. Maybe he's a little doughy around the middle, has a kind face, or a soft voice. Whatever the issue, he has a hard time looking tough. He subtracts 2 when making Intimidation rolls.",
-    "notes": null,
+    "summary": "The adventurer has a kind face and a gentle demeanour that makes them singularly bad at looking threatening. They suffer a -2 penalty to all Intimidation rolls.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -433,10 +410,9 @@
     "slug": "mute-major",
     "severity": "MAJOR",
     "description": "Due to trauma or birth, your character has lost the ability to speak. He can write messages to others when needed, use sign language, or some combination of visual communication. Vision-based communication may require a Notice roll to perceive correctly (illumination and similar penalties apply).",
-    "notes": null,
+    "summary": "The adventurer cannot speak at all. They must communicate through writing, sign language, or gestures (which may require others to make Notice rolls to understand them properly).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -444,10 +420,9 @@
     "slug": "obese-minor",
     "severity": "MINOR",
     "description": "Those who carry their weight well have the Brawny Edge. Those who don't are Obese. A character cannot be both Brawny and Obese, and this Hindrance can't increase your Size above +3. An Obese hero's Size (and therefore Toughness) increase by +1. His Pace is reduced by 1, and his running die one die type (minimum d4). Strength is considered one die type less (minimum d4) for armor and worn gear (not weapons). They may also have difficulty finding armor or clothing that fits or entering confined spaces.",
-    "notes": null,
+    "summary": "The adventurer is significantly overweight. Size and Toughness increase by +1, but Pace drops by 1, running die drops one step, and Strength is treated as one die type lower for armour and encumbrance purposes. Finding properly fitting gear can also be… awkward.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -456,9 +431,9 @@
     "severity": "MINOR",
     "description": "Your hero has a responsibility she must attend to on a daily or regular basis. It could be a job, volunteer work, taking care of family or friends, etc. The Obligation consumes about 20 hours most weeks.",
     "notes": "Also exists as Obligation (Major).",
+    "summary": "The adventurer has a regular responsibility (job, family duty, volunteer work, etc.) that eats up roughly 20 hours a week.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -467,9 +442,9 @@
     "severity": "MAJOR",
     "description": "Your hero has a responsibility she must attend to on a daily or regular basis. It could be a job, volunteer work, taking care of family or friends, etc. The Obligation consumes about 40+ hours most weeks. Exactly what that entails should be discussed between the player and the Game Master.",
     "notes": "Also exists as Obligation (Minor).",
+    "summary": "The adventurer has a very demanding responsibility that takes up 40+ hours a week and frequently interferes with adventuring life.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -477,10 +452,9 @@
     "slug": "one-arm-major",
     "severity": "MAJOR",
     "description": "By birth or battle, your hero has lost an arm. Fortunately, his other arm is (now) his 'good' one. Tasks that require two hands, such as some Athletics rolls (GM's call) or using a two-handed weapon, suffer a -4 modifier.",
-    "notes": null,
+    "summary": "The adventurer is missing one arm. Any task requiring two hands (certain Athletics rolls, two-handed weapons, etc.) suffers a -4 penalty.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -488,10 +462,9 @@
     "slug": "one-eye-major",
     "severity": "MAJOR",
     "description": "This veteran lost an eye and has trouble with depth perception. He subtracts 2 from any Trait roll dependent on vision and more than 5\" (10 yards) distant.",
-    "notes": null,
+    "summary": "The adventurer is missing one eye and suffers from poor depth perception. They take a -2 penalty to any vision-based roll on targets more than 5\" (10 yards) away.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -500,9 +473,9 @@
     "severity": "MINOR",
     "description": "In a society made up of only a few types of people, your hero isn't one of them. A Native American in a Western town, an alien in a sci-fi game of human marines, or a half-orc in a party of elves, dwarves, and humans are all examples. Locals are likely to raise prices on her, ignore pleas for help, and generally treat her as lower class. Outsiders subtract 2 from Persuasion rolls made to influence those who aren't her own kind.",
     "notes": "Also exists as Outsider (Major).",
+    "summary": "The adventurer is visibly different from the local population and is treated as an outsider. They suffer a -2 penalty to Persuasion rolls when dealing with the dominant group.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -511,9 +484,9 @@
     "severity": "MAJOR",
     "description": "In a society made up of only a few types of people, your hero isn't one of them. A Native American in a Western town, an alien in a sci-fi game of human marines, or a half-orc in a party of elves, dwarves, and humans are all examples. Locals are likely to raise prices on her, ignore pleas for help, and generally treat her as lower class. Outsiders subtract 2 from Persuasion rolls made to influence those who aren't her own kind. The Major version also means the character has few or no legal rights in the main campaign area. She might be a different species among xenophobes, the civilization may be cruel and unenlightened toward strangers, or she might even be an artificial intelligence whose sapience isn't acknowledged by the law.",
     "notes": "Also exists as Outsider (Minor).",
+    "summary": "The adventurer is a true outsider with almost no legal rights in the campaign area. Locals treat them poorly, prices are higher, and they suffer a -2 to Persuasion rolls with the dominant group.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -521,10 +494,9 @@
     "slug": "overconfident-major",
     "severity": "MAJOR",
     "description": "There's nothing out there your hero can't defeat. At least that's what he thinks. He believes he can do most anything and never wants to retreat from a challenge. He's not suicidal, but he certainly takes on more than common sense dictates.",
-    "notes": null,
+    "summary": "The adventurer is utterly convinced that nothing can possibly defeat them. They never back down from a challenge and frequently bite off far more than they can chew.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -533,9 +505,9 @@
     "severity": "MINOR",
     "description": "Your hero absolutely despises violence. Minor pacifism means he only fights when given no other choice and never allows the killing of prisoners or other defenseless victims.",
     "notes": "Also exists as Pacifist (Major).",
+    "summary": "The adventurer hates violence and will only fight when there is absolutely no alternative. They never kill prisoners or defenceless people.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -544,9 +516,9 @@
     "severity": "MAJOR",
     "description": "Your hero absolutely despises violence. Major Pacifists won't fight living characters under any circumstances. They may defend themselves, but won't do anything to permanently harm sapient, living creatures. They may use nonlethal methods (see page 104), but only in self-defense or the defense of others. Note that undeniably evil creatures, undead, demons, and the like are fair game even for Major Pacifists!",
     "notes": "Also exists as Pacifist (Minor).",
+    "summary": "The adventurer is a true pacifist and will never deliberately harm a living, sapient being under any circumstances. They may defend themselves non-lethally, but actual killing is completely off the table (undead and demons are fair game, though).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -555,9 +527,9 @@
     "severity": "MINOR",
     "description": "Phobias are overwhelming and irrational fears that plague a hero's psyche. Whenever a character is in the presence of his phobia (GM's call, but generally sight), he subtracts 1 from all his Trait rolls if it's a Minor Hindrance. Phobias shouldn't be too obvious; everyone should be afraid of vampires, for example, so it's not a phobia, it's common sense. Instead, the phobia usually centers on some random element the mind associates with the event. Remember, phobias are irrational fears.",
     "notes": "Also exists as Phobia (Major).",
+    "summary": "The adventurer has an irrational fear of something relatively specific (spiders, open water, clowns, etc.). In its presence they suffer a -1 penalty to all Trait rolls.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -566,9 +538,9 @@
     "severity": "MAJOR",
     "description": "Phobias are overwhelming and irrational fears that plague a hero's psyche. Whenever a character is in the presence of his phobia (GM's call, but generally sight), he subtracts 2 from all his Trait rolls if it's a Major Hindrance. Phobias shouldn't be too obvious; everyone should be afraid of vampires, for example, so it's not a phobia, it's common sense. Instead, the phobia usually centers on some random element the mind associates with the event. Remember, phobias are irrational fears.",
     "notes": "Also exists as Phobia (Minor).",
+    "summary": "The adventurer has a crippling irrational fear of something specific. In its presence they suffer a -2 penalty to all Trait rolls and may even freeze or flee.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -576,10 +548,9 @@
     "slug": "poverty-minor",
     "severity": "MINOR",
     "description": "It's said a fool and his money are soon parted. Your hero is one of them. He starts with half the usual money for your setting and just can't seem to hang on to funds acquired after play begins. In general, the player halves his total funds every game week.",
-    "notes": null,
+    "summary": "The adventurer starts with only half the normal starting funds and somehow manages to lose or spend money at an alarming rate (roughly half their total wealth vanishes every game week).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -587,10 +558,9 @@
     "slug": "quirk-minor",
     "severity": "MINOR",
     "description": "This individual has some minor foible that is usually humorous but can occasionally cause him real trouble. A swashbuckler may always try to slash his initials on his foes, a dwarf may brag constantly about his culture, or a snobby debutante might not eat, drink, or socialize with the lower class, for example.",
-    "notes": null,
+    "summary": "The adventurer has a charming but occasionally troublesome little quirk - always carving their initials on defeated foes, constantly bragging about their homeland, refusing to associate with 'the lower classes,' etc.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -599,9 +569,9 @@
     "severity": "MINOR",
     "description": "The fanatic will do most anything to accomplish her goals. As a Minor Hindrance, she stops short of true harm to anyone except those who directly oppose her.",
     "notes": "Also exists as Ruthless (Major).",
+    "summary": "The adventurer is quite ruthless in pursuit of their goals, but stops short of actually harming innocents - only those who actively stand in their way are fair game.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -610,9 +580,9 @@
     "severity": "MAJOR",
     "description": "The fanatic will do most anything to accomplish her goals. As a Major Hindrance, she harms anyone and everyone who gets in her way.",
     "notes": "Also exists as Ruthless (Minor).",
+    "summary": "The adventurer is utterly ruthless. Anyone who stands between them and their goal - innocent or not - is fair game.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -621,9 +591,9 @@
     "severity": "MINOR",
     "description": "Your hero has a secret she keeps to protect herself or others. As a Minor Hindrance, the secret is troublesome but not life-threatening.",
     "notes": "Also exists as Secret (Major).",
+    "summary": "The adventurer is hiding a secret that could cause them embarrassment or inconvenience if discovered, but it's not immediately life-threatening.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -632,31 +602,31 @@
     "severity": "MAJOR",
     "description": "Your hero has a secret she keeps to protect herself or others. The Major version would cause severe problems if discovered. If it ever becomes public knowledge, she should trade it for Enemy, Shamed, Wanted, or another appropriate Hindrance approved by the GM.",
     "notes": "Also exists as Secret (Minor).",
+    "summary": "The adventurer is hiding a major secret that would cause serious trouble (or worse) if it ever came out. If discovered, the GM may replace this Hindrance with Enemy, Shamed, Wanted, or something equally unpleasant.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Shamed (Minor)",
     "slug": "shamed-minor",
     "severity": "MINOR",
-    "description": "Something haunts your adventurer. Maybe he made a vow he didn't keep. Maybe he was defeated in an honorable fight and ordered the death of his foe anyway for some greater principle. Maybe he isn't actually cowardly but once ran from a battle and left others to die. As a Minor Hindrance, the shameful circumstances aren't generally known--it just haunts the hero. He might go out of his way, against all reason, not to repeat the mistake. Or he might give in to the same set of circumstances and hate himself for it.",
+    "description": "Something haunts your adventurer. Maybe he made a vow he didn't keep. Maybe he was defeated in an honorable fight and ordered the death of his foe anyway for some greater principle. Maybe he isn't actually cowardly but once ran from a battle and left others to die. As a Minor Hindrance, the shameful circumstances aren't generally known-it just haunts the hero. He might go out of his way, against all reason, not to repeat the mistake. Or he might give in to the same set of circumstances and hate himself for it.",
     "notes": "Also exists as Shamed (Major).",
+    "summary": "Something from the adventurer's past weighs heavily on their conscience. The shame isn't widely known, but it drives them to avoid repeating the same mistake… or sometimes tempts them to do exactly that.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Shamed (Major)",
     "slug": "shamed-major",
     "severity": "MAJOR",
-    "description": "Something haunts your adventurer. Maybe he made a vow he didn't keep. Maybe he was defeated in an honorable fight and ordered the death of his foe anyway for some greater principle. Maybe he isn't actually cowardly but once ran from a battle and left others to die. As a Major Hindrance, his deed is well-known--or at least known among those he cares about. The other player characters should be told the tale as soon as possible (preferably at character creation). If not, it should be revealed by nonplayer characters at some point, and occasionally used against the hero.",
+    "description": "Something haunts your adventurer. Maybe he made a vow he didn't keep. Maybe he was defeated in an honorable fight and ordered the death of his foe anyway for some greater principle. Maybe he isn't actually cowardly but once ran from a battle and left others to die. As a Major Hindrance, his deed is well-known-or at least known among those he cares about. The other player characters should be told the tale as soon as possible (preferably at character creation). If not, it should be revealed by nonplayer characters at some point, and occasionally used against the hero.",
     "notes": "Also exists as Shamed (Minor).",
+    "summary": "The adventurer's shameful past is widely known (or at least known to those who matter). Everyone important has heard the story, and it is frequently used against them.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -665,9 +635,9 @@
     "severity": "MINOR",
     "description": "A disability or past injury has hindered this hero's mobility. As a Minor Hindrance, reduce his Pace by 1 and his running die one step (if already d4, reduce to d4-1). Slow characters may not take the Fleet-Footed Edge. Prosthesis: A character with the Minor version of this Hindrance may have a prosthesis. If the prosthesis is lost, he suffers the effects of the Major version of Slow. Wheelchairs: From about the Victorian era forward, Slow heroes may start with a manual wheelchair at no cost. In the modern era (1980s and on), the character may also choose from an ultralight or powered chair. All wheelchairs require reasonably smooth ground to operate (GM's call). MANUAL: Pace is half Athletics die (max of 3) and cannot run. ULTRALIGHT: Pace is half Athletics die and may run at d4 (Minor). POWERED: Pace 6 on flat, even ground, Pace 3 on uneven ground, cannot run. Most powered chairs can go about 10 miles before requiring a recharge.",
     "notes": "Also exists as Slow (Major).",
+    "summary": "The adventurer is noticeably slow on their feet. Pace is reduced by 1 and the running die drops one step. They may not take Fleet-Footed. (Prosthetics or wheelchairs may be available depending on the setting and era.)",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -676,9 +646,9 @@
     "severity": "MAJOR",
     "description": "A disability or past injury has hindered this hero's mobility. As a Major Hindrance, reduce the running die a step, Pace by 2, and subtract 2 from Athletics rolls and rolls to resist Athletics (such as Tests or Grappling). Slow characters may not take the Fleet-Footed Edge. Wheelchairs: From about the Victorian era forward, Slow heroes may start with a manual wheelchair at no cost. In the modern era (1980s and on), the character may also choose from an ultralight or powered chair. All wheelchairs require reasonably smooth ground to operate (GM's call). MANUAL: Pace is half Athletics die (max of 3) and cannot run. ULTRALIGHT: Pace is half Athletics die and may run at d4-1 (Major). POWERED: Pace 6 on flat, even ground, Pace 3 on uneven ground, cannot run. Most powered chairs can go about 10 miles before requiring a recharge.",
     "notes": "Also exists as Slow (Minor).",
+    "summary": "The adventurer is significantly slowed by injury or disability. Pace drops by 2, running die drops one step, and they suffer -2 to Athletics rolls and any rolls to resist Athletics (Tests, Grappling, etc.). They may not take Fleet-Footed.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -686,10 +656,9 @@
     "slug": "small-minor",
     "severity": "MINOR",
     "description": "This adventurer is very skinny, very short, or both. His Size (see page 106) is reduced by 1, which reduces his Toughness as well. Size can't be reduced below -1, but the Toughness penalty remains. A Small half-folk, for example, remains Size -1 and loses a point of Toughness.",
-    "notes": null,
+    "summary": "The adventurer is noticeably small and slight. Their Size (and therefore Toughness) is reduced by 1 (minimum Size -1).",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -697,10 +666,9 @@
     "slug": "stubborn-minor",
     "severity": "MINOR",
     "description": "Stubborn individuals always want their way and never admit they're wrong. Even when it's painfully obvious they've made a mistake they try to justify it with half-truths and rationalizations.",
-    "notes": null,
+    "summary": "The adventurer is incredibly stubborn and almost never admits they're wrong, even when the evidence is staring them in the face.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -709,9 +677,9 @@
     "severity": "MINOR",
     "description": "Your character is suspicious of everyone. As a Minor Hindrance, his paranoia causes frequent trust issues. He might demand full payment before doing a task, want every agreement in writing, or believe even his friends are out to get him.",
     "notes": "Also exists as Suspicious (Major).",
+    "summary": "The adventurer trusts almost no one and is constantly on the lookout for betrayal. They may demand things in writing or refuse to act until they're paid in advance.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -720,9 +688,9 @@
     "severity": "MAJOR",
     "description": "Your character is suspicious of everyone. As a Major Hindrance, Support rolls to aid the distrustful individual are made at -2.",
     "notes": "Also exists as Suspicious (Minor).",
+    "summary": "The adventurer is deeply paranoid. Support rolls made to help them suffer a -2 penalty because they simply don't trust anyone enough to accept aid gracefully.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -731,9 +699,9 @@
     "severity": "MINOR",
     "description": "Personal attacks really get under this individual's skin. As a Minor Hindrance, he subtracts 2 when resisting Taunt attacks.",
     "notes": "Also exists as Thin Skinned (Major).",
+    "summary": "The adventurer is easily offended. They suffer a -2 penalty when resisting Taunt attacks.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -742,9 +710,9 @@
     "severity": "MAJOR",
     "description": "Personal attacks really get under this individual's skin. As a Major Hindrance, he subtracts 4 when resisting Taunt attacks.",
     "notes": "Also exists as Thin Skinned (Minor).",
+    "summary": "The adventurer is extremely thin-skinned. They suffer a -4 penalty when resisting Taunt attacks and take insults very, very personally.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -752,10 +720,9 @@
     "slug": "tongue-tied-major",
     "severity": "MAJOR",
     "description": "Your adventurer flubs cool lines (or thinks of them afterwards!), goes off on tangents when he's trying to talk someone into something, and generally miscommunicates most everything he says. He suffers a -1 penalty to Intimidation, Performance, Persuasion, and Taunt rolls that involve speech.",
-    "notes": null,
+    "summary": "The adventurer has a terrible habit of saying the wrong thing, forgetting their best lines, or going off on awkward tangents. They suffer a -1 penalty to all Intimidation, Performance, Persuasion, and Taunt rolls that involve speaking.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -764,9 +731,9 @@
     "severity": "MINOR",
     "description": "Attractive people get all the breaks. This unfortunate individual isn't one of them. He subtracts 1 from his Persuasion rolls.",
     "notes": "Also exists as Ugly (Major).",
+    "summary": "The adventurer is distinctly unattractive. They suffer a -1 penalty to all Persuasion rolls.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -775,9 +742,9 @@
     "severity": "MAJOR",
     "description": "Attractive people get all the breaks. This unfortunate individual isn't one of them. He subtracts 2 from his Persuasion rolls.",
     "notes": "Also exists as Ugly (Minor).",
+    "summary": "The adventurer is genuinely ugly. They suffer a -2 penalty to all Persuasion rolls.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -786,9 +753,9 @@
     "severity": "MINOR",
     "description": "Payback is...well...bad news for someone, and this adventurer is going to get it. As a Minor Hindrance she usually seeks vengeance legally. The method varies by situation. Some plot and scheme for months while others demand immediate results.",
     "notes": "Also exists as Vengeful (Major).",
+    "summary": "The adventurer does not forgive easily. As a Minor Hindrance they usually pursue vengeance through legal or social means, but they still hold serious grudges.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -797,9 +764,9 @@
     "severity": "MAJOR",
     "description": "Payback is...well...bad news for someone, and this adventurer is going to get it. Those with the Major version of this Hindrance don't let anything prevent them from a reckoning. This doesn't mean they immediately resort to violence, but their actions always escalate until total and complete satisfaction is achieved.",
     "notes": "Also exists as Vengeful (Minor).",
+    "summary": "The adventurer is consumed by the need for payback. They will stop at almost nothing to settle a score, and their methods tend to escalate until they feel fully satisfied.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -808,9 +775,9 @@
     "severity": "MINOR",
     "description": "The character has sworn an oath to someone or something he believes in. A Minor Vow might be to serve an order with a broad mandate that rarely conflicts with the party's goals.",
     "notes": "Also exists as Vow (Major).",
+    "summary": "The adventurer has sworn a relatively manageable vow (to serve an order, protect a particular person, uphold a code, etc.) that occasionally creates complications but rarely puts them in direct conflict with the party.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -819,9 +786,9 @@
     "severity": "MAJOR",
     "description": "The character has sworn an oath to someone or something he believes in. A Major Vow makes long-term and frequent demands on the servant's time and results in great risks to his life.",
     "notes": "Also exists as Vow (Minor).",
+    "summary": "The adventurer has taken a very serious and demanding vow that frequently puts them (and often the entire party) in considerable danger.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -830,9 +797,9 @@
     "severity": "MINOR",
     "description": "Your hero has committed some crime and will be arrested if discovered by the authorities. This assumes the setting actually has laws and police officers to enforce them. A hero with numerous unpaid parking tickets (in a game where he might have to drive occasionally) has a Minor Hindrance, as does someone wanted for more serious crimes away from the main campaign area.",
     "notes": "Also exists as Wanted (Major).",
+    "summary": "The adventurer is wanted by the authorities for some relatively minor crime (or a more serious one that happened far away). They risk arrest if recognised.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -841,9 +808,9 @@
     "severity": "MAJOR",
     "description": "Your hero has committed some crime and will be arrested if discovered by the authorities. This assumes the setting actually has laws and police officers to enforce them. Being accused of murder is a Major Hindrance in almost any setting if there's someone around to seek justice (or vengeance).",
     "notes": "Also exists as Wanted (Minor).",
+    "summary": "The adventurer is actively wanted for a serious crime (murder, treason, etc.). Capture almost certainly means imprisonment or worse.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -851,21 +818,20 @@
     "slug": "yellow-major",
     "severity": "MAJOR",
     "description": "Not everyone has ice water in their veins. Your hero is squeamish at the sight of blood and gore and terrified of coming to harm. He subtracts 2 from Fear checks and when resisting Intimidation.",
-    "notes": null,
+    "summary": "The adventurer is a terrible coward at heart. They suffer a -2 penalty to all Fear checks and when resisting Intimidation.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
     "name": "Young (Minor)",
     "slug": "young-minor",
     "severity": "MINOR",
-    "description": "The hero is 12-15 years old (in human years--adjust this for other races). He has only 4 points to adjust his attributes instead of 5, and 10 skill points instead of 12. He may also have legal restrictions depending on the setting (can't drive, own a firearm, and so on). On the plus side, youths have a fair amount of luck. They draw one extra Benny at the beginning of each game session (this stacks with other Edges such Luck or Great Luck). Most Young characters should also take the Small Hindrance, but it's not mandatory.",
+    "description": "The hero is 12-15 years old (in human years-adjust this for other races). He has only 4 points to adjust his attributes instead of 5, and 10 skill points instead of 12. He may also have legal restrictions depending on the setting (can't drive, own a firearm, and so on). On the plus side, youths have a fair amount of luck. They draw one extra Benny at the beginning of each game session (this stacks with other Edges such Luck or Great Luck). Most Young characters should also take the Small Hindrance, but it's not mandatory.",
     "notes": "Also exists as Young (Major).",
+    "summary": "The adventurer is quite young (12-15 in human years). They start with only 4 attribute points and 10 skill points, but gain one extra Benny per session. They may also face legal or social restrictions depending on the setting.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   },
   {
@@ -874,9 +840,9 @@
     "severity": "MAJOR",
     "description": "The hero is Very Young (8 to 11 years old). He has only 3 points for attributes and 10 for skills, and the Small Hindrance. Very Young heroes draw two extra Bennies at the start of each session.",
     "notes": "Also exists as Young (Minor).",
+    "summary": "The adventurer is very young indeed (8-11 in human years). They start with only 3 attribute points, 10 skill points, and the Small Hindrance, but gain two extra Bennies per session.",
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
     "sourceName": "Savage Worlds Adventure Edition"
   }
 ]

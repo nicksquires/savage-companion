@@ -1,18 +1,12 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   //output   = "../app/generated/prisma"
 }
 
 datasource db {
-  provider          = "mysql"
-  url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  //shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 ///////////////////////
@@ -165,49 +159,6 @@ enum ConditionType {
   CUSTOM // For homebrew conditions
 }
 
-// Examine this and PowerModifier for suitability in game logic vs schema
-// enum PowerGeneralModifier {
-//   ARMOR_PIERCING
-//   FATIGUE
-//   GLOW_SHROUD
-//   HEAVY_WEAPON
-//   HINDER_HURRY
-//   LINGERING_DAMAGE
-//   RANGE
-//   SELECTIVE
-// }
-
-// enum PowerModifier { 
-//   ADDITIONAL_RECIPIENTS 
-//   ADDITIONAL_ZOMBIES 
-//   AREA_EFFECT 
-//   ARMED 
-//   ARMOR 
-//   BITE_CLAW 
-//   CRIPPLING_INJURIES 
-//   DAMAGE 
-//   EDIT 
-//   FAST_CAST 
-//   FLIGHT 
-//   GREATER_HEALING 
-//   HARDENED 
-//   MIND_RIDER 
-//   MOBILE 
-//   MORE_ARMOR 
-//   NEUTRALIZE_POISON_OR_DISEASE 
-//   PERMANENT 
-//   POWER 
-//   QUICKNESS 
-//   SHAPED 
-//   SIZE 
-//   SOUND 
-//   SPEECH 
-//   STRONG 
-//   TARGETED 
-//   TELEPORT_FOE 
-//   TOUGHNESS 
-//   }
-
 enum WeaponCategory {
   MELEE
   RANGED
@@ -298,72 +249,6 @@ enum SpecialAbilityCategory {
   HAZARD
 }
 
-// Consider replacing XXX_ROLL types with 'TRIGGER' and the trigger can be a 'roll' or 'test'
-// enum EffectType {
-//   DAMAGE // Modifies damage roll (e.g., +2 for Blessed)
-//   TOUGHNESS // Modifies Toughness (e.g., +2 for Armor Bonus)
-//   PARRY // Modifies Parry score (e.g., -1 for Parry Penalty, +1 for Defensive)
-//   PACE // Modifies Pace (e.g., -1 for Encumbering)
-//   RESISTANCE_BYPASS // Ignores armor/resistances (e.g., Silvered, Cold Iron, Armor Piercing)
-//   ILLUMINATION_PENALTY // Modifies penalties due to lighting (e.g., negated by Glowing)
-//   SKILL_ROLL // Modifies skill rolls (e.g., +1 to Spellcasting for Spell Focus, -2 to Stealth for Noisy)
-//   POWER_POINTS // Modifies Power Point pool or usage (e.g., drained by Power Point Drain)
-//   ATTACK_ROLL // Modifies attack rolls (e.g., +2 for Three-Round Burst, -2 for Snapfire)
-//   AGILITY_ROLL // Modifies Agility-based rolls (e.g., -1 for Cumbersome)
-//   STEALTH_ROLL // Modifies Stealth rolls specifically (e.g., -2 for Noisy)
-//   CONCEALMENT_ROLL // Modifies rolls to hide items (e.g., +2 for Concealable)
-//   MULTI_ACTION_PENALTY // Modifies penalties for multi-actions (e.g., negated by Quick Draw)
-//   FATIGUE // Modifies Fatigue levels (e.g., +1 for Encumbering, Nonlethal, Cold-Based)
-//   STRENGTH_MINIMUM // Enforces minimum Strength die (e.g., d8 for Heavy Weapon)
-//   RATE_OF_FIRE // Modifies number of attack rolls per round (e.g., RoF 3 for Rate of Fire)
-//   RELOAD_TIME // Modifies actions needed to reload (e.g., +1 action for Reload)
-//   RANGE // Modifies weapon range (e.g., +1" for Reach)
-//   DAMAGE_ONGOING // Applies ongoing damage (e.g., fire for Fire-Based)
-//   MOVEMENT_PENALTY // Modifies movement penalties (e.g., -1 Pace for Entangling)
-//   SPELLCASTING_ROLL // Modifies Spellcasting rolls specifically (e.g., +1 for Spell Focus)
-//   BREAKAGE_CHANCE // Increases chance of item breaking (e.g., for Fragile)
-//   MALFUNCTION_CHANCE // Increases chance of malfunction (e.g., for Unstable)
-
-//   // Additional Savage Worlds mechanics
-//   WOUND_MODIFIER // Modifies Wound penalties (e.g., reduce penalty by 1)
-//   BENNY_COST // Modifies Benny usage cost (e.g., for rerolls or soak rolls)
-//   RUN_DIE // Modifies Run die roll (e.g., +1 to Running roll)
-//   SIZE_MODIFIER // Modifies Size for combat calculations (e.g., for large weapons)
-//   ARMOR_PENETRATION // Explicit AP value (complements RESISTANCE_BYPASS for specific AP points)
-//   HEALING_ROLL // Modifies Healing skill rolls
-//   INTIMIDATION_ROLL // Modifies Intimidation skill rolls
-//   TAUNT_ROLL // Modifies Taunt skill rolls
-//   NOTICE_ROLL // Modifies Notice skill rolls
-//   SURVIVAL_ROLL // Modifies Survival skill rolls
-//   TRACKING_ROLL // Modifies Tracking skill rolls
-//   INITIATIVE_CARD // Modifies Initiative card draws (e.g., +1 card or redraw)
-// }
-
-// enum WeaponType {
-//   MELEE
-//   RANGED
-//   IMPROVISED
-// }
-
-// enum FirearmType {
-//   PISTOL
-//   RIFLE
-//   SHOTGUN
-//   MACHINE_GUN
-//   LASER
-//   GATLING
-//   BLACK_POWDER
-//   IMPROVISED
-//   // Add more for settings 
-// }
-
-// For ArmorCoverage
-// enum BodyPart {
-//   HEAD
-//   TORSO
-//   ARMS
-//   LEGS
-// }
 enum FirearmMountType {
   NONE
   BIPOD
@@ -383,90 +268,11 @@ enum SettingType {
   OTHERWORLD
 }
 
-// // 1. WHAT is being modified?
-// enum ModifierTarget {
-//   ATTRIBUTE        // Agility, Smarts, etc.
-//   SKILL            // Fighting, Notice, etc.
-//   DERIVED_STAT     // Pace, Parry, Toughness, Size
-//   RESOURCE         // Bennies, Power Points
-//   MECHANIC         // Armor Piercing, Multi-Action Penalty, Run Die
-//   GRANT_EDGE       // Grants an Edge
-//   GRANT_HINDRANCE  // Grants a Hindrance
-//   GRANT_POWER      // Grants a Power
-// }
-
-// // 2. HOW is it modifying it?
-// enum ModifierOperation {
-//   ADD              // +1 to Toughness, +2 to damage
-//   SUBTRACT         // -1 to Pace, -2 to Stealth
-//   UPGRADE_DIE      // Starts at d6 instead of d4
-//   DOWNGRADE_DIE    // Caps at d10 instead of d12
-//   SET_VALUE        // Sets Pace exactly to 4
-//   GRANT            // Used with GRANT_EDGE/POWER/etc.
-// }
-
-// // 3. WHEN does it apply? (Keep your ModifierTrigger, but simplify)
-// enum ModifierTrigger {
-//   PASSIVE         // Always on (e.g., Racial +1 Toughness)
-//   ON_EQUIP        // Active when item is worn
-//   ON_USE          // Active when activated (e.g., drinking a potion)
-//   ON_ATTACK       // Fires when making an attack roll
-//   ON_HIT          // Fires when an attack lands
-//   ON_DAMAGE       // Fires during damage calculation
-//   ON_BEING_HIT    // Reactive (e.g., armor that damages attackers)
-//   CONDITIONAL     // Fires only in specific environments (e.g., darkness)
-// }
-// enum ModifierType {
-//   PASSIVE // Always on while active
-//   CONDITIONAL // Applies only when conditions are met
-//   TRIGGERED // Fires when an event happens
-//   REACTIVE // Responds to another effect (interrupt-like)
-//   OVERRIDE // Replaces a rule entirely
-// }
-
-// enum ModifierKind {
-//   STAT_ADJUSTMENT // +2 Toughness, -1 Pace
-//   SKILL_BONUS // +1 to Fighting
-//   DAMAGE_BONUS // +1 damage, +d6 damage
-//   DAMAGE_REPLACEMENT // Nonlethal damage, Fatigue instead of Wounds
-//   ARMOR_PIERCING
-//   IGNORE_PENALTY
-//   APPLY_PENALTY
-//   EXTRA_ACTION
-//   EXTRA_ATTACK
-//   REROLL
-//   TARGET_RESTRICTION
-//   IMMUNITY
-//   RESISTANCE
-//   CONDITION_APPLY // Shaken, Fatigue, Distracted, etc.
-//   CONDITION_REMOVE
-//   ROLL_MODIFIER
-//   RANGE_MODIFIER
-//   COST_MODIFIER // PP cost reduction
-//   RULE_OVERRIDE
-// }
-
-// enum ModifierContext {
-//   GLOBAL
-//   MELEE_ATTACK
-//   RANGED_ATTACK
-//   DAMAGE_ROLL
-//   SOAK_ROLL
-//   SPELLCASTING
-//   DRAW_WEAPON
-//   RELOAD
-//   MOVEMENT
-//   STEALTH
-//   PERCEPTION
-//   INITIATIVE
-//   ARMOR_CALCULATION
-//   TOUGHNESS_CALCULATION
-//   PARRY_CALCULATION
-// }
-
 enum ModifierEntityType {
   PLAYER
   CREATURE
+  ITEM
+  ENTITY
 }
 
 enum ModifierSourceType {
@@ -549,7 +355,6 @@ model User {
   customHindrances        Hindrance[]
   customRaces             Race[]
   customArcaneBackgrounds ArcaneBackground[]
-  customEffects           Effect[]
 
   // Journals/Sessions 
   gmJournalEntries     GMJournalEntry[]
@@ -607,7 +412,6 @@ model Campaign {
   sessions           CampaignSession[] // NEW: linked play sessions
   edges              CampaignEdge[] // campaign-specific edge selection
   powers             CampaignPower[]
-  items              CampaignItem[]
   hindrances         CampaignHindrance[]
   skills             CampaignSkill[]
   startingTemplate   CampaignStartingTemplate? @relation(fields: [startingTemplateId], references: [id])
@@ -793,10 +597,11 @@ model PlayerCharacter {
   edges             PlayerCharacterEdge[]
   powers            PlayerCharacterPower[]
   skills            PlayerCharacterSkill[]
-  gear              PlayerCharacterItem[]
   hindrances        PlayerCharacterHindrance[]
   arcaneBackgrounds PlayerCharacterArcaneBackground[]
-  journals          PlayerJournalEntry[] // Back-relation for per-character notes 
+
+  inventory ItemInstance[]
+  journals  PlayerJournalEntry[] // Back-relation for per-character notes 
   // campaigns         CampaignPlayerCharacter[]
 
   advancementLogs       AdvancementLog[] // Tracks advances
@@ -818,8 +623,7 @@ model CharacterInstance {
   powerPoints Int?
   shaken      Boolean @default(false)
 
-  inventory     ItemInstance[]
-  activeEffects ActiveEffect[]
+  inventory ItemInstance[]
 
   character PlayerCharacter @relation(fields: [characterId], references: [id])
   campaign  Campaign        @relation(fields: [campaignId], references: [id])
@@ -878,8 +682,8 @@ model Creature {
   tags              CreatureTag[]
   creatureHindrance CreatureHindrance[]
   creatureCategory  CreatureCategory[]
-  creatureItems     CreatureItem[]
   creatureInstances CreatureInstance[]
+  inventory         ItemInstance[]
 
   @@index([name, ownerId, sourceName])
 }
@@ -912,8 +716,7 @@ model CreatureInstance {
   campaign Campaign @relation(fields: [campaignId], references: [id])
 
   // Active play state
-  activeEffects ActiveEffect[]
-  items         ItemInstance[]
+  items ItemInstance[]
 
   // Session tracking (optional)
   sessionStates     SessionCharacterState[]
@@ -928,32 +731,30 @@ model CreatureInstance {
 // "Save as New Creature" and flatten base+modifiers of 
 // creature instance
 model EntityModifier {
-  id String @id @default(cuid())
-
-  entityType ModifierEntityType // PLAYER, CREATURE
-  entityId   String
-
+  id          String  @id @default(cuid())
   name        String
   description String?
 
-  sourceType ModifierSourceType // POWER, ITEM, EDGE, NARRATIVE, SYSTEM
+  entityType ModifierEntityType
+  entityId   String
+
+  sourceType ModifierSourceType
   sourceId   String?
 
-  // THE PAYLOAD: Validated by Zod in Next.js, ignored by Prisma
-  data Json
-
-  durationType      DurationType // INSTANT, TURN, SCENE, SESSION, PERMANENT
+  durationType      DurationType
   durationRemaining Int?
+
+  data      Json // validated by Zod (see below)
+  condition Json? // complex "if" rules
+  priority  Int   @default(0) // application order
 
   isActive Boolean @default(true)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  creatureInstance   CreatureInstance? @relation(fields: [creatureInstanceId], references: [id])
-  creatureInstanceId String?
-
-  @@index([entityType, entityId])
+  creatureInstance   CreatureInstance? @relation(fields: [creatureInstanceid], references: [id])
+  creatureInstanceid String?
 }
 
 model Race {
@@ -988,9 +789,8 @@ model RacialAbility {
   description String? @db.Text
   value       Int // Point cost: +2, -1, etc.
 
-  // THE BLUEPRINT: This holds an array of modifier objects 
-  // based on the enums we just created.
-  modifierData Json // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
   // Homebrew / Visibility
   isHomebrew Boolean @default(false)
@@ -1044,24 +844,22 @@ model Skill {
 }
 
 model Edge {
-  id         String @id @default(cuid())
-  name       String @unique
-  slug       String @unique
+  id         String  @id @default(cuid())
+  name       String  @unique
+  slug       String  @unique
   sourceName String
-
-  category String? // e.g., Background, Combat, Social
-  rank     Rank    @default(NOVICE)
-
-  /// Structured prerequisites (attributes, skills, other edges, etc.)
-  requirements Json?
+  rank       Rank    @default(NOVICE)
+  category   String? // e.g., Background, Combat, Social
 
   /// Canonical rules text (for UI / reference only)
   description String? @db.Text
   summary     String? @db.Text
 
-  /// Structured effect definitions that PRODUCE modifiers
-  /// (data-only, no logic)
-  effectDefinitions Json?
+  /// Structured prerequisites (attributes, skills, other edges, etc.)
+  requirements Json?
+
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
   // Metadata
   isHomebrew Boolean  @default(false)
@@ -1121,7 +919,10 @@ model Power {
   trappings   String? // Suggested trappings
   description String  @db.Text
   summary     String? @db.Text
-  modifiers   String? // Possible modifiers (i.e., DAMAGE(+1) or SIZE (+1))
+  // powerModifiers   String? // Possible modifiers (i.e., DAMAGE(+1) or SIZE (+1))
+
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
   // Metadata
   isHomebrew Boolean @default(false)
@@ -1174,10 +975,13 @@ model Hindrance {
   id          String        @id @default(cuid())
   name        String        @unique
   slug        String        @unique
-  severity    HindranceType // Enum: MAJOR | MINOR
   description String        @db.Text
+  severity    HindranceType // Enum: MAJOR | MINOR
   summary     String?       @db.Text
   notes       String?       @db.Text
+
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
   // Metadata
   isHomebrew Boolean @default(false)
@@ -1214,6 +1018,9 @@ model Item {
   ownerId    String?
   sourceName String?
 
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
+
   source Source? @relation(fields: [sourceName], references: [name])
   owner  User?   @relation(fields: [ownerId], references: [id])
 
@@ -1226,48 +1033,44 @@ model Item {
   // magicDevice MagicDevice?
 
   // Relations to game entities
-  characterItems PlayerCharacterItem[] // Join table relation for PC items
-  creatureItems  CreatureItem[] // Join table relation for NPC items
-  campaignItems  CampaignItem[] // Join table relation for campaign-specific items
-  tags           ItemTag[]
-  ItemEffect     ItemEffect[]
-  itemInstances  ItemInstance[]
-  ammunitions    Ammunition[]
+  tags          ItemTag[]
+  itemInstances ItemInstance[]
+  ammunitions   Ammunition[]
 
   @@index([name, type, sourceName])
 }
 
 model ItemInstance {
-  id String @id @default(cuid())
-
-  itemId     String
-  campaignId String?
+  id     String @id @default(cuid())
+  itemId String
 
   // Ownership (exactly one should be set, enforced in app logic)
   characterId String?
   creatureId  String?
+  containerId String?
 
-  quantity Int @default(1)
-
-  // Generic instance state
+  quantity   Int     @default(1)
   notes      String?
   isEquipped Boolean @default(false)
+
+  // THE STATE FIELD
+  // Stores dynamic data: { ammo: 6, isJammed: true, charges: 3, etc. }
+  state Json @default("{}")
 
   // Definition
   item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 
-  // Type-specific instance extensions (ONLY ONE should exist)
-  weaponInstance      WeaponInstance?
-  armorInstance       ArmorInstance?
-  consumableInstance  ConsumableInstance?
-  toolInstance        ToolInstance?
-  artifactInstance    ArtifactInstance?
-  characterInstance   CharacterInstance?  @relation(fields: [characterInstanceId], references: [id])
+  characterInstance   CharacterInstance? @relation(fields: [characterInstanceId], references: [id])
   characterInstanceId String?
-  creatureInstance    CreatureInstance?   @relation(fields: [creatureInstanceId], references: [id])
+  creatureInstance    CreatureInstance?  @relation(fields: [creatureInstanceId], references: [id])
   creatureInstanceId  String?
 
-  @@index([itemId, campaignId])
+  // Back-relations to the owners (Ensure these match the @relation in the other files)
+  // container Container?      @relation(fields: [containerId], references: [id]) // i.e: chests, lootable objects
+  character PlayerCharacter? @relation(fields: [characterId], references: [id])
+  creature  Creature?        @relation(fields: [creatureId], references: [id])
+
+  //@@index([containerId])
   @@index([characterId])
   @@index([creatureId])
 }
@@ -1298,17 +1101,6 @@ model Weapon {
   item    Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
 
-model WeaponInstance {
-  id             String @id @default(cuid())
-  itemInstanceId String @unique
-
-  isBroken Boolean @default(false)
-  isJammed Boolean @default(false)
-
-  itemInstance    ItemInstance     @relation(fields: [itemInstanceId], references: [id])
-  firearmInstance FirearmInstance?
-}
-
 model Firearm {
   id       String @id @default(cuid())
   weaponId String @unique
@@ -1327,23 +1119,13 @@ model Firearm {
   @@index([mountType])
 }
 
-model FirearmInstance {
-  id               String @id @default(cuid())
-  weaponInstanceId String @unique
-
-  currentAmmo   Int
-  chamberLoaded Boolean @default(true)
-
-  weaponInstance WeaponInstance @relation(fields: [weaponInstanceId], references: [id])
-}
-
 model Ammunition {
-  id        String  @id @default(cuid())
-  itemId    String  @unique
-  caliber   Int?
-  ap        Int?
-  damageMod String?
-  special   String?
+  id           String  @id @default(cuid())
+  itemId       String  @unique
+  caliber      Int?
+  ap           Int?
+  damageMod    String?
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
   item Item @relation(fields: [itemId], references: [id])
 }
@@ -1357,125 +1139,10 @@ model Armor {
   minStrength  String?
   parryPenalty Int?
 
-  item    Item         @relation(fields: [itemId], references: [id], onDelete: Cascade)
-  effects ItemEffect[] // ← reuse your generic effect system
-}
+  // THE BLUEPRINT: This holds an array of modifier objects based on schema enums
+  modifierData Json? // e.g., [{ target: "DERIVED_STAT", key: "Pace", operation: "SUBTRACT", value: 1 }]
 
-model ArmorInstance {
-  id             String @id @default(cuid())
-  itemInstanceId String @unique
-
-  isDamaged     Boolean @default(false)
-  damagePenalty Int? // Optional house rules
-  notes         String?
-
-  itemInstance ItemInstance @relation(fields: [itemInstanceId], references: [id], onDelete: Cascade)
-}
-
-// Needs BodyPart enum
-// model ArmorCoverage {
-//   armorId String
-//   part    BodyPart
-
-//   armor Armor @relation(fields: [armorId], references: [id])
-
-//   @@id([armorId, part])
-// }
-
-// Weapon mods, cybernetic alterations? needs examining
-// model Upgrade {
-//   id          String @id @default(cuid())
-//   name        String
-//   description String
-
-//   // applicableTo ItemType[]
-//   effects Effect[]
-// }
-
-// i.e: Armor-specific logic is determined by:
-// Effect.triggerType
-// Effect.targetType
-// Effect categories
-// runtime context
-model Effect {
-  id          String @id @default(cuid())
-  name        String @unique
-  slug        String @unique
-  description String @db.Text
-
-  // Metadata
-  isHomebrew Boolean @default(false)
-  isPublic   Boolean @default(true)
-  ownerId    String?
-  sourceName String?
-
-  // Execution semantics
-  //trigger ModifierTrigger? // ON_HIT, PASSIVE, ON_EQUIP, etc
-
-  targetType TargetType? // SELF, TARGET, ITEM, AREA
-  context    EffectContext? // MELEE_ATTACK, DAMAGE, ARMOR, etc
-
-  areaTemplate String?
-
-  /**
-   * Declarative effect definitions.
-   * These are NOT active modifiers.
-   * They get resolved into EntityModifiers at runtime.
-   * Example: Blessed Weapon
-   * {
-   * "type": "CONDITIONAL",
-   * "trigger": "ON_DAMAGE",
-   * "condition": {
-   * "targetHasCategory": "UNHOLY"
-   * },
-   * "effect": {
-   * "kind": "DAMAGE_BONUS",
-   * "value": 2
-   * }
-   * }
-   */
-  definitions Json
-
-  // Relations
-  owner         User?            @relation(fields: [ownerId], references: [id])
-  items         ItemEffect[]
-  categories    EffectCategory[]
-  activeEffects ActiveEffect[]
-
-  @@index([slug])
-}
-
-model ItemEffect {
-  itemId   String
-  effectId String
-
-  item       Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
-  effect     Effect    @relation(fields: [effectId], references: [id], onDelete: Cascade)
-  armor      Armor?    @relation(fields: [armorId], references: [id])
-  armorId    String?
-  tool       Tool?     @relation(fields: [toolId], references: [id])
-  toolId     String?
-  artifact   Artifact? @relation(fields: [artifactId], references: [id])
-  artifactId String?
-
-  @@id([itemId, effectId])
-  @@index([effectId])
-}
-
-model ActiveEffect {
-  id           String  @id @default(cuid())
-  effectId     String
-  sourceItemId String?
-  targetId     String
-
-  remainingDuration Int?
-  stacks            Int  @default(1)
-
-  effect              Effect             @relation(fields: [effectId], references: [id]) // Link to combat/session?
-  characterInstance   CharacterInstance? @relation(fields: [characterInstanceId], references: [id])
-  characterInstanceId String?
-  creatureInstance    CreatureInstance?  @relation(fields: [creatureInstanceId], references: [id])
-  creatureInstanceId  String?
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
 
 model Category {
@@ -1484,21 +1151,8 @@ model Category {
   slug        String  @unique
   description String? @db.Text
 
-  // Many-to-many with Effect (effects that apply to this category)
-  effects EffectCategory[]
-
   // Many-to-many with Creature (creatures belonging to categories)
   creatures CreatureCategory[]
-}
-
-model EffectCategory {
-  effectId   String
-  categoryId String
-
-  effect   Effect   @relation(fields: [effectId], references: [id], onDelete: Cascade)
-  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-
-  @@id([effectId, categoryId])
 }
 
 model CreatureCategory {
@@ -1521,16 +1175,6 @@ model Consumable {
   item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
 
-model ConsumableInstance {
-  id             String @id @default(cuid())
-  itemInstanceId String @unique
-
-  remainingUses Int
-  isSpoiled     Boolean @default(false)
-
-  itemInstance ItemInstance @relation(fields: [itemInstanceId], references: [id])
-}
-
 model Tool {
   id     String @id @default(cuid())
   itemId String @unique
@@ -1543,23 +1187,7 @@ model Tool {
   maxUses       Int? // e.g. lockpicks
   maxDurability Int? // e.g. fragile tools
 
-  item    Item         @relation(fields: [itemId], references: [id], onDelete: Cascade)
-  effects ItemEffect[] // Passive effects granted while owned or used
-}
-
-model ToolInstance {
-  id             String @id @default(cuid())
-  itemInstanceId String @unique
-
-  remainingUses Int?
-  durability    Int?
-
-  isBroken Boolean @default(false)
-  notes    String?
-
-  itemInstance ItemInstance @relation(fields: [itemInstanceId], references: [id], onDelete: Cascade)
-
-  @@index([isBroken])
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
 
 model Artifact {
@@ -1573,58 +1201,8 @@ model Artifact {
 
   maxCharges Int?
 
-  item    Item         @relation(fields: [itemId], references: [id], onDelete: Cascade)
-  effects ItemEffect[] // Magical / passive effects
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
-
-model ArtifactInstance {
-  id             String @id @default(cuid())
-  itemInstanceId String @unique
-
-  remainingCharges Int?
-  isAttuned        Boolean @default(false)
-
-  // Optional binding/attunement
-  boundCharacterId String?
-
-  itemInstance ItemInstance @relation(fields: [itemInstanceId], references: [id], onDelete: Cascade)
-
-  @@index([boundCharacterId])
-}
-
-// TO-DO: Examine Artificer specifics for model accuracy/necessity
-// model MagicDevice {
-//   id          String  @id @default(cuid())
-//   itemId      String  @unique
-//   powerPoints Int? // Starting PP pool
-//   recharge    String? // e.g., "1 PP/hour"
-//   special     String? @db.Text // Custom rules
-
-//   item   Item               @relation(fields: [itemId], references: [id], onDelete: Cascade)
-//   spells MagicDeviceSpell[] // Relation to spells it can cast (see below)
-// }
-
-// // If devices can cast spells, add a many-to-many or one-to-many relation
-// model Spell {
-//   id             String @id @default(cuid())
-//   name           String
-//   description    String @db.Text
-//   rank           String // e.g., "Novice"
-//   powerPointCost Int
-//   // Other spell fields...
-
-//   magicDeviceSpells MagicDeviceSpell[]
-// }
-
-// model MagicDeviceSpell {
-//   magicDeviceId String
-//   spellId       String
-
-//   magicDevice MagicDevice @relation(fields: [magicDeviceId], references: [id], onDelete: Cascade)
-//   spell       Spell       @relation(fields: [spellId], references: [id], onDelete: Cascade)
-
-//   @@id([magicDeviceId, spellId])
-// }
 
 model Tag {
   id   String @id @default(cuid())
@@ -1771,21 +1349,6 @@ model CampaignSource {
   @@index([campaignId])
 }
 
-model CampaignItem {
-  id         String  @id @default(cuid())
-  campaignId String
-  itemId     String
-  dieType    DieType @default(D4)
-  modifier   Int     @default(0)
-  notes      String?
-
-  campaign Campaign @relation(fields: [campaignId], references: [id])
-  item     Item     @relation(fields: [itemId], references: [id])
-
-  @@unique([campaignId, itemId]) // Prevent duplicates
-  @@index([campaignId])
-}
-
 ///////////////////////////////////////
 //      CHARACTER JOIN TABLES       //
 /////////////////////////////////////
@@ -1842,31 +1405,11 @@ model PlayerCharacterSkill {
   playerCharacterId String
   skillId           String
   dieType           DieType @default(D4)
-  // modifier          Int     @default(0)
-  // notes             String?
 
   character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
   skill     Skill           @relation(fields: [skillId], references: [id])
 
   @@unique([playerCharacterId, skillId]) // Prevent duplicates
-  @@index([playerCharacterId])
-}
-
-model PlayerCharacterItem {
-  id                String @id @default(cuid())
-  playerCharacterId String
-  itemId            String
-
-  quantity   Int      @default(1)
-  isEquipped Boolean? @default(false)
-  dieType    DieType? @default(D4)
-  modifier   Int?     @default(0)
-  notes      String?
-
-  character PlayerCharacter @relation(fields: [playerCharacterId], references: [id])
-  item      Item            @relation(fields: [itemId], references: [id])
-
-  @@unique([playerCharacterId, itemId])
   @@index([playerCharacterId])
 }
 
@@ -1953,21 +1496,6 @@ model CreatureSkill {
   @@index([creatureId])
 }
 
-model CreatureItem {
-  id         String  @id @default(cuid())
-  creatureId String
-  itemId     String
-  dieType    DieType @default(D4)
-  modifier   Int     @default(0)
-  notes      String?
-
-  creature Creature @relation(fields: [creatureId], references: [id])
-  item     Item     @relation(fields: [itemId], references: [id])
-
-  @@unique([creatureId, itemId]) // Prevent duplicates
-  @@index([creatureId])
-}
-
 /////////////////////////////////
 //      TAG JOIN TABLES       //
 ///////////////////////////////
@@ -2043,3 +1571,187 @@ model ItemTag {
   @@unique([itemId, tagId])
   @@index([itemId])
 }
+
+// // 1. WHAT is being modified?
+// enum ModifierTarget {
+//   ATTRIBUTE        // Agility, Smarts, etc.
+//   SKILL            // Fighting, Notice, etc.
+//   DERIVED_STAT     // Pace, Parry, Toughness, Size
+//   RESOURCE         // Bennies, Power Points
+//   MECHANIC         // Armor Piercing, Multi-Action Penalty, Run Die
+//   GRANT_EDGE       // Grants an Edge
+//   GRANT_HINDRANCE  // Grants a Hindrance
+//   GRANT_POWER      // Grants a Power
+// }
+
+// // 2. HOW is it modifying it?
+// enum ModifierOperation {
+//   ADD              // +1 to Toughness, +2 to damage
+//   SUBTRACT         // -1 to Pace, -2 to Stealth
+//   UPGRADE_DIE      // Starts at d6 instead of d4
+//   DOWNGRADE_DIE    // Caps at d10 instead of d12
+//   SET_VALUE        // Sets Pace exactly to 4
+//   GRANT            // Used with GRANT_EDGE/POWER/etc.
+// }
+
+// // 3. WHEN does it apply? (Keep your ModifierTrigger, but simplify)
+// enum ModifierTrigger {
+//   PASSIVE         // Always on (e.g., Racial +1 Toughness)
+//   ON_EQUIP        // Active when item is worn
+//   ON_USE          // Active when activated (e.g., drinking a potion)
+//   ON_ATTACK       // Fires when making an attack roll
+//   ON_HIT          // Fires when an attack lands
+//   ON_DAMAGE       // Fires during damage calculation
+//   ON_BEING_HIT    // Reactive (e.g., armor that damages attackers)
+//   CONDITIONAL     // Fires only in specific environments (e.g., darkness)
+// }
+// enum ModifierType {
+//   PASSIVE // Always on while active
+//   CONDITIONAL // Applies only when conditions are met
+//   TRIGGERED // Fires when an event happens
+//   REACTIVE // Responds to another effect (interrupt-like)
+//   OVERRIDE // Replaces a rule entirely
+// }
+
+// enum ModifierKind {
+//   STAT_ADJUSTMENT // +2 Toughness, -1 Pace
+//   SKILL_BONUS // +1 to Fighting
+//   DAMAGE_BONUS // +1 damage, +d6 damage
+//   DAMAGE_REPLACEMENT // Nonlethal damage, Fatigue instead of Wounds
+//   ARMOR_PIERCING
+//   IGNORE_PENALTY
+//   APPLY_PENALTY
+//   EXTRA_ACTION
+//   EXTRA_ATTACK
+//   REROLL
+//   TARGET_RESTRICTION
+//   IMMUNITY
+//   RESISTANCE
+//   CONDITION_APPLY // Shaken, Fatigue, Distracted, etc.
+//   CONDITION_REMOVE
+//   ROLL_MODIFIER
+//   RANGE_MODIFIER
+//   COST_MODIFIER // PP cost reduction
+//   RULE_OVERRIDE
+// }
+
+// enum ModifierContext {
+//   GLOBAL
+//   MELEE_ATTACK
+//   RANGED_ATTACK
+//   DAMAGE_ROLL
+//   SOAK_ROLL
+//   SPELLCASTING
+//   DRAW_WEAPON
+//   RELOAD
+//   MOVEMENT
+//   STEALTH
+//   PERCEPTION
+//   INITIATIVE
+//   ARMOR_CALCULATION
+//   TOUGHNESS_CALCULATION
+//   PARRY_CALCULATION
+// }
+
+// Examine this and PowerModifier for suitability in game logic vs schema
+// enum PowerGeneralModifier {
+//   ARMOR_PIERCING
+//   FATIGUE
+//   GLOW_SHROUD
+//   HEAVY_WEAPON
+//   HINDER_HURRY
+//   LINGERING_DAMAGE
+//   RANGE
+//   SELECTIVE
+// }
+
+// enum PowerModifier { 
+//   ADDITIONAL_RECIPIENTS 
+//   ADDITIONAL_ZOMBIES 
+//   AREA_EFFECT 
+//   ARMED 
+//   ARMOR 
+//   BITE_CLAW 
+//   CRIPPLING_INJURIES 
+//   DAMAGE 
+//   EDIT 
+//   FAST_CAST 
+//   FLIGHT 
+//   GREATER_HEALING 
+//   HARDENED 
+//   MIND_RIDER 
+//   MOBILE 
+//   MORE_ARMOR 
+//   NEUTRALIZE_POISON_OR_DISEASE 
+//   PERMANENT 
+//   POWER 
+//   QUICKNESS 
+//   SHAPED 
+//   SIZE 
+//   SOUND 
+//   SPEECH 
+//   STRONG 
+//   TARGETED 
+//   TELEPORT_FOE 
+//   TOUGHNESS 
+//   }
+
+// TO-DO: Examine Artificer specifics for model accuracy/necessity
+// model MagicDevice {
+//   id          String  @id @default(cuid())
+//   itemId      String  @unique
+//   powerPoints Int? // Starting PP pool
+//   recharge    String? // e.g., "1 PP/hour"
+//   special     String? @db.Text // Custom rules
+
+//   item   Item               @relation(fields: [itemId], references: [id], onDelete: Cascade)
+//   spells MagicDeviceSpell[] // Relation to spells it can cast (see below)
+// }
+
+// // If devices can cast spells, add a many-to-many or one-to-many relation
+// model Spell {
+//   id             String @id @default(cuid())
+//   name           String
+//   description    String @db.Text
+//   rank           String // e.g., "Novice"
+//   powerPointCost Int
+//   // Other spell fields...
+
+//   magicDeviceSpells MagicDeviceSpell[]
+// }
+
+// model MagicDeviceSpell {
+//   magicDeviceId String
+//   spellId       String
+
+//   magicDevice MagicDevice @relation(fields: [magicDeviceId], references: [id], onDelete: Cascade)
+//   spell       Spell       @relation(fields: [spellId], references: [id], onDelete: Cascade)
+
+//   @@id([magicDeviceId, spellId])
+// }
+
+// Needs BodyPart enum
+// model ArmorCoverage {
+//   armorId String
+//   part    BodyPart
+
+//   armor Armor @relation(fields: [armorId], references: [id])
+
+//   @@id([armorId, part])
+// }
+
+// Weapon mods, cybernetic alterations? needs examining
+// model Upgrade {
+//   id          String @id @default(cuid())
+//   name        String
+//   description String
+
+//   // applicableTo ItemType[]
+//   effects Effect[]
+// }
+
+// i.e: Armor-specific logic is determined by:
+// Effect.triggerType
+// Effect.targetType
+// Effect categories
+// runtime context

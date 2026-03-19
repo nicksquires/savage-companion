@@ -5,12 +5,13 @@ import { useMemo, useState } from "react";
 import EdgeFilters, { EdgeFilterState, EdgeSortField } from "./EdgeFilters";
 import EdgeAccordionList from "./EdgeAccordionList";
 import { Edge } from "@/lib/types/Edge";
+import { EdgeSummary } from "@/lib/types/EdgeSummary";
 
 interface Props {
   edges: Edge[];
 }
 
-// Define our rank weights outside the component to avoid recreating it on every render
+// Define rank weights outside the component to avoid recreating it on every render
 const RANK_WEIGHTS: Record<string, number> = {
   NOVICE: 1,
   SEASONED: 2,
@@ -71,6 +72,16 @@ export default function EdgePageClient({ edges }: Props) {
       });
   }, [edges, filters]);
 
+  // Extract edge summaries for query-less edge requirement hoverlinks
+  const edgeSummaries: EdgeSummary[] = useMemo(
+    () =>
+      edges?.map((edge) => ({
+        slug: edge.slug,
+        description: edge.description ?? null,
+      })) ?? [],
+    [edges],
+  );
+
   return (
     <>
       <div className="flex flex-col items-center max-w-7/8 md:max-w-5/6">
@@ -78,6 +89,7 @@ export default function EdgePageClient({ edges }: Props) {
 
         <EdgeAccordionList
           edges={filteredEdges}
+          edgeSummaries={edgeSummaries}
           onSort={handleSort}
           sortBy={filters.sortBy}
           sortDir={filters.sortDir}

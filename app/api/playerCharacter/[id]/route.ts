@@ -1,78 +1,98 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { playerCharacterUpdateSchema } from "../../../../lib/schemas/api/playerCharacter.schema";
+import { characterCoreSchema, characterStateSchema } from "@/lib/schemas/api/playerCharacter.schema";
 
-// GET - get one player character from master list
+// Create a generic update schema that accepts partials of either core or state stats
+const updateCharacterSchema = characterCoreSchema
+  .merge(characterStateSchema)
+  .partial();
+
+// GET_ONE: Fetch a single character and all their relational data
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  _request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
-
   try {
-  const character = await prisma.playerCharacter.findUnique({
-    where: { id: params.id },
-    include: {
-      edges: true,
-      powers: true,
-      skills: true,
-      hindrances: true,
-    },
-  });
+    const { id } = await context.params;
 
-  if (!character) {
-    return NextResponse.json({ error: "Character not found" }, { status: 404 });
-  }
-
-  return NextResponse.json(character);
-} catch (error) {
-  return NextResponse.json(
-    { error: "Failed to retrieve player Character"},
-    { status: 500}
-  );
-}
-}
-
-// PATCH - update one character in the master list
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  const body = await request.json();
-  const validation = playerCharacterUpdateSchema.safeParse(body);
-
-  if (!validation.success) {
-    return NextResponse.json(validation.error.flatten(), { status: 400 });
-  }
-
-  try {
-    const updated = await prisma.playerCharacter.update({
-      where: { id: params.id },
-      data: validation.data,
+    const character = await prisma.playerCharacter.findUnique({
+      where: { id },
+      include: {
+        inventory: {
+          include: { item: true }, // Joins the item templates to the instances
+        },
+        edges: true,
+        hindrances: true,
+        skills: true,
+        powers: true,
+      },
     });
 
-    return NextResponse.json(updated);
-  } catch (error) {
-    console.error("Error updating character:", error);
-    return NextResponse.json({ error: "Failed to update character" }, { status: 500 });
+    if (!character) {
+      return NextResponse.json({ error: "Character not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(character);
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to fetch character", details: String(err) },
+      { status: 500 }
+    );
   }
 }
 
-// DELETE - delete one character from the master list
-export async function DELETE(
-  _req: NextRequest,
-  { params }: { params: { id: string } }
+// PATCH: Update character stats (can handle both core leveling and volatile state)
+export async function PATCH(
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
-  const existing = await prisma.playerCharacter.findUnique({
-    where: { id: params.id },
-  });
+  try {
+    const { id } = await context.params;
+    const body = await request.json();
+    
+    const parsed = updateCharacterSchema.safeParse(body);
 
-  if (!existing) {
-    return NextResponse.json({ error: "Character not found" }, { status: 404 });
+    if (!parsed.success) {
+      return NextResponse.json(parsed.error.flatten(), { status: 400 });
+    }
+
+    const updatedCharacter = await prisma.playerCharacter.update({
+      where: { id },
+      data: parsed.data,
+    });
+
+    return NextResponse.json(updatedCharacter);
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to update character", details: String(err) },
+      { status: 500 }
+    );
   }
+}
 
-  await prisma.playerCharacter.delete({
-    where: { id: params.id },
-  });
+// DELETE: Soft-delete a character by marking them inactive
+export async function DELETE(
+  _request: NextRequest,
+  context: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await context.params;
 
-  return NextResponse.json({ message: "Character deleted" });
+    // Best practice for RPGs: Don't hard-delete. Soft-delete instead so
+    // campaign history and journals don't break due to missing foreign keys.
+    const archivedCharacter = await prisma.playerCharacter.update({
+      where: { id },
+      data: { isActive: false },
+    });
+
+    return NextResponse.json(
+      { message: "Character archived successfully", character: archivedCharacter },
+      { status: 200 }
+    );
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to delete character", details: String(err) },
+      { status: 500 }
+    );
+  }
 }

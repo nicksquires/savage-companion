@@ -770,82 +770,79 @@
   {
     "name": "Wounds"
   },
-{
-"name": "Fire"
-},
-{
-"name": "Ice"
-},
-{
-"name": "Nature"
-},
-{
-"name": "Necromancy"
-},
-{
-"name": "Eldritch"
-},
-{
-"name": "Light"
-},
-{
-"name": "Darkness"
-},
-{
-"name": "Earth"
-},
-{
-"name": "Electricity"
-},
-{
-"name": "Air"
-},
-{
-"name": "Detection"
-},
-{
-"name": "Concealment"
-},
-{
-"name": "Deception"
-},
-{
-"name": "Dispel"
-},
-{
-"name": "Demonic"
-},
-{
-"name": "Elemental"
-},
-{
-"name": "Water"
-},
-{
-"name": "Illusion"
-},
-{
-"name": "Shadow"
-},
-{
-"name": "Ghost"
-},
-{
-"name": "Invisibility"
-},
-{
-"name": "Sound"
-},
-{
-"name": "Transformation"
-},
-{
-"name": "Chaos"
-},
-{
-"name": "Conjuration"
-},
-{
-"name": "Undead"
-}
+  {
+  "name": "Fire"
+  },
+  {
+  "name": "Ice"
+  },
+  {
+  "name": "Necromancy"
+  },
+  {
+  "name": "Eldritch"
+  },
+  {
+  "name": "Light"
+  },
+  {
+  "name": "Darkness"
+  },
+  {
+  "name": "Earth"
+  },
+  {
+  "name": "Electricity"
+  },
+  {
+  "name": "Air"
+  },
+  {
+  "name": "Detection"
+  },
+  {
+  "name": "Concealment"
+  },
+  {
+  "name": "Deception"
+  },
+  {
+  "name": "Dispel"
+  },
+  {
+  "name": "Demonic"
+  },
+  {
+  "name": "Elemental"
+  },
+  {
+  "name": "Water"
+  },
+  {
+  "name": "Illusion"
+  },
+  {
+  "name": "Shadow"
+  },
+  {
+  "name": "Ghost"
+  },
+  {
+  "name": "Invisibility"
+  },
+  {
+  "name": "Sound"
+  },
+  {
+  "name": "Transformation"
+  },
+  {
+  "name": "Chaos"
+  },
+  {
+  "name": "Conjuration"
+  },
+  {
+  "name": "Undead"
+  }
 ]

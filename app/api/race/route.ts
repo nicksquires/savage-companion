@@ -1,22 +1,45 @@
-import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/prisma/client";
 import { raceSchema } from "../../../lib/schemas/api/race.schema";
 
-// Get all races
-export async function GET() {
-  const races = await prisma.race.findMany();
-  return NextResponse.json(races);
+// GET - get all races from master list
+export async function GET(_req: NextRequest) {
+  try {
+    const races = await prisma.race.findMany({
+      include: { 
+        source: true,
+       }, // OPTIONAL: include related data
+      orderBy: { name: "asc" },
+    });
+
+    return NextResponse.json(races);
+
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to fetch edges - internal server error.", details: String(err) },
+      { status: 500 }
+    );
+  }
 }
 
-// Add new race to master list
-export async function POST(request: NextRequest) {
-  const body = await request.json();
-  const validation = raceSchema.safeParse(body);
+// POST - add new edge to master list
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const parsed = raceSchema.safeParse(body);
+    
+    if (!parsed.success) {
+      return NextResponse.json(parsed.error.errors, { status: 400 });
+    }
 
-  if (!validation.success) {
-    return NextResponse.json(validation.error.errors, { status: 400 });
+    const newRace = await prisma.race.create({ data: body });
+
+    return NextResponse.json(newRace, { status: 201 });
+    
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to add race", details: String(err) },
+      { status: 500 }
+    );
   }
-
-  const newRace = await prisma.race.create({ data: body });
-  return NextResponse.json(newRace, { status: 201 });
 }

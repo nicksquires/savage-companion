@@ -3,66 +3,72 @@ import schema from "../../../../lib/schemas/api/register.schema";
 import { prisma } from "@/prisma/client";
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } },
+  _req: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
-  // fetch data from db
+  const { id } = await context.params;
+
   const user = await prisma.user.findUnique({
-    where: { id: params.id },
+    where: { id },
   });
 
-  // if not found, return 404 data
-  // else return data
   if (!user)
     return NextResponse.json({ error: "User not found" }, { status: 404 });
 
   return NextResponse.json(user);
 }
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } },
+export async function PATCH(
+  req: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
-  // Validate request body
-  const body = await request.json();
-  const validation = schema.safeParse(body);
+  const { id } = await context.params;
 
-  // If invalid, return 400 error
-  if (!validation.success)
-    return NextResponse.json(validation.error.errors, { status: 400 });
+  try {
+    // Validate request body
+    const body = await req.json();
+    const validation = schema.safeParse(body);
 
-  // Check for user with same id
-  const user = await prisma.user.findUnique({
-    where: { id: params.id },
-  });
+    if (!validation.success)
+      return NextResponse.json(validation.error.errors, { status: 400 });
 
-  // If user does not exist, return error
-  if (!user)
-    return NextResponse.json({ error: "User not found" }, { status: 400 });
+    // Check for user with same id
+    const user = await prisma.user.findUnique({
+      where: { id },
+    });
 
-  // Update user
-  const updatedUser = await prisma.user.update({
-    where: { id: user.id },
-    data: {
-      name: body.name,
-      email: body.email,
-    },
-  });
+    // If user does not exist, return error
+    if (!user)
+      return NextResponse.json({ error: "User not found" }, { status: 400 });
 
-  // if (params.id > 10)
-  //   return NextResponse.json({ error: "User not found" }, { status: 404 });
+    // Update user
+    const updatedUser = await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        // name: body.name,
+        // email: body.email,
+      },
+    });
 
-  //Return updated user
-  return NextResponse.json(updatedUser, { status: 202 });
+    //Return updated user
+    return NextResponse.json(updatedUser, { status: 202 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: "Failed to update power", details: String(err) },
+      { status: 500 },
+    );
+  }
 }
 
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } },
+  _req: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
+  const { id } = await context.params;
+
   // Attempt fetch user
   const user = await prisma.user.findUnique({
-    where: { id: params.id },
+    where: { id },
   });
 
   // If not exist, return error

@@ -5,6 +5,7 @@ import Link from "next/link";
 
 interface HoverEdgeLinkProps {
   edgeSlug: string;
+  summary: string;
 }
 
 export function HoverEdgeLink({ edgeSlug }: HoverEdgeLinkProps) {

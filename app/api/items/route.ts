@@ -20,9 +20,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newItem, { status: 201 });
 
-  } catch (error) {
+  } catch (err) {
     return NextResponse.json(
-      { error: "Failed to create item" }, 
+      { error: "Failed to create item", details: String(err) }, 
       { status: 500 }
     );
   }

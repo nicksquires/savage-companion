@@ -45,19 +45,20 @@ const ThemeSwitcher = () => {
       <div
         tabIndex={0}
         role="button"
-        className="btn btn-ghost btn-sm gap-2 normal-case
-        text-navbar-content hover:text-navbar hover:bg-navbar-content
-        "
+        className="btn btn-ghost btn-sm py-5 normal-case text-navbar-content 
+        hover:text-navbar hover:bg-navbar-content"
       >
-        <Palette className="h-4 w-4" />
-        <span className="hidden md:inline">Theme</span>
-        <ChevronDown className="h-3 w-3 opacity-50" />
+        <Palette className="h-6 w-6" />
+        {/* <span className="hidden md:inline">Theme</span> */}
+        <ChevronDown size={15} />
       </div>
+
+      {/* Theme List */}
       <ul
         tabIndex={0}
         className="dropdown-content menu p-2 shadow-xl 
-        bg-navbar brightness-125 rounded-box w-56 z-100 border 
-        border-primary/10 overflow-y-auto"
+        bg-navbar rounded-box w-56 z-100 border 
+        border-base-100/50 overflow-y-auto"
       >
         <li className="menu-title text-xs uppercase text-navbar-content opacity-70 px-4 py-2">
           Choose your vibe...

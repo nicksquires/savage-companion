@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { hindranceSchema } from "../../../lib/schemas/api/hindrance.schema";
 
 // GET - get all hindrances from master list
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
     const hindrances = await prisma.hindrance.findMany({
       include: { source: true }, // OPTIONAL: include related data
@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(hindrances);
   } catch (err) {
     return NextResponse.json(
-      { error: "Failed to fetch hindrances - internal server error." },
+      { error: "Failed to fetch hindrances - internal server error.", details: String(err) },
       { status: 500 }
     );
   }
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
   return NextResponse.json(newHindrance, { status: 201 });
     } catch (err) {
     return NextResponse.json(
-      { error: "Failed to add hindrance" },
+      { error: "Failed to add hindrance", details: String(err) },
       { status: 500 }
     );
   }

@@ -6,13 +6,13 @@ import logo from "/public/images/SW_LOGO_FP_2018.png";
 const Footer = () => {
   return (
     <footer className="bg-navbar text-navbar-content">
-      {/* TOP: Columns */}
-      <div className="footer sm:footer-horizontal p-10">
-        <aside>
+      {/* Icon Aside/Header */}
+      <div className="footer sm:footer-horizontal py-10 px-2 lg:px-10 items-center">
+        <aside className="flex flex-col items-center text-center">
           <Image
             src={logo}
             alt="Savage Worlds logo"
-            className="m-1 min-h-28 h-28 min-w-42 w-42"
+            className="min-w-25 w-42"
           />
           <p className="font-semibold">
             Savage Worlds Companion
@@ -23,7 +23,8 @@ const Footer = () => {
           </p>
         </aside>
 
-        <nav className="min-w-50">
+        {/* Campaigns */}
+        <nav className="min-w-30 sm:min-w-30">
           <h6 className="footer-title opacity-90 font-black">Campaigns</h6>
           <Link href="#" className="link link-hover">
             New Campaign
@@ -36,7 +37,8 @@ const Footer = () => {
           </Link>
         </nav>
 
-        <nav className="min-w-50">
+        {/* Tools */}
+        <nav className="min-w-30 sm:min-w-30">
           <h6 className="footer-title opacity-90 font-black">Tools</h6>
           <Link href="#" className="link link-hover">
             Character Builder
@@ -49,7 +51,8 @@ const Footer = () => {
           </Link>
         </nav>
 
-        <nav className="min-w-50">
+        {/* Reference */}
+        <nav className="min-w-30 sm:min-w-30">
           <h6 className="footer-title opacity-90 font-black">Reference</h6>
           <div className="grid grid-cols-2 gap-x-8 gap-y-2">
             <Link href="#" className="link link-hover">
@@ -72,6 +75,23 @@ const Footer = () => {
             </Link>
           </div>
         </nav>
+
+        {/* Legal
+        <nav className="min-w-50 mx-auto">
+          <h6 className="footer-title opacity-90 font-black">Legal</h6>
+          <Link href="/" className="link link-hover">
+            Terms of Use
+          </Link>
+          <Link href="#" className="link link-hover">
+            Licensing Notice
+          </Link>
+          <Link href="#" className="link link-hover">
+            Privacy Policy
+          </Link>
+          <Link href="#" className="link link-hover">
+            Cookie Usage
+          </Link>
+        </nav> */}
       </div>
 
       {/* BOTTOM: Legal / Disclaimer */}

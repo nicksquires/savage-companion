@@ -19,10 +19,9 @@ export async function seedCoreHindrances() {
           slug: hindranceData.slug,
           severity: hindranceData.severity as HindranceType,
           description: hindranceData.description,
-          notes: hindranceData.notes,
+          summary: hindranceData.summary,
           isHomebrew: hindranceData.isHomebrew,
           isPublic: hindranceData.isPublic,
-          ownerId: hindranceData.ownerId,
           sourceName: hindranceData.sourceName,
         },
       });

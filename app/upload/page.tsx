@@ -14,7 +14,7 @@ const UploadPage = () => {
       {publicId && <CldImage src={publicId} alt="" width="300" height="300" />}
       <CldUploadWidget
         uploadPreset="fhjfzp3f0"
-        onSuccess={(result, widget) => {
+        onSuccess={(result, _widget) => {
           const info = result.info as CloudinaryUploadWidgetInfo;
           if (result.event !== "success") return;
           setPublicId(info.public_id);
