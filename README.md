@@ -51,9 +51,9 @@ I’m updating this README as major milestones are hit — expect it to evolve q
 - **Database**: Prisma ORM + MySQL (easily swappable)
 - **Auth**: NextAuth v5 (Google + Credentials)
 - **Styling**: Tailwind CSS + custom Savage Worlds theme system
-- **State**: React hooks + server actions (Zustand planned for complex client state)
+- **State**: React hooks + server actions (Zustand planned for initial complex client state - may require Redux when integrating advanced VTT session features)
 - **Rules Engine**: Pure TypeScript with full Savage Worlds modifier logic
-- **Deployment**: Vercel (demo sample live at [savage-companion.vercel.app](https://savage-companion.vercel.app/))
+- **Deployment**: Vercel (demo sample page live at [savage-companion.vercel.app/reference/edges](https://savage-companion.vercel.app/reference/edges))
 
 ## 🚀 Getting Started
 
@@ -64,8 +64,8 @@ I’m updating this README as major milestones are hit — expect it to evolve q
 
 ### 1. Clone & install
 ```bash
-git clone https://github.com/YOUR-USERNAME/savage-worlds-vtt-companion.git
-cd savage-worlds-vtt-companion
+git clone https://github.com/nicksquires/savage-companion.git
+cd savage-companion
 npm install
 ```
 
