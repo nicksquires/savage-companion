@@ -78,7 +78,8 @@ enum EventType {
 enum ItemType {
   WEAPON // Swords, guns, bows, claws
   ARMOR // Armor, shields, protective gear
-  CONSUMABLE // Potions, ammo, food, drugs, scrolls
+  CONSUMABLE // Potions, food, drugs, scrolls
+  AMMUNITION // Used with various weapons and firearms
   TOOL // Utility items: rope, lockpicks, lanterns, crafting kits
   ARTIFACT // Unique magical/technological devices (magic device, relics, advanced tech)
   KEY_ITEM // Campaign-specific items: plot keys, quest tokens, one-off puzzle items
@@ -197,56 +198,7 @@ enum WeaponCategory {
 enum DamageType {
   NORMAL
   PIERCING
-}
-
-enum TargetType {
-  SELF // Applies to the user/wielder
-  ALLY // Applies to friendly targets
-  ENEMY // Applies to hostile targets
-  MULTI // Applies to multiple (e.g., allies or enemies in range)
-  AREA // Applies to an area template (e.g., Small Burst)
-  OBJECT // Applies to items/objects (rare, e.g., repair effects)
-}
-
-// enum EffectTrigger {
-//   ON_ATTACK
-//   ON_HIT
-//   ON_RAISE
-//   ON_MISS
-//   ON_DAMAGE
-//   ON_BEING_HIT
-//   ON_ITEM_HIT
-//   ON_EQUIP
-//   ON_UNEQUIP
-//   ON_USE
-//   PASSIVE
-// }
-
-// “some effects activate only when the wielder is struck”
-// “some effects activate if the item is struck”
-enum EffectContext {
-  WIELDER // Character holding the item
-  TARGET // Who is affected
-  ITEM // The item itself (weapon, armor)
-  SOURCE // Origin of the effect (spell, artifact)
-  AREA
-}
-
-// May be replaced by EffectType
-enum SpecialAbilityCategory {
-  MOVEMENT
-  OFFENSE
-  DEFENSE
-  IMMUNITIES
-  RESISTANCE
-  WEAKNESS
-  SENSES
-  TRAITS
-  RECOVERY
-  STATUSEFFECT
-  COMBAT
-  DURABILITY
-  HAZARD
+  BLUNT
 }
 
 enum FirearmMountType {
@@ -266,6 +218,7 @@ enum SettingType {
   FUTURISTIC
   ANCIENT_TIMES
   OTHERWORLD
+  HISTORICAL_TIMES
 }
 
 enum ModifierEntityType {
@@ -292,16 +245,59 @@ enum DurationType {
   PERMANENT // Items, edges, racial abilities
 }
 
+// Examine this and PowerModifier for suitability in game logic vs schema
+// enum PowerGeneralModifier {
+//   ARMOR_PIERCING
+//   FATIGUE
+//   GLOW_SHROUD
+//   HEAVY_WEAPON
+//   HINDER_HURRY
+//   LINGERING_DAMAGE
+//   RANGE
+//   SELECTIVE
+// }
+
+// enum PowerModifier { 
+//   ADDITIONAL_RECIPIENTS 
+//   ADDITIONAL_ZOMBIES 
+//   AREA_EFFECT 
+//   ARMED 
+//   ARMOR 
+//   BITE_CLAW 
+//   CRIPPLING_INJURIES 
+//   DAMAGE 
+//   EDIT 
+//   FAST_CAST 
+//   FLIGHT 
+//   GREATER_HEALING 
+//   HARDENED 
+//   MIND_RIDER 
+//   MOBILE 
+//   MORE_ARMOR 
+//   NEUTRALIZE_POISON_OR_DISEASE 
+//   PERMANENT 
+//   POWER 
+//   QUICKNESS 
+//   SHAPED 
+//   SIZE 
+//   SOUND 
+//   SPEECH 
+//   STRONG 
+//   TARGETED 
+//   TELEPORT_FOE 
+//   TOUGHNESS 
+//   }
+
 // The Account model in your schema is intended to support multiple 
 // login providers per user. This doesn’t mean a user can log in as 
 // multiple users, but rather that a single user can link multiple 
 // authentication methods to their one account.
 model Account {
   id                String  @id @default(cuid())
-  userId            String  @map("user_id")
+  userId            String
   type              String
   provider          String
-  providerAccountId String  @map("provider_account_id")
+  providerAccountId String
   refresh_token     String? @db.Text
   access_token      String? @db.Text
   expires_at        Int?
@@ -313,30 +309,29 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-  @@map("accounts")
 }
 
 model Session {
   id           String   @id @default(cuid())
-  sessionToken String   @unique @map("session_token")
-  userId       String   @map("user_id")
+  sessionToken String   @unique
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@map("sessions")
 }
 
 model User {
-  id               String                     @id @default(cuid())
-  name             String?
-  email            String                     @unique
-  emailVerified    DateTime?                  @map("email_verified")
-  hashedPassword   String?
-  image            String?
-  role             Role                       @default(FREE)
-  accounts         Account[]
-  sessions         Session[]
-  registeredAt     DateTime                   @default(now())
+  id             String    @id @default(cuid())
+  name           String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  hashedPassword String?
+  image          String?
+  role           Role      @default(FREE)
+  accounts       Account[]
+  sessions       Session[]
+
+  registeredAt DateTime @default(now())
+
   campaigns        Campaign[]
   campaignTemplate CampaignStartingTemplate[]
   campaignGMs      CampaignGM[] // Campaigns where user is GM (promoted) 
@@ -381,11 +376,10 @@ model Subscription {
 
 model VerificationToken {
   identifier String
-  token      String
+  token      String   @unique
   expires    DateTime
 
   @@unique([identifier, token])
-  @@map("verification_tokens")
 }
 
 ///////////////////////////////////////
@@ -1075,15 +1069,6 @@ model ItemInstance {
   @@index([creatureId])
 }
 
-model WeaponCategoryAssignment {
-  weaponId String
-  category WeaponCategory
-
-  weapon Weapon @relation(fields: [weaponId], references: [id], onDelete: Cascade)
-
-  @@id([weaponId, category])
-}
-
 model Weapon {
   id         String                     @id @default(cuid())
   itemId     String                     @unique
@@ -1099,6 +1084,15 @@ model Weapon {
 
   firearm Firearm?
   item    Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model WeaponCategoryAssignment {
+  weaponId String
+  category WeaponCategory
+
+  weapon Weapon @relation(fields: [weaponId], references: [id], onDelete: Cascade)
+
+  @@id([weaponId, category])
 }
 
 model Firearm {
@@ -1653,49 +1647,6 @@ model ItemTag {
 //   PARRY_CALCULATION
 // }
 
-// Examine this and PowerModifier for suitability in game logic vs schema
-// enum PowerGeneralModifier {
-//   ARMOR_PIERCING
-//   FATIGUE
-//   GLOW_SHROUD
-//   HEAVY_WEAPON
-//   HINDER_HURRY
-//   LINGERING_DAMAGE
-//   RANGE
-//   SELECTIVE
-// }
-
-// enum PowerModifier { 
-//   ADDITIONAL_RECIPIENTS 
-//   ADDITIONAL_ZOMBIES 
-//   AREA_EFFECT 
-//   ARMED 
-//   ARMOR 
-//   BITE_CLAW 
-//   CRIPPLING_INJURIES 
-//   DAMAGE 
-//   EDIT 
-//   FAST_CAST 
-//   FLIGHT 
-//   GREATER_HEALING 
-//   HARDENED 
-//   MIND_RIDER 
-//   MOBILE 
-//   MORE_ARMOR 
-//   NEUTRALIZE_POISON_OR_DISEASE 
-//   PERMANENT 
-//   POWER 
-//   QUICKNESS 
-//   SHAPED 
-//   SIZE 
-//   SOUND 
-//   SPEECH 
-//   STRONG 
-//   TARGETED 
-//   TELEPORT_FOE 
-//   TOUGHNESS 
-//   }
-
 // TO-DO: Examine Artificer specifics for model accuracy/necessity
 // model MagicDevice {
 //   id          String  @id @default(cuid())
@@ -1755,3 +1706,53 @@ model ItemTag {
 // Effect.targetType
 // Effect categories
 // runtime context
+
+// enum TargetType {
+//   SELF // Applies to the user/wielder
+//   ALLY // Applies to friendly targets
+//   ENEMY // Applies to hostile targets
+//   MULTI // Applies to multiple (e.g., allies or enemies in range)
+//   AREA // Applies to an area template (e.g., Small Burst)
+//   OBJECT // Applies to items/objects (rare, e.g., repair effects)
+// }
+
+// enum EffectTrigger {
+//   ON_ATTACK
+//   ON_HIT
+//   ON_RAISE
+//   ON_MISS
+//   ON_DAMAGE
+//   ON_BEING_HIT
+//   ON_ITEM_HIT
+//   ON_EQUIP
+//   ON_UNEQUIP
+//   ON_USE
+//   PASSIVE
+// }
+
+// “some effects activate only when the wielder is struck”
+// “some effects activate if the item is struck”
+// enum EffectContext {
+//   WIELDER // Character holding the item
+//   TARGET // Who is affected
+//   ITEM // The item itself (weapon, armor)
+//   SOURCE // Origin of the effect (spell, artifact)
+//   AREA
+// }
+
+// May be replaced by EffectType
+// enum SpecialAbilityCategory {
+//   MOVEMENT
+//   OFFENSE
+//   DEFENSE
+//   IMMUNITIES
+//   RESISTANCE
+//   WEAKNESS
+//   SENSES
+//   TRAITS
+//   RECOVERY
+//   STATUSEFFECT
+//   COMBAT
+//   DURABILITY
+//   HAZARD
+// }

@@ -3,8 +3,7 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import logo from "/public/images/SW_LOGO_FP_2018.png";
+import logo from "@/public/images/SW_LOGO_FP_2018.png";
 import ModeToggle from "./ModeToggle";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { UserCircle, ChevronDown } from "lucide-react";
@@ -25,7 +24,10 @@ const NavBar = () => {
           <Image
             src={logo}
             alt="Savage Worlds Fan Product logo"
+            width={120}
+            height={80}
             className="sm:min-w-30 sm:w-30 min-w-22 w-22"
+            priority
           />
         </Link>
       </div>

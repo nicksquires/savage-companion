@@ -1,25 +1,31 @@
-// Extended NextAuth’s types so ‘role’ doesn’t cause type 
-// errors by creating: /app/types/next-auth.d.ts
-// TODO: Examine necessity
-import _NextAuth from "next-auth";
+import { DefaultSession, DefaultUser } from "next-auth";
+import { JWT, DefaultJWT } from "next-auth/jwt";
+import { Role } from "@prisma/client";
 
 declare module "next-auth" {
   interface Session {
     user: {
+      id: string;
+      role?: Role;
       name?: string | null;
       email?: string | null;
       image?: string | null;
-      role?: string;
-    };
+    } & DefaultSession["user"];
   }
 
-  interface User {
-    role?: string;
+  interface User extends DefaultUser {
+    role?: Role;
   }
 }
 
 declare module "next-auth/jwt" {
-  interface JWT {
-    role?: string;
+  interface JWT extends DefaultJWT {
+    role?: Role;
+  }
+}
+
+declare module "@auth/core/adapters" {
+  interface AdapterUser {
+    role?: Role;
   }
 }

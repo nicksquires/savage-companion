@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE `effect` MODIFY `definitions` VARCHAR(191) NULL,
-    MODIFY `trigger` ENUM('ON_ATTACK', 'ON_HIT', 'ON_RAISE', 'ON_MISS', 'ON_DAMAGE', 'ON_BEING_HIT', 'ON_ITEM_HIT', 'ON_EQUIP', 'ON_UNEQUIP', 'ON_USE', 'PASSIVE') NULL;

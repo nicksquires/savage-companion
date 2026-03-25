@@ -1,0 +1,3950 @@
+[
+  {
+    "name": "Backpack",
+    "description": "A standard backpack designed for carrying personal gear and supplies.",
+    "type": "TOOL",
+    "cost": 50,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bedroll (Winterized)",
+    "description": "A heavy sleeping bag suitable for cold weather conditions.",
+    "type": "CONSUMABLE",
+    "cost": 25,
+    "weight": 4,
+    "consumable": {
+      "description": "Provides warmth and comfort during rest in cold environments.",
+      "maxUses": null,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Blanket",
+    "description": "A simple wool or heavy cloth blanket for warmth or basic shelter.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 4,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Camera (Disposable)",
+    "description": "A single-use camera that captures basic photographs.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": 24,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Camera (Regular)",
+    "description": "A standard film camera for capturing photographs.",
+    "type": "TOOL",
+    "cost": 75,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Camera (Digital)",
+    "description": "A modern digital camera capable of storing multiple images.",
+    "type": "TOOL",
+    "cost": 300,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Candle",
+    "description": "A wax candle that burns for one hour and illuminates a small area.",
+    "type": "CONSUMABLE",
+    "cost": 1,
+    "weight": 1,
+    "consumable": {
+      "description": "Provides 2\" radius of light for one hour.",
+      "maxUses": 1,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Canteen (Waterskin)",
+    "description": "A container for carrying water or other liquids.",
+    "type": "TOOL",
+    "cost": 5,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Crowbar",
+    "description": "A heavy iron bar used for prying open doors, crates, or other sealed containers.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 2,
+    "tool": {
+      "skill": "REPAIR",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "First Aid Kit",
+    "description": "A basic kit containing bandages, antiseptics, and supplies for minor wounds.",
+    "type": "CONSUMABLE",
+    "cost": 10,
+    "weight": 1,
+    "consumable": {
+      "description": "Three uses; provides basic medical aid for minor injuries.",
+      "maxUses": 3,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flashlight",
+    "description": "A portable light source that projects a focused beam up to 10\" (20 yards).",
+    "type": "TOOL",
+    "cost": 20,
+    "weight": 3,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flask (Ceramic)",
+    "description": "A small ceramic container for holding liquids.",
+    "type": "TOOL",
+    "cost": 5,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flint and Steel",
+    "description": "A basic fire-starting kit consisting of flint and steel striker.",
+    "type": "TOOL",
+    "cost": 3,
+    "weight": 1,
+    "tool": {
+      "skill": "SURVIVAL",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Goggles",
+    "description": "Protective eyewear that shields the eyes from dust, wind, or debris.",
+    "type": "TOOL",
+    "cost": 20,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Grappling Hook",
+    "description": "A hooked metal device attached to rope for climbing or securing lines.",
+    "type": "TOOL",
+    "cost": 100,
+    "weight": 2,
+    "tool": {
+      "skill": "ATHLETICS",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Hammer",
+    "description": "A standard claw hammer for driving nails or light construction work.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 1,
+    "tool": {
+      "skill": "REPAIR",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Handcuffs (Manacles)",
+    "description": "Metal restraints used to secure a person's wrists.",
+    "type": "TOOL",
+    "cost": 15,
+    "weight": 2,
+    "tool": {
+      "skill": "THIEVERY",
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Lantern",
+    "description": "A portable oil lantern that provides steady light in a 4\" radius for four hours.",
+    "type": "TOOL",
+    "cost": 25,
+    "weight": 3,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": 4,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Lighter",
+    "description": "A small, reusable flint-based lighter for starting fires.",
+    "type": "TOOL",
+    "cost": 2,
+    "weight": 0,
+    "tool": {
+      "skill": "SURVIVAL",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Lockpicks",
+    "description": "A set of tools designed for picking locks.",
+    "type": "TOOL",
+    "cost": 200,
+    "weight": 1,
+    "tool": {
+      "skill": "THIEVERY",
+      "skillBonus": 2,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Medic Kit",
+    "description": "A professional medical kit containing advanced supplies for treating injuries.",
+    "type": "CONSUMABLE",
+    "cost": 100,
+    "weight": 4,
+    "consumable": {
+      "description": "Five uses; provides +1 to Healing skill rolls.",
+      "maxUses": 5,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Oil (Lantern)",
+    "description": "One pint of lamp oil sufficient to fuel a lantern for several hours.",
+    "type": "CONSUMABLE",
+    "cost": 2,
+    "weight": 1,
+    "consumable": {
+      "description": "Fuel for lanterns.",
+      "maxUses": null,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Quiver",
+    "description": "A container that holds up to 20 arrows or bolts.",
+    "type": "TOOL",
+    "cost": 25,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": 20,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Rope, Hemp (10\")",
+    "description": "A 10\" (20 yards) length of sturdy hemp rope.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 15,
+    "tool": {
+      "skill": "ATHLETICS",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Rope, Nylon (10\")",
+    "description": "A 10\" (20 yards) length of lightweight, strong nylon rope.",
+    "type": "TOOL",
+    "cost": 10,
+    "weight": 3,
+    "tool": {
+      "skill": "ATHLETICS",
+      "skillBonus": 2,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Shovel",
+    "description": "A standard digging tool for excavation or construction.",
+    "type": "TOOL",
+    "cost": 5,
+    "weight": 5,
+    "tool": {
+      "skill": "SURVIVAL",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Soap",
+    "description": "A bar of basic soap for personal hygiene.",
+    "type": "CONSUMABLE",
+    "cost": 1,
+    "weight": 0.2,
+    "consumable": {
+      "description": "Basic hygiene item.",
+      "maxUses": null,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Tool Kit",
+    "description": "A comprehensive set of tools for repair and construction work.",
+    "type": "TOOL",
+    "cost": 200,
+    "weight": 5,
+    "tool": {
+      "skill": "REPAIR",
+      "skillBonus": 2,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Torch",
+    "description": "A wooden torch that burns for one hour and illuminates a 4\" radius.",
+    "type": "CONSUMABLE",
+    "cost": 5,
+    "weight": 1,
+    "consumable": {
+      "description": "Provides 4\" radius of light for one hour.",
+      "maxUses": 1,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Umbrella",
+    "description": "A collapsible umbrella for protection from rain.",
+    "type": "TOOL",
+    "cost": 5,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Whistle",
+    "description": "A small metal whistle for signaling.",
+    "type": "TOOL",
+    "cost": 2,
+    "weight": 0,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Whetstone",
+    "description": "A stone used for sharpening blades and tools.",
+    "type": "TOOL",
+    "cost": 5,
+    "weight": 1,
+    "tool": {
+      "skill": "REPAIR",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Boots, Hiking",
+    "description": "Sturdy boots designed for rough terrain and long-distance travel.",
+    "type": "TOOL",
+    "cost": 100,
+    "weight": 2,
+    "tool": {
+      "skill": "ATHLETICS",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Camouflage Fatigues",
+    "description": "Military-style clothing patterned for blending into natural environments.",
+    "type": "ARMOR",
+    "cost": 20,
+    "weight": 3,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "torso, arms, legs",
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Clothing, Casual",
+    "description": "Everyday clothing suitable for general wear.",
+    "type": "TOOL",
+    "cost": 20,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Clothing, Formal",
+    "description": "High-quality formal attire for social or ceremonial occasions.",
+    "type": "TOOL",
+    "cost": 200,
+    "weight": 3,
+    "tool": {
+      "skill": "PERSUASION",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Winter Gear (Cloak/Parka)",
+    "description": "Heavy winter clothing or parka designed for extreme cold.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 3,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "torso, arms",
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Winter Boots",
+    "description": "Insulated boots for protection against cold weather.",
+    "type": "TOOL",
+    "cost": 100,
+    "weight": 1,
+    "tool": {
+      "skill": "ATHLETICS",
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Desktop Computer",
+    "description": "A full-sized desktop computer system for data processing and storage.",
+    "type": "TOOL",
+    "cost": 800,
+    "weight": 20,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "GPS",
+    "description": "A handheld global positioning system device for navigation.",
+    "type": "TOOL",
+    "cost": 250,
+    "weight": 1,
+    "tool": {
+      "skill": "SURVIVAL",
+      "skillBonus": 2,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Handheld Computer",
+    "description": "A compact portable computing device.",
+    "type": "TOOL",
+    "cost": 250,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laptop",
+    "description": "A portable laptop computer for mobile computing.",
+    "type": "TOOL",
+    "cost": 1200,
+    "weight": 5,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bipod/Tripod",
+    "description": "A stabilizing mount for firearms that reduces recoil and minimum strength requirements.",
+    "type": "TOOL",
+    "cost": 100,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser/Red Dot Sight",
+    "description": "An optical aiming device that improves accuracy at short and medium range.",
+    "type": "TOOL",
+    "cost": 150,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": 1,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Rifle Scope",
+    "description": "A telescopic sight that reduces range penalties when aiming.",
+    "type": "TOOL",
+    "cost": 100,
+    "weight": 2,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Fast Food Meal",
+    "description": "A quick, inexpensive meal providing basic sustenance.",
+    "type": "CONSUMABLE",
+    "cost": 8,
+    "weight": 1,
+    "consumable": {
+      "description": "Basic meal for one person.",
+      "maxUses": 1,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Good Meal (Restaurant)",
+    "description": "A high-quality restaurant meal providing substantial nourishment.",
+    "type": "CONSUMABLE",
+    "cost": 15,
+    "weight": 0,
+    "consumable": {
+      "description": "High-quality meal for one person.",
+      "maxUses": 1,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "MRE (Meal Ready to Eat)",
+    "description": "A self-contained military ration providing a complete meal.",
+    "type": "CONSUMABLE",
+    "cost": 10,
+    "weight": 1,
+    "consumable": {
+      "description": "Complete field ration for one person.",
+      "maxUses": 1,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Trail Rations",
+    "description": "Compact, long-lasting food rations suitable for travel (5 meals).",
+    "type": "CONSUMABLE",
+    "cost": 10,
+    "weight": 5,
+    "consumable": {
+      "description": "Five meals of preserved trail rations.",
+      "maxUses": 5,
+      "isStackable": true
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Pepper Spray",
+    "description": "A small canister that sprays a chemical irritant to incapacitate a target at close range.",
+    "type": "WEAPON",
+    "cost": 15,
+    "weight": 0.5,
+    "weapon": {
+      "categories": ["RANGED", "LIGHT", "CONCEALED"],
+      "setting": "MODERN",
+      "damage": null,
+      "range": "2\"",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Stun Gun",
+    "description": "A handheld electrical device that delivers a powerful shock on contact.",
+    "type": "WEAPON",
+    "cost": 25,
+    "weight": 0.5,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "CONCEALED"],
+      "setting": "MODERN",
+      "damage": null,
+      "range": "1\"",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bug (Micro Transmitter)",
+    "description": "A tiny listening device capable of transmitting audio for up to 12 hours.",
+    "type": "TOOL",
+    "cost": 30,
+    "weight": 0,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": 12,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Button Camera",
+    "description": "A miniature camera disguised as a button that records for up to 12 hours.",
+    "type": "TOOL",
+    "cost": 50,
+    "weight": 0,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": 12,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Cellular Interceptor",
+    "description": "A device capable of intercepting and monitoring cellular communications.",
+    "type": "TOOL",
+    "cost": 650,
+    "weight": 5,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Lineman's Telephone",
+    "description": "A portable device used to tap into and monitor telephone lines.",
+    "type": "TOOL",
+    "cost": 150,
+    "weight": 2,
+    "tool": {
+      "skill": "REPAIR",
+      "skillBonus": 2,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Night Vision Goggles",
+    "description": "Electronic goggles that allow clear vision in low-light conditions.",
+    "type": "TOOL",
+    "cost": 500,
+    "weight": 3,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Parabolic Microphone",
+    "description": "A long-range listening device capable of picking up distant conversations.",
+    "type": "TOOL",
+    "cost": 750,
+    "weight": 4,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Telephone Tap",
+    "description": "A device for secretly monitoring telephone conversations.",
+    "type": "TOOL",
+    "cost": 250,
+    "weight": 0,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Transmitter Detector",
+    "description": "A handheld scanner used to detect hidden listening devices or transmitters.",
+    "type": "TOOL",
+    "cost": 525,
+    "weight": 1,
+    "tool": {
+      "skill": null,
+      "skillBonus": null,
+      "maxUses": null,
+      "maxDurability": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Arrows/Bolts",
+    "description": "Standard ammunition for bows or crossbows.",
+    "type": "AMMUNITION",
+    "cost": 1,
+    "weight": 0.2,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bullets (Small)",
+    "description": "Ammunition for small-caliber firearms (.22 to .32).",
+    "type": "AMMUNITION",
+    "cost": 10,
+    "weight": 1,
+    "ammunitions": {
+      "caliber": 0.32,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bullets (Medium)",
+    "description": "Ammunition for medium-caliber firearms (9mm to .45).",
+    "type": "AMMUNITION",
+    "cost": 20,
+    "weight": 2,
+    "ammunitions": {
+      "caliber": 0.45,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bullets (Large)",
+    "description": "Ammunition for large-caliber firearms (.50 and above).",
+    "type": "AMMUNITION",
+    "cost": 50,
+    "weight": 15,
+    "ammunitions": {
+      "caliber": 0.5,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Batteries (Pistol)",
+    "description": "Power cells for laser pistols.",
+    "type": "AMMUNITION",
+    "cost": 20,
+    "weight": 0.25,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Batteries (Rifle/SMG)",
+    "description": "Power cells for laser rifles or submachine guns.",
+    "type": "AMMUNITION",
+    "cost": 20,
+    "weight": 0.5,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Batteries (Gatling)",
+    "description": "Power cells for laser gatling weapons.",
+    "type": "AMMUNITION",
+    "cost": 50,
+    "weight": 4,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Shot (w/powder)",
+    "description": "Black powder ammunition for historical firearms.",
+    "type": "AMMUNITION",
+    "cost": 1,
+    "weight": 0.5,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Shotgun Shells",
+    "description": "Standard buckshot ammunition for shotguns.",
+    "type": "AMMUNITION",
+    "cost": 15,
+    "weight": 1.5,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Shotgun Slugs",
+    "description": "Solid slug ammunition for shotguns.",
+    "type": "AMMUNITION",
+    "cost": 20,
+    "weight": 1.5,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sling Stones",
+    "description": "Smooth stones suitable for use with a sling.",
+    "type": "AMMUNITION",
+    "cost": 2,
+    "weight": 1,
+    "ammunitions": {
+      "caliber": null,
+      "ap": 0,
+      "damageMod": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Heavy Winter Clothing / Supple Leather Armor",
+    "description": "Heavy winter clothing or supple leather that provides basic protection.",
+    "type": "ARMOR",
+    "cost": 20,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "torso, arms",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Robes",
+    "description": "Loose robes covering torso, arms, and legs.",
+    "type": "ARMOR",
+    "cost": 30,
+    "weight": 8,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "torso, arms, legs",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Leather Leggings",
+    "description": "Leather protection for the legs.",
+    "type": "ARMOR",
+    "cost": 20,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "legs",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Leather Cap",
+    "description": "A simple leather cap for head protection.",
+    "type": "ARMOR",
+    "cost": 5,
+    "weight": 1,
+    "armor": {
+      "armorBonus": 1,
+      "covers": "head",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Boiled Leather Jacket",
+    "description": "Stiffened leather jacket covering torso and arms.",
+    "type": "ARMOR",
+    "cost": 80,
+    "weight": 8,
+    "armor": {
+      "armorBonus": 2,
+      "covers": "torso, arms",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Boiled Leather Leggings",
+    "description": "Stiffened leather protection for the legs.",
+    "type": "ARMOR",
+    "cost": 40,
+    "weight": 7,
+    "armor": {
+      "armorBonus": 2,
+      "covers": "legs",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Boiled Leather Cap",
+    "description": "Stiffened leather cap for head protection.",
+    "type": "ARMOR",
+    "cost": 20,
+    "weight": 1,
+    "armor": {
+      "armorBonus": 2,
+      "covers": "head",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Chain Mail Shirt",
+    "description": "Chain mail shirt covering torso and arms.",
+    "type": "ARMOR",
+    "cost": 300,
+    "weight": 25,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "torso, arms",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Chain Mail Leggings",
+    "description": "Chain mail protection for the legs.",
+    "type": "ARMOR",
+    "cost": 150,
+    "weight": 10,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "legs",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Chain Hood or Helm",
+    "description": "Chain mail hood or helmet for head protection.",
+    "type": "ARMOR",
+    "cost": 25,
+    "weight": 4,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "head",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bronze Corselet",
+    "description": "Bronze breastplate covering the torso.",
+    "type": "ARMOR",
+    "cost": 80,
+    "weight": 13,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "torso",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bronze Vambraces",
+    "description": "Bronze arm guards (pair).",
+    "type": "ARMOR",
+    "cost": 40,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "arms",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bronze Greaves",
+    "description": "Bronze leg guards (pair).",
+    "type": "ARMOR",
+    "cost": 50,
+    "weight": 6,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "legs",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bronze Helmet",
+    "description": "Bronze helmet for head protection.",
+    "type": "ARMOR",
+    "cost": 25,
+    "weight": 6,
+    "armor": {
+      "armorBonus": 3,
+      "covers": "head",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Plate Corselet",
+    "description": "Heavy plate armor covering the torso.",
+    "type": "ARMOR",
+    "cost": 500,
+    "weight": 30,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "torso",
+      "minStrength": "d10",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Plate Vambraces",
+    "description": "Heavy plate arm guards (pair).",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 10,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "arms",
+      "minStrength": "d10",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Plate Greaves",
+    "description": "Heavy plate leg guards (pair).",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 10,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "legs",
+      "minStrength": "d10",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Heavy Helm",
+    "description": "Heavy plate helmet for head protection.",
+    "type": "ARMOR",
+    "cost": 100,
+    "weight": 4,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "head",
+      "minStrength": "d10",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Heavy Helm, Enclosed",
+    "description": "Fully enclosed heavy plate helmet for maximum head protection.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 8,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "head",
+      "minStrength": "d10",
+      "parryPenalty": -1
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flak Jacket",
+    "description": "Vietnam-era flak jacket providing basic ballistic protection to the torso.",
+    "type": "ARMOR",
+    "cost": 40,
+    "weight": 10,
+    "armor": {
+      "armorBonus": 2,
+      "covers": "torso",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Kevlar Vest",
+    "description": "Modern ballistic vest providing protection against small arms fire.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 2,
+      "covers": "torso",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Kevlar Vest with Ceramic Inserts",
+    "description": "Advanced ballistic vest with ceramic plates for superior protection.",
+    "type": "ARMOR",
+    "cost": 500,
+    "weight": 17,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "torso",
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Kevlar Helmet",
+    "description": "Ballistic helmet providing head protection.",
+    "type": "ARMOR",
+    "cost": 80,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "head",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bombproof Suit",
+    "description": "Full-body bombproof suit offering maximum protection.",
+    "type": "ARMOR",
+    "cost": 25000,
+    "weight": 80,
+    "armor": {
+      "armorBonus": 10,
+      "covers": "entire body",
+      "minStrength": "d12",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Body Armor (Futuristic)",
+    "description": "Light, advanced polymer body armor covering torso, arms, and legs.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 4,
+    "armor": {
+      "armorBonus": 4,
+      "covers": "torso, arms, legs",
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Infantry Battle Suit",
+    "description": "Full military-grade futuristic battle armor with boots and gloves.",
+    "type": "ARMOR",
+    "cost": 800,
+    "weight": 12,
+    "armor": {
+      "armorBonus": 6,
+      "covers": "torso, arms, legs",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Battle Helmet (Full Face)",
+    "description": "Advanced futuristic helmet providing full head and face protection.",
+    "type": "ARMOR",
+    "cost": 100,
+    "weight": 2,
+    "armor": {
+      "armorBonus": 6,
+      "covers": "head",
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Small Shield (Medieval)",
+    "description": "A small round or heater shield used for parrying.",
+    "type": "ARMOR",
+    "cost": 50,
+    "weight": 4,
+    "armor": {
+      "armorBonus": 0,
+      "covers": null,
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Medium Shield (Medieval)",
+    "description": "A standard medieval shield providing good coverage.",
+    "type": "ARMOR",
+    "cost": 100,
+    "weight": 8,
+    "armor": {
+      "armorBonus": 0,
+      "covers": null,
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Large Shield (Medieval)",
+    "description": "A large kite or tower shield offering maximum protection.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 12,
+    "armor": {
+      "armorBonus": 0,
+      "covers": null,
+      "minStrength": "d8",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Riot Shield",
+    "description": "Modern transparent riot control shield.",
+    "type": "ARMOR",
+    "cost": 80,
+    "weight": 5,
+    "armor": {
+      "armorBonus": 0,
+      "covers": null,
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Ballistic Shield",
+    "description": "Modern shield designed to stop bullets.",
+    "type": "ARMOR",
+    "cost": 250,
+    "weight": 9,
+    "armor": {
+      "armorBonus": 2,
+      "covers": null,
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Polymer Shield (Small)",
+    "description": "Futuristic lightweight small shield.",
+    "type": "ARMOR",
+    "cost": 200,
+    "weight": 2,
+    "armor": {
+      "armorBonus": 4,
+      "covers": null,
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Polymer Shield (Medium)",
+    "description": "Futuristic lightweight medium shield.",
+    "type": "ARMOR",
+    "cost": 300,
+    "weight": 4,
+    "armor": {
+      "armorBonus": 4,
+      "covers": null,
+      "minStrength": "d4",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Polymer Shield (Large)",
+    "description": "Futuristic lightweight large shield.",
+    "type": "ARMOR",
+    "cost": 400,
+    "weight": 6,
+    "armor": {
+      "armorBonus": 4,
+      "covers": null,
+      "minStrength": "d6",
+      "parryPenalty": 0
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Hand Axe",
+    "description": "A one-handed axe suitable for combat or utility work.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Battle Axe",
+    "description": "A larger, two-handed battle axe designed for heavy combat.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 4,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "HEAVY", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Great Axe",
+    "description": "A massive two-handed axe with significant reach and power.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 7,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "HEAVY", "REACH", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d10",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d10"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Light Club",
+    "description": "A simple wooden club or baton.",
+    "type": "WEAPON",
+    "cost": 25,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Heavy Club",
+    "description": "A heavier wooden club or mace-like weapon.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 5,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Dagger / Knife",
+    "description": "A small, concealable bladed weapon.",
+    "type": "WEAPON",
+    "cost": 25,
+    "weight": 1,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "CONCEALED", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flail",
+    "description": "A chained weapon that ignores shield bonuses.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 3,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Halberd",
+    "description": "A polearm combining axe, spear, and hook features.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 6,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "REACH", "POLEARM"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Katana",
+    "description": "A finely crafted two-handed Japanese sword.",
+    "type": "WEAPON",
+    "cost": 1000,
+    "weight": 3,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6+1",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Lance",
+    "description": "A long cavalry spear used for charging attacks.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 6,
+    "weapon": {
+      "categories": ["MELEE", "REACH", "POLEARM"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Mace",
+    "description": "A heavy, blunt-headed weapon effective against armor.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 4,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Maul",
+    "description": "A massive two-handed hammer designed for breaking objects.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 10,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "HEAVY", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d10",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d10"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Pike",
+    "description": "A very long spear used in formation combat.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 18,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "REACH", "POLEARM"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Rapier",
+    "description": "A light, elegant fencing sword with excellent parrying capability.",
+    "type": "WEAPON",
+    "cost": 150,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "ONE_HANDED", "MELEE_PIERCE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Spear",
+    "description": "A versatile thrusting weapon that can also be thrown.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 3,
+    "weapon": {
+      "categories": ["MELEE", "RANGED", "REACH", "POLEARM"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Staff",
+    "description": "A simple wooden staff used for defense and travel.",
+    "type": "WEAPON",
+    "cost": 10,
+    "weight": 4,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "REACH", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Great Sword",
+    "description": "A massive two-handed sword.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 6,
+    "weapon": {
+      "categories": ["MELEE", "TWO_HANDED", "HEAVY", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d10",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d10"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Long Sword",
+    "description": "A versatile one-handed sword commonly used in combat.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 3,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Short Sword",
+    "description": "A compact sword ideal for close-quarters combat or as a sidearm.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "LIGHT", "MELEE_BLADE"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Warhammer",
+    "description": "A spiked hammer designed to penetrate armor.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLUNT"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 1,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bangstick",
+    "description": "A shotgun shell mounted on a stick for close-quarters use.",
+    "type": "WEAPON",
+    "cost": 5,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "IMPROVISED"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bayonet",
+    "description": "A blade attached to the end of a rifle for melee combat.",
+    "type": "WEAPON",
+    "cost": 25,
+    "weight": 1,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "MELEE_PIERCE"],
+      "setting": "MODERN",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Billy Club / Baton",
+    "description": "A short, weighted club commonly carried by law enforcement.",
+    "type": "WEAPON",
+    "cost": 10,
+    "weight": 1,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "MELEE_BLUNT"],
+      "setting": "MODERN",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Brass Knuckles",
+    "description": "Metal knuckles worn on the hand to increase punch damage.",
+    "type": "WEAPON",
+    "cost": 20,
+    "weight": 1,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "CONCEALED", "IMPROVISED"],
+      "setting": "MODERN",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Chainsaw",
+    "description": "A powered cutting tool occasionally used as an improvised weapon.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 20,
+    "weapon": {
+      "categories": ["MELEE", "HEAVY", "IMPROVISED"],
+      "setting": "MODERN",
+      "damage": "2d6+4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Switchblade",
+    "description": "A concealable folding knife that can be deployed quickly.",
+    "type": "WEAPON",
+    "cost": 10,
+    "weight": 0.5,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "CONCEALED", "MELEE_BLADE"],
+      "setting": "MODERN",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Survival Knife",
+    "description": "A rugged knife with built-in survival tools in the handle.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 1,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "MELEE_BLADE"],
+      "setting": "MODERN",
+      "damage": "Str+d4",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Molecular Knife",
+    "description": "A futuristic blade with an extremely sharp monomolecular edge.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 0.5,
+    "weapon": {
+      "categories": ["MELEE", "LIGHT", "CONCEALED", "MELEE_BLADE"],
+      "setting": "FUTURISTIC",
+      "damage": "Str+d4+2",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Molecular Sword",
+    "description": "A long futuristic blade with monomolecular cutting power.",
+    "type": "WEAPON",
+    "cost": 500,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "MELEE_BLADE"],
+      "setting": "FUTURISTIC",
+      "damage": "Str+d8+2",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 4,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Sword",
+    "description": "A high-energy plasma or laser blade weapon.",
+    "type": "WEAPON",
+    "cost": 1000,
+    "weight": 2,
+    "weapon": {
+      "categories": ["MELEE", "ONE_HANDED", "ENERGY", "MELEE_BLADE"],
+      "setting": "FUTURISTIC",
+      "damage": "Str+d6+8",
+      "range": "Melee",
+      "rof": 1,
+      "ap": 12,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Throwing Axe",
+    "description": "A balanced axe designed for throwing.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "THROWN"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "3/6/12",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bow",
+    "description": "A standard wooden bow for ranged combat.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "BOW"],
+      "setting": "MEDIEVAL",
+      "damage": "2d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Crossbow (Hand Drawn)",
+    "description": "A compact, hand-drawn crossbow.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 5,
+    "weapon": {
+      "categories": ["RANGED", "CROSSBOW"],
+      "setting": "MEDIEVAL",
+      "damage": "2d6",
+      "range": "10/20/40",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Heavy Crossbow",
+    "description": "A powerful crossbow requiring a windlass to load.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "CROSSBOW", "HEAVY"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Long Bow",
+    "description": "A larger, more powerful bow requiring significant strength.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "BOW", "TWO_HANDED"],
+      "setting": "MEDIEVAL",
+      "damage": "2d6",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 1,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Net (Weighted)",
+    "description": "A weighted throwing net used to entangle opponents.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MEDIEVAL",
+      "damage": null,
+      "range": "3/6/12",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sling",
+    "description": "A simple leather sling for hurling stones.",
+    "type": "WEAPON",
+    "cost": 10,
+    "weight": 1,
+    "weapon": {
+      "categories": ["RANGED", "THROWN"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d4",
+      "range": "4/8/16",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Spear / Javelin",
+    "description": "A versatile spear that can be used in melee or thrown.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 3,
+    "weapon": {
+      "categories": ["MELEE", "RANGED", "THROWN", "REACH", "POLEARM"],
+      "setting": "MEDIEVAL",
+      "damage": "Str+d6",
+      "range": "3/6/12",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Compound Bow",
+    "description": "A modern compound bow with mechanical advantages for greater power.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "BOW"],
+      "setting": "MODERN",
+      "damage": "Str+d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 1,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Crossbow (Modern)",
+    "description": "A modern crossbow with improved power and accuracy.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 7,
+    "weapon": {
+      "categories": ["RANGED", "CROSSBOW"],
+      "setting": "MODERN",
+      "damage": "2d6",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flintlock Pistol",
+    "description": "A single-shot black powder pistol from the age of sail.",
+    "type": "WEAPON",
+    "cost": 150,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "PISTOL"],
+      "setting": "MEDIEVAL",
+      "damage": "2d6+1",
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 3,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Brown Bess Musket",
+    "description": "A standard smoothbore musket used in the 18th and 19th centuries.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 15,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "RIFLE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8",
+      "range": "10/20/40",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 3,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Blunderbuss",
+    "description": "A short, wide-barreled black powder shotgun.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 12,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "SHOTGUN"],
+      "setting": "MEDIEVAL",
+      "damage": "1-3d6",
+      "range": "10/20/40",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 3,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Kentucky Rifle",
+    "description": "A long, accurate rifled musket from the frontier era.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "RIFLE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 4,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Springfield Model 1861",
+    "description": "A standard Civil War-era rifled musket.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 11,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "RIFLE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 3,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Colt 1911 (.45)",
+    "description": "A classic semi-automatic pistol chambered in .45 ACP.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 4,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "PISTOL"],
+      "setting": "MODERN",
+      "damage": "2d6+1",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 1,
+      "caliber": 0.45,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 7,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Desert Eagle (.50)",
+    "description": "A powerful semi-automatic pistol chambered in .50 AE.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "PISTOL", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.5,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 7,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Glock (9mm)",
+    "description": "A reliable modern semi-automatic pistol chambered in 9mm.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 3,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "PISTOL"],
+      "setting": "MODERN",
+      "damage": "2d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 1,
+      "caliber": 9,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 17,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Ruger (.22)",
+    "description": "A lightweight semi-automatic pistol chambered in .22 LR.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 2,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "PISTOL", "LIGHT"],
+      "setting": "MODERN",
+      "damage": "2d4",
+      "range": "10/20/40",
+      "rof": 1,
+      "ap": 0,
+      "caliber": 0.22,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 9,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "H&K MP5 (9mm)",
+    "description": "A compact 9mm submachine gun widely used by special forces.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SMG"],
+      "setting": "MODERN",
+      "damage": "2d6",
+      "range": "12/24/48",
+      "rof": 3,
+      "ap": 1,
+      "caliber": 9,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 30,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Tommy Gun (.45)",
+    "description": "A classic .45 caliber submachine gun from the Prohibition era.",
+    "type": "WEAPON",
+    "cost": 350,
+    "weight": 13,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SMG"],
+      "setting": "MODERN",
+      "damage": "2d6+1",
+      "range": "12/24/48",
+      "rof": 3,
+      "ap": 1,
+      "caliber": 0.45,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 20,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Uzi (9mm)",
+    "description": "A compact, reliable 9mm submachine gun.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 9,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SMG"],
+      "setting": "MODERN",
+      "damage": "2d6",
+      "range": "12/24/48",
+      "rof": 3,
+      "ap": 1,
+      "caliber": 9,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 32,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Double-Barrel Shotgun",
+    "description": "A classic side-by-side double-barrel shotgun.",
+    "type": "WEAPON",
+    "cost": 150,
+    "weight": 11,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SHOTGUN"],
+      "setting": "MODERN",
+      "damage": "1-3d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 2,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Pump Action Shotgun",
+    "description": "A reliable pump-action shotgun with tubular magazine.",
+    "type": "WEAPON",
+    "cost": 150,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SHOTGUN"],
+      "setting": "MODERN",
+      "damage": "1-3d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 6,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sawed-Off Double-Barrel",
+    "description": "A shortened double-barrel shotgun for close-quarters use.",
+    "type": "WEAPON",
+    "cost": 150,
+    "weight": 6,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SHOTGUN", "LIGHT", "CONCEALED"],
+      "setting": "MODERN",
+      "damage": "1-3d6",
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 2,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Streetsweeper",
+    "description": "A rapid-fire shotgun designed for close-quarters combat.",
+    "type": "WEAPON",
+    "cost": 450,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "SHOTGUN", "SUPPRESSIVE"],
+      "setting": "MODERN",
+      "damage": "1-3d6",
+      "range": "12/24/48",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 12,
+      "reloadActions": 2,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Barrett (.50)",
+    "description": "A heavy .50 caliber anti-materiel sniper rifle.",
+    "type": "WEAPON",
+    "cost": 750,
+    "weight": 35,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d10",
+      "range": "50/100/200",
+      "rof": 1,
+      "ap": 4,
+      "caliber": 0.5,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 10,
+      "reloadActions": 1,
+      "mountType": "BIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "M1 Garand (.30-06)",
+    "description": "The standard U.S. infantry rifle of World War II.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "24/48/96",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.3,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 8,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Hunting Rifle (.308)",
+    "description": "A common civilian bolt-action hunting rifle.",
+    "type": "WEAPON",
+    "cost": 350,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "24/48/96",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.308,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 5,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sharps Big 50 (.50)",
+    "description": "A powerful single-shot black powder rifle from the frontier era.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 11,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "RIFLE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d10",
+      "range": "30/60/120",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.5,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 3,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Spencer Carbine (.52)",
+    "description": "A lever-action carbine from the American Civil War era.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "CARBINE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8",
+      "range": "20/40/80",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.52,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 7,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Winchester '73 (.44-40)",
+    "description": "The iconic lever-action repeating rifle of the Old West.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "BLACK_POWDER", "RIFLE"],
+      "setting": "MEDIEVAL",
+      "damage": "2d8-1",
+      "range": "24/48/96",
+      "rof": 1,
+      "ap": 2,
+      "caliber": 0.44,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 15,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "AK-47 (7.62mm)",
+    "description": "A rugged and reliable 7.62mm assault rifle.",
+    "type": "WEAPON",
+    "cost": 450,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE"],
+      "setting": "MODERN",
+      "damage": "2d8+1",
+      "range": "24/48/96",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 7.62,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 30,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "M-16 (5.56mm)",
+    "description": "The standard U.S. military assault rifle.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "24/48/96",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 5.56,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 30,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Steyr AUG (5.56mm)",
+    "description": "A modern bullpup assault rifle with integrated optics.",
+    "type": "WEAPON",
+    "cost": 400,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "24/48/96",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 5.56,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 30,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Browning Automatic Rifle (BAR)",
+    "description": "A heavy automatic rifle used as a squad support weapon.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 17,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "RIFLE", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "20/40/60",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 0.3,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 20,
+      "reloadActions": 1,
+      "mountType": "BIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Gatling (.45)",
+    "description": "A hand-cranked or early electric multi-barrel machine gun.",
+    "type": "WEAPON",
+    "cost": 500,
+    "weight": 170,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "24/48/96",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 0.45,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 100,
+      "reloadActions": 2,
+      "mountType": "TRIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Minigun (7.62mm)",
+    "description": "A high-rate-of-fire electric Gatling-style machine gun.",
+    "type": "WEAPON",
+    "cost": 100000,
+    "weight": 85,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8+1",
+      "range": "30/60/120",
+      "rof": 5,
+      "ap": 2,
+      "caliber": 7.62,
+      "minStrength": "d10"
+    },
+    "firearm": {
+      "ammoCapacity": 4000,
+      "reloadActions": 2,
+      "mountType": "TRIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "M2 Browning (.50 Cal)",
+    "description": "A heavy .50 caliber machine gun used as a vehicle or emplaced weapon.",
+    "type": "WEAPON",
+    "cost": 1500,
+    "weight": 84,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d10",
+      "range": "50/100/200",
+      "rof": 3,
+      "ap": 4,
+      "caliber": 0.5,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 200,
+      "reloadActions": 2,
+      "mountType": "TRIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "M60 (7.62mm)",
+    "description": "A general-purpose machine gun used by infantry.",
+    "type": "WEAPON",
+    "cost": 6000,
+    "weight": 33,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8+1",
+      "range": "30/60/120",
+      "rof": 3,
+      "ap": 2,
+      "caliber": 7.62,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 100,
+      "reloadActions": 2,
+      "mountType": "BIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "MG42 (7.92mm)",
+    "description": "A high-rate German machine gun from World War II.",
+    "type": "WEAPON",
+    "cost": 750,
+    "weight": 26,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8+1",
+      "range": "30/60/120",
+      "rof": 4,
+      "ap": 2,
+      "caliber": 7.92,
+      "minStrength": "d10"
+    },
+    "firearm": {
+      "ammoCapacity": 200,
+      "reloadActions": 2,
+      "mountType": "BIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "SAW (5.56mm)",
+    "description": "A modern squad automatic weapon (M249).",
+    "type": "WEAPON",
+    "cost": 4000,
+    "weight": 20,
+    "weapon": {
+      "categories": ["RANGED", "FIREARM", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "2d8",
+      "range": "30/60/120",
+      "rof": 4,
+      "ap": 2,
+      "caliber": 5.56,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 200,
+      "reloadActions": 2,
+      "mountType": "BIPOD",
+      "blastTemplate": null,
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Pistol",
+    "description": "A compact energy weapon firing focused light beams.",
+    "type": "WEAPON",
+    "cost": 250,
+    "weight": 2,
+    "weapon": {
+      "categories": ["RANGED", "ENERGY", "PISTOL"],
+      "setting": "FUTURISTIC",
+      "damage": "2d6",
+      "range": "15/30/60",
+      "rof": 1,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 50,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": "d6",
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser SMG",
+    "description": "A rapid-fire laser submachine gun.",
+    "type": "WEAPON",
+    "cost": 500,
+    "weight": 4,
+    "weapon": {
+      "categories": ["RANGED", "ENERGY", "SMG"],
+      "setting": "FUTURISTIC",
+      "damage": "2d6",
+      "range": "15/30/60",
+      "rof": 4,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 100,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": "d6",
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Laser Rifle",
+    "description": "A standard military laser rifle.",
+    "type": "WEAPON",
+    "cost": 700,
+    "weight": 8,
+    "weapon": {
+      "categories": ["RANGED", "ENERGY", "RIFLE"],
+      "setting": "FUTURISTIC",
+      "damage": "3d6",
+      "range": "30/60/120",
+      "rof": 3,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d6"
+    },
+    "firearm": {
+      "ammoCapacity": 100,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": null,
+      "overchargeDie": "d6",
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Gatling Laser",
+    "description": "A high-rate multi-barrel laser weapon usually vehicle-mounted.",
+    "type": "WEAPON",
+    "cost": 1000,
+    "weight": 20,
+    "weapon": {
+      "categories": ["RANGED", "ENERGY", "HEAVY"],
+      "setting": "FUTURISTIC",
+      "damage": "3d6+4",
+      "range": "50/100/200",
+      "rof": 4,
+      "ap": 2,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 800,
+      "reloadActions": 2,
+      "mountType": "TRIPOD",
+      "blastTemplate": null,
+      "overchargeDie": "d6",
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Cannon (12 lb)",
+    "description": "A heavy field cannon used for siege or anti-personnel roles.",
+    "type": "WEAPON",
+    "cost": 10000,
+    "weight": 1200,
+    "weapon": {
+      "categories": ["RANGED", "HEAVY", "AREA"],
+      "setting": "MEDIEVAL",
+      "damage": "By Ammo Type",
+      "range": "50/100/200",
+      "rof": 1,
+      "ap": 4,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 8,
+      "mountType": "TRIPOD",
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": "Solid Shot / Shrapnel / Canister"
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Catapult",
+    "description": "A siege engine that hurls large stones or other projectiles.",
+    "type": "WEAPON",
+    "cost": 10000,
+    "weight": null,
+    "weapon": {
+      "categories": ["RANGED", "HEAVY", "AREA"],
+      "setting": "MEDIEVAL",
+      "damage": "3d6",
+      "range": "24/48/96",
+      "rof": 1,
+      "ap": 4,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 5,
+      "mountType": "TRIPOD",
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Trebuchet",
+    "description": "A powerful counterweight siege engine for hurling heavy projectiles.",
+    "type": "WEAPON",
+    "cost": 50000,
+    "weight": null,
+    "weapon": {
+      "categories": ["RANGED", "HEAVY", "AREA"],
+      "setting": "MEDIEVAL",
+      "damage": "3d8",
+      "range": "30/60/120",
+      "rof": 1,
+      "ap": 4,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 5,
+      "mountType": "TRIPOD",
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Flamethrower",
+    "description": "A portable weapon that projects a stream of burning liquid or gas.",
+    "type": "WEAPON",
+    "cost": 300,
+    "weight": 70,
+    "weapon": {
+      "categories": ["RANGED", "AREA", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": "Cone Template",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 10,
+      "reloadActions": 2,
+      "mountType": null,
+      "blastTemplate": "Cone Template",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Mk II Fragmentation Grenade (Pineapple)",
+    "description": "A standard World War II-era fragmentation grenade.",
+    "type": "WEAPON",
+    "cost": 40,
+    "weight": 1,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": "4/8/16",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Potato Masher Grenade (WW2)",
+    "description": "A German stick grenade with a wooden handle.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 2,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MODERN",
+      "damage": "3d6-2",
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Mk67 Fragmentation Grenade (Modern)",
+    "description": "A modern U.S. military fragmentation grenade.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 1,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Smoke Grenade",
+    "description": "A grenade that releases thick smoke to obscure vision.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 1,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MODERN",
+      "damage": null,
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "LBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Stun Grenade",
+    "description": "A non-lethal grenade that disorients targets with flash and bang.",
+    "type": "WEAPON",
+    "cost": 50,
+    "weight": 1,
+    "weapon": {
+      "categories": ["RANGED", "THROWN", "AREA"],
+      "setting": "MODERN",
+      "damage": null,
+      "range": "5/10/20",
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": "d4"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": null,
+      "blastTemplate": "LBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Anti-Personnel Mine",
+    "description": "A small explosive device triggered by pressure, designed to injure infantry.",
+    "type": "WEAPON",
+    "cost": 100,
+    "weight": 10,
+    "weapon": {
+      "categories": ["RANGED", "AREA"],
+      "setting": "MODERN",
+      "damage": "2d6+2",
+      "range": null,
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": null,
+      "mountType": null,
+      "blastTemplate": "SBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Anti-Tank Mine",
+    "description": "A heavy pressure-activated mine designed to disable armored vehicles.",
+    "type": "WEAPON",
+    "cost": 200,
+    "weight": 20,
+    "weapon": {
+      "categories": ["RANGED", "AREA", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "4d6",
+      "range": null,
+      "rof": 1,
+      "ap": 5,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": null,
+      "mountType": null,
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Bouncing Betty",
+    "description": "An anti-personnel mine that launches into the air before detonating.",
+    "type": "WEAPON",
+    "cost": 125,
+    "weight": 9,
+    "weapon": {
+      "categories": ["RANGED", "AREA"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": null,
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": null,
+      "mountType": null,
+      "blastTemplate": "SBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Claymore Mine",
+    "description": "A directional anti-personnel mine that fires a spray of steel balls.",
+    "type": "WEAPON",
+    "cost": 75,
+    "weight": 4,
+    "weapon": {
+      "categories": ["RANGED", "AREA"],
+      "setting": "MODERN",
+      "damage": "3d6",
+      "range": null,
+      "rof": 1,
+      "ap": 0,
+      "caliber": null,
+      "minStrength": null
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": null,
+      "mountType": null,
+      "blastTemplate": "60° frontal arc",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "TOW Missile",
+    "description": "A wire-guided anti-tank missile launched from a portable or vehicle mount.",
+    "type": "WEAPON",
+    "cost": 60000,
+    "weight": 207,
+    "weapon": {
+      "categories": ["RANGED", "LAUNCHER", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "5d10",
+      "range": "75/150/300",
+      "rof": 1,
+      "ap": 34,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": "VEHICLE",
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Hellfire Missile",
+    "description": "A laser-guided air-to-ground missile for precision strikes.",
+    "type": "WEAPON",
+    "cost": 115000,
+    "weight": 100,
+    "weapon": {
+      "categories": ["RANGED", "LAUNCHER", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "5d10",
+      "range": "150/300/600",
+      "rof": 1,
+      "ap": 40,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": "VEHICLE",
+      "blastTemplate": "MBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sidewinder Missile",
+    "description": "A short-range heat-seeking air-to-air missile.",
+    "type": "WEAPON",
+    "cost": 600000,
+    "weight": 188,
+    "weapon": {
+      "categories": ["RANGED", "LAUNCHER", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "4d8",
+      "range": "100/200/400",
+      "rof": 1,
+      "ap": 6,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": "VEHICLE",
+      "blastTemplate": "SBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Sparrow Missile",
+    "description": "A medium-range radar-guided air-to-air missile.",
+    "type": "WEAPON",
+    "cost": 125000,
+    "weight": 617,
+    "weapon": {
+      "categories": ["RANGED", "LAUNCHER", "HEAVY"],
+      "setting": "MODERN",
+      "damage": "5d8",
+      "range": "150/300/600",
+      "rof": 1,
+      "ap": 6,
+      "caliber": null,
+      "minStrength": "d8"
+    },
+    "firearm": {
+      "ammoCapacity": 1,
+      "reloadActions": 1,
+      "mountType": "VEHICLE",
+      "blastTemplate": "SBT",
+      "overchargeDie": null,
+      "specialAmmo": null
+    },
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  }
+]

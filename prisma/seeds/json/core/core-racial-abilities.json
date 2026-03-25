@@ -1,486 +1,1067 @@
 [
   {
     "value": 2,
-    "customName": "Adaptable",
+    "name": "Adaptable",
     "slug": "adaptable",
-    "customDescription": "The race has great variation among its people and cultures. Characters start with a free Novice Edge of their choice (and must meet the Edge's Requirements).",
+    "description": "The race has great variation among its people and cultures. Characters start with a free Novice Edge of their choice (and must meet the Edge's Requirements).",
+    "summary": "Characters of this race begin play with one free Novice Edge of their choice (they must still meet all requirements).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_EDGE",
+        "operation": "GRANT",
+        "value": "CHOICE:NOVICE_EDGE",
+        "trigger": "PASSIVE",
+        "stackingRule": "NO_STACK"
+      }
+    ]
   },
   {
     "value": 3,
-    "customName": "Additional Action",
+    "name": "Additional Action",
     "slug": "additional-action",
-    "customDescription": "The being has additional appendages, enhanced reflexes, or exceptional eye-hand coordination. He may ignore 2 points of Multi-Action penalties each turn.",
+    "description": "The being has additional appendages, enhanced reflexes, or exceptional eye-hand coordination. He may ignore 2 points of Multi-Action penalties each turn.",
+    "summary": "The character ignores 2 points of Multi-Action penalties each turn.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "MULTI_ACTION",
+        "operation": "ADD",
+        "value": 2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Semi-Aquatic",
+    "name": "Semi-Aquatic",
     "slug": "semi-aquatic",
-    "customDescription": "The character is semi-aquatic and can hold his breath for 15 minutes before checking for drowning.",
+    "description": "The character is semi-aquatic and can hold his breath for 15 minutes before checking for drowning.",
+    "summary": "The character can hold their breath for 15 minutes before needing to make drowning checks.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Semi-Aquatic",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Aquatic",
+    "name": "Aquatic",
     "slug": "aquatic",
-    "customDescription": "The character is fully aquatic and cannot drown in oxygenated liquid. He moves his full Pace while swimming (see Movement, page 92).",
+    "description": "The character is fully aquatic and cannot drown in oxygenated liquid. He moves his full Pace while swimming (see Movement, page 92).",
+    "summary": "The character is fully aquatic, cannot drown in oxygenated water, and moves at full Pace while swimming.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Aquatic",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Armor",
+    "name": "Armor",
     "slug": "armor",
-    "customDescription": "The species has a thick hide or is encrusted in solid material like scaly plating or even rock. This grants Armor +2 each time it's taken.",
+    "description": "The species has a thick hide or is encrusted in solid material like scaly plating or even rock. This grants Armor +2 each time it's taken.",
+    "summary": "The character has natural armor that grants +2 Armor (may be taken up to 3 times).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Attribute Increase",
+    "name": "Attribute Increase",
     "slug": "attribute-increase",
-    "customDescription": "During character creation, the species increases a particular attribute (Agility, Smarts, Spirit, Strength, or Vigor) one die type. This increases the Trait's maximum die type by one as well.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "During character creation, the species increases a particular attribute (Agility, Smarts, Spirit, Strength, or Vigor) one die type. This increases the Trait's maximum die type by one as well.",
+    "summary": "During character creation, one chosen attribute is increased one die type (and its maximum is also increased by one die type).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "ATTRIBUTE",
+        "operation": "UPGRADE_DIE",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Bite",
+    "name": "Bite",
     "slug": "bite",
-    "customDescription": "The race has fangs that cause Strength+d4 damage. See Natural Weapons, page 104 for more information.",
+    "description": "The race has fangs that cause Strength+d4 damage. See Natural Weapons, page 104 for more information.",
+    "summary": "The character has natural fangs that deal Strength+d4 damage.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Bite, Str+d4)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Burrowing",
+    "name": "Burrowing",
     "slug": "burrowing",
-    "customDescription": "The species can burrow into loose earth and move through it at half normal Pace (he cannot run). He cannot normally be attacked while burrowing, and can attempt to surprise opponents who didn't see him coming by making an opposed Stealth vs. Notice roll. If successful, the burrower adds +2 to his attack and damage rolls that round, or +4 with a raise (he has The Drop, page 100).",
+    "description": "The species can burrow into loose earth and move through it at half normal Pace (he cannot run). He cannot normally be attacked while burrowing, and can attempt to surprise opponents who didn't see him coming by making an opposed Stealth vs. Notice roll. If successful, the burrower adds +2 to his attack and damage rolls that round, or +4 with a raise (he has The Drop, page 100).",
+    "summary": "The character can burrow through loose earth at half Pace and cannot be attacked while underground. They may attempt to surprise foes with an opposed Stealth vs Notice roll.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Burrowing",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Claws (Level 1)",
+    "name": "Claws (Level 1)",
     "slug": "claws-level-one",
-    "customDescription": "The race has claws that cause Str+d4 damage. See Natural Weapons, page 104 for more information.",
+    "description": "The race has claws that cause Str+d4 damage. See Natural Weapons, page 104 for more information.",
+    "summary": "The character has claws that deal Strength+d4 damage.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Claws, Str+d4)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 3,
-    "customName": "Claws (Level 2)",
+    "name": "Claws (Level 2)",
     "slug": "claws-level-two",
-    "customDescription": "The race has claws that cause Str+d6 damage. See Natural Weapons, page 104 for more information.",
+    "description": "The race has claws that cause Str+d6 damage. See Natural Weapons, page 104 for more information.",
+    "summary": "The character has claws that deal Strength+d6 damage.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Claws, Str+d6)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 4,
-    "customName": "Claws (Level 3)",
+    "name": "Claws (Level 3)",
     "slug": "claws-level-three",
-    "customDescription": "The race has claws that cause Str+d6 damage and AP 2. See Natural Weapons, page 104 for more information.",
+    "description": "The race has claws that cause Str+d6 damage and AP 2. See Natural Weapons, page 104 for more information.",
+    "summary": "The character has claws that deal Strength+d6 damage with AP 2.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Claws, Str+d6, AP 2)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 8,
-    "customName": "Construct",
+    "name": "Construct",
     "slug": "construct",
-    "customDescription": "Constructs are artificial beings made of inorganic material. They add +2 to recover from being Shaken, ignore one level of wound modifiers, don't breathe, and are immune to disease and poison. Wounds must be mended via the Repair skill. Each attempt takes one hour per current Wound level and ignores the \"Golden Hour\". Many Constructs have the Dependency Negative Racial Ability (reflecting their need for a power source).",
+    "description": "Constructs are artificial beings made of inorganic material. They add +2 to recover from being Shaken, ignore one level of wound modifiers, don't breathe, and are immune to disease and poison. Wounds must be mended via the Repair skill. Each attempt takes one hour per current Wound level and ignores the \"Golden Hour\". Many Constructs have the Dependency Negative Racial Ability (reflecting their need for a power source).",
+    "summary": "The character is a Construct: +2 to recover from Shaken, ignores one level of Wound penalties, does not breathe, and is immune to disease and poison. Wounds are repaired with the Repair skill instead of Healing.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Construct",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Doesn't Breathe",
+    "name": "Doesn't Breathe",
     "slug": "doesnt-breathe",
-    "customDescription": "The species does not breathe. Individuals are not affected by inhaled toxins, cannot drown, and will not suffocate in a vacuum. (They may still freeze, however.)",
+    "description": "The species does not breathe. Individuals are not affected by inhaled toxins, cannot drown, and will not suffocate in a vacuum. (They may still freeze, however.)",
+    "summary": "The character does not breathe and is immune to inhaled toxins, drowning, and suffocation in a vacuum.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Doesn't Breathe",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Edge (Novice)",
+    "name": "Edge (Novice)",
     "slug": "edge-novice",
-    "customDescription": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
+    "summary": "All members of this race begin play with the same chosen Novice Edge (requirements other than other Edges are ignored).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_EDGE",
+        "operation": "GRANT",
+        "value": "CHOICE:NOVICE_EDGE",
+        "trigger": "PASSIVE",
+        "stackingRule": "NO_STACK"
+      }
+    ]
   },
   {
     "value": 3,
-    "customName": "Edge (Seasoned)",
+    "name": "Edge (Seasoned)",
     "slug": "edge-seasoned",
-    "customDescription": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
+    "summary": "All members of this race begin play with the same chosen Seasoned Edge (requirements other than other Edges are ignored).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_EDGE",
+        "operation": "GRANT",
+        "value": "CHOICE:SEASONED_EDGE",
+        "trigger": "PASSIVE",
+        "stackingRule": "NO_STACK"
+      }
+    ]
   },
   {
     "value": 4,
-    "customName": "Edge (Veteran)",
+    "name": "Edge (Veteran)",
     "slug": "edge-veteran",
-    "customDescription": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
+    "summary": "All members of this race begin play with the same chosen Veteran Edge (requirements other than other Edges are ignored).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_EDGE",
+        "operation": "GRANT",
+        "value": "CHOICE:VETERAN_EDGE",
+        "trigger": "PASSIVE",
+        "stackingRule": "NO_STACK"
+      }
+    ]
   },
   {
     "value": 5,
-    "customName": "Edge (Heroic)",
+    "name": "Edge (Heroic)",
     "slug": "edge-heroic",
-    "customDescription": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "All members of this race have the same innate Edge chosen from those available in the setting. Unlike Adaptable, this ability ignores requirements except other Edges. Each Rank beyond Novice costs an additional point to a maximum of Heroic Rank (5).",
+    "summary": "All members of this race begin play with the same chosen Heroic Edge (requirements other than other Edges are ignored).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_EDGE",
+        "operation": "GRANT",
+        "value": "CHOICE:HEROIC_EDGE",
+        "trigger": "PASSIVE",
+        "stackingRule": "NO_STACK"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Environmental Resistance",
+    "name": "Environmental Resistance",
     "slug": "environmental-resistance",
-    "customDescription": "The species receives +4 bonus to resist a single negative environmental effect, such as heat, cold, lack of air, radiation, etc. Damage from that source is also reduced by 4.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The species receives +4 bonus to resist a single negative environmental effect, such as heat, cold, lack of air, radiation, etc. Damage from that source is also reduced by 4.",
+    "summary": "The character gains +4 to resist one chosen environmental hazard and reduces damage from that source by 4.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Environmental Resistance",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Flight (Level 1)",
+    "name": "Flight (Level 1)",
     "slug": "flight-level-one",
-    "customDescription": "The species can fly at Pace 6 and \"run\" for extra movement as usual. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "description": "The species can fly at Pace 6 and \"run\" for extra movement as usual. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "summary": "The character can fly at Pace 6 (maneuvering uses Athletics). Wings may be targeted or fouled.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Flight (Pace 6)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 4,
-    "customName": "Flight (Level 2)",
+    "name": "Flight (Level 2)",
     "slug": "flight-level-two",
-    "customDescription": "The species can fly at Pace 12 and \"run\" for extra movement as usual. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "description": "The species can fly at Pace 12 and \"run\" for extra movement as usual. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "summary": "The character can fly at Pace 12 (maneuvering uses Athletics). Wings may be targeted or fouled.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Flight (Pace 12)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 6,
-    "customName": "Flight (Level 3)",
+    "name": "Flight (Level 3)",
     "slug": "flight-level-three",
-    "customDescription": "The species can fly at Pace 24 and may \"run\" for 2d6\" of additional movement. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "description": "The species can fly at Pace 24 and may \"run\" for 2d6\" of additional movement. Maneuvering uses the Athletics skill. Racial flight presumes some kind of wings which can be targeted or fouled (a Bound or Entangled character cannot fly).",
+    "summary": "The character can fly at Pace 24 and may run for an additional 2d6\" (maneuvering uses Athletics). Wings may be targeted or fouled.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Flight (Pace 24)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Hardy",
+    "name": "Hardy",
     "slug": "hardy",
-    "customDescription": "A second Shaken result in combat does not cause a Wound.",
+    "description": "A second Shaken result in combat does not cause a Wound.",
+    "summary": "A second Shaken result in combat does not cause a Wound.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Hardy",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Horns (Level 1)",
+    "name": "Horns (Level 1)",
     "slug": "horns-level-one",
-    "customDescription": "The being has a horn or horns that cause Str+d4 damage. See Natural Weapons, page 104, for more information.",
+    "description": "The being has a horn or horns that cause Str+d4 damage. See Natural Weapons, page 104, for more information.",
+    "summary": "The character has horns that deal Strength+d4 damage.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Horns, Str+d4)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Horns (Level 2)",
+    "name": "Horns (Level 2)",
     "slug": "horns-level-two",
-    "customDescription": "The being has a horn or horns that cause Str+d6 damage. See Natural Weapons, page 104, for more information.",
+    "description": "The being has a horn or horns that cause Str+d6 damage. See Natural Weapons, page 104, for more information.",
+    "summary": "The character has horns that deal Strength+d6 damage.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Natural Weapon (Horns, Str+d6)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Immune to Poison or Disease",
+    "name": "Immune to Poison or Disease",
     "slug": "immune-to-poison-or-disease",
-    "customDescription": "The species is immune to poison or disease (your choice). It may be taken twice for both effects.",
+    "description": "The species is immune to poison or disease (your choice). It may be taken twice for both effects.",
+    "summary": "The character is immune to poison or disease (may be taken once for each).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 2
+    "maxUses": 2,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Immune to Poison/Disease",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Infravision",
+    "name": "Infravision",
     "slug": "infravision",
-    "customDescription": "The creature \"sees\" heat, either through eyes or other sensory organs. This halves Illumination penalties when attacking warm targets (including invisible beings).",
+    "description": "The creature \"sees\" heat, either through eyes or other sensory organs. This halves Illumination penalties when attacking warm targets (including invisible beings).",
+    "summary": "The character sees heat and halves illumination penalties when attacking warm-blooded or living targets (including invisible ones).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Infravision",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Leaper",
+    "name": "Leaper",
     "slug": "leaper",
-    "customDescription": "The character can jump twice as far as listed under Movement, page 92. In addition, he adds +4 to damage when leaping as part of a Wild Attack instead of the usual +2 (unless in a closed or confined space where he cannot leap horizontally or vertically- GM's call).",
+    "description": "The character can jump twice as far as listed under Movement, page 92. In addition, he adds +4 to damage when leaping as part of a Wild Attack instead of the usual +2 (unless in a closed or confined space where he cannot leap horizontally or vertically- GM's call).",
+    "summary": "The character can jump twice as far as normal and adds +4 damage (instead of +2) when making a Wild Attack after leaping.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Leaper",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Low Light Vision",
+    "name": "Low Light Vision",
     "slug": "low-light-vision",
-    "customDescription": "The being ignores penalties for Dim or Dark illumination (but not Pitch Darkness).",
+    "description": "The being ignores penalties for Dim or Dark illumination (but not Pitch Darkness).",
+    "summary": "The character ignores penalties for Dim and Dark lighting (but not Pitch Darkness).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Low Light Vision",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "No Vital Organs",
+    "name": "No Vital Organs",
     "slug": "no-vital-organs",
-    "customDescription": "These species have hidden, extremely tough, or redundant vital organs. Called Shots do no extra damage against them.",
+    "description": "These species have hidden, extremely tough, or redundant vital organs. Called Shots do no extra damage against them.",
+    "summary": "Called Shots cause no extra damage against this character.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "No Vital Organs",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Pace",
+    "name": "Pace",
     "slug": "pace",
-    "customDescription": "The creature's Pace is increased by +2 and his running die is increased a die type.",
+    "description": "The creature's Pace is increased by +2 and his running die is increased a die type.",
+    "summary": "The character's Pace is increased by +2 and their running die is increased one step.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 2
+    "maxUses": 2,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Parry",
+    "name": "Parry",
     "slug": "parry",
-    "customDescription": "The creature's natural Parry is increased by +1. This may be due to a prehensile tail, extra limbs, enhanced reflexes, or even latent psi-sense.",
+    "description": "The creature's natural Parry is increased by +1. This may be due to a prehensile tail, extra limbs, enhanced reflexes, or even latent psi-sense.",
+    "summary": "The character's natural Parry is increased by +1.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Poisonous Touch (Level 1)",
+    "name": "Poisonous Touch (Level 1)",
     "slug": "poisonous-touch-level-one",
-    "customDescription": "With a successful Touch Attack (page 108), bite, or claw, the victim must roll Vigor or suffer the effects of Mild Poison. The character may always choose whether or not to use her poison touch. See page 128 for Poison and its effects.",
+    "description": "With a successful Touch Attack (page 108), bite, or claw, the victim must roll Vigor or suffer the effects of Mild Poison. The character may always choose whether or not to use her poison touch. See page 128 for Poison and its effects.",
+    "summary": "On a successful Touch Attack, bite, or claw the target must make a Vigor roll or suffer Mild Poison. The character may choose not to use the poison.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Poisonous Touch (Mild)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 3,
-    "customName": "Poisonous Touch (Level 2)",
+    "name": "Poisonous Touch (Level 2)",
     "slug": "poisonous-touch-level-two",
-    "customDescription": "With a successful Touch Attack (page 108), bite, or claw, the victim must roll Vigor or suffer the effects of Mild Poison. The poison can be upgraded to Knockout, Lethal, or Paralyzing instead, but each use causes the hero Fatigue. The character may always choose whether or not to use her poison touch. See page 128 for Poison and its effects.",
+    "description": "With a successful Touch Attack (page 108), bite, or claw, the victim must roll Vigor or suffer the effects of Mild Poison. The poison can be upgraded to Knockout, Lethal, or Paralyzing instead, but each use causes the hero Fatigue. The character may always choose whether or not to use her poison touch. See page 128 for Poison and its effects.",
+    "summary": "On a successful Touch Attack, bite, or claw the target must make a Vigor roll or suffer Mild Poison (may be upgraded to Knockout, Lethal, or Paralyzing; each use causes the user Fatigue).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Poisonous Touch (Upgradable)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Power (Level 1)",
+    "name": "Power (Level 1)",
     "slug": "power-level-one",
-    "customDescription": "The race has an innate ability that functions like a power (see page 147). Each time this is taken after the first costs 1 point and grants another power. It does not increase her Power Points-use the Power Points Edge for that.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race has an innate ability that functions like a power (see page 147). Each time this is taken after the first costs 1 point and grants another power. It does not increase her Power Points-use the Power Points Edge for that.",
+    "summary": "The character has one innate power (may be taken multiple times for additional powers).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_POWER",
+        "operation": "GRANT",
+        "value": "CHOICE:POWER",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Power (Level 2)",
+    "name": "Power (Level 2)",
     "slug": "power-level-two",
-    "customDescription": "The race has an innate ability that functions like a power (see page 147). She has Arcane Background (Gifted) and a power that reflects her unusual ability. Each time this is taken after the first costs 1 point and grants another power. It does not increase her Power Points-use the Power Points Edge for that.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race has an innate ability that functions like a power (see page 147). She has Arcane Background (Gifted) and a power that reflects her unusual ability. Each time this is taken after the first costs 1 point and grants another power. It does not increase her Power Points-use the Power Points Edge for that.",
+    "summary": "The character has Arcane Background (Gifted) and one innate power (may be taken multiple times for additional powers).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_POWER",
+        "operation": "GRANT",
+        "value": "CHOICE:POWER",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Reach +1",
+    "name": "Reach +1",
     "slug": "reach-plus-one",
-    "customDescription": "Long limbs, tentacles, etc. grant the creature Reach +1 (add +1 each time it's taken after the first).",
+    "description": "Long limbs, tentacles, etc. grant the creature Reach +1 (add +1 each time it's taken after the first).",
+    "summary": "The character has Reach +1 (may be taken multiple times).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Regeneration (Level 1)",
+    "name": "Regeneration (Level 1)",
     "slug": "regeneration-level-one",
-    "customDescription": "The being heals damage quickly. She may make a natural healing roll once per day (rather than every five days). Treat each injury as an additional Wound for purposes of recovery (the being may try once per week).",
+    "description": "The being heals damage quickly. She may make a natural healing roll once per day (rather than every five days). Treat each injury as an additional Wound for purposes of recovery (the being may try once per week).",
+    "summary": "The character may make a natural healing roll once per day instead of once every five days.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Regeneration (once per day)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 3,
-    "customName": "Regeneration (Level 2)",
+    "name": "Regeneration (Level 2)",
     "slug": "regeneration-level-two",
-    "customDescription": "The being heals damage quickly. She may make a natural healing roll once per day (rather than every five days). Permanent injuries may be recovered once all other Wounds are regenerated. Treat each injury as an additional Wound for purposes of recovery (the being may try once per week).",
+    "description": "The being heals damage quickly. She may make a natural healing roll once per day (rather than every five days). Permanent injuries may be recovered once all other Wounds are regenerated. Treat each injury as an additional Wound for purposes of recovery (the being may try once per week).",
+    "summary": "The character may make a natural healing roll once per day. Permanent injuries may be recovered once all other Wounds are healed.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Regeneration (once per day + permanent injuries)",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Size +1",
+    "name": "Size +1",
     "slug": "size-plus-one",
-    "customDescription": "The creature is larger than normal. Each point of Size adds directly to Toughness and increases maximum Strength one step. Large species may have difficulty using equipment designed for more traditional humanoids. See page 106 for more on Size.",
+    "description": "The creature is larger than normal. Each point of Size adds directly to Toughness and increases maximum Strength one step. Large species may have difficulty using equipment designed for more traditional humanoids. See page 106 for more on Size.",
+    "summary": "The character is larger than normal: Size +1, Toughness +1, and maximum Strength increased by one die type.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Skill (Level 1)",
+    "name": "Skill (Level 1)",
     "slug": "skill-level-one",
-    "customDescription": "The character starts with a d4 in a skill inherent to his race or culture. If already a core skill, it starts at d6 and the skill's maximum increases to d12+1.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The character starts with a d4 in a skill inherent to his race or culture. If already a core skill, it starts at d6 and the skill's maximum increases to d12+1.",
+    "summary": "The character begins with a d4 (or d6 if it is a core skill) in one chosen skill. The skill's maximum is increased by one die type.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "UPGRADE_DIE",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Skill (Level 2)",
+    "name": "Skill (Level 2)",
     "slug": "skill-level-two",
-    "customDescription": "The character starts with a d6 in a skill inherent to her race or culture, and the skill's maximum increases to d12+1.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The character starts with a d6 in a skill inherent to her race or culture, and the skill's maximum increases to d12+1.",
+    "summary": "The character begins with a d6 in one chosen skill. The skill's maximum is increased by one die type.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "UPGRADE_DIE",
+        "value": 2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Skill Bonus (Level 1)",
+    "name": "Skill Bonus (Level 1)",
     "slug": "skill-bonus-level-one",
-    "customDescription": "Biological factors give the race a +1 bonus when using a particular skill. A race that emits pheromones, for example, might have a +1 bonus to Persuasion.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "Biological factors give the race a +1 bonus when using a particular skill. A race that emits pheromones, for example, might have a +1 bonus to Persuasion.",
+    "summary": "The character gains a +1 bonus to one chosen skill.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 2,
-    "customName": "Skill Bonus (Level 2)",
+    "name": "Skill Bonus (Level 2)",
     "slug": "skill-bonus-level-two",
-    "customDescription": "Biological factors give the race a +2 bonus when using a particular skill. A race that emits pheromones, for example, might have a +2 bonus to Persuasion.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "Biological factors give the race a +2 bonus when using a particular skill. A race that emits pheromones, for example, might have a +2 bonus to Persuasion.",
+    "summary": "The character gains a +2 bonus to one chosen skill.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": 2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Sleep Reduction",
+    "name": "Sleep Reduction",
     "slug": "sleep-reduction",
-    "customDescription": "The being needs half the normal amount of sleep as humans. If taken a second time, the being never sleeps.",
+    "description": "The being needs half the normal amount of sleep as humans. If taken a second time, the being never sleeps.",
+    "summary": "The character needs only half the normal amount of sleep (taken twice, they never need to sleep).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 2
+    "maxUses": 2,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Reduced Sleep",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Toughness",
+    "name": "Toughness",
     "slug": "toughness",
-    "customDescription": "The character has hardened skin, scales, or extremely dense tissue that increases his base Toughness by +1.",
+    "description": "The character has hardened skin, scales, or extremely dense tissue that increases his base Toughness by +1.",
+    "summary": "The character gains +1 Toughness.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": 1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": 1,
-    "customName": "Wall Walker",
+    "name": "Wall Walker",
     "slug": "wall-walker",
-    "customDescription": "The species may walk on vertical surfaces normally, or inverted surfaces at half Pace.",
+    "description": "The species may walk on vertical surfaces normally, or inverted surfaces at half Pace.",
+    "summary": "The character can walk on walls and ceilings at normal Pace (or half Pace when inverted).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_ABILITY",
+        "operation": "GRANT",
+        "value": "Wall Walker",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Attribute Penalty (Level One)",
+    "name": "Attribute Penalty (Level One)",
     "slug": "attribute-penalty-level-one",
-    "customDescription": "One attribute (but not linked skills) suffers a -1 penalty. If Strength, this applies to damage as well.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "One attribute (but not linked skills) suffers a -1 penalty. If Strength, this applies to damage as well.",
+    "summary": "One chosen attribute suffers a -1 penalty (if Strength, this also reduces damage).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "ATTRIBUTE",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -3,
-    "customName": "Attribute Penalty (Level Two)",
+    "name": "Attribute Penalty (Level Two)",
     "slug": "attribute-penalty-level-two",
-    "customDescription": "One attribute (but not linked skills) suffers a -2 penalty. If Strength, this applies to damage as well.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "One attribute (but not linked skills) suffers a -2 penalty. If Strength, this applies to damage as well.",
+    "summary": "One chosen attribute suffers a -2 penalty (if Strength, this also reduces damage).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "ATTRIBUTE",
+        "operation": "ADD",
+        "value": -2,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Big",
+    "name": "Big",
     "slug": "big",
-    "customDescription": "The race is particularly large in a world where most others aren't. He subtracts 2 from Trait rolls when using equipment that wasn't specifically designed for his race and cannot wear their armor or clothing. Equipment, food, and clothing cost double the listed price.",
+    "description": "The race is particularly large in a world where most others aren't. He subtracts 2 from Trait rolls when using equipment that wasn't specifically designed for his race and cannot wear their armor or clothing. Equipment, food, and clothing cost double the listed price.",
+    "summary": "The character is significantly larger than most races: -2 to Trait rolls with non-custom equipment, cannot wear standard armor/clothing, and such items cost double.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": -2,
+        "trigger": "ON_ROLL",
+        "condition": { "rollType": "Any Trait using non-custom equipment" }
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Cannot Speak",
+    "name": "Cannot Speak",
     "slug": "cannot-speak",
-    "customDescription": "The race has no vocal cords or cannot form the sounds made by most other races. He can communicate with members of his own race naturally (through song, pheromones, body language, etc.). Other races can't speak his \"language\" but may learn to understand him if they take the proper Language skill. The species can hear and understand other typical languages and may communicate via electronic devices or the like.",
+    "description": "The race has no vocal cords or cannot form the sounds made by most other races. He can communicate with members of his own race naturally (through song, pheromones, body language, etc.). Other races can't speak his \"language\" but may learn to understand him if they take the proper Language skill. The species can hear and understand other typical languages and may communicate via electronic devices or the like.",
+    "summary": "The character cannot speak any common languages but can communicate with their own kind through non-verbal means. They can still understand other languages and use devices to communicate.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_HINDRANCE",
+        "operation": "GRANT",
+        "value": "Cannot Speak",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Dependency",
+    "name": "Dependency",
     "slug": "dependency",
-    "customDescription": "The race must consume or have contact with some sort of relatively common substance for an hour out of every 24. Creatures from water-based worlds, for example, might need to immerse themselves in water; plant people might need sunlight. Without the required contact, a character becomes Fatigued each day until Incapacitated. A day after that, they perish. Each hour spent recovering with the appropriate substance restores a level of Fatigue.",
+    "description": "The race must consume or have contact with some sort of relatively common substance for an hour out of every 24. Creatures from water-based worlds, for example, might need to immerse themselves in water; plant people might need sunlight. Without the required contact, a character becomes Fatigued each day until Incapacitated. A day after that, they perish. Each hour spent recovering with the appropriate substance restores a level of Fatigue.",
+    "summary": "The character must spend one hour per day in contact with a specific common substance or become Fatigued (and eventually perish).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "GRANT_HINDRANCE",
+        "operation": "GRANT",
+        "value": "Dependency",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Environmental Weakness",
+    "name": "Environmental Weakness",
     "slug": "environmental-weakness",
-    "customDescription": "The race suffers -4 penalty to resist a particular environmental effect, such as heat, cold, etc. If the being suffers an attack based on that form, the penalty acts as a bonus to damage.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race suffers -4 penalty to resist a particular environmental effect, such as heat, cold, etc. If the being suffers an attack based on that form, the penalty acts as a bonus to damage.",
+    "summary": "The character suffers -4 to resist one chosen environmental hazard; attacks of that type also gain +4 damage against them.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_HINDRANCE",
+        "operation": "GRANT",
+        "value": "Environmental Weakness",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Frail",
+    "name": "Frail",
     "slug": "frail",
-    "customDescription": "The creature is less durable than most. Reduce its Toughness by 1.",
+    "description": "The creature is less durable than most. Reduce its Toughness by 1.",
+    "summary": "The character has -1 Toughness.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 2
+    "maxUses": 2,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Hindrance (Minor)",
+    "name": "Hindrance (Minor)",
     "slug": "hindrance-minor",
-    "customDescription": "The race has an inherent Minor Hindrance. This doesn't affect the ability to choose other Hindrances during character creation.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race has an inherent Minor Hindrance. This doesn't affect the ability to choose other Hindrances during character creation.",
+    "summary": "All members of this race have one chosen Minor Hindrance.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_HINDRANCE",
+        "operation": "GRANT",
+        "value": "CHOICE:MINOR_HINDRANCE",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Hindrance (Major)",
+    "name": "Hindrance (Major)",
     "slug": "hindrance-major",
-    "customDescription": "The race has an inherent Major Hindrance. This doesn't affect the ability to choose other Hindrances during character creation.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race has an inherent Major Hindrance. This doesn't affect the ability to choose other Hindrances during character creation.",
+    "summary": "All members of this race have one chosen Major Hindrance.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "GRANT_HINDRANCE",
+        "operation": "GRANT",
+        "value": "CHOICE:MAJOR_HINDRANCE",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Poor Parry",
+    "name": "Poor Parry",
     "slug": "poor-parry",
-    "customDescription": "These beings are poor melee defenders; -1 Parry.",
+    "description": "These beings are poor melee defenders; -1 Parry.",
+    "summary": "The character has -1 Parry.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 3
+    "maxUses": 3,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Racial Enemy",
+    "name": "Racial Enemy",
     "slug": "racial-enemy",
-    "customDescription": "This species dislikes another species relatively common to the setting. They suffer a -2 penalty to Persuasion rolls when dealing with their rivals and may become hostile with little provocation. This may only be taken once per race.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "This species dislikes another species relatively common to the setting. They suffer a -2 penalty to Persuasion rolls when dealing with their rivals and may become hostile with little provocation. This may only be taken once per race.",
+    "summary": "The character suffers -2 to Persuasion rolls when dealing with one chosen common rival race.",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": -2,
+        "trigger": "ON_ROLL",
+        "condition": { "rollType": "Persuasion vs Racial Enemy" }
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Reduced Core Skills",
+    "name": "Reduced Core Skills",
     "slug": "reduced-core-skills",
-    "customDescription": "This race starts with one less core skill. The skill may be gained normally but does not start at a d4. This may be taken once per core skill affected.",
+    "description": "This race starts with one less core skill. The skill may be gained normally but does not start at a d4. This may be taken once per core skill affected.",
+    "summary": "The character begins with one fewer core skill (may be taken once per core skill).",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 5
+    "maxUses": 5,
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "REVOKE",
+        "value": "ONE_CORE_SKILL",
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Reduced Pace (Level 1)",
+    "name": "Reduced Pace (Level 1)",
     "slug": "reduced-pace-level-one",
-    "customDescription": "Reduce Pace by 1 and the running die a die type (d4 is reduced to d4-1).",
+    "description": "Reduce Pace by 1 and the running die a die type (d4 is reduced to d4-1).",
+    "summary": "The character's Pace is reduced by 1 and their running die is reduced one step.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Reduced Pace (Level 2)",
+    "name": "Reduced Pace (Level 2)",
     "slug": "reduced-pace-level-two",
-    "customDescription": "Reduce Pace by 3 points and subtract 2 from Athletics and rolls to resist Athletics where movement and mobility are integral to the challenge (GM's call).",
+    "description": "Reduce Pace by 3 points and subtract 2 from Athletics and rolls to resist Athletics where movement and mobility are integral to the challenge (GM's call).",
+    "summary": "The character's Pace is reduced by 3 and they suffer -2 to Athletics rolls and rolls to resist Athletics that involve movement.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": -3,
+        "trigger": "PASSIVE"
+      },
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": -2,
+        "trigger": "ON_ROLL",
+        "condition": { "rollType": "Athletics (movement)" }
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Size -1",
+    "name": "Size -1",
     "slug": "size-minus-one",
-    "customDescription": "The creature is smaller than average, reducing its Size and Toughness by 1 (see the Size Table, page 179).",
+    "description": "The creature is smaller than average, reducing its Size and Toughness by 1 (see the Size Table, page 179).",
+    "summary": "The character is smaller than average: Size -1 and Toughness -1.",
     "sourceName": "Savage Worlds Adventure Edition",
-    "maxUses": 1
+    "maxUses": 1,
+    "modifierData": [
+      {
+        "target": "DERIVED_STAT",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -1,
-    "customName": "Skill Penalty (Level 1)",
+    "name": "Skill Penalty (Level 1)",
     "slug": "skill-penalty-level-one",
-    "customDescription": "The race suffers a -1 penalty to a very commonly used skill such as Fighting, Persuasion, or even Piloting in a game focused on airplanes (the GM decides based on her campaign). If the skill is less common or only comes up in certain situations, the penalty is -2.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race suffers a -1 penalty to a very commonly used skill such as Fighting, Persuasion, or even Piloting in a game focused on airplanes (the GM decides based on her campaign). If the skill is less common or only comes up in certain situations, the penalty is -2.",
+    "summary": "The character suffers -1 to one chosen commonly used skill (or -2 if the skill is less common).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": -1,
+        "trigger": "PASSIVE"
+      }
+    ]
   },
   {
     "value": -2,
-    "customName": "Skill Penalty (Level 2)",
+    "name": "Skill Penalty (Level 2)",
     "slug": "skill-penalty-level-two",
-    "customDescription": "The race suffers a -2 penalty to a very commonly used skill such as Fighting, Persuasion, or even Piloting in a game focused on airplanes (the GM decides based on her campaign). If the skill is less common or only comes up in certain situations, the penalty is -4.",
-    "sourceName": "Savage Worlds Adventure Edition"
+    "description": "The race suffers a -2 penalty to a very commonly used skill such as Fighting, Persuasion, or even Piloting in a game focused on airplanes (the GM decides based on her campaign). If the skill is less common or only comes up in certain situations, the penalty is -4.",
+    "summary": "The character suffers -2 to one chosen commonly used skill (or -4 if the skill is less common).",
+    "sourceName": "Savage Worlds Adventure Edition",
+    "modifierData": [
+      {
+        "target": "SKILL",
+        "operation": "ADD",
+        "value": -2,
+        "trigger": "PASSIVE"
+      }
+    ]
   }
 ]

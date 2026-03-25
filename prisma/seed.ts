@@ -3,7 +3,8 @@ import { seedCoreTags } from "./seeds/core/core-tags";
 import { seedCoreEdges } from "./seeds/core/core-edges";
 import { seedCoreHindrances } from "./seeds/core/core-hindrances";
 import { seedCorePowers } from "./seeds/core/core-powers";
-// import { seedCoreRacialAbilities } from "./seeds/core/core-racial-abilities";
+import { seedCoreRacialAbilities } from "./seeds/core/core-racial-abilities";
+import { seedCoreItems } from "./seeds/core/core-items";
 
 async function main() {
   await seedSources();          // must run first
@@ -11,10 +12,8 @@ async function main() {
   await seedCoreEdges();
   await seedCoreHindrances();
   await seedCorePowers();
-  
-  // await seedCoreRacialAbilities();
-  // await seedCoreItems();
-  // await seedCoreFirearms();
+  await seedCoreRacialAbilities();
+  await seedCoreItems();
 }
 
 main()

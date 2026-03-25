@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link"; // Better for Next.js SEO and performance
-import logo from "/public/images/SW_LOGO_FP_2018.png";
+import logo from "@/public/images/SW_LOGO_FP_2018.png";
 
 const Footer = () => {
   return (
