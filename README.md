@@ -120,4 +120,6 @@ This is my capstone portfolio piece. It showcases:
   - Auth + theming + real-time foundations
 
 ## 📜 License
+This project is currently closed-source and all rights are reserved. The code is available publicly solely for portfolio and demonstration purposes. Please reach out if you have any questions regarding the implementation!
+
 Fan License Note: This is a free, non-commercial unofficial Savage Worlds companion. It references the Savage Worlds rules system but does not reproduce any copyrighted material from the rulebook (no copy-paste of official text). See Pinnacle Entertainment Group’s Fan License for full details: https://peginc.com/licensing/
