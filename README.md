@@ -3,7 +3,7 @@
 > A modern, full-stack companion web app for *Savage Worlds* (Adventure Edition) — built as a solo portfolio project.  
 > Roll dice, resolve combat with all the “catch-all” modifiers, browse Edges/Hindrances/Powers, manage characters, and eventually play online with friends.
 
-**Live Demo**: [https://savage-companion.vercel.app/](https://savage-companion.vercel.app/)
+**Live Demo**: [https://savage-companion.vercel.app/reference/edges](https://savage-companion.vercel.app/reference/edges)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io)
