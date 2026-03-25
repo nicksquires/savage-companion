@@ -10,6 +10,12 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B67F?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 
+## Project Context 
+ 
+This project was created as part of my effort to build full-stack applications using Next.js and relational databases. 
+ 
+It focuses on implementing a structured data model using Prisma and building intuitive multi-entity management interfaces that allow for a robust Virtual Tabletop Environment experience across multiple platforms for multiple users.
+
 ## ✨ Current Status (March 2026)
 
 This is a pet project — an **early but strengthening foundation**. I’m building the entire thing alone, one major feature at a time, while keeping the architecture clean, concise, and scalable.
