@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Savage Worlds VTT Companion (Demo Sample - Unofficial Fan Product)
 
-## Getting Started
+> A modern, full-stack companion web app for *Savage Worlds* (Adventure Edition) - built as a solo portfolio project.  
+> Roll dice, resolve combat with all the “catch-all” modifiers, browse Edges/Hindrances/Powers, manage characters, and eventually play online with friends.
 
-First, run the development server:
+> Currently **~50% of core game mechanics** are functional in a rough and untested draft.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B67F?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+
+## ✨ Current Status (March 2026)
+
+This is a pet project, an **early but strengthening foundation**. I’m building the entire thing alone for now, one major feature at a time, while trying my darndest to keep the architecture clean, concise, and scalable.
+
+### ✅ Completed / Working Draft (50% of core game mechanics)
+- **Database layer** – Full Prisma schema + models for characters, edges, hindrances, powers, races, gear, etc.
+- **Seed data** – Complete JSON-based ruleset import (core rules/entities + Test Drive) with automatic seeding.
+- **Authentication** – NextAuth v5 with Google + Credentials providers.
+- **Theme system** – Fully selectable setting-specific themes with light/dark alternatives.
+- **API foundation** – Next.js 15 App Router routes (most are basic for now; one file already supports query params).
+- **Proxy / middleware layer** – Draft implementation for future real-time and third-party integrations.
+- **Rules engine draft** – Roll & combat evaluator that handles the full “catch-all” modifier system (trait rolls, damage, etc.).
+- **Minimal UI** – Header/footer layout + a functional **Edge Browser** (the first interactive rules viewer).
+
+### 🚧 Still To Do (the fun part)
+- Full character creator / sheet editor
+- Homebrew content system (custom edges, powers, gear, settings)
+- Friends list + social features
+- Real-time VTT elements (shared tables, initiative tracker, map tokens)
+- Dice roller UI with 3D visuals and SWADE-specific animations (Bennies, exploding die, wounded, incapacitated, etc.)
+- Campaign / session management
+- Mobile-responsive polish + accessibility
+- Deployment + full live demo
+
+I’m updating this README as major milestones are hit - expect it to evolve quickly!
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 (App Router + React Server Components)
+- **Language**: TypeScript
+- **Database**: Prisma ORM + PostgreSQL (easily swappable)
+- **Auth**: NextAuth v5 (Google + Credentials)
+- **Styling**: Tailwind CSS + custom Savage Worlds theme system
+- **State**: React hooks + server actions (Zustand planned for complex client state)
+- **Rules Engine**: Pure TypeScript with full Savage Worlds modifier logic
+- **Deployment**: Vercel (demo sample live for deployment testing at https://savage-companion.vercel.app/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 20+
+- MySQL (or any Prisma-supported DB)
+- Git
+
+### 1. Clone & install
+
+```
+git clone https://github.com/YOUR-USERNAME/savage-worlds-vtt-companion.git
+cd savage-worlds-vtt-companion
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy the example and fill in your keys:
+```
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Required variables (see .env.example):
+```
+DATABASE_URL
+NEXTAUTH_SECRET
+NEXTAUTH_URL
+Google OAuth credentials (optional but recommended)
+```
 
-## Learn More
+### 3. Database
+```
+npx prisma generate
+npx prisma db push          # or prisma migrate dev
+npx prisma db seed          # loads Savage Worlds core entities
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Run it
+```
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open http://localhost:3000/reference/edges
+  - showcases some client-side functionality by generating a mobile-friendly paginated list of edges that can be sorted and searched
+  - Next-auth can authenticate via credentials or Google's OAuth.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📸 Screenshots / Demo (coming soon)
+(I’ll add GIFs and screenshots of the Edge Browser + dice roller as soon as the UI gets its first proper coat of paint.)
 
-## Deploy on Vercel
+🗺 Roadmap & Milestones
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Milestone                             Status         TargetCore 
+-----------------------------------------------------------------
+Rules engine + combat resolver         Done           Q1 2026
+Character sheet editor              In progress       Q2 2026
+Homebrew & content creation           Planned         Q2 2026
+Friends & real-time sessions          Planned         Q3 2026
+Polished VTT experience               Planned         Q4 2026
+Public beta / live demo               Planned      Start of 2027
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🙌 Why This Project?
+This is my capstone portfolio piece. It showcases:
+  - Full-stack TypeScript architecture
+  - Complex domain modeling (tabletop RPG rules)
+  - Modern Next.js 15 patterns
+  - Database design at scale
+  - Auth + theming + real-time foundations
