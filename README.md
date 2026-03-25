@@ -90,24 +90,21 @@ npm run dev
 ```
 
 Open http://localhost:3000/reference/edges
-  - showcases some client-side functionality by generating a mobile-friendly paginated list of edges that can be sorted and searched
-  - Next-auth can authenticate via credentials or Google's OAuth.
 
-📸 Screenshots / Demo (coming soon)
+### 📸 Screenshots / Demo (coming soon)
 (I’ll add GIFs and screenshots of the Edge Browser + dice roller as soon as the UI gets its first proper coat of paint.)
 
-🗺 Roadmap & Milestones
+## 🗺 Roadmap & Milestones
+| Milestone  | Status | Target |
+| ------------- | ------------- | ------------- |
+| Core rules engine + combat resolver  | Done  | Q1 2026  |
+| Character sheet editor  | In progress  | Q2 2026  |
+| Homebrew & content creation  | Planned  | Q2 2026  |
+| Friends & real-time sessions  | Planned  | Q3 2026  |
+| Polished VTT experience  | Planned  | Q4 2026  |
+| Public beta / live demo  | Planned  | Start of 2027  |
 
-Milestone                             Status         TargetCore 
------------------------------------------------------------------
-Rules engine + combat resolver         Done           Q1 2026
-Character sheet editor              In progress       Q2 2026
-Homebrew & content creation           Planned         Q2 2026
-Friends & real-time sessions          Planned         Q3 2026
-Polished VTT experience               Planned         Q4 2026
-Public beta / live demo               Planned      Start of 2027
-
-🙌 Why This Project?
+### 🙌 Why This Project?
 This is my capstone portfolio piece. It showcases:
   - Full-stack TypeScript architecture
   - Complex domain modeling (tabletop RPG rules)
