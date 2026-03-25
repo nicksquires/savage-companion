@@ -91,8 +91,9 @@ npm run dev
 
 Open http://localhost:3000/reference/edges - this is currently the most complete page in the app
 
-### 📸 Screenshots / Demo (coming soon)
-(GIFs and screenshots of the Edge Browser will be added as soon as the UI gets its first proper coat of paint.)
+## 📸 Screenshots / Demo (coming soon)
+![Edge Browser Example Screenshot](screenshots/edge-browser.png)
+(More GIFs and screenshots of the app will be added as soon as the UI gets its first proper coat of paint and more pages are added.)
 
 ## 🗺 Roadmap & Milestones
 | Milestone  | Status | Target |
@@ -104,7 +105,7 @@ Open http://localhost:3000/reference/edges - this is currently the most complete
 | Polished VTT experience  | Planned  | Q4 2026  |
 | Public beta / live demo  | Planned  | Start of 2027  |
 
-### 🙌 Why This Project?
+## 🙌 Why This Project?
 This is my capstone portfolio piece. It showcases:
   - Full-stack TypeScript architecture
   - Complex domain modeling (tabletop RPG rules)
@@ -112,5 +113,5 @@ This is my capstone portfolio piece. It showcases:
   - Database design at scale
   - Auth + theming + real-time foundations
 
-### 📜 License
+## 📜 License
 Fan License Note: This is a free, non-commercial unofficial Savage Worlds companion. It references the Savage Worlds rules system but does not reproduce any copyrighted material from the rulebook (no copy-paste of official text). See Pinnacle Entertainment Group’s Fan License for full details: https://peginc.com/licensing/
