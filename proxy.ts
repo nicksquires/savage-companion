@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import { authConfig } from "./lib/auth.config";
+import { authConfig } from "./auth.config";
 import { NextResponse } from "next/server";
 
 const { auth } = NextAuth(authConfig);
@@ -9,26 +9,48 @@ export default auth((req) => {
   const isLoggedIn = !!req.auth;
   const role = req.auth?.user?.role;
 
+  // Route categories
   const isApiAuthRoute = nextUrl.pathname.startsWith("/api/auth");
+  const isAuthPageRoute = nextUrl.pathname.startsWith("/signin");
   const isAdminRoute = nextUrl.pathname.startsWith("/admin");
   const isCharacterBuilderRoute = nextUrl.pathname.startsWith("/characters/builder");
   const isDashboardRoute = nextUrl.pathname.startsWith("/dashboard");
+  const isHomebrewRoute = nextUrl.pathname.startsWith("/homebrew");
 
-  // 1. Always allow API auth routes (login, callback, etc.)
+  // Always allow API auth routes (login, callback, etc.)
   if (isApiAuthRoute) return NextResponse.next();
 
-  // 2. Admin Scoping
+  // Redirect logged-in users AWAY from the auth page
+  if (isAuthPageRoute) {
+    if (isLoggedIn) {
+      // Send them to the dashboard if they try to access login while authenticated
+      return NextResponse.redirect(new URL("/dashboard", nextUrl));
+    }
+    return NextResponse.next();
+  }
+
+  // Admin scoping
   if (isAdminRoute) {
     if (!isLoggedIn || role !== "ADMIN") {
       return NextResponse.redirect(new URL("/", nextUrl));
     }
   }
 
-  // 3. Protected Routes (Logged in required)
-  if (isCharacterBuilderRoute || isDashboardRoute) {
+  // Login scoping
+  if ( isCharacterBuilderRoute 
+    || isDashboardRoute 
+    || isHomebrewRoute
+  ) {
     if (!isLoggedIn) {
-      // Redirect to your custom sign-in page defined in auth.config.ts
-      return NextResponse.redirect(new URL("/auth/signin", nextUrl));
+      // Pass the originally requested URL as a callback so they 
+      // return wherever 'here' is after logging in
+      const callbackUrl = encodeURIComponent(
+        nextUrl.pathname + nextUrl.search
+      );
+
+      return NextResponse.redirect(new URL(
+        `/signin?callbackUrl=${callbackUrl}`, nextUrl
+      ));
     }
   }
 

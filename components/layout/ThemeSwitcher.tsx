@@ -8,7 +8,7 @@ const themeFamilies = [
   { id: "standard", label: "Standard", color: "bg-blue-500" },
   { id: "cyberpunk", label: "Cyberpunk", color: "bg-yellow-400" },
   { id: "eldritch", label: "Eldritch", color: "bg-indigo-900" },
-  { id: "aquatica", label: "Aquatica", color: "bg-cyan-500" },
+  { id: "aquatica", label: "Aquatica", color: "bg-cyan-400" },
   { id: "fantasy", label: "Fantasy", color: "bg-amber-700" },
   { id: "blood", label: "Blood", color: "bg-red-800" },
   { id: "forest", label: "Forest", color: "bg-green-700" },
@@ -57,7 +57,7 @@ const ThemeSwitcher = () => {
       <ul
         tabIndex={0}
         className="dropdown-content menu p-2 shadow-xl 
-        bg-navbar rounded-box w-56 z-100 border 
+        bg-navbar brightness-110 rounded-box w-56 z-100 border 
         border-base-100/50 overflow-y-auto"
       >
         <li className="menu-title text-xs uppercase text-navbar-content opacity-70 px-4 py-2">
@@ -66,25 +66,23 @@ const ThemeSwitcher = () => {
         {themeFamilies.map((family) => (
           <li
             key={family.id}
-            className="text-navbar-content hover:brightness-150"
+            className="text-navbar-content hover:brightness-110"
           >
             <button
               onClick={() => handleFamilyChange(family.id)}
               className={`flex items-center justify-between px-4 py-2 ${
-                currentFamily === family.id
-                  ? "bg-navbar/90 text-primary font-bold"
-                  : ""
+                currentFamily === family.id ? "bg-navbar/90 font-extrabold" : ""
               }`}
             >
               <div className="flex items-center gap-3">
                 <div
-                  className={`w-3 h-3 rounded-full ${family.color} shadow-sm`}
+                  className={`w-3 h-3 rounded-full ${family.color} shadow-md`}
                 />
                 <span>{family.label}</span>
               </div>
               {currentFamily === family.id && (
                 <div className="badge badge-primary text-primary-content badge-xs">
-                  Active
+                  ACTIVE
                 </div>
               )}
             </button>

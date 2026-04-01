@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { auth } from "@/auth";
+import Providers from "./(auth)/Provider";
+import "./globals.css";
+import NavBar from "@/components/layout/NavBar";
+import Footer from "../components/layout/Footer";
+
+import localFont from "next/font/local";
 import {
   Inter,
   Cinzel,
@@ -24,11 +31,6 @@ import {
   Press_Start_2P,
   Space_Mono,
 } from "next/font/google";
-import localFont from "next/font/local";
-import "./globals.css";
-import NavBar from "@/components/layout/NavBar";
-import Footer from "../components/layout/Footer";
-import Providers from "./(auth)/Provider";
 
 // --- FONT DEFINITIONS ---
 
@@ -159,11 +161,13 @@ export const metadata: Metadata = {
   description: "Virtual Tabletop Manager",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const session = await auth();
+
   return (
     <html
       lang="en"
@@ -179,7 +183,7 @@ export default function RootLayout({
         `}
     >
       <body>
-        <Providers>
+        <Providers session={session}>
           <div className="flex flex-col min-h-screen">
             <NavBar />
             <main className="grow">{children}</main>

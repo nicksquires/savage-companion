@@ -1,21 +1,19 @@
-"use client";
-import React from "react";
-// import bg from "../public/images/old_paper.jpg";
+import HeroSection from "@/components/home/HeroSection";
+import QuickActionPanel from "@/components/home/QuickActionPanel";
+import FeatureHighlights from "@/components/home/FeatureHighlights";
+import MarketplaceCarousel from "@/components/home/MarketplaceCarousel";
+import FeaturedWorlds from "@/components/home/FeaturedWorlds";
+import DailyAdventureHook from "@/components/home/DailyAdventureHook";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <h1>Hello World</h1>
-        <div>
-          <button
-            className="btn btn-primary m-3"
-            onClick={() => console.log("Click")}
-          >
-            Click Me
-          </button>
-        </div>
-      </div>
+    <main className="min-h-screen bg-base-100 text-base-content">
+      <HeroSection />
+      <QuickActionPanel />
+      <FeatureHighlights />
+      <MarketplaceCarousel />
+      <FeaturedWorlds />
+      <DailyAdventureHook />
     </main>
   );
 }

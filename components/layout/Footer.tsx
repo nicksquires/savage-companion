@@ -96,13 +96,21 @@ const Footer = () => {
 
       {/* BOTTOM: Legal / Disclaimer */}
       <div className="border-t border-navbar-content/20 px-6 py-4 text-xs leading-relaxed opacity-70">
-        © 1994-2003, 2005-2026 Pinnacle Entertainment Group | All Rights
-        Reserved. Savage Worlds, SWADE, Adventure Edition, Pinnacle
-        Entertainment Group, the Savage Worlds logo, and all related product
-        names, game mechanics, settings, and logos are trademarks or copyrights
-        of Pinnacle Entertainment Group in the U.S.A. and other countries. This
-        application is an unofficial fan project and is not affiliated with or
-        endorsed by Pinnacle Entertainment Group.
+        © 1994-2003, 2005-2026 Pinnacle Entertainment Group. All rights
+        reserved.&nbsp;&nbsp;|&nbsp;&nbsp;Savage Worlds, SWADE, Adventure
+        Edition, Pinnacle Entertainment Group, the Savage Worlds logo, and all
+        related product names, settings, and game mechanics are trademarks or
+        copyrights of Pinnacle Entertainment Group in the U.S.A. and other
+        countries&nbsp;&nbsp;|&nbsp;&nbsp;This application is an unofficial fan
+        project created under the Savage Worlds fan content guidelines. It is
+        not affiliated with, endorsed, sponsored, or approved by Pinnacle
+        Entertainment Group. No copyrighted text or material from official
+        publications is reproduced verbatim.
+        <br />© 2026 Nicholas Squires. All rights
+        reserved&nbsp;&nbsp;|&nbsp;&nbsp;Savage Companion, along with its
+        original code, data structures, organization, and non-verbatim
+        mechanical interpretations and descriptions, are the intellectual
+        property of Nicholas Squires.
       </div>
     </footer>
   );

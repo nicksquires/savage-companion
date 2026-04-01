@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/images/SW_LOGO_FP_2018.png";
@@ -11,6 +11,10 @@ import BurgerDrawer from "./BurgerDrawer";
 
 const NavBar = () => {
   const { status, data: session } = useSession();
+
+  const handleSignOut = async () => {
+    await signOut({ callbackUrl: "/" });
+  };
 
   return (
     <div
@@ -165,13 +169,13 @@ const NavBar = () => {
           />
 
           {/* 4. User Dropdown Button – authenticated only */}
-          {status === "authenticated" ? (
+          {status === "authenticated" && session?.user && (
             <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
                 className="btn btn-circle btn-md 
-                flex items-center justify-between gap-2 
+                flex items-center text-center gap-2 
                 bg-navbar border-navbar sm:bg-base-300
                 sm:p-3 p-0 ml-1 mr-3 
                 min-w-11rem sm:w-44 
@@ -188,7 +192,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="flex items-center gap-1.5 flex-1 justify-between">
-                  <span className="text-sm font-medium hidden sm:inline truncate max-w-9rem">
+                  <span className="text-sm font-medium hidden sm:inline truncate w-full">
                     {session.user?.name || session.user?.email?.split("@")[0]}
                   </span>
                   <span className="sm:inline hidden">
@@ -203,6 +207,9 @@ const NavBar = () => {
                 rounded-box z-50 w-56 p-2 shadow-lg 
                 border border-base-300/30 mt-1"
               >
+                <li>
+                  <Link href="/dashboard">Dashboard</Link>
+                </li>
                 <li>
                   <Link href="#">Notifications</Link>
                 </li>
@@ -224,30 +231,33 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/api/auth/signout" className="text-error">
+                  <button
+                    onClick={handleSignOut}
+                    className="text-error w-full text-left"
+                  >
                     Sign Out
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
-          ) : null}
+          )}
+
+          {/* Auth fallback when unauthenticated */}
+          {status === "loading" && (
+            <span className="loading loading-spinner loading-md opacity-70" />
+          )}
+
+          {status === "unauthenticated" && (
+            <div className="flex items-center gap-2 mr-2">
+              <Link href="/signin" className="btn btn-sm btn-ghost">
+                LOGIN
+              </Link>
+              <Link href="/signin" className="btn btn-sm btn-primary">
+                SIGN UP
+              </Link>
+            </div>
+          )}
         </div>
-
-        {/* Auth fallback when unauthenticated */}
-        {status === "loading" && (
-          <span className="loading loading-spinner loading-md opacity-70" />
-        )}
-
-        {status === "unauthenticated" && (
-          <div className="flex items-center gap-2 mr-2">
-            <Link href="/api/auth/signin" className="btn btn-sm btn-ghost">
-              LOGIN
-            </Link>
-            <Link href="/users/new" className="btn btn-sm btn-primary">
-              SIGN UP
-            </Link>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 @plugin "daisyui";
 
 @theme {
-  /* 1. Dynamic Font Utilities */
-  /* These map to Tailwind classes like 'font-header' and 'font-body' */
+  /* Dynamic Font Utilities */
   --font-header: var(--theme-font-header);
   --font-body: var(--theme-font-body);
 
@@ -16,19 +19,39 @@
 :root {
   --theme-font-header: var(--font-poppins);
   --theme-font-body: var(--font-inter);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
-
-/* =========================================
-   1. STANDARD (Modern/Clean)
-========================================= */
-[data-theme="standard-light"] {
-  --theme-font-header: var(--font-poppins);
-  --theme-font-body: var(--font-inter);
-  
-  --color-base-100: #fdfdfd;
-  --color-base-200: #f3f1ee;
-  --color-base-300: #eae8e4;
-  --color-base-content: #0f172a;
 
     /*   PUMPKIN ROSE 
   --color-base-50: #ffe5e3;
@@ -53,37 +76,73 @@
   --color-base-700: #5d3524;
   --color-base-800: #382014;
   --color-base-900: #170802; */
-  
-  --theme-navbar: #090503; /* High contrast dark header */
+
+/* =========================================
+   1. STANDARD (Modern/Clean)
+========================================= */
+[data-theme="standard-light"] {
+  /* Typography */
+  --theme-font-header: var(--font-poppins);
+  --theme-font-body: var(--font-inter);
+
+  /* Base Colors */
+  --color-base-50: #ffffff;
+  --color-base-100: #fdfdfd;
+  --color-base-200: #f3f1ee;
+  --color-base-300: #eae8e4;
+  --color-base-400: #d1cfcb;
+  --color-base-500: #b9b7b4;
+  --color-base-600: #8a8885;
+  --color-base-700: #5c5a58;
+  --color-base-800: #2e2d2c;
+  --color-base-900: #0f172a;
+  --color-base-content: #0f172a;
+
+  /* Navbar */
+  --theme-navbar: #090503;
   --theme-navbar-content: #f8fafc;
 
+  /* Core Colors */
   --color-primary: #ef830e;      --color-primary-content: #ffffff;
   --color-secondary: #3b82f6;    --color-secondary-content: #ffffff;
   --color-accent: #8b5cf6;       --color-accent-content: #ffffff;
   --color-neutral: #848fa0;      --color-neutral-content: #ffffff;
-  
+
+  /* Semantic Colors */
   --color-info: #0ea5e9;         --color-info-content: #ffffff;
   --color-success: #28b35b;      --color-success-content: #ffffff;
-  --color-warning: #c8c200;      --color-warning-content: #ffffff;
+  --color-warning: #d3b016;      --color-warning-content: #ffffff; 
   --color-error: #ef4444;        --color-error-content: #ffffff;
 }
 [data-theme="standard-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-poppins);
   --theme-font-body: var(--font-inter);
 
+  /* Base Colors */
+  --color-base-50: #0c0a09;
   --color-base-100: #1c1917;
   --color-base-200: #292524;
   --color-base-300: #44403c;
+  --color-base-400: #57534e;
+  --color-base-500: #78716c;
+  --color-base-600: #a8a29e;
+  --color-base-700: #d6d3d1;
+  --color-base-800: #e7e5e4;
+  --color-base-900: #f8fafc;
   --color-base-content: #f8fafc;
-  
-  --theme-navbar: #0c0a09; /* Darker than base-100 */
+
+  /* Navbar */
+  --theme-navbar: #0c0a09;
   --theme-navbar-content: #f8fafc;
 
+  /* Core Colors */
   --color-primary: #e2991a;      --color-primary-content: #000000;
   --color-secondary: #62c4d1;    --color-secondary-content: #000000;
   --color-accent: #a78bfa;       --color-accent-content: #000000;
   --color-neutral: #a8a29e;      --color-neutral-content: #000000;
-  
+
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #4ade80;      --color-success-content: #000000;
   --color-warning: #fbbf24;      --color-warning-content: #000000;
@@ -94,50 +153,74 @@
    2. CYBERPUNK (High Tech / Low Life)
 ========================================= */
 [data-theme="cyberpunk-light"] {
+  /* Typography */
   --theme-font-header: var(--font-orbitron);
   --theme-font-body: var(--font-rajdhani);
-
-  --color-base-100: #fefce8;
-  --color-base-200: #fff4a1;
-  --color-base-300: #ffe564;
-  --color-base-content: #111827;
   --font-weight-base: 400;
   --font-scale: 1.10;
 
-  --theme-navbar: #111827; /* Stark black against yellow */
+  /* Base Colors */
+  --color-base-50: #fffdf5;
+  --color-base-100: #fefce8;
+  --color-base-200: #fff4a1;
+  --color-base-300: #ffe564;
+  --color-base-400: #facc15;
+  --color-base-500: #eab308;
+  --color-base-600: #ca8a04;
+  --color-base-700: #a16207;
+  --color-base-800: #854d0e;
+  --color-base-900: #111827;
+  --color-base-content: #111827;
+
+  /* Navbar */
+  --theme-navbar: #111827;
   --theme-navbar-content: #fcee0a;
 
+  /* Core Colors */
   --color-primary: #ff3ade;      --color-primary-content: #ffffff;
-  --color-secondary: #00f0ff;    --color-secondary-content: #1e1e1ee3;
+  --color-secondary: #00f0ff;    --color-secondary-content: #1e1e1e; 
   --color-accent: #c061ff;       --color-accent-content: #ffffff;
   --color-neutral: #374151;      --color-neutral-content: #ffffff;
 
-  --color-info: #00f0ff;         --color-info-content: #1e1e1ee3;
-  --color-success: #14ff76;      --color-success-content: #1e1e1ee3;
-  --color-warning: #fcee0a;      --color-warning-content: #1e1e1ee3;
+  /* Semantic Colors */
+  --color-info: #00f0ff;         --color-info-content: #1e1e1e; 
+  --color-success: #14ff76;      --color-success-content: #1e1e1e; 
+  --color-warning: #fcee0a;      --color-warning-content: #1e1e1e; 
   --color-error: #ff003c;        --color-error-content: #ffffff;
 }
 [data-theme="cyberpunk-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-orbitron);
   --theme-font-body: var(--font-rajdhani);
+  --font-scale: 1.10;
+  --font-letter-spacing: 0.025em;
 
+  /* Base Colors */
+  --color-base-50: #06000a;
   --color-base-100: #180122;
   --color-base-200: #20032e;
   --color-base-300: #2d0440;
-  --color-base-content: #51e4efd1;
-  --font-scale: 1.10;
-  --font-letter-spacing: 0.025em;
-  
-  --theme-navbar: #06000a; /* Pure void */
+  --color-base-400: #3f0659;
+  --color-base-500: #5b0981;
+  --color-base-600: #7e0bb3;
+  --color-base-700: #a855f7;
+  --color-base-800: #c084fc;
+  --color-base-900: #51e4ef;
+  --color-base-content: #51e4ef; 
+
+  /* Navbar */
+  --theme-navbar: #06000a;
   --theme-navbar-content: #fcee0a;
 
-  --color-primary: #d862fff1;      --color-primary-content: #000000;
-  --color-secondary: #1ce4ffd1;    --color-secondary-content: #000000;
-  --color-accent: #ff38d7d1;       --color-accent-content: #000000;
+  /* Core Colors */
+  --color-primary: #d862ff;      --color-primary-content: #000000; 
+  --color-secondary: #1ce4ff;    --color-secondary-content: #000000; 
+  --color-accent: #ff38d7;       --color-accent-content: #000000; 
   --color-neutral: #4f106d;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #00f0ff;         --color-info-content: #000000;
-  --color-success: #39ff14d1;      --color-success-content: #000000;
+  --color-success: #39ff14;      --color-success-content: #000000; 
   --color-warning: #ffdd1e;      --color-warning-content: #000000;
   --color-error: #ff003c;        --color-error-content: #ffffff;
 }
@@ -146,92 +229,144 @@
    3. ELDRITCH (Cosmic Horror)
 ========================================= */
 [data-theme="eldritch-light"] {
+  /* Typography */
   --theme-font-header: var(--font-cinzel);
   --theme-font-body: var(--font-crimson);
 
+  /* Base Colors */
+  --color-base-50: #f9fafb;
   --color-base-100: #e5e7eb;
   --color-base-200: #d1d5db;
   --color-base-300: #9ca3af;
+  --color-base-400: #6b7280;
+  --color-base-500: #4b5563;
+  --color-base-600: #374151;
+  --color-base-700: #1f2937;
+  --color-base-800: #111827;
+  --color-base-900: #1e1b4b;
   --color-base-content: #1e1b4b;
-  
-  --theme-navbar: #251b3f; /* Deep cultist purple */
+
+  /* Navbar */
+  --theme-navbar: #251b3f;
   --theme-navbar-content: #e0e7ff;
 
-  --color-primary: #4338ca;      --color-primary-content: #ffffff;
+  /* Core Colors */
+  --color-primary: #8a68e6;      --color-primary-content: #ffffff;
   --color-secondary: #0f766e;    --color-secondary-content: #ffffff;
   --color-accent: #be185d;       --color-accent-content: #ffffff;
   --color-neutral: #4b5563;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #6366f1;         --color-info-content: #ffffff;
-  --color-success: #10b981;      --color-success-content: #000000;
+  --color-success: #086d32;      --color-success-content: #ffffff;
   --color-warning: #ca8a04;      --color-warning-content: #ffffff;
   --color-error: #9f1239;        --color-error-content: #ffffff;
 }
 [data-theme="eldritch-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-cinzel);
   --theme-font-body: var(--font-crimson);
 
+  /* Base Colors */
+  --color-base-50: #05020a;
   --color-base-100: #0f0a1c;
   --color-base-200: #1e1b4b;
   --color-base-300: #312e81;
+  --color-base-400: #3730a3;
+  --color-base-500: #4338ca;
+  --color-base-600: #4f46e5;
+  --color-base-700: #6366f1;
+  --color-base-800: #818cf8;
+  --color-base-900: #a5b4fc;
   --color-base-content: #a5b4fc;
-  
-  --theme-navbar: #05020a; /* Darker than the void */
+
+  /* Navbar */
+  --theme-navbar: #05020a;
   --theme-navbar-content: #2dd4bf;
 
+  /* Core Colors */
   --color-primary: #818cf8;      --color-primary-content: #000000;
   --color-secondary: #2dd4bf;    --color-secondary-content: #000000;
   --color-accent: #f472b6;       --color-accent-content: #000000;
-  --color-neutral: #3730a3;      --color-neutral-content: #a5b4fc;
+  --color-neutral: #9c65db;      --color-neutral-content: #000000;
 
+  /* Semantic Colors */
   --color-info: #818cf8;         --color-info-content: #000000;
   --color-success: #34d399;      --color-success-content: #000000;
   --color-warning: #fbbf24;      --color-warning-content: #000000;
-  --color-error: #e11d48;        --color-error-content: #ffffff;
+  --color-error: #e72750;        --color-error-content: #000000;
 }
 
 /* =========================================
    4. AQUATICA (Nautical/Abyssal)
 ========================================= */
 [data-theme="aquatica-light"] {
+  /* Typography */
   --theme-font-header: var(--font-righteous);
   --theme-font-body: var(--font-lato);
+  --font-scale: 1.15;
+  --font-letter-spacing: 0.025em;
 
+  /* Base Colors */
+  --color-base-50: #f0fdfa;
   --color-base-100: #ecfdf5;
   --color-base-200: #d1fae5;
   --color-base-300: #a7f3d0;
+  --color-base-400: #6ee7b7;
+  --color-base-500: #34d399;
+  --color-base-600: #10b981;
+  --color-base-700: #059669;
+  --color-base-800: #065f46;
+  --color-base-900: #064e3b;
   --color-base-content: #064e3b;
-  
-  --theme-navbar: rgb(10, 172, 213); /* Deep ocean */
+
+  /* Navbar */
+  --theme-navbar: #0eadd4; 
   --theme-navbar-content: #ffffff;
 
-  --color-primary: #0ea5e9;      --color-primary-content: #ffffff;
-  --color-secondary: #14b8a6;    --color-secondary-content: #ffffff;
-  --color-accent: #6366f1;       --color-accent-content: #ffffff;
-  --color-neutral: #0f766e;      --color-neutral-content: #ffffff;
+  /* Core Colors */
+  --color-primary: #14b8a6;      --color-primary-content: #ffffFf;
+  --color-accent: #e96c9c;      --color-accent-content: #ffffff;
+  --color-secondary: #5e8ef7;    --color-secondary-content: #ffffff;
+  --color-neutral: #e68585;      --color-neutral-content: #ffffff;
 
-  --color-info: #3b82f6;         --color-info-content: #ffffff;
+  /* Semantic Colors */
+  --color-info: #0f766e;       --color-info-content: #ffffff;
   --color-success: #10b981;      --color-success-content: #ffffff;
-  --color-warning: #f59e0b;      --color-warning-content: #ffffff;
+  --color-warning: #e9b169;      --color-warning-content: #ffffff;
   --color-error: #ef4444;        --color-error-content: #ffffff;
 }
 [data-theme="aquatica-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-righteous);
   --theme-font-body: var(--font-lato);
+  --font-scale: 1.15;
+  --font-letter-spacing: 0.025em;
 
+  /* Base Colors */
+  --color-base-50: #041e30;
   --color-base-100: #082f49;
   --color-base-200: #0c4a6e;
   --color-base-300: #075985;
+  --color-base-400: #0369a1;
+  --color-base-500: #0284c7;
+  --color-base-600: #0ea5e9;
+  --color-base-700: #38bdf8;
+  --color-base-800: #7dd3fc;
+  --color-base-900: #bae6fd;
   --color-base-content: #bae6fd;
-  
-  --theme-navbar: #041e30; /* Trench depth */
+
+  /* Navbar */
+  --theme-navbar: #041e30;
   --theme-navbar-content: #38bdf8;
 
+  /* Core Colors */
   --color-primary: #38bdf8;      --color-primary-content: #000000;
   --color-secondary: #f472b6;    --color-secondary-content: #000000;
   --color-accent: #818cf8;       --color-accent-content: #000000;
   --color-neutral: #164e63;      --color-neutral-content: #bae6fd;
 
+  /* Semantic Colors */
   --color-info: #7dd3fc;         --color-info-content: #000000;
   --color-success: #34d399;      --color-success-content: #000000;
   --color-warning: #fbbf24;      --color-warning-content: #000000;
@@ -242,44 +377,68 @@
    5. FANTASY (Classic RPG/Parchment)
 ========================================= */
 [data-theme="fantasy-light"] {
+  /* Typography */
   --theme-font-header: var(--font-lora);
   --theme-font-body: var(--font-merriweather);
 
+  /* Base Colors */
+  --color-base-50: #fffbeb;
   --color-base-100: #fef3c7;
   --color-base-200: #fde68a;
   --color-base-300: #fcd34d;
+  --color-base-400: #fbbf24;
+  --color-base-500: #f59e0b;
+  --color-base-600: #d97706;
+  --color-base-700: #b45309;
+  --color-base-800: #92400e;
+  --color-base-900: #451a03;
   --color-base-content: #451a03;
-  
-  --theme-navbar: #78350f; /* Old Leather binding */
+
+  /* Navbar */
+  --theme-navbar: #78350f;
   --theme-navbar-content: #fef3c7;
 
+  /* Core Colors */
   --color-primary: #b45309;      --color-primary-content: #ffffff;
   --color-secondary: #15803d;    --color-secondary-content: #ffffff;
   --color-accent: #7e22ce;       --color-accent-content: #ffffff;
   --color-neutral: #57534e;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #0284c7;         --color-info-content: #ffffff;
   --color-success: #16a34a;      --color-success-content: #ffffff;
-  --color-warning: #d97706;      --color-warning-content: #ffffff;
+  --color-warning: #c58804;      --color-warning-content: #ffffff;
   --color-error: #dc2626;        --color-error-content: #ffffff;
 }
 [data-theme="fantasy-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-lora);
   --theme-font-body: var(--font-merriweather);
 
+  /* Base Colors */
+  --color-base-50: #022c22;
   --color-base-100: #14532d;
   --color-base-200: #064e3b;
   --color-base-300: #065f46;
+  --color-base-400: #067a5b;
+  --color-base-500: #059669;
+  --color-base-600: #10b981;
+  --color-base-700: #34d399;
+  --color-base-800: #6ee7b7;
+  --color-base-900: #ecfdf5;
   --color-base-content: #ecfdf5;
-  
-  --theme-navbar: #022c22; /* Deep shadows */
+
+  /* Navbar */
+  --theme-navbar: #022c22;
   --theme-navbar-content: #fcd34d;
 
+  /* Core Colors */
   --color-primary: #f59e0b;      --color-primary-content: #000000;
   --color-secondary: #fbbf24;    --color-secondary-content: #000000;
   --color-accent: #c084fc;       --color-accent-content: #000000;
   --color-neutral: #043a2b;      --color-neutral-content: #ecfdf5;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #4ade80;      --color-success-content: #000000;
   --color-warning: #fde047;      --color-warning-content: #000000;
@@ -290,44 +449,68 @@
    6. BLOOD (Gothic/Vampiric)
 ========================================= */
 [data-theme="blood-light"] {
+  /* Typography */
   --theme-font-header: var(--font-creepster);
   --theme-font-body: var(--font-roboto-slab);
 
+  /* Base Colors */
+  --color-base-50: #ffffff;
   --color-base-100: #fafaf9;
   --color-base-200: #f5f5f4;
   --color-base-300: #e7e5e4;
+  --color-base-400: #d6d3d1;
+  --color-base-500: #a8a29e;
+  --color-base-600: #78716c;
+  --color-base-700: #57534e;
+  --color-base-800: #440a0a;
+  --color-base-900: #2a0505;
   --color-base-content: #450a0a;
-  
-  --theme-navbar: #450a0a; /* Dried blood */
+
+  /* Navbar */
+  --theme-navbar: #450a0a;
   --theme-navbar-content: #fafaf9;
 
+  /* Core Colors */
   --color-primary: #991b1b;      --color-primary-content: #ffffff;
   --color-secondary: #1c1917;    --color-secondary-content: #ffffff;
   --color-accent: #7f1d1d;       --color-accent-content: #ffffff;
   --color-neutral: #57534e;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #475569;         --color-info-content: #ffffff;
   --color-success: #3f6212;      --color-success-content: #ffffff;
   --color-warning: #b45309;      --color-warning-content: #ffffff;
   --color-error: #dc2626;        --color-error-content: #ffffff;
 }
 [data-theme="blood-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-creepster);
   --theme-font-body: var(--font-roboto-slab);
 
+  /* Base Colors */
+  --color-base-50: #280404;
   --color-base-100: #450a0a;
   --color-base-200: #7f1d1d;
   --color-base-300: #991b1b;
+  --color-base-400: #b91c1c;
+  --color-base-500: #dc2626;
+  --color-base-600: #ef4444;
+  --color-base-700: #f87171;
+  --color-base-800: #fca5a5;
+  --color-base-900: #fee2e2;
   --color-base-content: #fca5a5;
-  
-  --theme-navbar: #280404; /* Pitch black red */
+
+  /* Navbar */
+  --theme-navbar: #280404;
   --theme-navbar-content: #ef4444;
 
+  /* Core Colors */
   --color-primary: #ef4444;      --color-primary-content: #000000;
   --color-secondary: #000000;    --color-secondary-content: #ef4444;
   --color-accent: #b91c1c;       --color-accent-content: #ffffff;
   --color-neutral: #292524;      --color-neutral-content: #fca5a5;
 
+  /* Semantic Colors */
   --color-info: #94a3b8;         --color-info-content: #000000;
   --color-success: #84cc16;      --color-success-content: #000000;
   --color-warning: #f59e0b;      --color-warning-content: #000000;
@@ -338,50 +521,74 @@
    7. FOREST (Nature/Druidic)
 ========================================= */
 [data-theme="forest-light"] {
+  /* Typography */
   --theme-font-header: var(--font-amatic);
   --theme-font-body: var(--font-quicksand);
   --font-scale: 1;
   --font-letter-spacing: 0em;
   --font-weight-base: 500;
 
+  /* Base Colors */
+  --color-base-50: #f7fee7;
   --color-base-100: #f0fdf4;
   --color-base-200: #dcfce7;
   --color-base-300: #bbf7d0;
+  --color-base-400: #86efac;
+  --color-base-500: #4ade80;
+  --color-base-600: #22c55e;
+  --color-base-700: #16a34a;
+  --color-base-800: #15803d;
+  --color-base-900: #14532d;
   --color-base-content: #14532d;
-  
-  --theme-navbar: #186737; /* Bark/Deep green */
+
+  /* Navbar */
+  --theme-navbar: #186737;
   --theme-navbar-content: #f0fdf4;
 
-  --color-primary: #2bc459;      --color-primary-content: #ffffff;
-  --color-secondary: #3dc414;    --color-secondary-content: #ffffff;
-  --color-accent: #14b8a6;       --color-accent-content: #ffffff;
-  --color-neutral: #176c4a;      --color-neutral-content: #ffffff;
+  /* Core Colors */
+  --color-primary: #1fb84d;      --color-primary-content: #ffffff;
+  --color-secondary: #6cad37;    --color-secondary-content: #ffffff;
+  --color-accent: #268b33;       --color-accent-content: #ffffff;
+  --color-neutral: #338162;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #0ea5e9;         --color-info-content: #ffffff;
-  --color-success: #16a34a;      --color-success-content: #ffffff;
-  --color-warning: #eab308;      --color-warning-content: #ffffff;
+  --color-success: #169c09;      --color-success-content: #ffffff;
+  --color-warning: #be9714;      --color-warning-content: #ffffff; 
   --color-error: #ef4444;        --color-error-content: #ffffff;
 }
 [data-theme="forest-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-amatic);
   --theme-font-body: var(--font-quicksand);
   --font-scale: 1;
   --font-letter-spacing: 0em;
   --font-weight-base: 500;
 
+  /* Base Colors */
+  --color-base-50: #011812;
   --color-base-100: #022c22;
   --color-base-200: #064e3b;
   --color-base-300: #065f46;
+  --color-base-400: #067a5b;
+  --color-base-500: #059669;
+  --color-base-600: #10b981;
+  --color-base-700: #34d399;
+  --color-base-800: #6ee7b7;
+  --color-base-900: #dcfce7;
   --color-base-content: #dcfce7;
-  
-  --theme-navbar: #011812; /* Deepest canopy */
+
+  /* Navbar */
+  --theme-navbar: #011812;
   --theme-navbar-content: #4ade80;
 
+  /* Core Colors */
   --color-primary: #4ade80;      --color-primary-content: #000000;
   --color-secondary: #16a34a;    --color-secondary-content: #000000;
   --color-accent: #2dd4bf;       --color-accent-content: #000000;
   --color-neutral: #258b62;      --color-neutral-content: #000000;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #22c55e;      --color-success-content: #000000;
   --color-warning: #fde047;      --color-warning-content: #000000;
@@ -392,44 +599,68 @@
    8. STEAM (Steampunk/Brass)
 ========================================= */
 [data-theme="steam-light"] {
+  /* Typography */
   --theme-font-header: var(--font-playfair);
   --theme-font-body: var(--font-pt-serif);
 
+  /* Base Colors */
+  --color-base-50: #fefce8;
   --color-base-100: #fef08a;
   --color-base-200: #fde047;
   --color-base-300: #facc15;
+  --color-base-400: #eab308;
+  --color-base-500: #ca8a04;
+  --color-base-600: #a16207;
+  --color-base-700: #854d0e;
+  --color-base-800: #713f12;
+  --color-base-900: #422006;
   --color-base-content: #422006;
-  
-  --theme-navbar: #422006; /* Dark leather */
+
+  /* Navbar */
+  --theme-navbar: #422006;
   --theme-navbar-content: #fef08a;
 
+  /* Core Colors */
   --color-primary: #92400e;      --color-primary-content: #ffffff;
   --color-secondary: #713f12;    --color-secondary-content: #ffffff;
-  --color-accent: #0f766e;       --color-accent-content: #ffffff; /* Patina green */
+  --color-accent: #0f766e;       --color-accent-content: #ffffff;
   --color-neutral: #57534e;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #0284c7;         --color-info-content: #ffffff;
   --color-success: #16a34a;      --color-success-content: #ffffff;
-  --color-warning: #d97706;      --color-warning-content: #ffffff;
+  --color-warning: #ca6f06;      --color-warning-content: #ffffff;
   --color-error: #b91c1c;        --color-error-content: #ffffff;
 }
 [data-theme="steam-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-playfair);
   --theme-font-body: var(--font-pt-serif);
 
+  /* Base Colors */
+  --color-base-50: #0c0a09;
   --color-base-100: #292524;
   --color-base-200: #1c1917;
-  --color-base-300: #0c0a09;
+  --color-base-300: #44403c;
+  --color-base-400: #57534e;
+  --color-base-500: #78716c;
+  --color-base-600: #a8a29e;
+  --color-base-700: #d6d3d1;
+  --color-base-800: #e7e5e4;
+  --color-base-900: #eab308;
   --color-base-content: #eab308;
-  
-  --theme-navbar: #0c0a09; /* Oiled iron */
+
+  /* Navbar */
+  --theme-navbar: #0c0a09;
   --theme-navbar-content: #ca8a04;
 
+  /* Core Colors */
   --color-primary: #ca8a04;      --color-primary-content: #000000;
   --color-secondary: #d97706;    --color-secondary-content: #000000;
-  --color-accent: #2dd4bf;       --color-accent-content: #000000; /* Glowing patina */
+  --color-accent: #2dd4bf;       --color-accent-content: #000000;
   --color-neutral: #44403c;      --color-neutral-content: #eab308;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #4ade80;      --color-success-content: #000000;
   --color-warning: #fcd34d;      --color-warning-content: #000000;
@@ -440,44 +671,69 @@
    9. ATOMIC (Diesel-punk/Post-Apoc)
 ========================================= */
 [data-theme="atomic-light"] {
+  /* Typography */
   --theme-font-header: var(--font-anton);
   --theme-font-body: var(--font-courier);
+  --font-letter-spacing: 0.01em;
 
-  --color-base-100: #d6d3d1;
-  --color-base-200: #a8a29e;
-  --color-base-300: #78716c;
-  --color-base-content: #1c1917;
-  
-  --theme-navbar: #1e40af; /* Vault blue */
+  /* Base Colors */
+  --color-base-50: #f3f2f1;
+  --color-base-100: #e7e6e5;
+  --color-base-200: #cfcbc9;
+  --color-base-300: #aca6a2;
+  --color-base-400: #77726b;
+  --color-base-500: #68635e;
+  --color-base-600: #494240;
+  --color-base-700: #36312e;
+  --color-base-800: #2b2623;
+  --color-base-900: #141010;
+  --color-base-content: #141010;
+
+  /* Navbar */
+  --theme-navbar: #1e40af;
   --theme-navbar-content: #facc15;
 
-  --color-primary: #15803d;      --color-primary-content: #ffffff;
+  /* Core Colors */
+  --color-primary: #119140;      --color-primary-content: #ffffff;
   --color-secondary: #1e40af;    --color-secondary-content: #ffffff;
   --color-accent: #ca8a04;       --color-accent-content: #ffffff;
   --color-neutral: #44403c;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #0284c7;         --color-info-content: #ffffff;
   --color-success: #16a34a;      --color-success-content: #ffffff;
-  --color-warning: #eab308;      --color-warning-content: #000000;
+  --color-warning: #ca9d16;      --color-warning-content: #ffffff;
   --color-error: #dc2626;        --color-error-content: #ffffff;
 }
 [data-theme="atomic-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-anton);
   --theme-font-body: var(--font-courier);
 
+  /* Base Colors */
+  --color-base-50: #000000;
   --color-base-100: #1c1917;
   --color-base-200: #0c0a09;
-  --color-base-300: #000000;
+  --color-base-300: #292524;
+  --color-base-400: #44403c;
+  --color-base-500: #57534e;
+  --color-base-600: #78716c;
+  --color-base-700: #166534;
+  --color-base-800: #22c55e;
+  --color-base-900: #4ade80;
   --color-base-content: #22c55e;
-  
-  --theme-navbar: #000000; /* CRT Off */
+
+  /* Navbar */
+  --theme-navbar: #000000;
   --theme-navbar-content: #4ade80;
 
+  /* Core Colors */
   --color-primary: #166534;      --color-primary-content: #ffffff;
   --color-secondary: #fbbf24;    --color-secondary-content: #000000;
   --color-accent: #ea580c;       --color-accent-content: #ffffff;
   --color-neutral: #292524;      --color-neutral-content: #22c55e;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #4ade80;      --color-success-content: #000000;
   --color-warning: #fde047;      --color-warning-content: #000000;
@@ -488,44 +744,68 @@
    10. NOIR (Detective/Sin City)
 ========================================= */
 [data-theme="noir-light"] {
+  /* Typography */
   --theme-font-header: var(--font-bebas);
   --theme-font-body: var(--font-baskerville);
 
+  /* Base Colors */
+  --color-base-50: #fafaf9;
   --color-base-100: #f5f5f4;
   --color-base-200: #e7e5e4;
   --color-base-300: #d6d3d1;
+  --color-base-400: #a8a29e;
+  --color-base-500: #78716c;
+  --color-base-600: #57534e;
+  --color-base-700: #44403c;
+  --color-base-800: #292524;
+  --color-base-900: #1c1917;
   --color-base-content: #1c1917;
-  
-  --theme-navbar: #1c1917; /* High contrast black */
+
+  /* Navbar */
+  --theme-navbar: #1c1917;
   --theme-navbar-content: #f5f5f4;
 
+  /* Core Colors */
   --color-primary: #000000;      --color-primary-content: #ffffff;
-  --color-secondary: #ef4444;    --color-secondary-content: #ffffff; /* Splash of red */
+  --color-secondary: #ef4444;    --color-secondary-content: #ffffff;
   --color-accent: #52525b;       --color-accent-content: #ffffff;
   --color-neutral: #78716c;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #52525b;         --color-info-content: #ffffff;
   --color-success: #000000;      --color-success-content: #ffffff;
   --color-warning: #78716c;      --color-warning-content: #ffffff;
   --color-error: #dc2626;        --color-error-content: #ffffff;
 }
 [data-theme="noir-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-bebas);
   --theme-font-body: var(--font-baskerville);
 
+  /* Base Colors */
+  --color-base-50: #000000;
   --color-base-100: #09090b;
   --color-base-200: #18181b;
   --color-base-300: #27272a;
+  --color-base-400: #3f3f46;
+  --color-base-500: #52525b;
+  --color-base-600: #71717a;
+  --color-base-700: #a1a1aa;
+  --color-base-800: #d4d4d8;
+  --color-base-900: #ffffff;
   --color-base-content: #ffffff;
-  
-  --theme-navbar: #000000; /* Pure black */
+
+  /* Navbar */
+  --theme-navbar: #000000;
   --theme-navbar-content: #ef4444;
 
+  /* Core Colors */
   --color-primary: #ef4444;      --color-primary-content: #000000;
   --color-secondary: #52525b;    --color-secondary-content: #000000;
   --color-accent: #a1a1aa;       --color-accent-content: #000000;
   --color-neutral: #3f3f46;      --color-neutral-content: #000000;
 
+  /* Semantic Colors */
   --color-info: #a1a1aa;         --color-info-content: #000000;
   --color-success: #ffffff;      --color-success-content: #000000;
   --color-warning: #71717a;      --color-warning-content: #000000;
@@ -536,44 +816,68 @@
    11. FROST (Tundra/Lich King)
 ========================================= */
 [data-theme="frost-light"] {
+  /* Typography */
   --theme-font-header: var(--font-montserrat);
   --theme-font-body: var(--font-open-sans);
 
+  /* Base Colors */
+  --color-base-50: #f8fafc;
   --color-base-100: #f0f9ff;
   --color-base-200: #e0f2fe;
   --color-base-300: #bae6fd;
+  --color-base-400: #7dd3fc;
+  --color-base-500: #38bdf8;
+  --color-base-600: #0ea5e9;
+  --color-base-700: #0284c7;
+  --color-base-800: #0369a1;
+  --color-base-900: #0c4a6e;
   --color-base-content: #0c4a6e;
-  
-  --theme-navbar: #0369a1; /* Deep ice blue */
+
+  /* Navbar */
+  --theme-navbar: #0369a1;
   --theme-navbar-content: #f0f9ff;
 
+  /* Core Colors */
   --color-primary: #38bdf8;      --color-primary-content: #ffffff;
   --color-secondary: #0d97d6;    --color-secondary-content: #ffffff;
   --color-accent: #818cf8;       --color-accent-content: #ffffff;
   --color-neutral: #0284c7;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #0ea5e9;         --color-info-content: #ffffff;
   --color-success: #10b981;      --color-success-content: #ffffff;
-  --color-warning: #fbbf24;      --color-warning-content: #ffffff;
+  --color-warning: #fbbf24;      --color-warning-content: #000000; /* Contrast fix */
   --color-error: #ef4444;        --color-error-content: #ffffff;
 }
 [data-theme="frost-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-montserrat);
   --theme-font-body: var(--font-open-sans);
 
+  /* Base Colors */
+  --color-base-50: #041e30;
   --color-base-100: #0c4a6e;
   --color-base-200: #082f49;
-  --color-base-300: #041e30;
+  --color-base-300: #0369a1;
+  --color-base-400: #0284c7;
+  --color-base-500: #0ea5e9;
+  --color-base-600: #38bdf8;
+  --color-base-700: #7dd3fc;
+  --color-base-800: #bae6fd;
+  --color-base-900: #e0f2fe;
   --color-base-content: #e0f2fe;
-  
-  --theme-navbar: #041e30; /* Night sky/glacier shadow */
+
+  /* Navbar */
+  --theme-navbar: #041e30;
   --theme-navbar-content: #7dd3fc;
 
+  /* Core Colors */
   --color-primary: #7dd3fc;      --color-primary-content: #000000;
   --color-secondary: #bae6fd;    --color-secondary-content: #000000;
   --color-accent: #a5b4fc;       --color-accent-content: #000000;
   --color-neutral: #0369a1;      --color-neutral-content: #ffffff;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #34d399;      --color-success-content: #000000;
   --color-warning: #fde047;      --color-warning-content: #000000;
@@ -584,44 +888,69 @@
    12. SYNTHWAVE (Retro 80s)
 ========================================= */
 [data-theme="synthwave-light"] {
+  /* Typography */
   --theme-font-header: var(--font-press-start);
   --theme-font-body: var(--font-space-mono);
+  --font-letter-spacing: 0.025em;
 
+  /* Base Colors */
+  --color-base-50: #fdf2f8;
   --color-base-100: #fce7f3;
   --color-base-200: #fbcfe8;
   --color-base-300: #ffb4dd;
+  --color-base-400: #f472b6;
+  --color-base-500: #ec4899;
+  --color-base-600: #db2777;
+  --color-base-700: #be185d;
+  --color-base-800: #9d174d;
+  --color-base-900: #701a75;
   --color-base-content: #701a75;
-  
-  --theme-navbar: #86198f; /* Intense purple/magenta */
+
+  /* Navbar */
+  --theme-navbar: #86198f;
   --theme-navbar-content: #fce7f3;
 
+  /* Core Colors */
   --color-primary: #ef46ec;      --color-primary-content: #ffffff;
   --color-secondary: #06b6d4;    --color-secondary-content: #ffffff;
   --color-accent: #ec4899;       --color-accent-content: #ffffff;
   --color-neutral: #9d174d;      --color-neutral-content: #ffffff;
 
-  --color-info: #0ea5e9;       --color-info-content: #ffffff;
+  /* Semantic Colors */
+  --color-info: #0ea5e9;         --color-info-content: #ffffff;
   --color-success: #10b981;      --color-success-content: #ffffff;
-  --color-warning: #f59e0b;      --color-warning-content: #ffffff;
+  --color-warning: #f29e0b;      --color-warning-content: #ffffff; /* Contrast fix */
   --color-error: #e11d48;        --color-error-content: #ffffff;
 }
 [data-theme="synthwave-dark"] {
+  /* Typography */
   --theme-font-header: var(--font-press-start);
   --theme-font-body: var(--font-space-mono);
 
+  /* Base Colors */
+  --color-base-50: #110e2e;
   --color-base-100: #1e1b4b;
   --color-base-200: #312e81;
   --color-base-300: #4338ca;
+  --color-base-400: #4f46e5;
+  --color-base-500: #6366f1;
+  --color-base-600: #818cf8;
+  --color-base-700: #a5b4fc;
+  --color-base-800: #c7d2fe;
+  --color-base-900: #ffb7dc;
   --color-base-content: #ffb7dc;
-  
-  --theme-navbar: #110e2e; /* Midnight synth grid */
+
+  /* Navbar */
+  --theme-navbar: #110e2e;
   --theme-navbar-content: #22d3ee;
 
+  /* Core Colors */
   --color-primary: #ec4899;      --color-primary-content: #000000;
   --color-secondary: #22d3ee;    --color-secondary-content: #000000;
   --color-accent: #d946ef;       --color-accent-content: #000000;
   --color-neutral: #3730a3;      --color-neutral-content: #ffb7dc;
 
+  /* Semantic Colors */
   --color-info: #38bdf8;         --color-info-content: #000000;
   --color-success: #34d399;      --color-success-content: #000000;
   --color-warning: #fbbf24;      --color-warning-content: #000000;
@@ -633,6 +962,11 @@ html {
   letter-spacing: var(--font-letter-spacing);
   font-weight: var(--font-weight-base);
   line-height: var(--font-line-height, 1.5);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(720deg); }
 }
 
 /* body {
@@ -647,8 +981,97 @@ html {
     font-family: var(--font-header);
     font-size: calc(1em * var(--heading-scale, 1));
   }
-  
+
   .font-body {
     font-family: var(--font-body);
   }
 } */
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

@@ -1,23 +1,20 @@
 "use client";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 
-const Providers = ({ children }: { children: ReactNode }) => {
+type ProvidersProps = {
+  children: ReactNode;
+  session: any; // ← v5 best practice: pass session from server
+};
+
+const Providers = ({ children, session }: ProvidersProps) => {
   return (
-    // SessionProvider handles  NextAuth login state
-    <SessionProvider>
-      {/* ThemeProvider handles applying the correct 'data-theme' 
-        to <html> tag. We disable the default Next.js hydration 
-        warning because next-themes needs to inject the theme script 
-        before React fully hydrates.
-      */}
+    <SessionProvider session={session}>
       <ThemeProvider
         attribute="data-theme"
         defaultTheme="standard-dark"
         enableSystem={true}
-        // This prevents the "Flash of Unstyled Content"
-        // (FOUC) when the page loads
         disableTransitionOnChange
       >
         {children}

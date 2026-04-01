@@ -9,12 +9,37 @@ import { authConfig } from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
+
   adapter: PrismaAdapter(prisma),
+
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      allowDangerousEmailAccountLinking: true,    // consider tweaking later to allow auto-linking users
+
+      // Explicit account selection
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+        }
+      },
+      
+      // Explicit 'user' creation on google 'account/ creation
+      //    NOTE: if this fails, user is forced 
+      //    in 'auth.config.ts' at signIn()
+      profile(profile) {
+        return {
+          id: profile.sub, // CRITICAL: must return ID for the adapter to work
+          name: profile.name || profile.email?.split("@")[0],
+          email: profile.email,
+          image: profile.picture,
+          role: "FREE" as const,  // default role for new Google users
+        };
+      },
     }),
+
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
@@ -35,7 +60,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           user.hashedPassword
         );
 
-        return passwordsMatch ? user : null;
+        if (!passwordsMatch) return null;
+
+        // Return the full user object
+        return {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          image: user.image ?? null,
+        };
       },
     }),
   ],
