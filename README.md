@@ -98,6 +98,11 @@ npm run dev
 ```
 ## 📸 Screenshots / Demo
 
+![Edge Browser Example Screenshot](screenshots/landing-page.png)
+![Edge Browser Example Screenshot](screenshots/character_builder_summary.png)
+![Edge Browser Example Screenshot](screenshots/character_builder_race.png)
+![Edge Browser Example Screenshot](screenshots/character_builder_gear.png)
+![Edge Browser Example Screenshot](screenshots/character_builder_traits.png)
 ![Edge Browser Example Screenshot](screenshots/edge-browser.png)
 (More GIFs and screenshots of the app will be added as soon as the UI gets its first proper coat of paint and more pages are added.)
 
