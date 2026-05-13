@@ -98,7 +98,7 @@ npm run dev
 ```
 ## 📸 Screenshots / Demo
 
-![Edge Browser Example Screenshot](screenshots/landing-page.png)
+![Edge Browser Example Screenshot](screenshots/landing_page.png)
 ![Edge Browser Example Screenshot](screenshots/character_builder_summary.png)
 ![Edge Browser Example Screenshot](screenshots/character_builder_race.png)
 ![Edge Browser Example Screenshot](screenshots/character_builder_gear.png)
