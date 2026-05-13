@@ -13,7 +13,7 @@ export default auth((req) => {
   const isApiAuthRoute = nextUrl.pathname.startsWith("/api/auth");
   const isAuthPageRoute = nextUrl.pathname.startsWith("/signin");
   const isAdminRoute = nextUrl.pathname.startsWith("/admin");
-  const isCharacterBuilderRoute = nextUrl.pathname.startsWith("/characters/builder");
+  const isCharactersRoute = nextUrl.pathname.startsWith("/characters");
   const isDashboardRoute = nextUrl.pathname.startsWith("/dashboard");
   const isHomebrewRoute = nextUrl.pathname.startsWith("/homebrew");
 
@@ -37,7 +37,7 @@ export default auth((req) => {
   }
 
   // Login scoping
-  if ( isCharacterBuilderRoute 
+  if ( isCharactersRoute 
     || isDashboardRoute 
     || isHomebrewRoute
   ) {

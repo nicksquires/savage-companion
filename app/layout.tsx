@@ -34,6 +34,24 @@ import {
 
 // --- FONT DEFINITIONS ---
 
+// 0.1 Builder Headers - Treacherous Corners
+const treacherous = localFont({
+  src: "../public/fonts/CCTreacherousCorners_Regular.ttf",
+  variable: "--font-treacherous",
+});
+
+// 0.2 Builder Headers - Bathory
+const bathory = localFont({
+  src: "../public/fonts/Bathory_Regular_Demo.otf",
+  variable: "--font-bathory",
+});
+
+// 0.3 Builder Subheaders - Varnyx
+const varnyx = localFont({
+  src: "../public/fonts/Varnyx-Regular.ttf",
+  variable: "--font-varnyx",
+});
+
 // 1. Standard
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const poppins = localFont({
@@ -173,7 +191,7 @@ export default async function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={`
-          ${inter.variable} ${poppins.variable} ${orbitron.variable} ${rajdhani.variable} 
+          ${treacherous.variable} ${bathory.variable} ${varnyx.variable} ${inter.variable} ${poppins.variable} ${orbitron.variable} ${rajdhani.variable} 
           ${cinzel.variable} ${crimson.variable} ${righteous.variable} ${lato.variable} 
           ${lora.variable} ${merriweather.variable} ${creepster.variable} ${robotoSlab.variable} 
           ${amatic.variable} ${quicksand.variable} ${playfair.variable} ${ptSerif.variable} 

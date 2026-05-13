@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Orc",
+    "slug": "orc",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Fierce, green-skinned warriors who respect strength above all else.",
+    "racialAbilities": ["racial-ability:frightening-visage", "racial-ability:iron-stomach", "racial-ability:attribute-increase", "hindrance:bloodthirsty-major"]
+  },
+  {
+    "name": "Goblin",
+    "slug": "goblin",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Small, cunning scavengers who thrive in the darkest caverns.",
+    "racialAbilities": ["racial-ability:darkvision", "racial-ability:natural-camouflage", "racial-ability:size-minus-one"]
+  },
+  {
+    "name": "Fiendblood",
+    "slug": "fiendblood",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Mortals bearing the ancestral curse of demonic entities, identifiable by their horns and unusual skin tones.",
+    "racialAbilities": ["racial-ability:darkvision", "racial-ability:volatile-blood", "hindrance:outsider-major"]
+  },
+  {
+    "name": "Drakin",
+    "slug": "drakin",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Proud humanoids boasting dragon-like scales and elemental affinities.",
+    "racialAbilities": ["racial-ability:elemental-resistance", "racial-ability:frightening-visage", "racial-ability:armor", "hindrance:arrogant-minor"]
+  },
+  {
+    "name": "Tinkerer (Gnome)",
+    "slug": "tinkerer-gnome",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Energetic, diminutive inventors driven by obsessive curiosity.",
+    "racialAbilities": ["racial-ability:magical-affinity", "racial-ability:hover", "racial-ability:size-minus-one", "racial-ability:frail"]
+  },
+  {
+    "name": "Asterion",
+    "slug": "asterion",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Massive labyrinth-dwellers with the heads of bulls and unparalleled tempers.",
+    "racialAbilities": ["racial-ability:natural-camouflage", "racial-ability:frightening-visage", "racial-ability:size-plus-one", "racial-ability:big"]
+  },
+  {
+    "name": "Giant-kin",
+    "slug": "giant-kin",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Towering nomads from the frozen peaks with bloodlines tracing back to ancient titans.",
+    "racialAbilities": ["racial-ability:iron-stomach", "racial-ability:ancestral-memory", "racial-ability:size-plus-one", "racial-ability:reduced-pace-level-one"]
+  },
+  {
+    "name": "Celestial",
+    "slug": "celestial",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Beings touched by divine light, acting as guardians of the mortal realms.",
+    "racialAbilities": ["racial-ability:telepathic", "racial-ability:hover", "hindrance:vow-major", "racial-ability:edge-novice"]
+  },
+  {
+    "name": "Ironclad",
+    "slug": "ironclad",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Forged for war and granted sentience, these metal juggernauts seek a purpose beyond combat.",
+    "racialAbilities": ["racial-ability:crystalline-skin", "racial-ability:volatile-blood", "racial-ability:construct", "racial-ability:dependency"]
+  },
+  {
+    "name": "Nightstalker",
+    "slug": "nightstalker",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Cursed undead who sustain themselves on the vitality of the living.",
+    "racialAbilities": ["racial-ability:darkvision", "racial-ability:sunlight-sensitivity", "racial-ability:soul-siphon", "racial-ability:bite"]
+  },
+  {
+    "name": "Lycan",
+    "slug": "lycan",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Shapechangers afflicted by a primal curse, constantly balancing their humanity with the beast within.",
+    "racialAbilities": ["racial-ability:beast-speaker", "racial-ability:natural-camouflage", "racial-ability:claws-level-one", "hindrance:bloodthirsty-minor"]
+  },
+  {
+    "name": "Siren",
+    "slug": "siren",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Alluring aquatic humanoids known for their mesmerizing voices and deep-sea telepathy.",
+    "racialAbilities": ["racial-ability:telepathic", "racial-ability:beast-speaker", "racial-ability:aquatic", "racial-ability:dependency"]
+  },
+  {
+    "name": "Centaur",
+    "slug": "centaur",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Noble half-equine wanderers who possess profound ancestral wisdom.",
+    "racialAbilities": ["racial-ability:natural-camouflage", "racial-ability:ancestral-memory", "racial-ability:big", "racial-ability:pace"]
+  },
+  {
+    "name": "Pixie",
+    "slug": "pixie",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Tiny, mischievous fey who flutter through the world playing tricks on larger folk.",
+    "racialAbilities": ["racial-ability:hover", "racial-ability:magical-affinity", "racial-ability:size-minus-one", "racial-ability:frail"]
+  },
+  {
+    "name": "Morpher",
+    "slug": "morpher",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Faceless shapeshifters who integrate perfectly into any society they choose.",
+    "racialAbilities": ["racial-ability:telepathic", "racial-ability:amorphous-form", "hindrance:outsider-minor"]
+  },
+  {
+    "name": "Oozeling",
+    "slug": "oozeling",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Sentient gelatinous masses capable of adopting humanoid shapes to interact with others.",
+    "racialAbilities": ["racial-ability:amorphous-form", "racial-ability:goo-like-weakness", "racial-ability:wall-walker"]
+  },
+  {
+    "name": "Shardmind",
+    "slug": "shardmind",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Psychic entities composed entirely of animated, resonating crystal shards.",
+    "racialAbilities": ["racial-ability:crystalline-skin", "racial-ability:telepathic", "racial-ability:construct"]
+  },
+  {
+    "name": "Floran",
+    "slug": "floran",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Savage, carnivorous plant-people who thrive in deep wilderness and rely on the sun.",
+    "racialAbilities": ["racial-ability:sunlight-sensitivity", "racial-ability:natural-camouflage", "racial-ability:regeneration-level-one", "racial-ability:environmental-weakness"]
+  },
+  {
+    "name": "Lepidopteran",
+    "slug": "lepidopteran",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Mysterious, moth-like humanoids drawn to arcane energy and bright lights.",
+    "racialAbilities": ["racial-ability:hover", "racial-ability:beast-speaker", "racial-ability:flight-level-one", "racial-ability:frail"]
+  },
+  {
+    "name": "Hive-Swarm",
+    "slug": "hive-swarm",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "A collective of thousands of insects acting as a single, terrifyingly intelligent bipedal entity.",
+    "racialAbilities": ["racial-ability:hive-mind-link", "racial-ability:amorphous-form", "racial-ability:goo-like-weakness"]
+  },
+  {
+    "name": "Umbral",
+    "slug": "umbral",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Creatures born from the Shadowfell, capable of slipping between reality and the dark.",
+    "racialAbilities": ["racial-ability:darkvision", "racial-ability:phasing", "racial-ability:sunlight-sensitivity"]
+  },
+  {
+    "name": "Clockwork Puppet",
+    "slug": "clockwork-puppet",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Wooden, gear-driven dolls brought to life by forgotten magic.",
+    "racialAbilities": ["racial-ability:hover", "racial-ability:iron-stomach", "racial-ability:construct", "racial-ability:size-minus-one"]
+  },
+  {
+    "name": "Chitinous",
+    "slug": "chitinous",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Four-armed desert insects who communicate through clicks, pheromones, and a shared connection.",
+    "racialAbilities": ["racial-ability:hive-mind-link", "racial-ability:prehensile-appendage", "racial-ability:armor", "racial-ability:cannot-speak"]
+  },
+  {
+    "name": "Phantom",
+    "slug": "phantom",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Spirits bound to the mortal plane, barely interacting with the physical world.",
+    "racialAbilities": ["racial-ability:phasing", "racial-ability:hover", "racial-ability:doesnt-breathe", "racial-ability:frail"]
+  },
+  {
+    "name": "Parasited",
+    "slug": "parasited",
+    "isHomebrew": true,
+    "isPublic": true,
+    "description": "Hosts to alien or demonic symbiotes that grant them incredible, albeit draining, biological surges.",
+    "racialAbilities": ["racial-ability:symbiotic-surge", "racial-ability:soul-siphon", "hindrance:dependency-major"]
+  }
+]

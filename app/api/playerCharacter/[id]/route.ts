@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/prisma/client";
-import { characterCoreSchema, characterStateSchema } from "@/lib/schemas/api/playerCharacter.schema";
+import { characterCoreSchema, builderStateSchema } from "@/lib/schemas/api/playerCharacter.schema";
 
-// Create a generic update schema that accepts partials of either core or state stats
+// PATCH accepts partial core fields + optional builderState
 const updateCharacterSchema = characterCoreSchema
-  .merge(characterStateSchema)
-  .partial();
+  .partial()
+  .extend({
+    builderState: builderStateSchema.optional(),
+  });
 
-// GET_ONE: Fetch a single character and all their relational data
 export async function GET(
   _request: NextRequest,
   context: { params: Promise<{ id: string }> }
@@ -18,13 +19,12 @@ export async function GET(
     const character = await prisma.playerCharacter.findUnique({
       where: { id },
       include: {
-        inventory: {
-          include: { item: true }, // Joins the item templates to the instances
-        },
+        inventory: { include: { item: true } },
         edges: true,
         hindrances: true,
         skills: true,
         powers: true,
+        arcaneBackgrounds: true,
       },
     });
 
@@ -41,7 +41,6 @@ export async function GET(
   }
 }
 
-// PATCH: Update character stats (can handle both core leveling and volatile state)
 export async function PATCH(
   request: NextRequest,
   context: { params: Promise<{ id: string }> }
@@ -49,9 +48,8 @@ export async function PATCH(
   try {
     const { id } = await context.params;
     const body = await request.json();
-    
-    const parsed = updateCharacterSchema.safeParse(body);
 
+    const parsed = updateCharacterSchema.safeParse(body);
     if (!parsed.success) {
       return NextResponse.json(parsed.error.flatten(), { status: 400 });
     }
@@ -70,7 +68,6 @@ export async function PATCH(
   }
 }
 
-// DELETE: Soft-delete a character by marking them inactive
 export async function DELETE(
   _request: NextRequest,
   context: { params: Promise<{ id: string }> }
@@ -78,8 +75,6 @@ export async function DELETE(
   try {
     const { id } = await context.params;
 
-    // Best practice for RPGs: Don't hard-delete. Soft-delete instead so
-    // campaign history and journals don't break due to missing foreign keys.
     const archivedCharacter = await prisma.playerCharacter.update({
       where: { id },
       data: { isActive: false },

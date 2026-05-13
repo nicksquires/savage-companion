@@ -1,4 +1,5 @@
 "use client";
+
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -28,9 +29,10 @@ export default function FeaturedWorlds() {
                 glareEnable
                 glareMaxOpacity={0.25}
                 scale={1.05}
-                className={`w-72 h-96 rounded-3xl border border-${world.accent}/30 bg-linear-to-br from-${world.accent}/10 to-base-100 flex items-center justify-center p-8 cursor-pointer shadow-xl`}
+                className={`w-72 h-96 rounded-3xl border border-${world.accent}/50 bg-linear-to-br from-${world.accent}/30 to-base-100/80 
+                  flex items-center justify-center p-8 cursor-pointer shadow-xl`}
               >
-                <h3 className="text-3xl font-black text-center drop-shadow-sm">
+                <h3 className="text-3xl font-header font-black text-center drop-shadow-sm">
                   {world.name}
                 </h3>
               </Tilt>

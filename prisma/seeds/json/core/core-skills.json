@@ -1,0 +1,290 @@
+[
+  {
+    "name": "Academics",
+    "slug": "academics",
+    "linkedAttribute": "SMARTS",
+    "description": "Knowledge of history, literature, science, and scholarly pursuits. Used for research, teaching, or recalling obscure facts.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Athletics",
+    "slug": "athletics",
+    "linkedAttribute": "AGILITY",
+    "description": "Running, jumping, climbing, swimming, and other physical feats of coordination and endurance.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Battle",
+    "slug": "battle",
+    "linkedAttribute": "SMARTS",
+    "description": "Commanding troops, understanding tactics, and leading forces effectively in combat.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Boating",
+    "slug": "boating",
+    "linkedAttribute": "AGILITY",
+    "description": "Operating and navigating watercraft of all sizes, from canoes to large ships.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Common Knowledge",
+    "slug": "common-knowledge",
+    "linkedAttribute": "SMARTS",
+    "description": "Everyday practical knowledge about the world, local customs, and general information.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Driving",
+    "slug": "driving",
+    "linkedAttribute": "AGILITY",
+    "description": "Operating and maneuvering land vehicles such as cars, trucks, and tanks.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Electronics",
+    "slug": "electronics",
+    "linkedAttribute": "SMARTS",
+    "description": "Using, repairing, and understanding electronic devices, computers, and security systems.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Faith",
+    "slug": "faith",
+    "linkedAttribute": "SPIRIT",
+    "description": "Channeling divine power through belief and prayer.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Fighting",
+    "slug": "fighting",
+    "linkedAttribute": "AGILITY",
+    "description": "Hand-to-hand combat with fists, melee weapons, and natural attacks.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Focus",
+    "slug": "focus",
+    "linkedAttribute": "SPIRIT",
+    "description": "Maintaining concentration and control when using powers or resisting mental effects.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Gambling",
+    "slug": "gambling",
+    "linkedAttribute": "SMARTS",
+    "description": "Playing games of chance, reading opponents, and winning at cards or dice.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Hacking",
+    "slug": "hacking",
+    "linkedAttribute": "SMARTS",
+    "description": "Infiltrating, manipulating, and securing computer networks and digital systems.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Healing",
+    "slug": "healing",
+    "linkedAttribute": "SMARTS",
+    "description": "Treating wounds, curing ailments, and providing medical care in the field.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Intimidation",
+    "slug": "intimidation",
+    "linkedAttribute": "SPIRIT",
+    "description": "Using threats, presence, or fear to coerce or demoralize others.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Language",
+    "slug": "language",
+    "linkedAttribute": "SMARTS",
+    "description": "Speaking, reading, and understanding foreign or ancient languages.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Notice",
+    "slug": "notice",
+    "linkedAttribute": "SMARTS",
+    "description": "Spotting hidden details, ambushes, or important clues in the environment.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Occult",
+    "slug": "occult",
+    "linkedAttribute": "SMARTS",
+    "description": "Knowledge of magic, supernatural creatures, rituals, and arcane lore.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Performance",
+    "slug": "performance",
+    "linkedAttribute": "SPIRIT",
+    "description": "Singing, acting, playing music, or entertaining an audience.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Persuasion",
+    "slug": "persuasion",
+    "linkedAttribute": "SPIRIT",
+    "description": "Convincing, negotiating, or charming others through words and charisma.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Piloting",
+    "slug": "piloting",
+    "linkedAttribute": "AGILITY",
+    "description": "Operating aircraft, spaceships, or other flying vehicles.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Psionics",
+    "slug": "psionics",
+    "linkedAttribute": "SMARTS",
+    "description": "Harnessing mental powers and psychic abilities.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Repair",
+    "slug": "repair",
+    "linkedAttribute": "SMARTS",
+    "description": "Fixing mechanical devices, vehicles, and broken equipment.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Research",
+    "slug": "research",
+    "linkedAttribute": "SMARTS",
+    "description": "Finding information in libraries, databases, or ancient tomes.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Riding",
+    "slug": "riding",
+    "linkedAttribute": "AGILITY",
+    "description": "Riding and controlling mounts such as horses or exotic beasts.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Science",
+    "slug": "science",
+    "linkedAttribute": "SMARTS",
+    "description": "Understanding natural laws, experiments, and advanced scientific principles.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Shooting",
+    "slug": "shooting",
+    "linkedAttribute": "AGILITY",
+    "description": "Firing ranged weapons such as guns, bows, or thrown objects.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Spellcasting",
+    "slug": "spellcasting",
+    "linkedAttribute": "SMARTS",
+    "description": "Channeling arcane energy to cast spells and manipulate magic.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Stealth",
+    "slug": "stealth",
+    "linkedAttribute": "AGILITY",
+    "description": "Moving silently, hiding, and avoiding detection.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Survival",
+    "slug": "survival",
+    "linkedAttribute": "SMARTS",
+    "description": "Navigating the wilderness, foraging, tracking, and enduring harsh environments.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Taunt",
+    "slug": "taunt",
+    "linkedAttribute": "SMARTS",
+    "description": "Insulting or mocking opponents to provoke, distract, or demoralize them.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Thievery",
+    "slug": "thievery",
+    "linkedAttribute": "AGILITY",
+    "description": "Picking locks, pickpocketing, and other acts of sleight-of-hand and stealthy crime.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Weird Science",
+    "slug": "weird-science",
+    "linkedAttribute": "SMARTS",
+    "description": "Inventing and operating bizarre, mad-science gadgets and contraptions.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  }
+]

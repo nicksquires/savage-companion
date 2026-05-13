@@ -1,0 +1,102 @@
+[
+  {
+    "value": 2, "name": "Darkvision", "slug": "darkvision",
+    "description": "The creature's eyes are completely adapted to pitch blackness, ignoring all illumination penalties.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "ignore-pitch-darkness", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 1, "name": "Natural Camouflage", "slug": "natural-camouflage",
+    "description": "The creature blends into its native environment perfectly.",
+    "modifierData": [{ "target": "SKILL", "operation": "ADD", "value": 2, "context": "ENVIRONMENTAL", "trigger": "ON_ROLL", "condition": { "rollType": "stealth" } }]
+  },
+  {
+    "value": 2, "name": "Telepathic", "slug": "telepathic",
+    "description": "Can communicate mentally with any sentient creature within line of sight.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "telepathy", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Prehensile Appendage", "slug": "prehensile-appendage",
+    "description": "An extra arm or tail that allows the character to ignore 1 point of multi-action penalties.",
+    "modifierData": [{ "target": "MULTI_ACTION", "operation": "ADD", "value": 1, "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 3, "name": "Amorphous Form", "slug": "amorphous-form",
+    "description": "The creature has no rigid skeletal structure. Immune to crushing damage and can squeeze through keyholes.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "amorphous-form", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 1, "name": "Frightening Visage", "slug": "frightening-visage",
+    "description": "The entity is naturally terrifying to behold.",
+    "modifierData": [{ "target": "SKILL", "operation": "ADD", "value": 2, "trigger": "ON_ROLL", "condition": { "rollType": "intimidation" } }]
+  },
+  {
+    "value": 1, "name": "Iron Stomach", "slug": "iron-stomach",
+    "description": "Gains a +4 bonus to resist ingested poisons and diseases.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "resist-ingested-hazards", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Magical Affinity", "slug": "magical-affinity",
+    "description": "Innate connection to the arcane weaves.",
+    "modifierData": [{ "target": "SKILL", "operation": "ADD", "value": 1, "context": "SPELLCASTING", "trigger": "ON_ROLL" }]
+  },
+  {
+    "value": 1, "name": "Beast Speaker", "slug": "beast-speaker",
+    "description": "Can comprehend and communicate with natural beasts.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "speak-with-animals", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 3, "name": "Crystalline Skin", "slug": "crystalline-skin",
+    "description": "Reflective skin that grants +4 Armor specifically against energy-based attacks.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "energy-armor-plus-4", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Hive Mind Link", "slug": "hive-mind-link",
+    "description": "Tied to a collective consciousness. Attackers gain no Gang Up bonuses against this character.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "immune-to-gang-up", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": -2, "name": "Sunlight Sensitivity", "slug": "sunlight-sensitivity",
+    "description": "Direct sunlight causes extreme discomfort, resulting in a -1 to all Trait rolls.",
+    "modifierData": [{ "target": "ATTRIBUTE", "operation": "SUBTRACT", "value": 1, "context": "ENVIRONMENTAL", "trigger": "ON_ROLL" }]
+  },
+  {
+    "value": 2, "name": "Volatile Blood", "slug": "volatile-blood",
+    "description": "The creature's blood is acidic or searing hot. Melee attackers take 1d4 damage when dealing a Wound.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "acidic-blood", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Hover", "slug": "hover",
+    "description": "The creature naturally floats a few feet off the ground, ignoring difficult terrain.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "hover-ignore-difficult-terrain", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": -1, "name": "Goo-like Weakness", "slug": "goo-like-weakness",
+    "description": "Extremely vulnerable to area-of-effect elemental attacks, taking +4 damage.",
+    "modifierData": [{ "target": "GRANT_HINDRANCE", "operation": "GRANT", "value": "aoe-weakness", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 3, "name": "Soul Siphon", "slug": "soul-siphon",
+    "description": "Killing a sentient foe in melee combat restores one level of Fatigue.",
+    "modifierData": [{ "target": "RESOURCE", "operation": "ADD", "value": 1, "trigger": "ON_DAMAGE_DEALT", "condition": { "targetHasTag": "fatigue", "rollType": "melee-kill" } }]
+  },
+  {
+    "value": 4, "name": "Phasing", "slug": "phasing",
+    "description": "Can walk through up to one foot of solid non-magical material at the cost of 1 Fatigue.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "phase-shift", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Symbiotic Surge", "slug": "symbiotic-surge",
+    "description": "Can spend a Benny to temporarily upgrade Strength by one die type for the scene.",
+    "modifierData": [{ "target": "ATTRIBUTE", "operation": "TEMPORARY_SET", "value": "UPGRADE_DIE", "trigger": "ON_FREE_ACTION_TRIGGER", "condition": { "targetHasTag": "strength" } }]
+  },
+  {
+    "value": 2, "name": "Elemental Resistance", "slug": "elemental-resistance",
+    "description": "Takes half damage from a chosen elemental source.",
+    "modifierData": [{ "target": "GRANT_ABILITY", "operation": "GRANT", "value": "half-elemental-damage", "trigger": "PASSIVE" }]
+  },
+  {
+    "value": 2, "name": "Ancestral Memory", "slug": "ancestral-memory",
+    "description": "Can perfectly recall ancient lore, granting +2 to Knowledge/Academics rolls.",
+    "modifierData": [{ "target": "SKILL", "operation": "ADD", "value": 2, "trigger": "ON_ROLL", "condition": { "rollType": "academics" } }]
+  }
+]

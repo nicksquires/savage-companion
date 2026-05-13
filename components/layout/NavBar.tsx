@@ -84,7 +84,7 @@ const NavBar = () => {
             rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
-              <Link href="#">Character Builder</Link>
+              <Link href="/characters">Character Builder</Link>
             </li>
             <li>
               <Link href="#">Combat Assistant</Link>
@@ -186,7 +186,7 @@ const NavBar = () => {
                     className="sm:bg-base-300 bg-navbar sm:text-base-content text-navbar-content/85 
                   rounded-full w-full h-full hover:text-navbar-content"
                   >
-                    <UserCircle className="w-9 h-9 sm:w-7 sm:h-7" />
+                    <UserCircle className="w-8 h-8 sm:w-7 sm:h-7" />
                     {/* smaller icon */}
                   </div>
                 </div>

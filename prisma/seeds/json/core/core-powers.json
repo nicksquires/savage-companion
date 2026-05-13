@@ -23,7 +23,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Arcane", "Anti-Magic", "Magic Resistance", "Defense", "Buff"]
   },
@@ -39,7 +39,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Supernatural", "Divine", "Holy", "Unholy", "Arcane", "Debuff"]
   },
@@ -63,7 +63,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Defense", "Area of Effect", "Fire", "Ice", "Nature", "Necromancy", "Eldritch"]
   },
@@ -86,7 +86,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Animal", "Nature", "Control", "Summoner", "Communication"]
   },
@@ -110,7 +110,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Damage", "Area of Effect", "Fire", "Ice", "Light", "Darkness", "Eldritch", "Nature"]
   },
@@ -134,7 +134,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Debuff", "Light", "Control", "Area of Effect"]
   },
@@ -157,7 +157,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Damage", "Ranged", "Fire", "Ice", "Light", "Darkness", "Holy", "Nature"]
   },
@@ -186,7 +186,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Boost", "Buff", "Debuff", "Attribute", "Skill", "Aura"]
   },
@@ -209,7 +209,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mobility", "Movement", "Stealth", "Earth", "Surprise"]
   },
@@ -232,7 +232,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Damage", "Area of Effect", "Fire", "Ice", "Eldritch"]
   },
@@ -248,7 +248,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Debuff", "Control", "Mental", "Area of Effect", "Illusion"]
   },
@@ -272,7 +272,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Damage", "Aura", "Fire", "Electricity"]
   },
@@ -296,7 +296,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Perception", "Utility", "Darkness"]
   },
@@ -320,7 +320,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Defense", "Evasion", "Buff", "Illusion", "Air"]
   },
@@ -336,7 +336,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Arcane", "Detection", "Concealment", "Utility", "Area of Effect"]
   },
@@ -352,7 +352,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Appearance", "Illusion", "Stealth", "Deception"]
   },
@@ -368,7 +368,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Anti-Magic", "Arcane", "Dispel", "Control"]
   },
@@ -384,7 +384,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Divine", "Supernatural", "Communication", "Knowledge", "Necromancy", "Demonic"]
   },
@@ -400,7 +400,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Arcane", "Debuff", "Power Points", "Psionics"]
   },
@@ -416,7 +416,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Elemental", "Air", "Earth", "Fire", "Water"]
   },
@@ -432,7 +432,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mental", "Communication", "Persuasion", "Animal", "Social"]
   },
@@ -448,7 +448,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Debuff", "Area of Effect", "Ice", "Nature", "Eldritch"]
   },
@@ -470,7 +470,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Protection", "Defense", "Utility", "Resistance", "Elemental"]
   },
@@ -492,7 +492,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Perception", "Utility", "Ranged", "Air"]
   },
@@ -508,7 +508,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Fear", "Debuff", "Mental", "Area of Effect", "Eldritch"]
   },
@@ -530,7 +530,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mobility", "Movement", "Air"]
   },
@@ -546,7 +546,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Size", "Strength", "Toughness", "Buff", "Debuff"]
   },
@@ -562,7 +562,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Debuff", "Area of Effect", "Air", "Chaos"]
   },
@@ -584,7 +584,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Healing", "Holy", "Divine", "Support"]
   },
@@ -607,7 +607,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Illusion", "Deception", "Utility"]
   },
@@ -623,7 +623,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mobility", "Defense", "Supernatural", "Shadow", "Ghost"]
   },
@@ -645,7 +645,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Stealth", "Invisibility", "Defense"]
   },
@@ -667,7 +667,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Light", "Darkness", "Control", "Utility", "Area of Effect"]
   },
@@ -689,7 +689,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mental", "Communication", "Telepathy", "Support"]
   },
@@ -705,7 +705,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mental", "Psionics", "Detection", "Telepathy"]
   },
@@ -727,7 +727,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mental", "Control", "Debuff", "Psionics"]
   },
@@ -743,7 +743,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Detection", "Knowledge", "Utility", "Psionics"]
   },
@@ -771,7 +771,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Protection", "Defense", "Buff", "Toughness", "Armor"]
   },
@@ -793,7 +793,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Mental", "Psionics"]
   },
@@ -815,7 +815,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Healing", "Support", "Recovery"]
   },
@@ -831,7 +831,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Healing", "Necromancy", "Divine", "Holy", "Death"]
   },
@@ -853,7 +853,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Animal", "Nature", "Transformation", "Versatility"]
   },
@@ -876,7 +876,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Speed", "Mobility", "Debuff", "Buff", "Area of Effect"]
   },
@@ -892,7 +892,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Debuff", "Mental", "Area of Effect"]
   },
@@ -915,7 +915,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Damage", "Buff", "Weapon", "Holy", "Eldritch"]
   },
@@ -931,7 +931,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Sound", "Control", "Utility", "Stealth"]
   },
@@ -953,7 +953,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Communication", "Languages", "Utility"]
   },
@@ -969,7 +969,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Stunned", "Debuff", "Control", "Area of Effect", "Light", "Sound", "Eldritch"]
   },
@@ -991,7 +991,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Summoner", "Ally", "Support", "Conjuration"]
   },
@@ -1007,7 +1007,7 @@
     "modifierData": [],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Control", "Psionics", "Utility", "Damage"]
   },
@@ -1029,7 +1029,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mobility", "Movement", "Utility"]
   },
@@ -1062,7 +1062,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Mobility", "Movement", "Athletics"]
   },
@@ -1086,7 +1086,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Buff", "Combat", "Support"]
   },
@@ -1120,7 +1120,7 @@
     ],
     "isHomebrew": false,
     "isPublic": true,
-    "ownerId": null,
+    "authorId": null,
     "sourceName": "Savage Worlds Adventure Edition",
     "tags": ["Necromancy", "Summoner", "Control", "Undead", "Unholy"]
   }

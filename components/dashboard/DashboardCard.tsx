@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -23,9 +24,9 @@ export default function DashboardCard({
       >
         <div className="card-body">
           <div
-            className={`w-12 h-12 rounded-2xl bg-${color}/10 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}
+            className={`sm:w-20 rounded-2xl flex items-center justify-center text-3xl mb-2 group-hover:scale-110 transition-transform`}
           >
-            {icon}
+            <Image src={icon} alt={`${title} + icon.`} className="w-full" />
           </div>
           <h3 className="card-title text-2xl font-header">{title}</h3>
           <p className="text-base-content/70">{description}</p>

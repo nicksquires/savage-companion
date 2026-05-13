@@ -26,7 +26,7 @@ export async function seedCorePowers() {
           slug: powerData.slug,
           isHomebrew: powerData.isHomebrew,
           isPublic: powerData.isPublic,
-          ownerId: powerData.ownerId,
+          authorId: powerData.authorId,
           sourceName: powerData.sourceName,
         },
       });

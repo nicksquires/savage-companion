@@ -1,6 +1,10 @@
 import { User } from "next-auth";
 import DashboardCard from "./DashboardCard";
 import Widgets from "./Widgets";
+import characters from "@/public/images/icons/delapouite/character.svg";
+import campaigns from "@/public/images/icons/lorc/treasure-map.svg";
+import compendium from "@/public/images/icons/lorc/book-cover.svg";
+import homebrew from "@/public/images/icons/lorc/gear-hammer.svg";
 
 interface Props {
   user: User & { role?: string };
@@ -24,28 +28,28 @@ export default function DashboardBody({ user }: Props) {
         <DashboardCard
           title="Characters"
           description="Manage your Savage Worlds heroes"
-          icon="🛡️"
+          icon={characters}
           href="/characters"
           color="primary"
         />
         <DashboardCard
           title="Campaigns"
           description="Your active games & GM tools"
-          icon="📜"
+          icon={campaigns}
           href="/campaigns"
           color="secondary"
         />
         <DashboardCard
           title="Compendium"
           description="Core rules & unlocked content"
-          icon="📖"
+          icon={compendium}
           href="/compendium"
           color="accent"
         />
         <DashboardCard
           title="Homebrew"
           description="Create & share your own content"
-          icon="🔨"
+          icon={homebrew}
           href="/homebrew"
           color="neutral"
         />

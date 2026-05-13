@@ -9,23 +9,27 @@ export const authConfig = {
     async jwt({ token, user }) {
       // Only runs on sign-in (when user object exists)
       if (user) {
+        token.id = user.id;
         token.role = user.role as Role ?? "FREE";
         token.name = user.name ?? user.email;
       }
       return token;
     },
+
     async session({ session, token }) {
       if (session.user) {
+        session.user.id = token.id as string;
         session.user.role = token.role as Role;
         session.user.name = token.name as string | undefined;
       }
       return session;
     },
+    
     async redirect({ url, baseUrl }) {
       // Allows relative callback URLs (e.g. "/")
-      if (url.startsWith("/")) {
-        return `${baseUrl}${url}`;
-      }
+      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      // if (url.startsWith(baseUrl)) return url;
+      // return `${baseUrl}/dashboard`;
 
       // Allows callback URLs on the same origin (prevents open redirects)
       try {

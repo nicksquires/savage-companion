@@ -944,7 +944,7 @@
     "type": "AMMUNITION",
     "cost": 1,
     "weight": 0.2,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -959,7 +959,7 @@
     "type": "AMMUNITION",
     "cost": 10,
     "weight": 1,
-    "ammunitions": {
+    "ammunition": {
       "caliber": 0.32,
       "ap": 0,
       "damageMod": null
@@ -974,7 +974,7 @@
     "type": "AMMUNITION",
     "cost": 20,
     "weight": 2,
-    "ammunitions": {
+    "ammunition": {
       "caliber": 0.45,
       "ap": 0,
       "damageMod": null
@@ -989,7 +989,7 @@
     "type": "AMMUNITION",
     "cost": 50,
     "weight": 15,
-    "ammunitions": {
+    "ammunition": {
       "caliber": 0.5,
       "ap": 0,
       "damageMod": null
@@ -1004,7 +1004,7 @@
     "type": "AMMUNITION",
     "cost": 20,
     "weight": 0.25,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1019,7 +1019,7 @@
     "type": "AMMUNITION",
     "cost": 20,
     "weight": 0.5,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1034,7 +1034,7 @@
     "type": "AMMUNITION",
     "cost": 50,
     "weight": 4,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1049,7 +1049,7 @@
     "type": "AMMUNITION",
     "cost": 1,
     "weight": 0.5,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1064,7 +1064,7 @@
     "type": "AMMUNITION",
     "cost": 15,
     "weight": 1.5,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1079,7 +1079,7 @@
     "type": "AMMUNITION",
     "cost": 20,
     "weight": 1.5,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null
@@ -1094,7 +1094,7 @@
     "type": "AMMUNITION",
     "cost": 2,
     "weight": 1,
-    "ammunitions": {
+    "ammunition": {
       "caliber": null,
       "ap": 0,
       "damageMod": null

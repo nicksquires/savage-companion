@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Arcane Background (Gifted)",
+    "slug": "arcane-background-gifted",
+    "arcaneSkillSlug": "focus",
+    "startingPowers": 1,
+    "powerPoints": 15,
+    "description": "Some lucky sods just wake up one day with powers that don’t neatly fit into any of the usual flashy categories. Could be low-key super abilities, a dodgy divine hand-me-down, or something properly alien. Either way, it’s all a bit eccentric and doesn’t play by the normal rules — which, let’s be honest, makes it rather more interesting.",
+    "summary": "Innate oddball powers that don’t fit magic, miracles or psionics. Unusual and unique.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Arcane Background (Magic)",
+    "slug": "arcane-background-magic",
+    "arcaneSkillSlug": "spellcasting",
+    "startingPowers": 3,
+    "powerPoints": 10,
+    "description": "From pompous archmages to dodgy cultists in basements, magicians yank raw supernatural energy out of the ether and hurl it about with dramatic gestures and ancient-sounding nonsense. The stuff is everywhere if you know how to poke it properly.",
+    "summary": "Classic spell-slingers who channel raw supernatural energy through words, gestures, and runes.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Arcane Background (Miracles)",
+    "slug": "arcane-background-miracles",
+    "arcaneSkillSlug": "faith",
+    "startingPowers": 3,
+    "powerPoints": 10,
+    "description": "These pious types beg favours from gods, nature spirits, or whatever divine bureaucracy will listen. A quick prayer or dusty ritual usually does the trick. They’re often saddled with inconvenient vows and might have a few mates in the same holy club who can lend a hand when the divine tap runs dry.",
+    "summary": "Divine champions who call upon gods or spirits through prayer and ritual. Often bound by vows.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Arcane Background (Psionics)",
+    "slug": "arcane-background-psionics",
+    "arcaneSkillSlug": "psionics",
+    "startingPowers": 3,
+    "powerPoints": 10,
+    "description": "Brainy sorts who poke reality directly with the power of their massive ego — sorry, mind. They read thoughts, bend spoons, and occasionally cause headaches for government agencies. Some trained for years; others just woke up weird one Tuesday.",
+    "summary": "Mentalists who wield raw brainpower to manipulate matter and minds.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  },
+  {
+    "name": "Arcane Background (Weird Science)",
+    "slug": "arcane-background-weird-science",
+    "arcaneSkillSlug": "weird-science",
+    "startingPowers": 2,
+    "powerPoints": 15,
+    "description": "Mad inventors cobble together ridiculous contraptions that shouldn’t work but somehow do, thanks to exotic fuels, alien scrap, or sheer bloody-minded genius. Their gadgets are highly personal — good luck getting anyone else to make the damn things function without exploding. The “magic” lives in the inventor, not the gadget.",
+    "summary": "Eccentric inventors whose bizarre gadgets channel strange powers. Devices are personal and often temperamental.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition"
+  }
+]

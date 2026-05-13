@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ZodSchema } from "zod";
 
-//  Using 'unknown' instead of 'any' 
-//  keeps ESLint happy, hence Generics
+// This file creates generic route handlers for the addition/removal
+// of core entities on playerCharacters. i.e: adding and edge, or
+// removing a hindrance.
 
 // 1. Define operations we expect Prisma delegates to have.
 type PrismaAssignmentOperations = {
@@ -31,7 +32,7 @@ export type HandlerConfig<
   paramItemKey: string;
   addSchema: TAddSchema;
   updateSchema: TUpdateSchema;
-  include?: Record<string, unknown>; // Safely replaces 'any' for Prisma includes
+  include?: Record<string, unknown>;
 };
 
 export function createCharacterAssignmentHandler<

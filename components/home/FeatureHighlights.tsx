@@ -1,81 +1,102 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Swords,
+  User,
+  Map,
+  Dice6,
+  BookOpen,
+  Zap,
+  Layers,
+  Users,
+} from "lucide-react";
 
 const features = [
   {
-    title: "Real-Time Combat",
+    title: "Companion Utilities",
     description:
-      "Initiative cards drawn and sorted instantly. Status effects and modifiers calculate automatically.",
-    iconPath: "/images/icons/lorc/crossed-swords.svg", // Using your local game-icons
+      "Quick tools for creating and managing characters, creatures, and custom content.",
+    icon: Zap,
   },
   {
-    title: "Deep Character Modeling",
+    title: "Modular Mechanics Engine",
     description:
-      "Edges, Hindrances, and Advances tracked seamlessly through our optimized database architecture.",
-    iconPath: "/images/icons/delapouite/character.svg",
+      "Plug, play, and customize—your rules, your world, powered by the Savage Worlds foundation.",
+    icon: Dice6,
   },
+
   {
-    title: "Dynamic Token Systems",
+    title: "Dynamic Maps & Tokens",
     description:
-      "Drag-and-drop tokens with integrated line-of-sight and aura tracking.",
-    iconPath: "/images/icons/lorc/hexagonal-nut.svg", // Re-contextualized as a hex token
+      "Drag-and-drop tokens with line-of-sight, auras, lighting, and real-time movement.",
+    icon: Map,
   },
+
   {
-    title: "Exploding Dice Engine",
+    title: "Homebrew Settings",
     description:
-      "A flawless physics and RNG engine built specifically for Savage Worlds' Ace mechanics.",
-    iconPath: "/images/icons/skoll/d20.svg",
+      "Create, use, and share portable homebrew packages for campaigns.",
+    icon: BookOpen,
   },
+  // {
+  //   title: "Deep Character Builder",
+  //   description:
+  //     "Edges, Hindrances, Advances, arcane backgrounds, and custom traits — fully modeled.",
+  //   icon: User,
+  // },
+  // { title: "Campaign Journal", description: "Session notes, advancement logs, and shared GM/player views.", icon: Layers },
+  // { title: "Live Multiplayer", description: "Real-time play with friends — voice, maps, and dice in sync.", icon: Users },
+  //
+  // {
+  //   title: "Initiative & Combat Flow",
+  //   description:
+  //     "Automatic initiative cards, status tracking, and modifier stacking in one view.",
+  //   icon: Swords,
+  // },
+  // Commented alternatives
 ];
 
 export default function FeatureHighlights() {
   return (
-    <section className="py-24 bg-zinc-950 relative border-t border-zinc-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-100 mb-4">
-            Mechanics <span className="text-amber-500">Mastered</span>
-          </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
-            We've translated the complex ruleset into an elegant digital format,
-            getting the math out of the way so you can focus on the story.
-          </p>
-        </div>
+    <>
+      <section className="py-24 bg-base-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-base-content mb-4">
+              Mechanics <span className="text-primary">Mastered</span>
+            </h2>
+            <p className="text-base-content/70 max-w-2xl mx-auto">
+              Built from the ground up for Savage Worlds — fast, furious, and
+              fun.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 hover:border-amber-500/50 hover:bg-zinc-900 transition-colors group"
-            >
-              <div
-                className="w-12 h-12 mb-4 bg-amber-500 transition-transform group-hover:scale-110 group-hover:bg-amber-400"
-                style={{
-                  maskImage: `url('${feature.iconPath}')`,
-                  maskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  maskPosition: "center",
-                  WebkitMaskImage: `url('${feature.iconPath}')`,
-                  WebkitMaskSize: "contain",
-                  WebkitMaskRepeat: "no-repeat",
-                  WebkitMaskPosition: "center",
-                }}
-              />
-              <h3 className="text-xl font-semibold text-zinc-200 mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="h-full border-base-300 hover:border-primary/40 transition-all group">
+                  <CardContent className="p-8">
+                    <feature.icon className="w-10 h-10 text-primary mb-6 transition-transform group-hover:scale-110" />
+                    <h3 className="font-header text-2xl font-semibold mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-base-content/70 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -1,0 +1,139 @@
+[
+  {
+    "name": "Android",
+    "slug": "android",
+    "description": "Semi-organic beings crafted by advanced technology. They possess fully realized artificial intelligence, giving them unique personalities and quirks, though they are often treated as property under the law.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:construct",
+      "hindrance:pacifist-major",
+      "hindrance:outsider-major",
+      "hindrance:vow-major"
+    ]
+  },
+  {
+    "name": "Aquarian",
+    "slug": "aquarian",
+    "description": "Sturdy humanoids adapted to the crushing pressures and darkness of the ocean floor. While resilient beneath the waves, they dehydrate rapidly on dry land.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:aquatic",
+      "racial-ability:dependency",
+      "racial-ability:low-light-vision",
+      "racial-ability:toughness"
+    ]
+  },
+  {
+    "name": "Avion",
+    "slug": "avion",
+    "description": "Slight, winged humanoids with hollow bones. Their physiology grants them the gift of flight and sharp eyesight, but makes them fragile and a liability in deep water.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:cant-swim",
+      "racial-ability:flight-level-two",
+      "racial-ability:frail",
+      "racial-ability:skill-level-two",
+      "racial-ability:reduced-pace-level-one"
+    ]
+  },
+  {
+    "name": "Dwarf",
+    "slug": "dwarf",
+    "description": "Stout, robust mountain-dwellers known for their longevity and martial pride. Generations of underground living have adapted their eyes to the dark, though their short legs make them slower than other races.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:low-light-vision",
+      "racial-ability:reduced-pace-level-one",
+      "racial-ability:attribute-increase"
+    ]
+  },
+  {
+    "name": "Elf",
+    "slug": "elf",
+    "description": "Graceful, long-lived denizens of ancient forests and hidden valleys. They are naturally agile and possess keen sight in dim light, but often have a cultural or inherent disdain for mechanical devices.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:attribute-increase",
+      "hindrance:outsider-minor",
+      "racial-ability:low-light-vision"
+    ]
+  },
+  {
+    "name": "Half-Elf",
+    "slug": "half-elf",
+    "description": "Caught between two worlds, these individuals inherit the longevity and physical traits of elves combined with human versatility. They often struggle to find true acceptance in either society.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:heritage-half-elf",
+      "racial-ability:low-light-vision",
+      "hindrance:outsider-minor"
+    ]
+  },
+  {
+    "name": "Half-Folk",
+    "slug": "half-folk",
+    "description": "Diminutive, optimistic people who prefer quiet, close-knit communities. Despite their small stature and slower pace, their inherent luck and high spirits often see them through deadly situations.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:edge-novice",
+      "racial-ability:reduced-pace-level-one",
+      "racial-ability:size-minus-one",
+      "racial-ability:attribute-increase"
+    ]
+  },
+  {
+    "name": "Human",
+    "slug": "human",
+    "description": "The most versatile and widespread of the sentient races. What they lack in inherent biological advantages, they make up for with extreme adaptability and determination.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": ["racial-ability:adaptable"]
+  },
+  {
+    "name": "Rakashan",
+    "slug": "rakashan",
+    "description": "Feline humanoids boasting sharp claws, fangs, and a predatory grace. They are beautiful but dangerous, known for a bloodthirsty streak that makes other races wary of them.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:attribute-increase",
+      "racial-ability:bite",
+      "racial-ability:claws-level-one",
+      "hindrance:bloodthirsty-major",
+      "racial-ability:cant-swim",
+      "racial-ability:low-light-vision",
+      "racial-ability:racial-enemy"
+    ]
+  },
+  {
+    "name": "Saurian",
+    "slug": "saurian",
+    "description": "Reptilian humanoids hailing from steaming jungles and harsh deserts. They boast natural armor and acute senses, but their cold-blooded ancestry makes them highly vulnerable to freezing temperatures.",
+    "isHomebrew": false,
+    "isPublic": true,
+    "sourceName": "Savage Worlds Adventure Edition",
+    "racialAbilities": [
+      "racial-ability:armor",
+      "racial-ability:bite",
+      "racial-ability:environmental-weakness",
+      "racial-ability:edge-novice",
+      "hindrance:anemic-minor"
+    ]
+  }
+]

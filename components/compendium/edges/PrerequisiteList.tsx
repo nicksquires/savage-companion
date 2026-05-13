@@ -20,9 +20,6 @@ export function PrerequisiteList({
     return <span className="text-sm mt-1 uppercase">None</span>;
   }
 
-  // Helper to format slugs like "martial-artist" to "MARTIAL ARTIST"
-  //const formatSlug = (slug: string) => slug.replace(/-/g, " ").toUpperCase();
-
   return (
     <ul className="text-sm mt-1 space-y-1">
       {requirements.map((requirement, index) => {

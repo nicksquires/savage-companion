@@ -1,43 +1,48 @@
 import { prisma } from "../../client";
-import racialAbilities from "../json/core/core-racial-abilities.json";
+import abilities from "../json/core/core-racial-abilities.json";
 
 export async function seedCoreRacialAbilities() {
+  console.log("🧹 Sweeping old racial abilities...");
+
+  await prisma.racialAbility.deleteMany({
+    where: { isHomebrew: true },
+  });
+
+  console.log("✨ Clean slate ready. Starting seed...");
   console.log("🌱 Seeding racial abilities...");
 
-  // Counters
   let addedCount = 0;
   let skippedCount = 0;
   let failedCount = 0;
 
-  for (const racialAbilityData of racialAbilities) {
+  for (const abilityData of abilities) {
     try {
-      // Create racial ability
-      const racialAbility = await prisma.racialAbility.create({
+      await prisma.racialAbility.create({
         data: {
-          slug: racialAbilityData.slug,
-          name: racialAbilityData.name,
-          description: racialAbilityData.description,
-          value: racialAbilityData.value,
-          modifierData: racialAbilityData.modifierData,
-          sourceName: racialAbilityData.sourceName,
+          name: abilityData.name,
+          slug: abilityData.slug,
+          description: abilityData.description,
+          value: abilityData.value,
+          modifierData: abilityData.modifierData,
+          isPublic: true,
+          sourceName: "Savage Worlds Adventure Edition", // Uncomment if tracking sources for homebrew
         },
       });
 
-      console.log(`✅ Seeded racial ability: ${racialAbility.name}`);
-       addedCount++;
+      console.log(`✅ Seeded ability: ${abilityData.name}`);
+      addedCount++;
     } catch (err: any) {
-      // Handle unique constraint violation (racial ability already exists)
       if (err.code === "P2002") {
-        console.log(`⏭ Skipped racial ability: ${racialAbilityData.name} (already exists)`);
+        console.log(`⏭ Skipped ability: ${abilityData.name} (already exists)`);
         skippedCount++;
       } else {
-        console.error(`❌ Failed to seed racial ability ${racialAbilityData.name}:`, err);
+        console.error(`❌ Failed to seed ability ${abilityData.name}:`, err);
         failedCount++;
       }
     }
   }
 
-  const total = racialAbilities.length;
+  const total = abilities.length;
 
   console.log("\n📊 Seeding summary:");
   console.log(`   ✅ Added:   ${addedCount}`);
@@ -47,7 +52,6 @@ export async function seedCoreRacialAbilities() {
   console.log("🌱 Finished seeding racial abilities.");
 }
 
-// Allow standalone execution
 if (require.main === module) {
   seedCoreRacialAbilities()
     .then(async () => {

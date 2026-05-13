@@ -17,7 +17,7 @@ const navSections = [
   {
     title: "Tools",
     links: [
-      { name: "Character Builder", href: "#" },
+      { name: "Character Builder", href: "/characters" },
       { name: "Combat Assistant", href: "#" },
       { name: "Beast Builder", href: "#" },
     ],

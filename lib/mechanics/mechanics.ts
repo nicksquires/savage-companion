@@ -9,11 +9,13 @@ export const MODIFIER_CONTEXTS = [
   "SPELLCASTING",    // Only applies to Arcane Background skill rolls
   "SOAK_ROLL",       // Only applies to Vigor rolls made to Soak
   "RECOVERY_ROLL",   // Natural healing rolls
-  
+  "OPPOSED_ROLL",
+
   // Situational Contexts
-  "OPPONENT_TYPE",   // Requires checking the target's tags (e.g., Undead, Evil)
-  "ENVIRONMENTAL",   // Requires checking the scene (e.g., Dim Light, Underwater)
-  "STATUS_EFFECT",   // Only applies if the user is Shaken, Stunned, etc.
+  "OPPONENT_TYPE",        // Requires checking the target's tags (e.g., Undead, Evil)
+  "ENVIRONMENTAL",        // Requires checking the scene (e.g., Dim Light, Underwater)
+  "STATUS_EFFECT",        // Only applies if the user is Shaken, Stunned, etc.
+  "SOCIAL_INTERACTION",
 ] as const;
 
 export type ModifierContext = typeof MODIFIER_CONTEXTS[number];
@@ -29,6 +31,9 @@ export const MODIFIER_OPERATIONS = [
   "UPGRADE_DIE",     // Move from d4 -> d6 -> d8
   "DOWNGRADE_DIE",   // Move from d12 -> d10 -> d8
   "REROLL",          // Reroll last roll
+
+  // Negation
+  "IGNORE_PENALTY",  // E.g., "Steady Hands"
   
   // Absolute Values
   "SET_VALUE",       // Overrides current value (e.g., "Pace is exactly 4")
@@ -57,13 +62,17 @@ export const MODIFIER_TARGETS = [
   "DERIVED_STAT",      // Pace, Parry, Toughness, Size, Scale
   
   // Game Resources
-  "RESOURCE",          // Bennies, Power Points, Wounds, Fatigue
+  //"RESOURCE",          // Bennies, Power Points, Wounds, Fatigue
   
   // Dice & Mechanics
+  "DAMAGE",
+  "DEFENSE",
   "WILD_DIE",          // E.g., +1 to the Wild Die specifically
   "RUN_DIE",           // E.g., d8 instead of d6 for running
   "ARMOR_PIERCING",    // Explicit AP values
+  "RATE_OF_FIRE",      // E.g, for 'Rapid Fire'
   "MULTI_ACTION",      // Offsetting MAP (Multi-Action Penalty)
+  "GANG_UP_BONUS", 
   "WOUND_PENALTY",     // Offsetting wound penalties (e.g., Nerves of Steel)
   "FATIGUE_PENALTY",   // Offsetting fatigue penalties
   "BENNIES",           // E.g., Extra bennie for Elan, soak bennie for Ace

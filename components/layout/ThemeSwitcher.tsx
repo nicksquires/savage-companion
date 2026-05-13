@@ -81,7 +81,7 @@ const ThemeSwitcher = () => {
                 <span>{family.label}</span>
               </div>
               {currentFamily === family.id && (
-                <div className="badge badge-primary text-primary-content badge-xs">
+                <div className="badge bg-primary text-primary-content badge-xs px-2">
                   ACTIVE
                 </div>
               )}

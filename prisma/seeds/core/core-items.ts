@@ -12,10 +12,9 @@ export async function seedCoreItems() {
   await prisma.weaponCategoryAssignment.deleteMany();
   await prisma.firearm.deleteMany();
   await prisma.weapon.deleteMany();
-  // Add these if they exist and don't have cascade delete:
-  // await prisma.armor.deleteMany(); 
-  // await prisma.consumable.deleteMany();
-  // await prisma.tool.deleteMany();
+  await prisma.armor.deleteMany();
+  await prisma.consumable.deleteMany();
+  await prisma.tool.deleteMany();
 
   // Delete the parent items
   await prisma.item.deleteMany();
@@ -70,7 +69,7 @@ export async function seedCoreItems() {
       if (itemData.armor) itemPayload.armor = { create: itemData.armor };
       if (itemData.consumable) itemPayload.consumable = { create: itemData.consumable };
       if (itemData.tool) itemPayload.tool = { create: itemData.tool };
-      if (itemData.ammunitions) itemPayload.ammunitions = { create: itemData.ammunitions };
+      if (itemData.ammunition) itemPayload.ammunition = { create: itemData.ammunition };
       // if (itemData.artifact) itemPayload.artifact = { create: itemData.artifact };
 
       // Create the full item with all nested data in one transaction

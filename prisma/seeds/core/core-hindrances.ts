@@ -1,6 +1,7 @@
 import { prisma } from "../../client";
-import { HindranceType } from "@prisma/client";
+import { HindranceType, Prisma } from "@prisma/client";
 import hindrances from "../json/core/core-hindrances.json";
+import { toJson } from "../toJson";
 
 export async function seedCoreHindrances() {
   console.log("🌱 Seeding hindrances...");
@@ -23,6 +24,7 @@ export async function seedCoreHindrances() {
           isHomebrew: hindranceData.isHomebrew,
           isPublic: hindranceData.isPublic,
           sourceName: hindranceData.sourceName,
+          modifierData: toJson(hindranceData.modifierData),
         },
       });
 

@@ -2,6 +2,7 @@
 import { prisma } from "../../client";
 import { Rank } from "@prisma/client";
 import edges from "../json/core/core-edges.json";
+import { toJson } from "../toJson";
 
 export async function seedCoreEdges() {
   console.log("🌱 Seeding edges...");
@@ -22,13 +23,13 @@ export async function seedCoreEdges() {
           slug: edgeData.slug,
           sourceName: edgeData.sourceName,
           category: edgeData.category,
+          description: edgeData.description,
+          summary: edgeData.summary,          
           rank: edgeData.rank as Rank,
           requirements: edgeData.requirements ?? [],
-          description: edgeData.description,
-          summary: edgeData.summary,
-          // effectDefinitions: edgeData.effectDefinitions,
+          modifierData: edgeData.modifierData ?? "",
           isPublic: edgeData.isPublic,
-          ownerId: edgeData.ownerId,
+          authorId: edgeData.authorId,
         },
       });
 
