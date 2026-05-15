@@ -87,7 +87,7 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          <Link href="/campaigns">
+          <Link href="/characters">
             <button
               className="btn border-none text-primary-content font-bold text-lg h-14 px-8 transition-all w-70
                 bg-primary/85 shadow-[0_0_20px_rgba(217,119,6,0.4)] 

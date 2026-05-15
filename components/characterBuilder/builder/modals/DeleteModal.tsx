@@ -23,7 +23,7 @@ export default function DeleteModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-60"
         >
           <div className="card bg-base-100 w-96 p-8">
             <h3 className="text-xl font-header text-error mb-4">{title}</h3>

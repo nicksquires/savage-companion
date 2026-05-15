@@ -177,7 +177,7 @@ const NavBar = () => {
                 className="btn btn-circle btn-md 
                 flex items-center text-center gap-2 
                 bg-navbar border-navbar sm:bg-base-300
-                sm:p-5 ml-1 sm:mr-2 lg:mr-3 
+                sm:p-5 sm:ml-1 ml-2 mr-1.5 sm:mr-2 lg:mr-3 
                 min-w-11rem sm:w-44 
                 shadow-sm hover:brightness-110 transition-all"
               >
@@ -186,9 +186,14 @@ const NavBar = () => {
                     className="sm:bg-base-300 bg-navbar sm:text-base-content text-navbar-content/85 
                   rounded-full w-full h-full hover:text-navbar-content"
                   >
-                    <UserCircle className="w-8 h-8 sm:w-7 sm:h-7" />
+                    <UserCircle className="w-7 h-7" />
+
                     {/* smaller icon */}
                   </div>
+                  <ChevronDown
+                    size={18}
+                    className="absolute -right-4.5 top-1 inline sm:hidden"
+                  />
                 </div>
 
                 <div className="flex items-center gap-1.5 flex-1 justify-between">

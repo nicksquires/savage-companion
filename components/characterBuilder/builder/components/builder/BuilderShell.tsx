@@ -241,7 +241,7 @@ export default function BuilderShell({
         </div>
 
         {/* Page Navigation Arrows (Moved ABOVE Content) */}
-        <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-100">
+        <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-10">
           <button
             onClick={() => goToTab(currentIndex - 1)}
             disabled={currentIndex <= 0}
