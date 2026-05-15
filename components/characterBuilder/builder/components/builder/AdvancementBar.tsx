@@ -50,7 +50,9 @@ const toRoman = (num: number) => {
 
 function AdvanceTypeIcon({ type }: { type?: string }) {
   if (!type) return null;
-  const props = { className: "w-5 h-5 opacity-50 text-base-content" };
+  const props = {
+    className: "w-4 h-4 md:w-5 md:h-5 opacity-50 text-base-content",
+  };
   switch (type) {
     case "EDGE":
       return <ShieldPlus {...props} />;
@@ -171,14 +173,14 @@ export default function AdvancementBar() {
                 <ChevronRight className="w-10 h-10" />
               </button>
 
-              <div className="mx-5">
+              <div className="mx-8 md:mx-5">
                 <div
                   ref={scrollRef}
-                  className="relative flex items-center h-42 px-6 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                  className="relative flex items-center h-26 md:h-42 px-6 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                 >
                   {/* Advances Counter */}
-                  <div className="flex flex-col justify-end mr-4 shrink-0">
-                    <span className="text-[12px] tracking-[0.2em] font-bold text-success/80 uppercase mb-2 w-full text-center">
+                  <div className="flex flex-col justify-end mr-2 md:mr-4 shrink-0">
+                    <span className="text-[8px] md:text-[12px] tracking-[0.2em] font-bold text-success/80 uppercase mb-2 w-full text-center">
                       Advances
                     </span>
                     <div className="flex flex-col items-center">
@@ -189,7 +191,7 @@ export default function AdvancementBar() {
                         >
                           <Plus className="w-4 h-4 md:w-6 md:h-6" />
                         </button>
-                        <span className="font-builder-header text-4xl font-bold text-success drop-shadow-[0_0_12px_rgba(var(--color-success-rgb),0.8)] my-1 leading-none tracking-widest">
+                        <span className="font-builder-header text-2xl md:text-4xl font-bold text-success drop-shadow-[0_0_12px_rgba(var(--color-success-rgb),0.8)] my-1 leading-none tracking-widest">
                           {advancesEarned}
                         </span>
                         <button
@@ -221,10 +223,10 @@ export default function AdvancementBar() {
                           key={advanceNumber}
                           className="relative flex flex-col items-center justify-center snap-center h-full px-2"
                         >
-                          <div className="absolute top-2 text-[12px] font-serif opacity-80 text-base-content select-none font-bold tracking-widest">
+                          <div className="absolute top-2 text-[8px] md:text-[12px] font-serif opacity-80 text-base-content select-none font-bold tracking-widest">
                             {toRoman(advanceNumber)}
                           </div>
-                          <div className="z-10 mt-6 mb-6" data-status={status}>
+                          <div className="z-10" data-status={status}>
                             {advanceNumber % 4 === 0 ? (
                               <RankMilestoneNode
                                 rank={getRankForAdvance(
@@ -244,7 +246,7 @@ export default function AdvancementBar() {
                               />
                             )}
                           </div>
-                          <div className="absolute bottom-2 h-6 flex items-center justify-center">
+                          <div className="absolute bottom-0 md:bottom-2 h-6 flex items-center justify-center">
                             <AdvanceTypeIcon type={logEntry?.type} />
                           </div>
                         </div>
@@ -257,7 +259,7 @@ export default function AdvancementBar() {
               {/* Hide Button */}
               <button
                 onClick={() => setIsMinimized(true)}
-                className="absolute bottom-2 right-4 text-success/30 hover:text-success transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(var(--color-success-rgb),0.6)] cursor-pointer p-1"
+                className="absolute -bottom-0.5 md:bottom-2 right-2 md:right-4 text-success/40 hover:text-success transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(var(--color-success-rgb),0.6)] cursor-pointer px-1"
                 title="Minimize Tracker"
               >
                 <ChevronUp className="w-5 h-5" />

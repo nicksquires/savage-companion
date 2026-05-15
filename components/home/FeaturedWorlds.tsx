@@ -11,10 +11,10 @@ const worlds = [
 
 export default function FeaturedWorlds() {
   return (
-    <section className="py-24 bg-base-200">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-base-content mb-12">
-          Jump Into Any Setting
+    <section className="py-24 bg-[url('/images/textures/paper_361.png')] bg-cover mix-blend-color-dodge">
+      <div className="max-w-7xl mx-auto px-10 sm:px-6 text-center">
+        <h2 className="text-5xl md:text-6xl font-builder-header tracking-wider text-base-content mb-12 opacity-70">
+          Wield Any Setting
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
@@ -29,8 +29,8 @@ export default function FeaturedWorlds() {
                 glareEnable
                 glareMaxOpacity={0.25}
                 scale={1.05}
-                className={`w-72 h-96 rounded-3xl border border-${world.accent}/50 bg-linear-to-br from-${world.accent}/30 to-base-100/80 
-                  flex items-center justify-center p-8 cursor-pointer shadow-xl`}
+                className={`w-72 h-96 rounded-3xl border border-${world.accent}/50 bg-[url('/images/textures/parchment.png')] mix-blend-normal opacity-55
+                  flex items-center justify-center p-8 cursor-pointer shadow-xl border-l-8 border-l-white/40`}
               >
                 <h3 className="text-3xl font-header font-black text-center drop-shadow-sm">
                   {world.name}

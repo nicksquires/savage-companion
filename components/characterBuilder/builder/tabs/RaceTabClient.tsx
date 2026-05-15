@@ -257,17 +257,20 @@ export default function RaceTabClient() {
       className="p-6 max-w-6xl mx-auto"
     >
       {/* HEADER */}
-      <div className="mb-10 flex justify-between items-end pb-4 relative">
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-primary/60 via-primary to-transparent opacity-90" />
-        <div className="relative z-10">
-          <h1 className="font-builder-header text-5xl md:text-7xl text-primary drop-shadow-[0_0_20px_var(--color-primary)] tracking-wide">
+      <div className="flex justify-between items-end pb-4 relative border-b border-primary/30 mb-10">
+        <div className="absolute -bottom-px left-0 w-full h-px bg-linear-to-r from-primary via-primary/50 to-transparent" />
+
+        <div className="relative">
+          <h1 className="font-builder-header text-6xl md:text-8xl text-primary drop-shadow-[0_0_25px_rgba(var(--color-primary),0.4)] tracking-wide flex items-center gap-4">
             Race
           </h1>
-          <p className="text-base-content/60 tracking-[0.3em] uppercase text-xs font-bold font-serif mt-2">
-            Choose Your Look &amp; Feel
+
+          <p className="text-primary/70 tracking-[0.4em] uppercase text-sm md:text-base font-bold font-serif mt-1">
+            Choose Your Look & Feel
           </p>
         </div>
-        <PersonStanding className="w-16 h-16 md:w-20 md:h-20 align-top text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4 z-10" />
+
+        <PersonStanding className="w-16 h-16 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4" />
       </div>
 
       <button

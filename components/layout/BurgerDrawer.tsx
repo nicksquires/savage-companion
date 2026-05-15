@@ -54,7 +54,7 @@ export default function BurgerDrawer() {
           className="btn btn-ghost btn-circle"
           aria-label="Open Menu"
         >
-          <Menu size={24} />
+          <Menu className="h-5 sm:h-6 w-5 sm:w-6" />
         </label>
       </div>
 

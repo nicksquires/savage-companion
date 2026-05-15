@@ -53,6 +53,41 @@ const ATTRIBUTES = Object.keys(
   ATTRIBUTE_DATA,
 ) as (keyof typeof ATTRIBUTE_DATA)[];
 
+const SKILL_ICONS: Record<string, string> = {
+  academics: "/images/icons/delapouite/classical-knowledge.svg", // or lorc/open-book
+  athletics: "/images/icons/lorc/sprint.svg", // or run / jump-across
+  battle: "/images/icons/lorc/sword-clash.svg",
+  boating: "/images/icons/delapouite/sailboat.svg", // or boat-fishing
+  "common-knowledge": "/images/icons/delapouite/classical-knowledge.svg",
+  driving: "/images/icons/delapouite/steering-wheel.svg", // or city-car
+  electronics: "/images/icons/lorc/circuitry.svg", // or processor
+  faith: "/images/icons/delapouite/prayer.svg", // common for faith/religion
+  fighting: "/images/icons/lorc/sword-clash.svg", // or blade icons
+  focus: "/images/icons/delapouite/meditation.svg", // or think / eye
+  gambling: "/images/icons/lorc/dice.svg", // or cards / poker
+  hacking: "/images/icons/lorc/circuitry.svg", // or keyboard / bug
+  healing: "/images/icons/delapouite/healing.svg", // or health-potion
+  intimidation: "/images/icons/lorc/fangs.svg", // or skull / angry
+  language: "/images/icons/lorc/scroll-unfurled.svg", // or speech-bubbles
+  notice: "/images/icons/lorc/magnifying-glass.svg", // or eye / binoculars
+  occult: "/images/icons/lorc/crystal-ball.svg", // or spell-book / pentacle
+  performance: "/images/icons/delapouite/microphone.svg", // or music-notes / theater
+  persuasion: "/images/icons/delapouite/speech-bubble.svg", // or handshake
+  piloting: "/images/icons/delapouite/steering-wheel.svg", // or airplane / ship-wheel
+  psionics: "/images/icons/lorc/brain.svg", // or third-eye / psi
+  repair: "/images/icons/lorc/gear-hammer.svg", // or claw-hammer / wrench
+  research: "/images/icons/lorc/open-book.svg", // or microscope
+  riding: "/images/icons/delapouite/horse-head.svg", // or saddle
+  science: "/images/icons/delapouite/flask.svg", // or atom / microscope
+  shooting: "/images/icons/lorc/pistol.svg", // or target / gun
+  spellcasting: "/images/icons/delapouite/spell-book.svg", // or magic-wand / orb
+  stealth: "/images/icons/lorc/ninja-mask.svg", // or footprint / eye-slash
+  survival: "/images/icons/lorc/campfire.svg", // or tent / knife
+  taunt: "/images/icons/delapouite/mouth.svg", // or angry-face / fist
+  thievery: "/images/icons/lorc/lockpick.svg", // or masked-face / pouch
+  "weird-science": "/images/icons/lorc/gear-hammer.svg", // or flask / tesla-coil / mad-science variants
+};
+
 // --- ROTATING SVG DICE ---
 const DiceIcon = ({
   type,
@@ -237,17 +272,20 @@ export default function TraitsTabClient() {
       className="max-w-4xl mx-auto p-6"
     >
       {/* HEADER */}
-      <div className="mb-10 flex justify-between items-end pb-4 relative">
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-primary/60 via-primary to-transparent opacity-90" />
-        <div className="relative z-10">
-          <h1 className="font-builder-header text-5xl md:text-7xl text-primary drop-shadow-[0_0_20px_var(--color-primary)] tracking-wide">
+      <div className="flex justify-between items-end pb-4 relative border-b border-primary/30 mb-10">
+        <div className="absolute -bottom-px left-0 w-full h-px bg-linear-to-r from-primary via-primary/50 to-transparent" />
+
+        <div className="relative">
+          <h1 className="font-builder-header text-6xl md:text-8xl text-primary drop-shadow-[0_0_25px_rgba(var(--color-primary),0.4)] tracking-wide flex items-center gap-4">
             Traits
           </h1>
-          <p className="text-base-content/60 tracking-[0.3em] uppercase text-xs font-bold font-serif mt-2">
-            Core pillars of your Legend
+
+          <p className="text-primary/70 tracking-[0.4em] uppercase text-sm md:text-base font-bold font-serif mt-1">
+            Core Pillars of Your Legend
           </p>
         </div>
-        <Dices className="w-14 h-14 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4 z-10" />
+
+        <Dices className="w-14 h-14 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4" />
       </div>
 
       {/* =======================
@@ -255,23 +293,26 @@ export default function TraitsTabClient() {
       ======================== */}
       {/* Tracker */}
       <div
-        className={`flex flex-col float-end p-4 rounded-2xl border-2 shadow-lg bg-base-200/50 ${remAttr < 0 ? "border-error shadow-error/20" : "border-base-300"}`}
+        className={`flex flex-col float-end p-2.5 md:p-4 rounded-2xl -mt-6 md:mt-0 border-2 shadow-lg bg-base-200/50 ${remAttr < 0 ? "border-error shadow-error/20" : "border-base-300"}`}
       >
         <div className="text-[10px] uppercase tracking-widest text-base-content/60 mb-1">
           Attr Steps
         </div>
         <div className="flex items-baseline gap-2">
           <span
-            className={`text-4xl font-header font-black ${remAttr < 0 ? "text-error" : "text-success"}`}
+            className={`text-2xl md:text-4xl font-header font-black ${remAttr < 0 ? "text-error" : "text-success"}`}
           >
             {remAttr}
           </span>
-          <span className="text-sm opacity-50 font-bold">/ {totalAttrPts}</span>
+          <span className="text-xs md:text-sm opacity-50 font-bold">
+            / {totalAttrPts}
+          </span>
         </div>
       </div>
-      <h2 className="font-builder-header text-6xl text-base-content mb-6 mt-18">
+      <h2 className="font-builder-header text-4xl lg:text-5xl text-base-content mb-6 mt-14 md:mt-18">
         Attributes
       </h2>
+
       <div className="flex flex-col gap-6 mb-8">
         {ATTRIBUTES.map((attr) => {
           const data = ATTRIBUTE_DATA[attr];
@@ -282,7 +323,7 @@ export default function TraitsTabClient() {
           return (
             <motion.div
               key={attr}
-              className="card bg-base-200/30 border-2 border-base-200/20 p-5 shadow-md relative overflow-hidden group transition-all duration-300 rounded-4xl"
+              className="card bg-base-200/30 border-2 border-base-200/20 p-2.5 md:p-5 shadow-md relative overflow-hidden group transition-all duration-300 rounded-4xl"
             >
               <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full gap-6 lg:gap-8">
                 {/* Left Side */}
@@ -291,10 +332,10 @@ export default function TraitsTabClient() {
                     <div
                       className={`ml-4 p-2 rounded-lg bg-base-200 shadow-inner group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all shrink-0 ${data.color}`}
                     >
-                      <AttrIcon className="w-12 h-12 drop-shadow-md" />
+                      <AttrIcon className="w-8 h-8 md:w-12 md:h-12 drop-shadow-md" />
                     </div>
                     <div className="flex flex-col items-start">
-                      <h3 className="font-header text-3xl tracking-tighter text-base-content uppercase truncate">
+                      <h3 className="font-header text-2xl md:text-3xl tracking-tighter text-base-content uppercase truncate">
                         {attr}
                       </h3>
                       <h4 className="font-body text-sm italic tracking-tight text-base-content/85 truncate">
@@ -312,7 +353,7 @@ export default function TraitsTabClient() {
                 </div>
 
                 {/* Right Side Dice */}
-                <div className="flex justify-between items-center border-2 border-base-200/20 bg-linear-to-br from-base-500/20 to-base-200/60 py-4 px-2 md:px-6 rounded-2xl shrink-0 gap-2 md:gap-5">
+                <div className="flex justify-between items-center border-2 border-base-200/20 bg-linear-to-br from-base-500/20 to-base-200/60 py-4 px-4 md:px-6 rounded-2xl shrink-0 gap-2 md:gap-5">
                   {DIE_STEPS.map((die) => {
                     const isSelected = attributes[attr] === die;
                     return (
@@ -348,23 +389,23 @@ export default function TraitsTabClient() {
 
       {/*  Trackers */}
       <div
-        className={`flex flex-col float-end p-4 rounded-2xl border-2 shadow-lg bg-base-200/50 ${remSkills < 0 ? "border-error shadow-error/20" : "border-base-300"}`}
+        className={`flex flex-col float-end p-2.5 md:p-4 rounded-2xl border-2 shadow-lg bg-base-200/50 ${remSkills < 0 ? "border-error shadow-error/20" : "border-base-300"}`}
       >
         <div className="text-[10px] uppercase tracking-widest text-base-content/60 mb-1">
           Skill Pts
         </div>
         <div className="flex items-baseline gap-2">
           <span
-            className={`text-4xl font-header font-black ${remSkills < 0 ? "text-error" : "text-success"}`}
+            className={`text-2xl md:text-4xl font-header font-black ${remSkills < 0 ? "text-error" : "text-success"}`}
           >
             {remSkills}
           </span>
-          <span className="text-sm opacity-50 font-bold">
+          <span className="text-xs md:text-sm opacity-50 font-bold">
             / {totalSkillPts}
           </span>
         </div>
       </div>
-      <h2 className="font-builder-header text-6xl text-base-content mb-6 mt-18">
+      <h2 className="font-builder-header text-4xl lg:text-5xl text-base-content mb-6 mt-18">
         Skills
       </h2>
 

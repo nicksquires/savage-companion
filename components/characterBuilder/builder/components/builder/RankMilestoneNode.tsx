@@ -62,7 +62,7 @@ export const RankMilestoneNode = ({
     <motion.button
       onClick={onClick}
       disabled={isLocked}
-      className="relative z-20 w-14 h-14 rounded-full flex items-center justify-center group"
+      className="relative z-20 w-9 h-9 md:w-14 md:h-14 rounded-full flex items-center justify-center group"
       whileHover={!isLocked ? { scale: 1.1 } : {}}
       whileTap={!isLocked ? { scale: 0.95 } : {}}
     >
@@ -92,7 +92,7 @@ export const RankMilestoneNode = ({
         <div className="absolute top-0 left-[10%] right-[10%] h-[40%] bg-linear-to-b from-white/40 to-transparent rounded-t-full pointer-events-none z-40" />
 
         <span
-          className={`relative font-header text-2xl font-bold z-50 drop-shadow-md
+          className={`relative font-header text-md md:text-2xl font-bold z-50 drop-shadow-md
            ${isLocked ? "text-white/20" : "text-white"}
          `}
         >

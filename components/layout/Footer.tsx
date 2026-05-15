@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col bg-navbar text-navbar-content justify-between">
       {/* Icon Aside/Header */}
-      <div className="footer sm:footer-horizontal py-10 px-2 lg:px-10 items-center">
+      <div className="footer sm:footer-horizontal py-10 px-2 lg:px-10 items-center sm:justify-between justify-center">
         <aside className="flex flex-col items-center text-center">
           <Image
             src={logo}

@@ -12,14 +12,14 @@ export const AdvancementConnector = ({ progress }: { progress: number }) => (
       transition={{ type: "spring", stiffness: 20, damping: 20, mass: 8 }}
     >
       <div
-        className="absolute inset-0 bg-linear-to-r from-success/80 via-[#2dd4bf]/90 to-success/80 animate-liquid-flow"
+        className="absolute inset-0 bg-linear-to-r from-success/80 via-secondary/90 to-success/80 animate-pulse"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(var(--color-success-rgb), 0.7) 0%, rgba(45, 212, 191, 0.9) 50%, rgba(var(--color-success-rgb), 0.7) 100%)",
         }}
       />
 
-      <div className="absolute top-0 left-0 right-0 h-1/2 inset-0 bg-[url('/images/textures/parchment.png')] mix-blend-overlay opacity-60 animate-pulse rounded-t-full" />
+      <div className="absolute top-0 left-0 right-0 h-full inset-0 bg-[url('/images/textures/parchment.png')] mix-blend-overlay opacity-80 animate-liquid-flow rounded-t-full" />
     </motion.div>
 
     <div className="absolute top-px left-2 right-2 h-0.75 bg-linear-to-r from-transparent via-white/20 to-transparent rounded-full z-20 pointer-events-none" />

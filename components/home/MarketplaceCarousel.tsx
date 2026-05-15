@@ -62,19 +62,19 @@ const assets = [
 
 export default function MarketplaceCarousel() {
   return (
-    <section className="py-24 bg-base-50">
+    <section className="py-24 bg-[url('/images/textures/parchment.png')] mix-blend-normal opacity-85">
       <div className="max-w-7xl mx-auto px-6 flex-col">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-4xl font-header font-bold text-base-content">
+            <h2 className="text-5xl uppercase font-header font-bold text-base-content">
               The Bazaar
             </h2>
-            <p className="text-base-content/70 mt-2">
+            <p className="text-base-content/90 mt-2">
               Official and fan-created content for every setting.
             </p>
           </div>
         </div>
-        <div className="2xl:mx-0 mx-24">
+        <div className="2xl:mx-0 sm:mx-24 mx-8">
           <Carousel
             opts={{
               align: "start",
@@ -88,7 +88,7 @@ export default function MarketplaceCarousel() {
                   key={index}
                   className="pl-4 basis-full md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                 >
-                  <Card className="overflow-hidden border-base-300 bg-base-400/40 hover:border-primary transition-all group cursor-pointer">
+                  <Card className="overflow-hidden border-2 border-base-300/20 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal hover:border-primary transition-all group cursor-pointer">
                     <div className="h-52 relative">
                       <img
                         src={item.img}
@@ -122,8 +122,8 @@ export default function MarketplaceCarousel() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="bg-base-100 border-base-300" />
-            <CarouselNext className="bg-base-100 border-base-300" />
+            <CarouselPrevious className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 border-success/30" />
+            <CarouselNext className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 border-success/30" />
           </Carousel>
         </div>
       </div>

@@ -36,13 +36,13 @@ export default function DailyAdventureHook() {
   };
 
   return (
-    <section className="py-16 bg-base-200/60">
+    <section className="py-16 bg-base-300/40">
       <div className="max-w-4xl mx-auto px-6">
-        <Card className="border-base-300">
+        <Card className="border-base-300 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal opacity-90">
           <CardContent className="p-10">
             <div className="flex items-center gap-3 mb-6">
               <Sparkles className="text-primary" />
-              <h4 className="font-bold uppercase tracking-widest text-primary text-sm">
+              <h4 className="font-bold uppercase tracking-widest text-primary text-md">
                 Daily Plot Hook
               </h4>
             </div>

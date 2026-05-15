@@ -45,10 +45,10 @@ const ThemeSwitcher = () => {
       <div
         tabIndex={0}
         role="button"
-        className="btn btn-ghost btn-sm py-5 normal-case text-navbar-content 
+        className="btn btn-ghost btn-xs md:btn-sm py-5 normal-case text-navbar-content 
         hover:text-navbar hover:bg-navbar-content"
       >
-        <Palette className="h-6 w-6" />
+        <Palette className="h-5 sm:h-6 w-5 sm:w-6" />
         {/* <span className="hidden md:inline">Theme</span> */}
         <ChevronDown size={15} />
       </div>

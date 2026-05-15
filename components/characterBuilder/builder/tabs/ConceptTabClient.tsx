@@ -52,17 +52,20 @@ export default function ConceptTabClient() {
       className="p-6 max-w-4xl mx-auto"
     >
       {/* HEADER */}
-      <div className="mb-10 flex justify-between items-end pb-4 relative">
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-primary/60 via-primary to-transparent opacity-90" />
-        <div className="relative z-10">
-          <h1 className="font-builder-header text-5xl md:text-7xl text-primary drop-shadow-[0_0_20px_var(--color-primary)] tracking-wide">
+      <div className="flex justify-between items-end pb-4 relative border-b border-primary/30 mb-10">
+        <div className="absolute -bottom-px left-0 w-full h-px bg-linear-to-r from-primary via-primary/50 to-transparent" />
+
+        <div className="relative">
+          <h1 className="font-builder-header text-6xl md:text-8xl text-primary drop-shadow-[0_0_25px_rgba(var(--color-primary),0.4)] tracking-wide flex items-center gap-4">
             Concept
           </h1>
-          <p className="text-base-content/60 tracking-[0.3em] uppercase text-xs font-bold font-serif mt-2">
+
+          <p className="text-primary/70 tracking-[0.4em] uppercase text-sm md:text-base font-bold font-serif mt-1">
             Character Fundamentals
           </p>
         </div>
-        <User className="w-16 h-16 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4 z-10" />
+
+        <User className="w-16 h-16 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4" />
       </div>
 
       <div className="space-y-8">
@@ -113,7 +116,34 @@ export default function ConceptTabClient() {
           Choose which books and expansions this character can draw from.
         </p>
 
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Added Sources */}
+          <div>
+            <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
+              Added to Character
+            </h3>
+            <div className="space-y-2">
+              {sources.length === 0 && (
+                <div className="px-4 py-3 rounded-xl border border-dashed border-base-300 text-center text-sm text-base-content/50">
+                  No sources added yet.
+                </div>
+              )}
+              {sources.map((source) => (
+                <div
+                  key={source}
+                  className="flex text-sm md:text-md justify-between items-center px-4 py-3 rounded-xl bg-base-300"
+                >
+                  <span>{source}</span>
+                  <button
+                    onClick={() => handleRemoveSource(source)}
+                    className="text-error hover:text-red-600 text-sm font-medium"
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
           {/* Available Sources */}
           <div>
             <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
@@ -130,38 +160,10 @@ export default function ConceptTabClient() {
                   key={source}
                   onClick={() => handleAddSource(source)}
                   disabled={sources.includes(source)}
-                  className="w-full text-left px-4 py-3 rounded-xl bg-base-200 hover:bg-base-300 disabled:opacity-40 transition"
+                  className="w-full text-left text-sm md:text-md px-4 py-3 rounded-xl bg-base-200 hover:bg-base-300 disabled:opacity-40 transition"
                 >
                   {source}
                 </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Added Sources */}
-          <div>
-            <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
-              Added to Character
-            </h3>
-            <div className="space-y-2">
-              {sources.length === 0 && (
-                <div className="px-4 py-3 rounded-xl border border-dashed border-base-300 text-center text-sm text-base-content/50">
-                  No sources added yet.
-                </div>
-              )}
-              {sources.map((source) => (
-                <div
-                  key={source}
-                  className="flex justify-between items-center px-4 py-3 rounded-xl bg-base-300"
-                >
-                  <span>{source}</span>
-                  <button
-                    onClick={() => handleRemoveSource(source)}
-                    className="text-error hover:text-red-600 text-sm font-medium"
-                  >
-                    Remove
-                  </button>
-                </div>
               ))}
             </div>
           </div>

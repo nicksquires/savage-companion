@@ -30,7 +30,7 @@ const NavBar = () => {
             alt="Savage Worlds Fan Product logo"
             width={120}
             height={80}
-            className="sm:min-w-30 sm:w-30 min-w-22 w-22"
+            className="sm:min-w-30 sm:w-30 min-w-16 w-16"
             priority
           />
         </Link>
@@ -138,7 +138,7 @@ const NavBar = () => {
                 lg:min-w-2/5 min-w-5/6"
       >
         {/* Main action icons — 4 slots, evenly spaced */}
-        <div className="flex items-center justify-end flex-1 gap-4 lg:gap-6 min-w-0">
+        <div className="flex items-center justify-end flex-1 gap-1 sm:gap-2 md:gap-4 lg:gap-6 min-w-0">
           {/* 1. Burger – hidden on lg+ */}
           <div className="lg:hidden items-center justify-center">
             <BurgerDrawer />
@@ -177,7 +177,7 @@ const NavBar = () => {
                 className="btn btn-circle btn-md 
                 flex items-center text-center gap-2 
                 bg-navbar border-navbar sm:bg-base-300
-                sm:p-3 p-0 ml-1 mr-3 
+                sm:p-5 ml-1 sm:mr-2 lg:mr-3 
                 min-w-11rem sm:w-44 
                 shadow-sm hover:brightness-110 transition-all"
               >
@@ -248,11 +248,11 @@ const NavBar = () => {
           )}
 
           {status === "unauthenticated" && (
-            <div className="flex items-center gap-2 mr-2">
-              <Link href="/signin" className="btn btn-sm btn-ghost">
+            <div className="flex items-center gap-0 sm:gap-2 mr-2 sm:mr-4">
+              <Link href="/signin" className="btn btn-xs sm:btn-sm btn-ghost">
                 LOGIN
               </Link>
-              <Link href="/signin" className="btn btn-sm btn-primary">
+              <Link href="/signin" className="btn btn-xs sm:btn-sm btn-primary">
                 SIGN UP
               </Link>
             </div>

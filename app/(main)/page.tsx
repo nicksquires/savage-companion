@@ -10,10 +10,11 @@ export default function Home() {
     <main className="min-h-screen bg-base-100 text-base-content">
       <HeroSection />
       <QuickActionPanel />
-      <FeatureHighlights />
       <MarketplaceCarousel />
-      <FeaturedWorlds />
+      <FeatureHighlights />
+
       <DailyAdventureHook />
+      <FeaturedWorlds />
     </main>
   );
 }

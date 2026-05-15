@@ -153,6 +153,7 @@ export type GenericTrait = {
   powerPoints?: number;
   requirements?: JsonValue | EdgeRequirement[];
   _type?: string; // Optional metadata
+  iconUrl?: string;
 };
 
 export type HindranceAllocations = {

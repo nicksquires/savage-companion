@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserPlus, Map, BookOpen, Wand2, Users, Swords } from "lucide-react";
+import { Map, Users, Coins, HammerIcon } from "lucide-react";
 
 const actions = [
-  { label: "Create Character", icon: UserPlus, color: "primary" },
-  { label: "Start Campaign", icon: Map, color: "secondary" },
-  { label: "Browse Marketplace", icon: BookOpen, color: "info" },
-  { label: "Build Homebrew", icon: Wand2, color: "success" },
-  { label: "Join a Table", icon: Users, color: "accent" },
-  { label: "Random Encounter", icon: Swords, color: "error" },
+  // { label: "Create Character", icon: UserPlus, color: "primary" },
+  { label: "Start Campaign", icon: Map, color: "accent" },
+  { label: "Browse Marketplace", icon: Coins, color: "warning" },
+  { label: "Build Homebrew", icon: HammerIcon, color: "secondary" },
+  { label: "Join Table", icon: Users, color: "error" },
+  // { label: "Random Encounter", icon: Swords, color: "error" },
 ];
 
 export default function QuickActionPanel() {

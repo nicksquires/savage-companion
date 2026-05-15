@@ -150,7 +150,8 @@ export default function BuilderShell({
                 key={tab.id}
                 value={tab.id}
                 disabled={tab.disabled}
-                className="flex items-center text-md font-bold gap-1.5 data-[state=active]:text-primary data-[state=active]:hover:cursor-auto rounded-3xl rounded-br-none rounded-bl-none hover:cursor-pointer"
+                className="flex items-center text-md font-bold gap-1.5 data-[state=active]:text-primary data-[state=active]:hover:cursor-auto
+                rounded-3xl rounded-br-none rounded-bl-none hover:cursor-pointer"
                 data-tip={tab.tooltip}
               >
                 <tab.icon />
@@ -164,19 +165,19 @@ export default function BuilderShell({
 
         {/* Header Card */}
         <div
-          className={`max-w-4xl mx-auto mt-8 px-6 ${currentTab === "summary" ? "hidden" : ""}`}
+          className={`max-w-4xl mx-auto mt-4 md:mt-8 px-4 md:px-6 ${currentTab === "summary" ? "hidden" : ""}`}
         >
-          <div className="card bg-base-100 shadow-xl border border-base-300 flex flex-row items-center gap-6 p-6">
+          <div className="card bg-base-100 shadow-xl border border-base-300 flex flex-row items-start md:items-center gap-4 md:gap-6 p-4 md:p-6">
             {/* Avatar */}
             <div className="relative w-16 h-16 md:w-24 md:h-24 shrink-0">
               <div className="w-full h-full rounded-2xl border-2 border-dashed border-primary/60 bg-base-200 flex items-center justify-center overflow-hidden">
                 <div className="text-center">
-                  <User className="w-12 h-12 text-base-content/40 mx-auto" />
+                  <User className="w-8 h-8 md:w-12 md:h-12 text-base-content/40 mx-auto" />
                   <button
                     onClick={() =>
                       alert("Avatar upload coming soon (Next.js + Cloudinary)")
                     }
-                    className="absolute bottom-2 right-2 btn btn-circle btn-primary btn-xs shadow-md"
+                    className="absolute bottom-1 right-1 md:bottom-2 md:right-2 btn btn-circle btn-primary btn-xs shadow-md scale-75 md:scale-100"
                   >
                     <Plus className="w-3 h-3" />
                   </button>
@@ -184,82 +185,95 @@ export default function BuilderShell({
               </div>
             </div>
 
-            {/* Name */}
-            <div className="flex-1">
-              <label className="text-xs font-medium tracking-widest text-base-content/60 mb-1 block">
-                CHARACTER NAME
-              </label>
-              <input
-                value={name}
-                onChange={(e) => setDraft({ name: e.target.value })}
-                className="input input-bordered w-full text-lg md:text-2xl font-header bg-base-500/50 border-0 focus:border-primary px-2 py-1"
-                placeholder={`Untitled Character`}
-              />
-            </div>
+            {/* Right Side Wrapper (Name + Buttons) */}
+            <div className="flex-1 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 w-full overflow-hidden">
+              {/* Name */}
+              <div className="flex-1 w-full">
+                <label className="text-[10px] md:text-xs font-medium tracking-widest text-base-content/60 mb-1 block">
+                  CHARACTER NAME
+                </label>
+                <input
+                  value={name}
+                  onChange={(e) => setDraft({ name: e.target.value })}
+                  className="input input-sm md:input-md input-bordered w-full text-base md:text-2xl font-header bg-base-500/50 border-0 focus:border-primary px-2 py-1"
+                  placeholder={`Untitled Character`}
+                />
+              </div>
 
-            {/* Advancement + Guide + Delete */}
-            <div className="flex flex-col items-end gap-1">
-              <button
-                onClick={handleToggleAdvancement}
-                className="btn btn-ghost btn-sm flex items-center gap-2 text-success"
-              >
-                {advancementsEnabled ? (
-                  <CheckCircleIcon className="w-6 h-6 sm:w-4 sm:h-4" />
-                ) : (
-                  <CircleIcon className="w-6 h-6 sm:w-4 sm:h-4" />
-                )}
-                <p className="hidden sm:inline">Advancement</p>
-              </button>
-              <button
-                onClick={() => setIsGuideOpen(true)}
-                className="btn btn-ghost btn-sm flex items-center gap-2 text-secondary"
-              >
-                <Info className="w-6 h-6 sm:w-4 sm:h-4" />
-                <p className="hidden sm:inline">Show Guide</p>
-              </button>
+              {/* Advancement + Guide + Delete */}
+              <div className="flex flex-row md:flex-col justify-between md:justify-end items-center md:items-end md:gap-2 w-full md:w-auto">
+                <button
+                  onClick={handleToggleAdvancement}
+                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-success flex-1 md:flex-none px-0 md:px-3"
+                >
+                  {advancementsEnabled ? (
+                    <CheckCircleIcon className="w-4 h-4 shrink-0" />
+                  ) : (
+                    <CircleIcon className="w-4 h-4 shrink-0" />
+                  )}
+                  <span className="text-[10px] sm:text-xs md:text-sm">
+                    Advancement
+                  </span>
+                </button>
 
-              <button
-                onClick={() => setShowDeleteModal(true)}
-                className="btn btn-ghost btn-sm flex items-center gap-2 text-error hover:bg-error/10"
-              >
-                <Trash2 className="w-6 h-6 sm:w-4 sm:h-4" />
-                <p className="hidden sm:inline">Delete Character</p>
-              </button>
+                <button
+                  onClick={() => setIsGuideOpen(true)}
+                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-secondary flex-1 md:flex-none px-0 md:px-3"
+                >
+                  <Info className="w-4 h-4 shrink-0" />
+                  <span className="text-[10px] sm:text-xs md:text-sm">
+                    Guide
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => setShowDeleteModal(true)}
+                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-error hover:bg-error/10 flex-1 md:flex-none px-0 md:px-3"
+                >
+                  <Trash2 className="w-4 h-4 shrink-0" />
+                  <span className="text-[10px] sm:text-xs md:text-sm leading-tight">
+                    Delete
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Content with side arrows */}
-        <div className="max-w-7xl mx-auto px-6 sticky top-0">
+        {/* Page Navigation Arrows (Moved ABOVE Content) */}
+        <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-100">
           <button
             onClick={() => goToTab(currentIndex - 1)}
             disabled={currentIndex <= 0}
-            className="absolute left-4 xl:left-0 top-32 btn btn-circle btn-secondary text-4xl shadow-lg z-5 disabled:opacity-30"
+            className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
           >
-            <ChevronLeft />
+            <ChevronLeft className="w-5 h-5" />
+            <span className="hidden sm:inline pr-2 tracking-wide">Prev</span>
           </button>
-
-          <div className="px-12 min-h-400px">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTab}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-              >
-                {children}
-              </motion.div>
-            </AnimatePresence>
-          </div>
 
           <button
             onClick={() => goToTab(currentIndex + 1)}
             disabled={currentIndex >= tabIds.length - 1}
-            className="absolute right-4 xl:right-0 top-32 btn btn-circle btn-secondary text-4xl shadow-lg z-5 disabled:opacity-30"
+            className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
           >
-            <ChevronRight />
+            <span className="hidden sm:inline pl-2 tracking-wide">Next</span>
+            <ChevronRight className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Main Content Area (Now spans full width without horizontal squishing) */}
+        <div className="max-w-7xl mx-auto px-0 md:px-6 min-h-100">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              {children}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Delete Confirmation Modal */}
@@ -278,9 +292,9 @@ export default function BuilderShell({
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              className="fixed top-0 right-0 h-full w-96 bg-base-100 shadow-2xl border-l border-primary/30 z-50 overflow-auto"
+              className="fixed top-0 right-0 h-full w-full sm:w-96 bg-base-100 shadow-2xl border-l border-primary/30 z-50 overflow-auto"
             >
-              <div className="p-6 sticky top-0 bg-base-100 border-b flex justify-between items-center">
+              <div className="p-6 sticky top-0 bg-base-100 border-b flex justify-between items-center z-10">
                 <h2 className="font-header text-2xl">
                   Character Builder Guide
                 </h2>

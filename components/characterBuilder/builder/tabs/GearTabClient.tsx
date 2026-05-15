@@ -105,26 +105,29 @@ export default function GearTabClient() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-full mx-auto py-6"
+      className="max-w-full mx-2 md:mx-auto py-6"
     >
       {/* HEADER */}
-      <div className="mb-10 flex justify-between items-end pb-4 relative">
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-primary/60 via-primary to-transparent opacity-90" />
-        <div className="relative z-0">
-          <h1 className="font-builder-header text-5xl md:text-7xl text-primary drop-shadow-[0_0_20px_var(--color-primary)] tracking-wide">
+      <div className="flex justify-between items-end pb-4 relative border-b border-primary/30 mb-10">
+        <div className="absolute -bottom-px left-0 w-full h-px bg-linear-to-r from-primary via-primary/50 to-transparent" />
+
+        <div className="relative">
+          <h1 className="font-builder-header text-6xl md:text-8xl text-primary drop-shadow-[0_0_25px_rgba(var(--color-primary),0.4)] tracking-wide flex items-center gap-4">
             Gear
           </h1>
-          <p className="text-base-content/60 tracking-[0.3em] uppercase text-xs font-bold font-serif mt-2">
+
+          <p className="text-primary/70 tracking-[0.4em] uppercase text-sm md:text-base font-bold font-serif mt-1">
             Requisitions & Ledger
           </p>
         </div>
+
         <Backpack className="w-16 h-16 md:w-20 md:h-20 text-primary drop-shadow-[0_0_15px_var(--color-primary)] relative mb-4" />
       </div>
 
       {/* MAIN GRID: Ledger Left (Top on Mobile), Shop Right */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* LEFT COLUMN: THE BACKPACK LEDGER */}
-        <div className="lg:col-span-5 flex flex-col gap-6 sticky top-14 z-50">
+        <div className="lg:col-span-5 flex flex-col gap-6 md:sticky top-14 z-50">
           <div
             className={cn(
               parchmentVariants({ variant: "panel" }),
@@ -133,23 +136,23 @@ export default function GearTabClient() {
           >
             {/* Ledger Header / Funds */}
             <div className="px-6 py-3 bg-base-200/30 border-b border-base-300/40 relative">
-              <h3 className="font-body font-semibold uppercase text-4xl mb-1 text-base-content/85 tracking-wider">
+              <h3 className="font-body font-semibold uppercase text-2xl md:text-4xl mb-0 md:mb-1 text-base-content/85 tracking-wider">
                 Ledger
               </h3>
-              <p className="text-xs uppercase tracking-widest text-base-content/50 font-bold mb-6">
+              <p className="text-xs uppercase tracking-widest text-base-content/50 font-bold md:mb-6">
                 Current Funds
               </p>
 
               <div className="flex justify-end items-center gap-3 z-0">
                 <span
                   className={cn(
-                    "text-6xl font-black font-mono tracking-tighter drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]",
+                    "text-3xl md:text-6xl font-black font-mono tracking-tighter drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]",
                     remainingWealth < 0 ? "text-error" : "text-success",
                   )}
                 >
                   ${remainingWealth}
                 </span>
-                <span className="text-base-content/40 text-xl font-mono font-bold mb-2">
+                <span className="text-base-content/40 text-sm md:text-xl font-mono font-bold mb-2">
                   / ${maxWealth}
                 </span>
               </div>
@@ -162,7 +165,7 @@ export default function GearTabClient() {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-center py-16 px-6"
+                    className="text-center py-4 md:py-16 px-6"
                   >
                     <p className="font-serif italic text-base-content/40">
                       Your pack lies empty...
@@ -299,12 +302,13 @@ export default function GearTabClient() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    "px-4 py-2 m-0.5 rounded-lg font-bold text-[10px] tracking-widest uppercase transition-colors",
+                    "px-4 py-2 m-0.5 rounded-lg font-bold text-[10px] tracking-widest uppercase transition-colors flex flex-row gap-1",
                     activeCategory === cat
                       ? "bg-primary/20 text-primary border border-primary/30"
                       : "text-base-content/50 hover:bg-base-200",
                   )}
                 >
+                  <CategoryIcon type={cat.toWellFormed()} className="w-4 h-4" />
                   {cat}
                 </button>
               ))}

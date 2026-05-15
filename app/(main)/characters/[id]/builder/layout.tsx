@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/prisma/client";
 import BuilderShell from "@/components/characterBuilder/builder/components/builder/BuilderShell";
-import DebugPanel from "@/components/characterBuilder/builder/components/builder/DebugPanel";
+import _DebugPanel from "@/components/characterBuilder/builder/components/builder/DebugPanel";
 import DraftHydrator from "@/components/characterBuilder/builder/components/builder/DraftHydrator";
 
 export default async function BuilderLayout({
@@ -79,7 +79,7 @@ export default async function BuilderLayout({
     <div>
       <DraftHydrator initialData={formattedData}>
         <BuilderShell>{children}</BuilderShell>
-        <DebugPanel />
+        {/* <DebugPanel /> */}
       </DraftHydrator>
     </div>
   );

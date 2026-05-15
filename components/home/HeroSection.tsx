@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Play, Dices } from "lucide-react";
+import { Play, Dices, User, UserPlus, BookOpen } from "lucide-react";
 import Particles from "@tsparticles/react";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles"; // ← correct import for v3 full bundle
@@ -75,31 +75,31 @@ export default function HeroSection() {
               Roll Bold.
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-base-content/70 max-w-2xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-base-content/90 max-w-2xl mx-auto mb-10">
             The ultimate Savage Worlds VTT. Exploding dice, custom rules, and
             character sheets - lightning fast.
           </p>
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
           <Link href="/campaigns">
             <button
-              className="btn border-none text-primary-content font-bold text-lg h-14 px-8 transition-all 
+              className="btn border-none text-primary-content font-bold text-lg h-14 px-8 transition-all w-70
                 bg-primary/85 shadow-[0_0_20px_rgba(217,119,6,0.4)] 
                 hover:bg-primary hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]"
             >
-              <Play className="mr-2 h-5 w-5 fill-current" />
-              Start a Campaign
+              <UserPlus className="mr-2 h-5 w-5 fill-current" />
+              Create a Character
             </button>
           </Link>
 
-          <button className="btn btn-outline border-base-700 text-base-700/75 hover:bg-base-800 hover:text-primary hover:border-base-600 h-14 px-8 font-semibold">
-            <Dices className="mr-2 h-5 w-5" /> Try the Roller
+          <button className="btn btn-outline border-base-700 text-base-700/75 hover:bg-base-800 hover:text-primary hover:border-base-600 h-14 px-8 font-semibold w-70">
+            <BookOpen className="mr-2 h-5 w-5" /> Learn to Play
           </button>
         </motion.div>
       </div>

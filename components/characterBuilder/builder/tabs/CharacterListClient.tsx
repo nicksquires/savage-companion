@@ -51,14 +51,16 @@ export default function CharacterListClient({
 
   return (
     <>
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="font-header text-5xl text-primary">My Characters</h1>
+      <div className="flex flex-row justify-between items-center mb-8">
+        <h1 className="font-header text-3xl sm:text-5xl text-primary sm:w-auto w-full">
+          My Characters
+        </h1>
         <button
           onClick={handleAction}
           disabled={isPending}
-          className="btn btn-primary gap-2"
+          className="btn btn-primary gap-1 sm:gap-2 px-2 sm:px-4 text-xs sm:text-md"
         >
-          <Plus className="w-5 h-5" />
+          <Plus className="w-4 sm:w-5 h-4 sm:h-5" />
           {isPending
             ? "Loading..."
             : hasDraft
@@ -95,10 +97,10 @@ export default function CharacterListClient({
                   }
                   className="block"
                 >
-                  <div className="font-header text-2xl flex items-center gap-2">
+                  <div className="font-header text-2xl flex items-center gap-2 w-full h-auto justify-between">
                     {char.name}
                     {isDraft && (
-                      <span className="text-xs badge badge-warning px-2">
+                      <span className="text-xs badge badge-warning px-2 float-right tracking-wider">
                         DRAFT
                       </span>
                     )}
@@ -106,7 +108,7 @@ export default function CharacterListClient({
                   <div className="text-sm text-base-content/60 mt-1">
                     {char.concept || "No concept yet"}
                   </div>
-                  <div className="text-xs mt-4 badge badge-primary px-1">
+                  <div className="text-xs mt-4 badge badge-secondary px-2">
                     {char.rank}
                   </div>
                 </a>
