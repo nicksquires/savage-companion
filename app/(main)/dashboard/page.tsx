@@ -14,7 +14,7 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-screen bg-base-50">
       <DashboardBanner user={session.user} />
       <DashboardBody user={session.user} />
     </div>

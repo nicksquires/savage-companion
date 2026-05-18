@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
+import { DicesIcon, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const hooks = [
@@ -36,25 +36,31 @@ export default function DailyAdventureHook() {
   };
 
   return (
-    <section className="py-16 bg-base-300/40">
-      <div className="max-w-4xl mx-auto px-6">
-        <Card className="border-base-300 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal opacity-90">
-          <CardContent className="p-10">
-            <div className="flex items-center gap-3 mb-6">
-              <Sparkles className="text-primary" />
-              <h4 className="font-bold uppercase tracking-widest text-primary text-md">
-                Daily Plot Hook
-              </h4>
-            </div>
-            <p className="text-xl italic leading-relaxed text-base-content min-h-5.5rem mb-8">
-              “{hook}”
-            </p>
-            <button onClick={reroll} className="btn btn-outline btn-sm">
-              Reroll Hook
-            </button>
-          </CardContent>
-        </Card>
+    <>
+      <div className="py-20 bg-background">
+        <div className="max-w-4xl mx-auto bg-base-50/30 px-6">
+          <Card className="border-base-300 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal opacity-90">
+            <CardContent className="p-10 flex flex-col justify-center items-center">
+              <div className="flex items-center gap-3 mb-6 text-left">
+                <Sparkles className="text-primary w-10 h-10 md:w-14 md:h-14" />
+                <h4 className="font-bold uppercase tracking-widest text-primary text-lg md:text-2xl">
+                  Daily Plot Hook
+                </h4>
+              </div>
+              <p className="text:md md:text-xl italic leading-relaxed text-base-content min-h-5.5rem mb-8">
+                “{hook}”
+              </p>
+              <button
+                onClick={reroll}
+                className="btn btn-outline btn-lg md:btn-xl max-w-[12em]"
+              >
+                <DicesIcon />
+                Reroll Hook
+              </button>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </section>
+    </>
   );
 }

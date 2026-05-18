@@ -132,211 +132,208 @@ export default function BuilderShell({
   ];
 
   return (
-    <>
-      <div className="min-h-screen">
-        {/* Sticky Tabs */}
-        <Tabs
-          value={currentTab}
-          onValueChange={(value) =>
-            router.push(`/characters/${id}/builder/${value}`)
-          }
-          className="sticky top-0 z-35 w-full"
+    <div className="min-h-full bg-base-100 text-base-content relative overflow-hidden pb-24">
+      {/* Ambient Background Textures */}
+      <div
+        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50 
+        bg-[url('/images/textures/glass.png')] bg-top bg-cover z-0"
+      />
+
+      <div
+        className="pointer-events-none absolute inset-0 mix-blend-screen opacity-20 
+        bg-[url('/images/textures/darkpaper.png')] bg-cover z-0"
+      />
+      {/* Sticky Tabs */}
+      <Tabs
+        value={currentTab}
+        onValueChange={(value) =>
+          router.push(`/characters/${id}/builder/${value}`)
+        }
+        className="sticky top-0 z-35 w-full"
+      >
+        <TabsList
+          className={`grid w-full grid-cols-8 bg-base-500 rounded-none pb-0`}
         >
-          <TabsList
-            className={`grid w-full grid-cols-8 bg-base-500 rounded-none pb-0`}
-          >
-            {updatedTabs.map((tab) => (
-              <TabsTrigger
-                key={tab.id}
-                value={tab.id}
-                disabled={tab.disabled}
-                className="flex items-center text-md font-bold gap-1.5 data-[state=active]:text-primary data-[state=active]:hover:cursor-auto
+          {updatedTabs.map((tab) => (
+            <TabsTrigger
+              key={tab.id}
+              value={tab.id}
+              disabled={tab.disabled}
+              className="flex items-center text-md font-bold gap-1.5 data-[state=active]:text-primary data-[state=active]:hover:cursor-auto
                 rounded-3xl rounded-br-none rounded-bl-none hover:cursor-pointer"
-                data-tip={tab.tooltip}
-              >
-                <tab.icon />
-                <span className="hidden lg:inline">{tab.label}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
-
-        <AdvancementBar />
-
-        {/* Header Card */}
-        <div
-          className={`max-w-4xl mx-auto mt-4 md:mt-8 px-4 md:px-6 ${currentTab === "summary" ? "hidden" : ""}`}
-        >
-          <div className="card bg-base-100 shadow-xl border border-base-300 flex flex-row items-start md:items-center gap-4 md:gap-6 p-4 md:p-6">
-            {/* Avatar */}
-            <div className="relative w-16 h-16 md:w-24 md:h-24 shrink-0">
-              <div className="w-full h-full rounded-2xl border-2 border-dashed border-primary/60 bg-base-200 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <User className="w-8 h-8 md:w-12 md:h-12 text-base-content/40 mx-auto" />
-                  <button
-                    onClick={() =>
-                      alert("Avatar upload coming soon (Next.js + Cloudinary)")
-                    }
-                    className="absolute bottom-1 right-1 md:bottom-2 md:right-2 btn btn-circle btn-primary btn-xs shadow-md scale-75 md:scale-100"
-                  >
-                    <Plus className="w-3 h-3" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side Wrapper (Name + Buttons) */}
-            <div className="flex-1 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 w-full overflow-hidden">
-              {/* Name */}
-              <div className="flex-1 w-full">
-                <label className="text-[10px] md:text-xs font-medium tracking-widest text-base-content/60 mb-1 block">
-                  CHARACTER NAME
-                </label>
-                <input
-                  value={name}
-                  onChange={(e) => setDraft({ name: e.target.value })}
-                  className="input input-sm md:input-md input-bordered w-full text-base md:text-2xl font-header bg-base-500/50 border-0 focus:border-primary px-2 py-1"
-                  placeholder={`Untitled Character`}
-                />
-              </div>
-
-              {/* Advancement + Guide + Delete */}
-              <div className="flex flex-row md:flex-col justify-between md:justify-end items-center md:items-end md:gap-2 w-full md:w-auto">
+              data-tip={tab.tooltip}
+            >
+              <tab.icon />
+              <span className="hidden lg:inline">{tab.label}</span>
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
+      <AdvancementBar />
+      {/* Header Card */}
+      <div
+        className={`max-w-4xl mx-auto mt-4 md:mt-8 px-4 md:px-6 ${currentTab === "summary" ? "hidden" : ""}`}
+      >
+        <div className="card bg-base-100 shadow-xl border border-base-300 flex flex-row items-start md:items-center gap-4 md:gap-6 p-4 md:p-6">
+          {/* Avatar */}
+          <div className="relative w-16 h-16 md:w-24 md:h-24 shrink-0">
+            <div className="w-full h-full rounded-2xl border-2 border-dashed border-primary/60 bg-base-200 flex items-center justify-center overflow-hidden">
+              <div className="text-center">
+                <User className="w-8 h-8 md:w-12 md:h-12 text-base-content/40 mx-auto" />
                 <button
-                  onClick={handleToggleAdvancement}
-                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-success flex-1 md:flex-none px-0 md:px-3"
+                  onClick={() =>
+                    alert("Avatar upload coming soon (Next.js + Cloudinary)")
+                  }
+                  className="absolute bottom-1 right-1 md:bottom-2 md:right-2 btn btn-circle btn-primary btn-xs shadow-md scale-75 md:scale-100"
                 >
-                  {advancementsEnabled ? (
-                    <CheckCircleIcon className="w-4 h-4 shrink-0" />
-                  ) : (
-                    <CircleIcon className="w-4 h-4 shrink-0" />
-                  )}
-                  <span className="text-[10px] sm:text-xs md:text-sm">
-                    Advancement
-                  </span>
-                </button>
-
-                <button
-                  onClick={() => setIsGuideOpen(true)}
-                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-secondary flex-1 md:flex-none px-0 md:px-3"
-                >
-                  <Info className="w-4 h-4 shrink-0" />
-                  <span className="text-[10px] sm:text-xs md:text-sm">
-                    Guide
-                  </span>
-                </button>
-
-                <button
-                  onClick={() => setShowDeleteModal(true)}
-                  className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-error hover:bg-error/10 flex-1 md:flex-none px-0 md:px-3"
-                >
-                  <Trash2 className="w-4 h-4 shrink-0" />
-                  <span className="text-[10px] sm:text-xs md:text-sm leading-tight">
-                    Delete
-                  </span>
+                  <Plus className="w-3 h-3" />
                 </button>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Page Navigation Arrows (Moved ABOVE Content) */}
-        <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-10">
-          <button
-            onClick={() => goToTab(currentIndex - 1)}
-            disabled={currentIndex <= 0}
-            className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
+          {/* Right Side Wrapper (Name + Buttons) */}
+          <div className="flex-1 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 w-full overflow-hidden">
+            {/* Name */}
+            <div className="flex-1 w-full">
+              <label className="text-[10px] md:text-xs font-medium tracking-widest text-base-content/60 mb-1 block">
+                CHARACTER NAME
+              </label>
+              <input
+                value={name}
+                onChange={(e) => setDraft({ name: e.target.value })}
+                className="input input-sm md:input-md input-bordered w-full text-base md:text-2xl font-header bg-base-500/50 border-0 focus:border-primary px-2 py-1"
+                placeholder={`Untitled Character`}
+              />
+            </div>
+
+            {/* Advancement + Guide + Delete */}
+            <div className="flex flex-row md:flex-col justify-between md:justify-end items-center md:items-end md:gap-2 w-full md:w-auto">
+              <button
+                onClick={handleToggleAdvancement}
+                className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-success flex-1 md:flex-none px-0 md:px-3"
+              >
+                {advancementsEnabled ? (
+                  <CheckCircleIcon className="w-4 h-4 shrink-0" />
+                ) : (
+                  <CircleIcon className="w-4 h-4 shrink-0" />
+                )}
+                <span className="text-[10px] sm:text-xs md:text-sm">
+                  Advancement
+                </span>
+              </button>
+
+              <button
+                onClick={() => setIsGuideOpen(true)}
+                className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-secondary flex-1 md:flex-none px-0 md:px-3"
+              >
+                <Info className="w-4 h-4 shrink-0" />
+                <span className="text-[10px] sm:text-xs md:text-sm">Guide</span>
+              </button>
+
+              <button
+                onClick={() => setShowDeleteModal(true)}
+                className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-error hover:bg-error/10 flex-1 md:flex-none px-0 md:px-3"
+              >
+                <Trash2 className="w-4 h-4 shrink-0" />
+                <span className="text-[10px] sm:text-xs md:text-sm leading-tight">
+                  Delete
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Page Navigation Arrows (Moved ABOVE Content) */}
+      <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-10">
+        <button
+          onClick={() => goToTab(currentIndex - 1)}
+          disabled={currentIndex <= 0}
+          className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
+        >
+          <ChevronLeft className="w-5 h-5" />
+          <span className="hidden sm:inline pr-2 tracking-wide">Prev</span>
+        </button>
+
+        <button
+          onClick={() => goToTab(currentIndex + 1)}
+          disabled={currentIndex >= tabIds.length - 1}
+          className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
+        >
+          <span className="hidden sm:inline pl-2 tracking-wide">Next</span>
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+      {/* Main Content Area (Now spans full width without horizontal squishing) */}
+      <div className="max-w-7xl mx-auto px-0 md:px-6 min-h-100">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentTab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
           >
-            <ChevronLeft className="w-5 h-5" />
-            <span className="hidden sm:inline pr-2 tracking-wide">Prev</span>
-          </button>
-
-          <button
-            onClick={() => goToTab(currentIndex + 1)}
-            disabled={currentIndex >= tabIds.length - 1}
-            className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
-          >
-            <span className="hidden sm:inline pl-2 tracking-wide">Next</span>
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Main Content Area (Now spans full width without horizontal squishing) */}
-        <div className="max-w-7xl mx-auto px-0 md:px-6 min-h-100">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              {children}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Delete Confirmation Modal */}
-        <DeleteModal
-          isOpen={showDeleteModal}
-          onClose={() => setShowDeleteModal(false)}
-          onConfirm={handleDeleteCharacter}
-          title="Delete Character?"
-          message="This will permanently delete the character and all draft data. This action cannot be undone."
-        />
-
-        {/* Guide Drawer */}
-        <AnimatePresence>
-          {isGuideOpen && (
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              className="fixed top-0 right-0 h-full w-full sm:w-96 bg-base-100 shadow-2xl border-l border-primary/30 z-50 overflow-auto"
-            >
-              <div className="p-6 sticky top-0 bg-base-100 border-b flex justify-between items-center z-10">
-                <h2 className="font-header text-2xl">
-                  Character Builder Guide
-                </h2>
-                <button
-                  onClick={() => setIsGuideOpen(false)}
-                  className="btn btn-ghost btn-circle"
-                >
-                  ✕
-                </button>
-              </div>
-
-              <div className="p-6 space-y-8">
-                {guideSections.map((section) => (
-                  <div
-                    key={section.title}
-                    className="collapse collapse-arrow border border-base-300 bg-base-200"
-                  >
-                    <input type="checkbox" />
-                    <div className="collapse-title font-medium text-primary">
-                      {section.title}
-                    </div>
-                    <div className="collapse-content text-sm leading-relaxed whitespace-pre-line">
-                      {section.content}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
+            {children}
+          </motion.div>
         </AnimatePresence>
-
-        {/* Backdrop */}
+      </div>
+      {/* Delete Confirmation Modal */}
+      <DeleteModal
+        isOpen={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+        onConfirm={handleDeleteCharacter}
+        title="Delete Character?"
+        message="This will permanently delete the character and all draft data. This action cannot be undone."
+      />
+      {/* Guide Drawer */}
+      <AnimatePresence>
         {isGuideOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsGuideOpen(false)}
-            className="fixed inset-0 bg-black z-40"
-          />
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            className="fixed top-0 right-0 h-full w-full sm:w-96 bg-base-100 shadow-2xl border-l border-primary/30 z-50 overflow-auto"
+          >
+            <div className="p-6 sticky top-0 bg-base-100 border-b flex justify-between items-center z-10">
+              <h2 className="font-header text-2xl">Character Builder Guide</h2>
+              <button
+                onClick={() => setIsGuideOpen(false)}
+                className="btn btn-ghost btn-circle"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="p-6 space-y-8">
+              {guideSections.map((section) => (
+                <div
+                  key={section.title}
+                  className="collapse collapse-arrow border border-base-300 bg-base-200"
+                >
+                  <input type="checkbox" />
+                  <div className="collapse-title font-medium text-primary">
+                    {section.title}
+                  </div>
+                  <div className="collapse-content text-sm leading-relaxed whitespace-pre-line">
+                    {section.content}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         )}
-      </div>
-    </>
+      </AnimatePresence>
+      {/* Backdrop */}
+      {isGuideOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsGuideOpen(false)}
+          className="fixed inset-0 bg-black z-40"
+        />
+      )}
+    </div>
   );
 }

@@ -1,34 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Map, Users, Coins, HammerIcon } from "lucide-react";
+import { Map, Users, Coins, HammerIcon, BookCopy } from "lucide-react";
 
 const actions = [
   // { label: "Create Character", icon: UserPlus, color: "primary" },
   { label: "Start Campaign", icon: Map, color: "accent" },
-  { label: "Browse Marketplace", icon: Coins, color: "warning" },
+  { label: "Browse Marketplace", icon: BookCopy, color: "warning" },
   { label: "Build Homebrew", icon: HammerIcon, color: "secondary" },
-  { label: "Join Table", icon: Users, color: "error" },
+  { label: "Find Friends", icon: Users, color: "error" },
   // { label: "Random Encounter", icon: Swords, color: "error" },
 ];
 
 export default function QuickActionPanel() {
   return (
-    <section className="relative -mt-12 max-w-7xl mx-auto px-6 z-10 pb-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+    <section className="relative max-w-full z-0 flex flex-row justify-center bg-linear-to-b from-primary/5 to-background via-background overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 my-8 gap-2 md:gap-4 lg:gap-6 xl:gap-12 mx-0 md:mx-4 xl:mx-0">
         {actions.map((action, i) => (
           <motion.button
             key={action.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.05 }}
+            transition={{ delay: i * 0.04 }}
             whileHover={{ y: -6, scale: 1.03 }}
-            className={`group flex flex-col items-center justify-center p-10 rounded-3xl border border-base-300 bg-base-100 hover:bg-base-200 hover:border-${action.color} transition-all`}
+            className={`group mb-0.5 md:mb-0 z-2 flex flex-col items-center justify-center px-6 py-2 md:px-8 md:py-4 xl:px-10 lg:py-7 rounded-3xl border-3 border-base-300 
+              bg-base-200 hover:bg-base-300 hover:border-${action.color} transition-all mask-x-from-98% mask-y-from-95%`}
           >
-            <action.icon
-              className={`w-11 h-11 text-${action.color} mb-6 transition-transform group-hover:scale-110`}
+            <div
+              className="absolute w-full h-full bg-[url('/images/textures/darkpaper.png')] 
+            mix-blend-difference opacity-20 bg-cover"
             />
-            <span className="font-medium text-base-content text-center text-lg">
+            <action.icon
+              className={`w-11 sm:w-15 h-11 sm:h-15 text-${action.color} mb-2 md:mb-6 opacity-90
+                transition-transform group-hover:scale-110 group-hover:opacity-100 drop-shadow-${action.color} drop-shadow-sm`}
+            />
+            <span
+              className={`font-medium text-base-content text-center text-lg`}
+            >
               {action.label}
             </span>
           </motion.button>

@@ -3,7 +3,8 @@
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/images/SW_LOGO_FP_2018.png";
+import logo2 from "@/public/images/svglogo_white_logo_only.png";
+import logotext from "@/public/images/svglogo_white_text_canvas.png";
 import ModeToggle from "./ModeToggle";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { UserCircle, ChevronDown } from "lucide-react";
@@ -26,13 +27,33 @@ const NavBar = () => {
       <div className="navbar-start">
         <Link href="/" className="flex items-center">
           <Image
-            src={logo}
+            src={logo2}
             alt="Savage Worlds Fan Product logo"
-            width={120}
-            height={80}
-            className="sm:min-w-30 sm:w-30 min-w-16 w-16"
+            className="w-12 sm:w-14 drop-shadow-primary/50 drop-shadow-sm opacity-95"
             priority
           />
+
+          <Image
+            src={logotext}
+            alt="Savage Worlds Fan Product logo"
+            className="w-32 ml-1 drop-shadow-primary/40 drop-shadow-sm opacity-95"
+            priority
+          />
+
+          {/* <h2 className="font-header-bold uppercase text-[44px] tracking-tight ml-1">
+            Savage
+            <p className="tracking-tight text-2xl px-px -mt-4">
+              Companion
+            </p>
+          </h2> */}
+
+          {/* <h2
+            className="font-header-bold uppercase text-[44px] tracking-normal ml-1
+          drop-shadow-primary/40 drop-shadow-sm opacity-95"
+          >
+            Savage
+            <p className="tracking-[0.13rem] text-[24px] -mt-5">Companion</p>
+          </h2> */}
         </Link>
       </div>
 

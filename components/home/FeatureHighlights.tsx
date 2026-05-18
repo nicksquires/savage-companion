@@ -61,15 +61,18 @@ const features = [
 export default function FeatureHighlights() {
   return (
     <>
-      <section className="py-24 bg-base-200">
+      <div
+        className="py-42 lg:py-36 bg-[url('/images/textures/darkerparchment.png')] 
+      mix-blend-normal bg-cover mask-y-from-88%"
+      >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-base-content mb-4">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold text-base-content/90 mb-6">
               Mechanics <span className="text-primary">Mastered</span>
             </h2>
-            <p className="text-base-content/70 max-w-2xl mx-auto">
-              Built from the ground up for Savage Worlds — fast, furious, and
-              fun.
+            <p className="text-base-content/85 max-w-2xl mx-auto">
+              Built from the ground up for Savage Worlds: <br />
+              Fast, Furious, and Fun.
             </p>
           </div>
 
@@ -81,13 +84,13 @@ export default function FeatureHighlights() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="h-full border-base-300 hover:border-primary/40 transition-all group">
+                <Card className="h-full border-2 border-base-500/10 hover:border-primary/40 transition-all group bg-primary/15">
                   <CardContent className="p-8">
-                    <feature.icon className="w-10 h-10 text-primary mb-6 transition-transform group-hover:scale-110" />
+                    <feature.icon className="w-10 h-10 text-primary/90 mb-6 transition-transform group-hover:scale-110" />
                     <h3 className="font-header text-2xl font-semibold mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-base-content/70 leading-relaxed">
+                    <p className="text-base-content/90 leading-relaxed">
                       {feature.description}
                     </p>
                   </CardContent>
@@ -96,7 +99,7 @@ export default function FeatureHighlights() {
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

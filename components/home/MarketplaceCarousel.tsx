@@ -19,7 +19,7 @@ const assets = [
   {
     title: "Fantasy Companion",
     type: "Rules Expansion",
-    price: "Free",
+    price: "$20.99",
     img: "/images/sources/SW_FANTASY_2.webp",
   },
   {
@@ -62,71 +62,84 @@ const assets = [
 
 export default function MarketplaceCarousel() {
   return (
-    <section className="py-24 bg-[url('/images/textures/parchment.png')] mix-blend-normal opacity-85">
-      <div className="max-w-7xl mx-auto px-6 flex-col">
-        <div className="flex justify-between items-end mb-10">
-          <div>
-            <h2 className="text-5xl uppercase font-header font-bold text-base-content">
-              The Bazaar
-            </h2>
-            <p className="text-base-content/90 mt-2">
-              Official and fan-created content for every setting.
-            </p>
+    <>
+      <div className="absolute z-0 bg-background/95 mask-y-from-78% sm:mask-y-from-90% w-full h-full" />
+      <div className="py-20 sm:py-20 bg-background/90 mask-t-from-90%">
+        <div className="max-w-full mx-auto px-1 lg:px-6 flex-col">
+          <div className="flex justify-center items-end mb-10">
+            <div className="mx-12 text-center">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl uppercase font-header font-bold text-base-content">
+                Marketplace
+              </h2>
+              <p className="text-base-content/90 mt-2 text-xs md:text-lg">
+                Official and fan-created content. For every setting.
+              </p>
+            </div>
+          </div>
+          <div className="lg:mx-24 sm:mx-28 mx-20">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-mr-4">
+                {assets.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="px-4 basis-full md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+                  >
+                    <Card
+                      className="overflow-hidden border-2 bg-[url('/images/textures/builder_bg.png')] bg-top-left 
+                            border-base-content/20 hover:border-base-content/50 transition-all group cursor-pointer 
+                            mask-y-from-98% mask-x-from-99% lg:h-115"
+                    >
+                      <div className="h-48 sm:h-64 lg:h-70 relative">
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-xs"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-base-900/80 to-transparent" />
+                      </div>
+                      <CardContent className="px-3 sm:px-4 flex flex-col justify-between items-start max-h-1/3">
+                        <div>
+                          <h3 className="font-semibold text-lg text-base-content">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-base-content/75">
+                            {item.type}
+                          </p>
+                        </div>
+                        <div className="flex w-full justify-end">
+                          <span
+                            className={`badge px-2.5 ${
+                              item.price === "Free"
+                                ? "badge-success"
+                                : "badge-primary"
+                            }`}
+                          >
+                            {item.price}
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious
+                className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 
+                border-base-300/40 size-12 -left-18"
+              />
+              <CarouselNext
+                className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 
+                border-base-300/40 size-12 -right-18"
+              />
+            </Carousel>
           </div>
         </div>
-        <div className="2xl:mx-0 sm:mx-24 mx-8">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {assets.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-4 basis-full md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
-                >
-                  <Card className="overflow-hidden border-2 border-base-300/20 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal hover:border-primary transition-all group cursor-pointer">
-                    <div className="h-52 relative">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-linear-to-t from-base-900/80 to-transparent" />
-                    </div>
-                    <CardContent className="p-4 flex flex-col justify-between items-start">
-                      <div>
-                        <h3 className="font-semibold text-lg text-base-content">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-base-content/60">
-                          {item.type}
-                        </p>
-                      </div>
-                      <div className="flex w-full justify-end">
-                        <span
-                          className={`badge px-2 ${
-                            item.price === "Free"
-                              ? "badge-success"
-                              : "badge-primary"
-                          }`}
-                        >
-                          {item.price}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 border-success/30" />
-            <CarouselNext className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 border-success/30" />
-          </Carousel>
-        </div>
       </div>
-    </section>
+    </>
   );
 }

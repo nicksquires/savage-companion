@@ -23,7 +23,11 @@ export default function HeroSection() {
   return (
     <section className="relative h-185 flex pt-40 justify-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/images/textures/builder_bg.png')] mix-blend-color-dodge bg-cover bg-center" />
+      <div className="absolute z-0 inset-0 bg-primary/15 opacity-30" />
+      <div
+        className="absolute z-0 inset-0 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal bg-top-left
+      mask-t-from-94% mask-b-from-80% opacity-40"
+      />
 
       {/* Gentle ember / dust particles */}
       {init && (
@@ -51,9 +55,6 @@ export default function HeroSection() {
         />
       )}
 
-      {/* Dark gradient overlay for readability */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-base-300/70 via-base-300/90 to-base-300" /> */}
-
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <motion.div
@@ -61,17 +62,19 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {/* <span className="text-primary/75 font-semibold tracking-widest uppercase text-sm mb-4 block drop-shadow-accent">
-            Fast! Furious! Fun!
-          </span> */}
           <span className="text-primary font-semibold tracking-widest uppercase text-sm mb-4 block drop-shadow-[0_0_8px_rgba(245,158,11,0.7)]">
             Fast! Furious! Fun!
           </span>
+          <h1
+            className="font-header text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text mask-type-alpha bg-[url('/images/textures/glass.png')] bg-center tracking-tighter mb-6
+            drop-shadow-primary/10 drop-shadow-lg"
+          >
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-base-content/75 to-base-content/75">
+              Build Worlds.
+            </span>
 
-          <h1 className="font-header text-6xl md:text-7xl font-black tracking-tighter text-base-content mb-6">
-            Build Worlds.
             <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent/90">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary/75 to-info/75">
               Roll Bold.
             </span>
           </h1>

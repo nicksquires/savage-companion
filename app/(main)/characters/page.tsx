@@ -19,9 +19,5 @@ export default async function CharactersPage() {
     },
   });
 
-  return (
-    <div className="max-w-6xl mx-auto p-8">
-      <CharacterListClient characters={characters} />
-    </div>
-  );
+  return <CharacterListClient characters={characters} />;
 }

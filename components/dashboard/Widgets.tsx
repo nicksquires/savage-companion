@@ -2,14 +2,14 @@
 
 export default function Widgets() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-10 sm:mx-40 lg:mx-50 opacity-90">
       {/* Widget 1: Adventure Pulse */}
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body bg-base-300">
+      <div className="card bg-base-100 border-4 border-primary rounded-4xl mask-x-from-98% mask-y-from-98%">
+        <div className="card-body rounded-4xl">
           <h3 className="font-header text-lg flex items-center gap-2">
             <span className="text-success">●</span> Adventure Pulse
           </h3>
-          <div className="stats stats-vertical shadow-inner bg-base-100 rounded-2xl p-4">
+          <div className="stats stats-vertical shadow-inner bg-base-700/30 rounded-4xl p-4">
             <div className="stat">
               <div className="stat-title text-xs">Last Session</div>
               <div className="stat-value text-3xl">3 days ago</div>
@@ -23,8 +23,8 @@ export default function Widgets() {
       </div>
 
       {/* Widget 2: Wild Die Quick Roll */}
-      <div className="card bg-base-100 shadow-xl overflow-hidden">
-        <div className="card-body bg-base-300">
+      <div className="card bg-base-100 border-4 border-primary rounded-4xl mask-x-from-98% mask-y-from-98% overflow-hidden">
+        <div className="card-body bg-base-300 rounded-4xl ">
           <h3 className="font-header text-lg">Wild Die Quick Roll</h3>
           <button
             onClick={(e) => {
@@ -48,16 +48,16 @@ export default function Widgets() {
       </div>
 
       {/* Widget 3: Spotlight Teaser */}
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body bg-base-300">
+      <div className="card bg-base-100 border-4 border-primary rounded-4xl mask-x-from-98% mask-y-from-98%">
+        <div className="card-body bg-base-300 rounded-4xl ">
           <h3 className="font-header text-lg">Content Spotlight</h3>
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x">
-            <div className="snap-center shrink-0 w-40 bg-base-100 rounded-2xl p-4 text-center">
+            <div className="snap-center shrink-0 w-40 bg-base-100 rounded-4xl p-4 text-center">
               <div className="text-4xl mb-2">🗡️</div>
               <p className="font-medium text-sm">Edge of the Week</p>
               <p className="text-xs text-primary">Alertness</p>
             </div>
-            <div className="snap-center shrink-0 w-40 bg-base-100 rounded-2xl p-4 text-center">
+            <div className="snap-center shrink-0 w-40 bg-base-100 rounded-4xl p-4 text-center">
               <div className="text-4xl mb-2">🔥</div>
               <p className="font-medium text-sm">Power Spotlight</p>
               <p className="text-xs text-secondary">Blast</p>

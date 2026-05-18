@@ -16,6 +16,7 @@
   /* Dynamic Font Utilities */
   --font-header: var(--theme-font-header);
   --font-body: var(--theme-font-body);
+  --font-header-bold: var(--theme-font-header-bold);
   --font-builder-header: var(--theme-font-builder-header);
   --font-builder-body: var(--theme-font-builder-body);
 
@@ -156,6 +157,7 @@
 ========================================= */
 [data-theme="standard-light"] {
   --theme-font-header: var(--font-poppins);
+  --theme-font-header-bold: var(--font-anton);
   --theme-font-body: var(--font-inter);
   --theme-font-builder-header: var(--font-treacherous);
   --theme-font-builder-body: var(--font-varnyx);
@@ -238,6 +240,7 @@
 }
 [data-theme="standard-dark"] {
   --theme-font-header: var(--font-poppins);
+  --theme-font-header-bold: var(--font-anton);
   --theme-font-body: var(--font-inter);
   --theme-font-builder-header: var(--font-treacherous);
   --theme-font-builder-body: var(--font-varnyx);
@@ -1031,9 +1034,6 @@
 [data-theme="forest-dark"] {
   --theme-font-header: var(--font-amatic);
   --theme-font-body: var(--font-quicksand);
-  --font-scale: 1;
-  --font-letter-spacing: 0em;
-  --font-weight-base: 500;
 
   --color-base-50: #011812;
   --color-base-100: #022c22;

@@ -12,53 +12,65 @@ interface Props {
 
 export default function DashboardBody({ user }: Props) {
   return (
-    <div className="w-full mx-auto bg-base-300/60">
-      <div className="max-w-full mx-auto px-10 md:px-20 py-6 md:py-10 ">
-        {/* Welcome message */}
-        <div className="mb-8">
-          <p className="text-xl text-base-content/70 font-light">
+    <>
+      <div className="w-full mx-auto mask-t-from-97% mask-b-from-94%">
+        <div
+          className="max-w-full mx-auto px-4 sm:px-10 md:px-10 xl:px-20 pt-20 pb-15 text-center
+      bg-[url('/images/textures/darkpaper.png')] mix-blend-exclusion bg-cover"
+        >
+          <p
+            className="text-3xl md:text-4xl lg:text-5xl uppercase tracking-widest text-base-content/80 
+          font-header font-medium border-b-2 border-b-base-content pb-2 px-6 lg:px-2.5 text-center md:text-left"
+          >
+            Dashboard
+          </p>
+          {/* Welcome message */}
+          <div className="my-12 md:my-20 mx-2 text-2xl sm:text-3xl opacity-95">
             Welcome back,{" "}
-            <span className="font-semibold text-primary">
+            <span className="font-semibold text-primary drop-shadow-xs drop-shadow-primary">
               {user.name || "Adventurer"}
             </span>
-          </p>
-        </div>
+          </div>
 
-        {/* Main Options Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <DashboardCard
-            title="Characters"
-            description="Manage your Savage Worlds heroes"
-            icon={characters}
-            href="/characters"
-            color="primary"
-          />
-          <DashboardCard
-            title="Campaigns"
-            description="Your active games & GM tools"
-            icon={campaigns}
-            href="/campaigns"
-            color="secondary"
-          />
-          <DashboardCard
-            title="Compendium"
-            description="Core rules & unlocked content"
-            icon={compendium}
-            href="/compendium"
-            color="accent"
-          />
-          <DashboardCard
-            title="Homebrew"
-            description="Create & share your own content"
-            icon={homebrew}
-            href="/homebrew"
-            color="neutral"
-          />
-        </div>
+          {/* Main Options Grid */}
+          <div
+            className="min-w-80 grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-0 sm:gap-2 lg:gap-6 
+          lg:mx-5 xl:mx-24 2xl:mx-40 mb-24 items-center justify-center"
+          >
+            <DashboardCard
+              title="Characters"
+              description="Manage your heroes"
+              icon={characters}
+              href="/characters"
+              color="primary"
+            />
+            <DashboardCard
+              title="Campaigns"
+              description="Active games and GM tools"
+              icon={campaigns}
+              href="/campaigns"
+              color="secondary"
+            />
+            <DashboardCard
+              title="Compendium"
+              description="Browse rules and unlocked content"
+              icon={compendium}
+              href="/compendium"
+              color="accent"
+            />
+            <DashboardCard
+              title="Homebrew"
+              description="Create and Share custom content"
+              icon={homebrew}
+              href="/homebrew"
+              color="neutral"
+            />
+          </div>
 
-        {/* Wildcard Widgets Section */}
-        <Widgets />
+          {/* Wildcard Widgets Section */}
+          <Widgets />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

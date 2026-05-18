@@ -2,18 +2,31 @@
 
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { Anchor, BowArrow, Rocket } from "lucide-react";
 
 const worlds = [
-  { name: "Savage Worlds Core", accent: "primary" },
-  { name: "Weird West", accent: "secondary" },
-  { name: "Deep Space", accent: "accent" },
+  {
+    name: "Fantasy Companion",
+    accent: "primary",
+    icon: <BowArrow className="w-30 h-30 mb-10 text-primary" />,
+  },
+  {
+    name: "Pirates of the Spanish Main",
+    accent: "info",
+    icon: <Anchor className="w-30 h-30 mb-10 text-info" />,
+  },
+  {
+    name: "Science Fiction Companion",
+    accent: "accent",
+    icon: <Rocket className="w-30 h-30 mb-10 text-accent" />,
+  },
 ];
 
 export default function FeaturedWorlds() {
   return (
-    <section className="py-24 bg-[url('/images/textures/paper_361.png')] bg-cover mix-blend-color-dodge">
-      <div className="max-w-7xl mx-auto px-10 sm:px-6 text-center">
-        <h2 className="text-5xl md:text-6xl font-builder-header tracking-wider text-base-content mb-12 opacity-70">
+    <section className="max-w-screen md:py-22 py-14 mask-t-from-90% bg-base-100/60 mask-b-from-99%">
+      <div className=" mx-auto px-10 sm:px-6 pt-12 text-center">
+        <h2 className="text-6xl md:text-7xl font-builder-header tracking-tighter text-base-content/90 mb-12 opacity-90">
           Wield Any Setting
         </h2>
 
@@ -29,10 +42,13 @@ export default function FeaturedWorlds() {
                 glareEnable
                 glareMaxOpacity={0.25}
                 scale={1.05}
-                className={`w-72 h-96 rounded-3xl border border-${world.accent}/50 bg-[url('/images/textures/parchment.png')] mix-blend-normal opacity-55
-                  flex items-center justify-center p-8 cursor-pointer shadow-xl border-l-8 border-l-white/40`}
+                className={`w-62 sm:w-48 lg:w-72 h-82 sm:h-72 lg:h-96 flex flex-col rounded-3xl border-2 border-${world.accent}/30 
+                  bg-[url('/images/textures/parchment.png')] mix-blend-normal opacity-85 
+                  mask-l-from-67 mask-r-from-98%
+                  items-center justify-center p-8 cursor-pointer shadow-xl border-l-8 border-l-white/40`}
               >
-                <h3 className="text-3xl font-header font-black text-center drop-shadow-sm">
+                {world.icon}
+                <h3 className="text-3xl sm:text-xl lg:text-4xl font-builder-body font-black text-center drop-shadow-sm">
                   {world.name}
                 </h3>
               </Tilt>

@@ -7,14 +7,13 @@ import DailyAdventureHook from "@/components/home/DailyAdventureHook";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-base-100 text-base-content">
+    <main className="min-h-screen bg-background text-base-content">
       <HeroSection />
       <QuickActionPanel />
       <MarketplaceCarousel />
       <FeatureHighlights />
-
       <DailyAdventureHook />
-      <FeaturedWorlds />
+      {/* <FeaturedWorlds /> */}
     </main>
   );
 }

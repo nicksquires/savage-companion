@@ -77,7 +77,7 @@ export default function ConceptTabClient() {
             value={name || ""}
             onChange={(e) => setDraft({ name: e.target.value })}
             onBlur={(e) => syncToServer({ name: e.target.value })}
-            className="input input-bordered w-full bg-base-200"
+            className="input input-bordered w-full bg-base-300"
             placeholder="Sir Reginald the Bold"
           />
         </div>
@@ -88,7 +88,7 @@ export default function ConceptTabClient() {
             value={concept || ""}
             onChange={(e) => setDraft({ concept: e.target.value })}
             onBlur={(e) => syncToServer({ concept: e.target.value })}
-            className="input input-bordered w-full bg-base-200"
+            className="input input-bordered w-full bg-base-300"
             placeholder="A grizzled knight seeking redemption..."
           />
         </div>
@@ -101,7 +101,7 @@ export default function ConceptTabClient() {
             value={biography || ""}
             onChange={(e) => setDraft({ biography: e.target.value })}
             onBlur={(e) => syncToServer({ biography: e.target.value })}
-            className="textarea textarea-bordered w-full h-48 bg-base-200"
+            className="textarea textarea-bordered w-full h-48 bg-base-300"
             placeholder="As an orphan raised by bandits, Reginald knew combat from a young age..."
           />
         </div>
@@ -117,8 +117,31 @@ export default function ConceptTabClient() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Available Sources */}
+          <div className="text-center">
+            <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
+              Available Sources
+            </h3>
+            <div className="space-y-2">
+              {availableSources.length === 0 && (
+                <p className="text-sm text-base-content/50 italic">
+                  Loading sources...
+                </p>
+              )}
+              {availableSources.map((source) => (
+                <button
+                  key={source}
+                  onClick={() => handleAddSource(source)}
+                  disabled={sources.includes(source)}
+                  className="w-full text-left text-sm md:text-md px-4 py-3 rounded-xl bg-base-300 hover:bg-base-300 disabled:opacity-40 transition"
+                >
+                  {source}
+                </button>
+              ))}
+            </div>
+          </div>
           {/* Added Sources */}
-          <div>
+          <div className="text-center">
             <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
               Added to Character
             </h3>
@@ -141,29 +164,6 @@ export default function ConceptTabClient() {
                     Remove
                   </button>
                 </div>
-              ))}
-            </div>
-          </div>
-          {/* Available Sources */}
-          <div>
-            <h3 className="font-medium mb-3 text-sm uppercase tracking-widest">
-              Available Sources
-            </h3>
-            <div className="space-y-2">
-              {availableSources.length === 0 && (
-                <p className="text-sm text-base-content/50 italic">
-                  Loading sources...
-                </p>
-              )}
-              {availableSources.map((source) => (
-                <button
-                  key={source}
-                  onClick={() => handleAddSource(source)}
-                  disabled={sources.includes(source)}
-                  className="w-full text-left text-sm md:text-md px-4 py-3 rounded-xl bg-base-200 hover:bg-base-300 disabled:opacity-40 transition"
-                >
-                  {source}
-                </button>
               ))}
             </div>
           </div>

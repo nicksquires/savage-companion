@@ -19,34 +19,9 @@ import {
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { getRankForAdvance } from "@/lib/character/builder/validation";
+import { toRomanNumeral } from "@/lib/utils/toRomanNumeral";
 
 const TOTAL_NODES = 19;
-
-const toRoman = (num: number) => {
-  const map: Record<string, number> = {
-    M: 1000,
-    CM: 900,
-    D: 500,
-    CD: 400,
-    C: 100,
-    XC: 90,
-    L: 50,
-    XL: 40,
-    X: 10,
-    IX: 9,
-    V: 5,
-    IV: 4,
-    I: 1,
-  };
-  let result = "";
-  for (const key in map) {
-    while (num >= map[key]) {
-      result += key;
-      num -= map[key];
-    }
-  }
-  return result;
-};
 
 function AdvanceTypeIcon({ type }: { type?: string }) {
   if (!type) return null;
@@ -224,7 +199,7 @@ export default function AdvancementBar() {
                           className="relative flex flex-col items-center justify-center snap-center h-full px-2"
                         >
                           <div className="absolute top-2 text-[8px] md:text-[12px] font-serif opacity-80 text-base-content select-none font-bold tracking-widest">
-                            {toRoman(advanceNumber)}
+                            {toRomanNumeral(advanceNumber)}
                           </div>
                           <div className="z-10" data-status={status}>
                             {advanceNumber % 4 === 0 ? (

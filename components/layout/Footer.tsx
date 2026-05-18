@@ -5,7 +5,7 @@ import logo from "@/public/images/SW_LOGO_FP_2018.png";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-navbar text-navbar-content justify-between">
+    <footer className="flex flex-col bg-navbar text-navbar-content justify-between z-1">
       {/* Icon Aside/Header */}
       <div className="footer sm:footer-horizontal py-10 px-2 lg:px-10 items-center sm:justify-between justify-center">
         <aside className="flex flex-col items-center text-center">
