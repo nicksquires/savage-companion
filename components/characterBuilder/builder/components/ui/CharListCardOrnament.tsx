@@ -20,9 +20,9 @@ export const CharListCardOrnament: React.FC<CharListCardOrnamentProps> = ({
   return (
     <>
       <div
-        className="absolute rounded-lg m-10 inset-0 pointer-events-none
+        className="absolute rounded-xs mx-8.25 my-13.5 inset-0 pointer-events-none
       mix-blend-hard-light opacity-10 bg-[url('/images/textures/glass.png')] bg-bottom-right
-      mask-y-from-95% mask-x-from-97% z-0"
+      z-0"
       />
       <div
         className="absolute z-0 inset-0 pointer-events-none
@@ -138,7 +138,7 @@ export const CharListCardOrnament: React.FC<CharListCardOrnamentProps> = ({
           rx="7"
           ry="7"
           stroke="url(#borderparchment)"
-          strokeWidth="4"
+          strokeWidth="2.5"
           opacity="0.09"
         />
 
@@ -176,7 +176,7 @@ export const CharListCardOrnament: React.FC<CharListCardOrnamentProps> = ({
           rx="7"
           ry="7"
           fill="url(#parchment)"
-          opacity="0.83"
+          opacity="0.7"
         />
 
         {/* Top Border Base */}
@@ -215,12 +215,12 @@ export const CharListCardOrnament: React.FC<CharListCardOrnamentProps> = ({
         </g>
 
         {/* Top Center Ornament */}
-        <g transform="translate(400 33)">
+        <g transform="translate(400 32.75)">
           <path
             d="M-356 -1 Q-100 -25 -50 -10 Q0 -29 50 -10 Q100 -25 356 -1"
             fill="url(#borderparchment)"
             stroke="url(#borderparchment)"
-            strokeWidth="6.5"
+            strokeWidth="5.5"
             strokeLinejoin="round"
           />
         </g>

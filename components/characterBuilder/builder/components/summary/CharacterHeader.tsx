@@ -6,85 +6,7 @@ import { User, Footprints, Sword, Shield, Coins } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CharacterDraft } from "@/lib/types/CharacterBuilder";
 import { calculateRank } from "@/lib/character/builder/validation";
-
-/**
- * COMPONENT: OrnateCorner (Structured)
- * Used for top-left and bottom-right to anchor the geometry.
- */
-const OrnateCorner = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 120 120"
-    fill="none"
-    className={cn(
-      "absolute w-28 h-28 pointer-events-none z-30 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]",
-      className,
-    )}
-  >
-    <path
-      d="M2 100V2H100M15 85V15H85M30 70V30H70"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      className="opacity-50"
-    />
-    <circle cx="2" cy="2" r="3" fill="currentColor" />
-    <path
-      d="M10 10L30 30M10 2V10H2M118 2H110V10M2 118V110H10"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-    <path
-      d="M40 10C40 10 50 2 60 2C70 2 80 10 80 10"
-      stroke="currentColor"
-      strokeWidth="1"
-      className="opacity-30"
-    />
-  </svg>
-);
-
-/**
- * COMPONENT: LaurelCorner (Expressive)
- * Used for top-right and bottom-left to introduce organic, elvish/arcane curvature.
- */
-const LaurelCorner = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 120 120"
-    fill="none"
-    className={cn(
-      "absolute w-28 h-28 pointer-events-none z-30 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]",
-      className,
-    )}
-  >
-    <path
-      d="M4 116 Q 4 4 116 4"
-      stroke="currentColor"
-      strokeWidth="2"
-      fill="none"
-      className="opacity-60"
-    />
-    <path
-      d="M15 90 Q 20 80 35 85 Q 25 95 15 90"
-      fill="currentColor"
-      className="opacity-80"
-    />
-    <path
-      d="M30 60 Q 40 50 55 60 Q 45 70 30 60"
-      fill="currentColor"
-      className="opacity-80"
-    />
-    <path
-      d="M60 30 Q 70 20 85 35 Q 75 45 60 30"
-      fill="currentColor"
-      className="opacity-80"
-    />
-    <path
-      d="M90 15 Q 95 25 85 35 Q 80 20 90 15"
-      fill="currentColor"
-      className="opacity-80"
-    />
-    <circle cx="4" cy="4" r="3" fill="currentColor" />
-  </svg>
-);
+import { LaurelCorner, OrnateCorner } from "../ui/Corners";
 
 /**
  * COMPONENT: AmbientGlowLayer
@@ -194,12 +116,11 @@ const StatRelicTab = ({
     initial={{ y: -30, opacity: 0, rotateZ: -2 }}
     animate={{ y: 0, opacity: 1, rotateZ: 0 }}
     transition={{
-      delay: 0.5 + delay,
       type: "spring",
       stiffness: 150,
       damping: 12,
     }}
-    whileHover={{ y: 2, transition: { duration: 0.2 } }}
+    whileHover={{ y: -1, transition: { duration: 0.2 } }}
     className="relative flex flex-col items-center group cursor-default"
   >
     {/* Thick Metallic Hangers */}
@@ -257,13 +178,19 @@ export const CharacterHeader = ({ draft, raceName, derivedStats }: Props) => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      className="relative w-full max-w-6xl mx-auto"
+      className="relative w-full max-w-6xl mx-auto mask-x-from-277 mask-t-from-121"
     >
       <AmbientGlowLayer />
 
       {/* 1. MAIN CARD FRAME */}
       {/* Darkened the base gradient to allow foreground highlights to pop out heavily */}
-      <div className="relative p-1.5 rounded-sm rounded-tl-[5.85rem] rounded-br-[5.85rem] bg-linear-to-br from-primary/40 via-base-300 to-base-100/40 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-visible">
+      <div
+        className="relative p-1.5 rounded-sm rounded-tl-[5.85rem] rounded-br-[5.85rem] 
+                  bg-linear-to-br from-primary/40 via-base-300 to-base-100/40 
+                  shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-visible
+                  mask-b-from-99%
+      "
+      >
         {/* The Parchment Panel with extreme inset shadows */}
         <div className="relative rounded-sm rounded-tl-[5.85rem] rounded-br-[5.85rem] overflow-hidden min-h-1/6 flex flex-col sm:flex-row items-center md:items-start gap-12 p-10 shadow-[inset_0_4px_20px_rgba(0,0,0,0.5)]">
           <GlimmerLayer />

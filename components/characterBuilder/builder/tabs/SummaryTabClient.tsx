@@ -112,8 +112,11 @@ function TraitGroup({
   const Icon = AttrIcons[attribute.toLowerCase()] || Book;
   return (
     <div className="flex flex-col gap-3 relative pb-4">
-      <div className="absolute left-6 top-8 bottom-0 w-px bg-base-300/50" />
-      <div className="flex justify-between items-center bg-base-200/50 p-3 rounded-lg border-l-4 border-primary z-10 shadow-sm">
+      <div className="absolute left-6 top-8 bottom-0 w-px bg-primary/20" />
+      <div
+        className="flex justify-between items-center bg-base-300/55 p-3 rounded-lg 
+      border-l-4 border-primary z-10 shadow-sm"
+      >
         <div className="flex items-center gap-3">
           <div className="p-2 bg-primary/20 rounded-md text-primary drop-shadow-[0_0_8px_var(--color-primary)]">
             <Icon size={20} />

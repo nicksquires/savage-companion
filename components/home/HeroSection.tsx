@@ -94,7 +94,7 @@ export default function HeroSection() {
             <button
               className="btn border-none text-primary-content font-bold text-lg h-14 px-8 transition-all w-70
                 bg-primary/85 shadow-[0_0_20px_rgba(217,119,6,0.4)] 
-                hover:bg-primary hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]"
+                hover:bg-primary hover:shadow-primary"
             >
               <UserPlus className="mr-2 h-5 w-5 fill-current" />
               Create a Character

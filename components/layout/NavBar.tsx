@@ -62,29 +62,36 @@ const NavBar = () => {
         className="navbar-center hidden lg:flex gap-8 font-header
       text-lg"
       >
-        {/* Campaigns Dropdown */}
+        {/* Play Dropdown */}
         <div className="dropdown dropdown-hover">
           <div
             tabIndex={0}
             role="button"
-            className="m-1 flex flex-row items-center gap-1"
+            className="m-1 flex flex-row items-center gap-1 pointer-events-none"
           >
-            Campaigns
-            <ChevronDown size={15} />
+            Play
+            <ChevronDown className="md:w-5 md:h-5" />
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content menu bg-navbar 
             rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
-            <li>
-              <Link href="#">New Campaign</Link>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Getting Started</Link>
+            </li>
+
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Campaigns</Link>
             </li>
             <li>
-              <Link href="#">Active Campaigns</Link>
+              <Link href="/characters">Characters</Link>
             </li>
-            <li>
-              <Link href="#">Encounters</Link>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="/reference/edges">Game Rules</Link>
+            </li>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Guilds</Link>
             </li>
           </ul>
         </div>
@@ -94,10 +101,10 @@ const NavBar = () => {
           <div
             tabIndex={0}
             role="button"
-            className="m-1 flex flex-row items-center gap-1"
+            className="m-1 flex flex-row items-center gap-1 pointer-events-none"
           >
             Tools
-            <ChevronDown size={15} />
+            <ChevronDown className="md:w-5 md:h-5" />
           </div>
           <ul
             tabIndex={0}
@@ -105,26 +112,32 @@ const NavBar = () => {
             rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
-              <Link href="/characters">Character Builder</Link>
+              <Link href="/characters">Character Creator</Link>
             </li>
-            <li>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Homebrew Portal</Link>
+            </li>
+            <li className="opacity-50 pointer-events-none">
               <Link href="#">Combat Assistant</Link>
             </li>
-            <li>
-              <Link href="#">Beast Builder</Link>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Encounters</Link>
+            </li>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Library</Link>
             </li>
           </ul>
         </div>
 
-        {/* Reference Dropdown */}
+        {/* Shop Dropdown */}
         <div className="dropdown dropdown-hover">
           <div
             tabIndex={0}
             role="button"
-            className="m-1 flex flex-row items-center gap-1"
+            className="m-1 flex flex-row items-center gap-1 pointer-events-none"
           >
-            Reference
-            <ChevronDown size={15} />
+            Shop
+            <ChevronDown className="md:w-5 md:h-5" />
           </div>
           <ul
             tabIndex={0}
@@ -132,22 +145,46 @@ const NavBar = () => {
             rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
             <li>
-              <Link href="#">Bestiary</Link>
+              <Link href="https://shop.peginc.com/">PEGinc Shop</Link>
+            </li>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Compendiums</Link>
+            </li>
+            <li className="opacity-50 pointer-events-none">
+              <Link href="#">Game Resources</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* About Dropdown */}
+        <div className="dropdown dropdown-hover">
+          <div
+            tabIndex={0}
+            role="button"
+            className="m-1 flex flex-row items-center gap-1 pointer-events-none"
+          >
+            About
+            <ChevronDown className="md:w-5 md:h-5" />
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-navbar 
+            rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
+          >
+            <li>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="#">Races</Link>
+              <Link href="/legal/credits">Credits</Link>
             </li>
             <li>
-              <Link href="#">Hindrances</Link>
+              <Link href="/legal/licenses">Licenses</Link>
             </li>
             <li>
-              <Link href="/reference/edges">Edges</Link>
+              <Link href="/legal/privacy">Privacy</Link>
             </li>
             <li>
-              <Link href="#">Gear</Link>
-            </li>
-            <li>
-              <Link href="#">Powers</Link>
+              <Link href="/legal/terms">Terms</Link>
             </li>
           </ul>
         </div>
@@ -180,9 +217,9 @@ const NavBar = () => {
            my-0 py-0 mx-0 w-0"
           />
           {/* 3. Light/Dark Toggle */}
-          <div className="flex items-center justify-center">
+          {/* <div className="flex items-center justify-center">
             <ModeToggle />
-          </div>
+          </div> */}
 
           <div
             className="divider divider-horizontal border-l border-navbar-content/15
@@ -222,7 +259,7 @@ const NavBar = () => {
                     {session.user?.name || session.user?.email?.split("@")[0]}
                   </span>
                   <span className="sm:inline hidden">
-                    <ChevronDown size={15} className="sm:opacity-70" />
+                    <ChevronDown size={15} className="sm:opacity-50" />
                   </span>
                 </div>
               </div>
@@ -270,7 +307,7 @@ const NavBar = () => {
 
           {/* Auth fallback when unauthenticated */}
           {status === "loading" && (
-            <span className="loading loading-spinner loading-md opacity-70" />
+            <span className="loading loading-spinner loading-md opacity-50" />
           )}
 
           {status === "unauthenticated" && (

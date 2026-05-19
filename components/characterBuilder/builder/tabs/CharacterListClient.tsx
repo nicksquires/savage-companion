@@ -159,12 +159,12 @@ export default function CharacterListClient({
     <div className="min-h-full bg-base-100 text-base-content relative overflow-hidden pb-24">
       {/* Ambient Background Textures */}
       <div
-        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50 
+        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-25 
         bg-[url('/images/textures/glass.png')] bg-cover bg-center z-0"
       />
 
       <div
-        className="pointer-events-none absolute inset-0 mix-blend-screen opacity-20 
+        className="pointer-events-none absolute inset-0 mix-blend-screen opacity-15 
         bg-[url('/images/textures/darkpaper.png')] bg-cover z-0"
       />
 
@@ -285,8 +285,8 @@ function CharacterCard({
       tiltMaxAngleY={4}
       scale={1.02}
       transitionSpeed={1500}
-      className="h-full drop-shadow-2xl drop-shadow-primary/40
-      mask-y-from-96% mask-x-from-95%"
+      className="h-full drop-shadow-lg drop-shadow-primary/40
+      mask-y-from-97% mask-x-from-95%"
     >
       {/* Top Border Roman Numeral */}
       <div
@@ -336,7 +336,7 @@ function CharacterCard({
         {/* Main Content */}
         <div
           className="relative flex flex-col h-full px-10 sm:px-18 md:px-24 lg:px-14 xl:px-20 2xl:px-12 py-24 sm:py-24
-         drop-shadow-md drop-shadow-base-50"
+         drop-shadow-lg drop-shadow-black/80"
         >
           {/* Header */}
           <div className="mb-8">

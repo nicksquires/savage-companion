@@ -18,6 +18,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { deleteCharacter } from "@/app/(main)/characters/[id]/builder/api/draft/characterActions";
 import DeleteModal from "../../modals/DeleteModal";
 import AdvancementBar from "./AdvancementBar";
+import { LaurelCorner, OrnateCorner } from "../ui/Corners";
 
 export default function BuilderShell({
   children,
@@ -135,13 +136,13 @@ export default function BuilderShell({
     <div className="min-h-full bg-base-100 text-base-content relative overflow-hidden pb-24">
       {/* Ambient Background Textures */}
       <div
-        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-50 
-        bg-[url('/images/textures/glass.png')] bg-top bg-cover z-0"
+        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-10 
+        bg-[url('/images/textures/glass.png')] bg-fixed bg-cover bg-top-left z-0"
       />
 
       <div
         className="pointer-events-none absolute inset-0 mix-blend-screen opacity-20 
-        bg-[url('/images/textures/darkpaper.png')] bg-cover z-0"
+        bg-[url('/images/textures/darkpaper.png')] bg-fixed bg-cover z-0"
       />
       {/* Sticky Tabs */}
       <Tabs
@@ -152,7 +153,7 @@ export default function BuilderShell({
         className="sticky top-0 z-35 w-full"
       >
         <TabsList
-          className={`grid w-full grid-cols-8 bg-base-500 rounded-none pb-0`}
+          className={`grid w-full grid-cols-8 bg-base-400 rounded-none pb-10`}
         >
           {updatedTabs.map((tab) => (
             <TabsTrigger
@@ -169,12 +170,19 @@ export default function BuilderShell({
           ))}
         </TabsList>
       </Tabs>
+
       <AdvancementBar />
+
       {/* Header Card */}
       <div
         className={`max-w-4xl mx-auto mt-4 md:mt-8 px-4 md:px-6 ${currentTab === "summary" ? "hidden" : ""}`}
       >
-        <div className="card bg-base-100 shadow-xl border border-base-300 flex flex-row items-start md:items-center gap-4 md:gap-6 p-4 md:p-6">
+        <div className="card bg-base-300/50 shadow-xl border-2 border-base-300 flex flex-row items-start md:items-center gap-4 md:gap-6 p-4 md:p-6">
+          <OrnateCorner className="top-0 left-0 text-primary/60 w-10 h-10" />
+          <OrnateCorner className="top-0 right-0 rotate-90 text-primary w-10 h-10" />
+          <OrnateCorner className="bottom-0 right-0 -rotate-180 text-primary/60 w-10 h-10" />
+          <OrnateCorner className="bottom-0 left-0 rotate-270 text-primary w-10 h-10" />
+
           {/* Avatar */}
           <div className="relative w-16 h-16 md:w-24 md:h-24 shrink-0">
             <div className="w-full h-full rounded-2xl border-2 border-dashed border-primary/60 bg-base-200 flex items-center justify-center overflow-hidden">

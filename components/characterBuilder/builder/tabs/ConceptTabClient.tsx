@@ -70,7 +70,7 @@ export default function ConceptTabClient() {
 
       <div className="space-y-8">
         <div>
-          <label className="block text-sm font-medium mb-2">
+          <label className="block text-sm sm:text-lg font-medium mb-2">
             Character Name
           </label>
           <input
@@ -83,7 +83,9 @@ export default function ConceptTabClient() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Concept</label>
+          <label className="block text-sm sm:text-lg font-medium mb-2">
+            Concept
+          </label>
           <input
             value={concept || ""}
             onChange={(e) => setDraft({ concept: e.target.value })}
@@ -94,8 +96,8 @@ export default function ConceptTabClient() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">
-            Biography / Backstory
+          <label className="block text-sm sm:text-lg font-medium mb-2">
+            Biography
           </label>
           <textarea
             value={biography || ""}
