@@ -153,7 +153,7 @@ export default function BuilderShell({
         className="sticky top-0 z-35 w-full"
       >
         <TabsList
-          className={`grid w-full grid-cols-8 bg-base-400 rounded-none pb-10`}
+          className={`grid w-full grid-cols-8 bg-base-400 rounded-none pb-0`}
         >
           {updatedTabs.map((tab) => (
             <TabsTrigger
