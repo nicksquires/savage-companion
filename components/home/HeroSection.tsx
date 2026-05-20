@@ -93,17 +93,19 @@ export default function HeroSection() {
           <Link href="/characters">
             <button
               className="btn border-none text-primary-content font-bold text-lg h-14 px-8 transition-all w-70
-                bg-primary/85 shadow-[0_0_20px_rgba(217,119,6,0.4)] 
-                hover:bg-primary hover:shadow-primary"
+                bg-primary/85 drop-shadow-md drop-shadow-primary/30 
+                hover:bg-primary hover:drop-shadow-primary/80"
             >
               <UserPlus className="mr-2 h-5 w-5 fill-current" />
               Create a Character
             </button>
           </Link>
 
-          <button className="btn btn-outline border-base-700 text-base-700/75 hover:bg-base-800 hover:text-primary hover:border-base-600 h-14 px-8 font-semibold w-70">
-            <BookOpen className="mr-2 h-5 w-5" /> Learn to Play
-          </button>
+          <Link href="/rules/getting-started">
+            <button className="btn btn-outline border-base-700 text-base-700/75 hover:bg-base-800 hover:text-primary hover:border-base-600 h-14 px-8 font-semibold w-70">
+              <BookOpen className="mr-2 h-5 w-5" /> Learn to Play
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>

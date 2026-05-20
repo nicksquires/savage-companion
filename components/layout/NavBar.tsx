@@ -29,14 +29,14 @@ const NavBar = () => {
           <Image
             src={logo2}
             alt="Savage Worlds Fan Product logo"
-            className="w-12 sm:w-14 drop-shadow-primary/50 drop-shadow-sm opacity-95"
+            className="w-11 sm:w-12 drop-shadow-primary/50 drop-shadow-sm opacity-95"
             priority
           />
 
           <Image
             src={logotext}
             alt="Savage Worlds Fan Product logo"
-            className="w-32 ml-1 drop-shadow-primary/40 drop-shadow-sm opacity-95"
+            className="w-27 ml-1 drop-shadow-primary/40 drop-shadow-sm opacity-95"
             priority
           />
 
@@ -77,8 +77,8 @@ const NavBar = () => {
             className="dropdown-content menu bg-navbar 
             rounded-box z-1 w-52 p-2 shadow border border-navbar-content/15"
           >
-            <li className="opacity-50 pointer-events-none">
-              <Link href="#">Getting Started</Link>
+            <li>
+              <Link href="/rules/getting-started">Getting Started</Link>
             </li>
 
             <li className="opacity-50 pointer-events-none">
@@ -184,7 +184,7 @@ const NavBar = () => {
               <Link href="/legal/privacy">Privacy</Link>
             </li>
             <li>
-              <Link href="/legal/terms">Terms</Link>
+              <Link href="/legal/terms">Terms of Use</Link>
             </li>
           </ul>
         </div>
@@ -197,7 +197,6 @@ const NavBar = () => {
       >
         {/* Main action icons — 4 slots, evenly spaced */}
         <div className="flex items-center justify-end flex-1 gap-1 sm:gap-2 md:gap-4 lg:gap-6 min-w-0">
-          {/* 1. Burger – hidden on lg+ */}
           <div className="lg:hidden items-center justify-center">
             <BurgerDrawer />
           </div>
@@ -206,18 +205,15 @@ const NavBar = () => {
             className="lg:hidden divider divider-horizontal border-l border-navbar-content/15
            m-0 py-0 px-0 w-0"
           />
-
-          {/* 2. Theme Family Selector */}
           <div className="flex items-center justify-center">
             <ThemeSwitcher />
           </div>
 
-          <div
+          {/* <div
             className="divider divider-horizontal border-l border-navbar-content/15
            my-0 py-0 mx-0 w-0"
           />
-          {/* 3. Light/Dark Toggle */}
-          {/* <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <ModeToggle />
           </div> */}
 

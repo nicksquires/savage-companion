@@ -45,7 +45,7 @@ const navSections = [
       { name: "Credits", href: "/legal/credits", isDisabled: false },
       { name: "Licenses", href: "/legal/licenses", isDisabled: false },
       { name: "Privacy", href: "/legal/privacy", isDisabled: false },
-      { name: "Terms", href: "/legal/terms", isDisabled: false },
+      { name: "Terms of Use", href: "/legal/terms", isDisabled: false },
     ],
   },
 ];
