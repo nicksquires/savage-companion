@@ -5,9 +5,7 @@ import Tilt from "react-parallax-tilt";
 import {
   Dices,
   Star,
-  Swords,
   Zap,
-  BookOpen,
   Crown,
   Crosshair,
   Flame,
@@ -34,6 +32,7 @@ import {
   D6,
   D8,
 } from "@/components/characterBuilder/builder/components/ui/svg/DiceNumSVG";
+import logo2 from "@/public/images/svglogo_white_logo_only.png";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -58,17 +57,20 @@ export default function GettingStartedClient() {
 
       {/* --- HERO SECTION --- */}
       <section className="relative w-full py-16 px-6 flex flex-col items-center justify-center text-center border-b border-primary/20 z-10">
-        <div className="absolute inset-0 bg-[url('/images/textures/builder_bg.png')] opacity-20 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/images/textures/builder_bg.png')] opacity-20 mix-blend-overlay bg-cover pointer-events-none" />
         <div className="absolute inset-0 bg-linear-to-b from-base-100/10 via-base-100/50 to-base-100/70" />
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="relative z-10 max-w-6xl mx-auto space-y-6"
+          className="flex flex-col relative z-10 max-w-full mx-auto justify-center items-center"
         >
-          <motion.div variants={fadeUp} className="flex justify-center mb-6">
-            <div className="relative w-30 inline-block">
+          <motion.div
+            variants={fadeUp}
+            className="flex justify-center mt-10 mb-6"
+          >
+            <div className="relative w-30 md:w-50 inline-block">
               <Image
                 src={WildcardIcon}
                 alt="Wildcard Icon"
@@ -87,41 +89,43 @@ export default function GettingStartedClient() {
           </motion.div>
           <motion.h1
             variants={fadeUp}
-            className="font-header py-2 text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-secondary to-base-content drop-shadow-sm"
+            className="font-header py-2 sm:pb-16 sm:pt-2 text-4xl sm:text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-linear-to-br from-primary via-secondary to-base-content drop-shadow-sm"
           >
             Learn to Play <br />
             Savage Worlds
           </motion.h1>
           <motion.h2
             variants={fadeUp}
-            className="font-header text-2xl md:text-3xl py-8 text-base-content/80 uppercase tracking-[0.2em] font-bold"
+            className="font-header text-3xl md:text-4xl w-full md:w-4/5 2xl:w-2/3 pt-8 pb-4 text-base-content/80 uppercase 
+            tracking-[0.2em] font-bold border-b-base-content/80 border-b"
           >
             NEW PLAYER GUIDE
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="text-base text-md md:text-lg text-base-content/60 max-w-5xl mx-auto leading-relaxed mt-6"
+            className="text-sm sm:text-md lg:text-lg text-base-content/60 w-full px-3 sm:px-8 lg:px-20 xl:px-40 2xl:px-90 leading-relaxed mt-6 sm:mt-8"
           >
-            In this fast &amp; furious tabletop RPG system, developed by{" "}
+            Savage Worlds is a fast &amp; furious tabletop RPG ruleset developed
+            by{" "}
             <a href="https://peginc.com/" className="link-primary">
               Pinnacle Entertainment Group
             </a>
-            , you take on the role of a hero attempting to complete objectives
-            and overcome obstacles set by the Game Master (GM). Your adventure
-            can last one night - or maybe it lasts five years. You narrate your
-            character's actions, and when the outcome is uncertain, you roll the
-            dice to see if you succeed.
+            . Take on the role of a hero, completing objectives and overcoming
+            obstacles set by the Game Master (
+            <strong className="uppercase">GM</strong>). Narrate your character's
+            actions, and when the outcome is uncertain, you roll the dice to see
+            if you succeed.
           </motion.p>
 
           <motion.p
             variants={fadeUp}
-            className="text-xl md:text-2xl text-base-content/75 max-w-5xl mx-auto leading-relaxed mt-14"
+            className="text-md sm:text-lg lg:text-xl text-base-content/75 px-3 sm:px-8 lg:px-20 xl:px-40 2xl:px-90 leading-relaxed mt-6 sm:mt-8"
           >
             Whether you are exploring haunted ruins, battling across irradiated
             wastelands, or slugging it out with supervillains in the skies
             above, you are stepping into a game designed for explosive action
-            and epic storytelling.
+            and epic storytelling!
           </motion.p>
         </motion.div>
       </section>
@@ -146,21 +150,27 @@ export default function GettingStartedClient() {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <motion.div variants={fadeUp} className="space-y-6 text-center">
-              <p className="text-md md:text-lg leading-relaxed text-base-content/80 text-left">
+            <motion.div variants={fadeUp} className="text-center">
+              <motion.p
+                variants={fadeUp}
+                className="text-sm sm:text-md md:text-lg leading-relaxed text-base-content/80 text-left"
+              >
                 In Savage Worlds, your hero's capabilities are measured by a
                 ladder of traditional gaming dice:
-              </p>
-              <div className="flex flex-row leading-relaxed text-base-content/80 text-center mx-3">
+              </motion.p>
+              <div className="flex flex-row leading-relaxed text-base-content/80 text-center my-0.5 sm:my-4 mx-10 sm:mx-2 justify-center">
                 <D4 size={100} color="var(--color-primary)" />
                 <D6 size={100} color="var(--color-primary)" />
                 <D8 size={100} color="var(--color-primary)" />
                 <D10 size={100} color="var(--color-primary)" />
                 <D12 size={100} color="var(--color-primary)" />
               </div>
-              <p className="text-md md:text-lg leading-relaxed text-base-content/80 text-left">
-                The larger the die, the better your chances are! Whenever your
-                hero attempts something important, you make a{" "}
+              <motion.p
+                variants={fadeUp}
+                className="text-sm sm:text-md md:text-lg leading-relaxed text-base-content/80 text-left"
+              >
+                The larger the die, the better your chances of success. Whenever
+                your hero attempts something important, you make a{" "}
                 <strong className="uppercase">Trait Roll</strong>. Your hero may
                 be leaping a chasm, so they roll with their{" "}
                 <strong className="uppercase">ATHLETICS</strong> Skill die; or
@@ -170,35 +180,48 @@ export default function GettingStartedClient() {
                 <strong className="uppercase">SPIRIT</strong> attribute of the
                 target (this is called a{" "}
                 <strong className="uppecase">TEST</strong>).
-              </p>
+              </motion.p>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-6">
               <div className="bg-base-200/40 border border-base-300 rounded-3xl p-6 shadow-inner relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/textures/parchment.png')] opacity-15 mix-blend-overlay" />
-                <h3 className="font-header text-2xl text-accent mb-4">
+                <motion.h3
+                  variants={fadeUp}
+                  className="font-header text-xl sm:text-2xl text-accent mb-4"
+                >
                   Wild Cards &amp; the Wild Die
-                </h3>
-                <p className="text-base-content/80 leading-relaxed mb-2">
+                </motion.h3>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed mb-2"
+                >
                   Because you are playing a{" "}
                   <strong className="uppercase">player</strong> character, you
                   are what is called a{" "}
                   <strong className="uppercase">Wild Card</strong> - a hero
                   destined for greatness!
-                </p>
-                <p className="text-base-content/80 leading-relaxed mb-4">
+                </motion.p>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed mb-4"
+                >
                   Whenever you make a Trait Roll, you don't just roll your
                   standard ability die. You also roll a{" "}
-                  <strong className="uppercase">Wild Die</strong> (a standard
-                  D6) at the exact same time.
-                </p>
+                  <strong className="uppercase">Wild Die</strong> (a standard{" "}
+                  <strong className="uppercase">D6</strong>) at the exact same
+                  time.
+                </motion.p>
                 <div className="bg-base-300/50 p-4 rounded-xl border border-base-content/10 flex items-start gap-3">
                   <Zap className="w-5 h-5 text-warning shrink-0 mt-0.5 fill-warning" />
-                  <p className="text-sm text-base-content/70">
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm text-base-content/70"
+                  >
                     <strong className="uppercase">Keep the Highest:</strong> You
                     don't add them together. You simply compare both dice and
                     keep the highest result.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
             </motion.div>
@@ -212,15 +235,21 @@ export default function GettingStartedClient() {
             <Card className="border-l-4 border-l-primary bg-base-200/50 backdrop-blur-sm relative overflow-hidden group">
               <div className="absolute inset-0 bg-[url('/images/textures/glass.png')] opacity-10 mix-blend-overlay group-hover:opacity-20 transition-opacity" />
               <CardContent className="p-6 relative z-10 space-y-2">
-                <Crosshair className="absolute -top-6 -left-4 w-60 h-60 z-0 text-primary opacity-10" />
-                <h3 className="font-header text-2xl font-semibold text-primary flex items-center gap-2">
+                <Crosshair className="absolute -top-6 -left-4 h-40 w-40 sm:w-60 sm:h-60 z-0 text-primary opacity-10" />
+                <motion.h3
+                  variants={fadeUp}
+                  className="font-header text-xl sm:text-2xl font-semibold text-primary flex items-center gap-2"
+                >
                   Golden Die Rule: Success on a 4
-                </h3>
-                <p className="text-base-content/80 text-left px-2 text-sm">
+                </motion.h3>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/80 text-left px-2"
+                >
                   To succeed at almost any standard task, you simply need to
                   roll a <strong className="text-primary">4 or higher</strong>{" "}
                   on your die.
-                </p>
+                </motion.p>
               </CardContent>
             </Card>
 
@@ -239,16 +268,23 @@ export default function GettingStartedClient() {
                   <Dices className="w-10 h-10 text-warning relative z-10" />
                 </motion.div>
                 <div>
-                  <h3 className="font-header text-2xl text-warning mb-2">
+                  <motion.h3
+                    variants={fadeUp}
+                    className="font-header text-xl sm:text-2xl text-warning mb-2"
+                  >
                     Acing: The Exploding Dice
-                  </h3>
-                  <p className="text-base-content/80 text-sm leading-relaxed">
+                  </motion.h3>
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed"
+                  >
                     If you roll the maximum possible number on any die (like a 6
-                    on a D6), the die "explodes." You roll that die again and
-                    add the new value to your total! If it maxes out again, keep
-                    rolling and adding. Even a humble D4 can achieve legendary
-                    feats.
-                  </p>
+                    on a <strong className="uppercase">D6</strong>), the die
+                    "explodes." You roll that die again and add the new value to
+                    your total! If it maxes out again, keep rolling and adding.
+                    Even a humble <strong className="uppercase">D4</strong> can
+                    achieve legendary feats.
+                  </motion.p>
                 </div>
               </CardContent>
             </Card>
@@ -273,16 +309,25 @@ export default function GettingStartedClient() {
           </motion.div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <motion.div variants={fadeUp} className="lg:col-span-2 space-y-6">
-              <p className="text-md md:text-lg leading-relaxed text-base-content/80">
+              <motion.p
+                variants={fadeUp}
+                className="text-sm sm:text-md md:text-lg leading-relaxed text-base-content/80"
+              >
                 Great characters are far more than just numbers, but numbers are
                 where they begin.
-              </p>
+              </motion.p>
 
-              <div className="space-y-4">
-                <h3 className="font-header uppercase text-2xl text-secondary">
+              <div className="space-y-2 2xl:space-y-4">
+                <motion.h3
+                  variants={fadeUp}
+                  className="font-header uppercase text-2xl sm:text-3xl md:text-4xl text-secondary"
+                >
                   Attributes
-                </h3>
-                <p className="text-base-content/80">
+                </motion.h3>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-base-content/80 text-sm sm:text-md md:text-lg pl-1.5"
+                >
                   Every character has five core Attributes that measure their
                   raw potential:{" "}
                   <strong className="uppercase">
@@ -292,29 +337,43 @@ export default function GettingStartedClient() {
                   creation, all Attributes start at a{" "}
                   <strong className="uppercase">D4</strong>. You spend points to
                   step them up the ladder.
-                </p>
+                </motion.p>
               </div>
 
-              <div className="space-y-4">
-                <h3 className="font-header uppercase text-2xl text-secondary">
+              <div className="space-y-2 2xl:space-y-4">
+                <motion.h3
+                  variants={fadeUp}
+                  className="font-header uppercase text-2xl sm:text-3xl md:text-4xl text-secondary"
+                >
                   Skills &amp; Untrained Rolls
-                </h3>
-                <p className="text-base-content/80">
+                </motion.h3>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-base-content/80 text-sm sm:text-md md:text-lg pl-1.5"
+                >
                   Skills are your learned abilities - like <em>Shooting</em>,{" "}
-                  <em>Stealth</em>, or <em>Persuasion</em>. If you attempt
+                  <em>Electronics</em>, or <em>Persuasion</em>. If you attempt
                   something you haven't learned, you make an{" "}
                   <strong className="uppercase">Untrained Roll</strong>. You
-                  still roll a standard D4 (and your Wild Die), but you suffer a{" "}
+                  still roll a standard{" "}
+                  <strong className="uppercase">D4</strong> (and your Wild Die),
+                  but you suffer a{" "}
                   <strong className="text-error">-2 penalty</strong> to the
                   final result.
-                </p>
+                </motion.p>
               </div>
 
-              <div className="space-y-4">
-                <h3 className="font-header uppercase text-2xl text-secondary">
+              <div className="space-y-2 2xl:space-y-4">
+                <motion.h3
+                  variants={fadeUp}
+                  className="font-header uppercase text-2xl sm:text-3xl md:text-4xl text-secondary"
+                >
                   Modifiers
-                </h3>
-                <p className="text-base-content/80">
+                </motion.h3>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-base-content/80 text-sm sm:text-md md:text-lg pl-1.5"
+                >
                   If a task is exceptionally difficult, or your hero has a
                   situational advantage,{" "}
                   <strong className="text-error uppercase">NEGATIVE</strong> or{" "}
@@ -325,73 +384,98 @@ export default function GettingStartedClient() {
                   <strong className="uppercase">DISTRACTED</strong>? Are they
                   behind cover, or are they prone? All of these factors can play
                   a large role in how things turn out for your hero!
-                </p>
+                </motion.p>
               </div>
             </motion.div>
 
             {/* Derived Stats Panel */}
             <motion.div
               variants={fadeUp}
-              className="bg-base-200 border border-base-300/70 rounded-3xl p-6 shadow-lg my-10 md:my-20"
+              className="bg-base-200 border border-base-300/70 rounded-3xl px-1.5 pt-6 pb-2 lg:px-2 lg:py-8 shadow-lg lg:my-30"
             >
-              <h3 className="font-header text-xl md:text-2xl text-base-content/70 uppercase tracking-widest mb-6 text-center">
+              <motion.h3
+                variants={fadeUp}
+                className="font-header text-2xl text-base-content/70 uppercase tracking-widest mb-6 text-center"
+              >
                 Derived Stats
-              </h3>
-              <div className="space-y-4">
-                <div className="flex flex-col gap-1">
-                  <Badge
-                    variant="outline"
-                    className="w-fit bg-base-100 text-sm py-3 px-2.5 border-secondary/30 text-secondary"
-                  >
-                    <strong className="uppercase pr-1">PACE</strong>(Speed)
-                  </Badge>
-                  <p className="text-sm text-base-content/60 py-1.5 px-3">
-                    How fast you move in combat (Standard is 6)
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <Badge
-                    variant="outline"
-                    className="w-fit bg-base-100 text-sm py-3 px-2.5 border-secondary/30 text-secondary"
-                  >
-                    <strong className="uppercase pr-1">PARRY</strong>(Defense)
-                  </Badge>
-                  <p className="text-sm text-base-content/60 py-1.5 px-3">
-                    How hard you are to hit in melee (2 + half Fighting)
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <Badge
-                    variant="outline"
-                    className="w-fit bg-base-100 text-sm py-3 px-2.5 border-secondary/30 text-secondary"
-                  >
-                    <strong className="uppercase pr-1">TOUGHNESS</strong>
-                    (Health)
-                  </Badge>
-                  <p className="text-sm text-base-content/60 py-1.5 px-3">
-                    Your damage threshold (2 + half Vigor + Armor)
-                  </p>
-                </div>
-              </div>
+              </motion.h3>
+              <motion.div variants={fadeUp} className="flex flex-col gap-1">
+                <Badge
+                  variant="outline"
+                  className="w-fit bg-base-100 text-sm sm:text-md md:text-lg py-3 px-2.5 sm:py-4 sm:px-5 border-secondary/30 text-secondary"
+                >
+                  <strong className="uppercase pr-1">PACE</strong>(Speed)
+                </Badge>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/60 pb-4 px-3"
+                >
+                  How fast you move in combat (Standard is 6)
+                </motion.p>
+              </motion.div>
+              <motion.div variants={fadeUp} className="flex flex-col gap-1">
+                <Badge
+                  variant="outline"
+                  className="w-fit bg-base-100 text-sm sm:text-md md:text-lg py-3 px-2.5 sm:py-4 sm:px-5 border-secondary/30 text-secondary"
+                >
+                  <strong className="uppercase pr-1">PARRY</strong>(Defense)
+                </Badge>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/60 pb-4 px-3"
+                >
+                  How hard you are to hit in melee (2 + half Fighting)
+                </motion.p>
+              </motion.div>
+              <motion.div variants={fadeUp} className="flex flex-col gap-1">
+                <Badge
+                  variant="outline"
+                  className="w-fit bg-base-100 text-sm sm:text-md md:text-lg py-3 px-2.5 sm:py-4 sm:px-5 border-secondary/30 text-secondary"
+                >
+                  <strong className="uppercase pr-1">TOUGHNESS</strong>
+                  (Health)
+                </Badge>
+                <motion.p
+                  variants={fadeUp}
+                  className="text-sm sm:text-md md:text-lg text-base-content/60 pb-4 px-3"
+                >
+                  Your damage threshold (2 + half Vigor + Armor)
+                </motion.p>
+              </motion.div>
             </motion.div>
           </div>
+        </motion.section>
 
+        {/* --- SECTION 3: HINDRANCES AND EDGES --- */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="space-y-2 lg:space-y-8"
+        >
           <motion.div variants={fadeUp}>
-            <Card className="bg-linear-to-r from-base-200 to-base-100 border-primary/20 my-8 overflow-hidden relative">
+            <Card className="bg-linear-to-r from-base-200 to-base-100 border-primary/20 my-2 lg:my-8 overflow-hidden relative">
               {/* ORNAMENTAL GLOW */}
               <div className="absolute inset-0 bg-radial from-primary/10 via-transparent to-transparent pointer-events-none" />
 
               <CardContent className="p-6 lg:p-8 flex flex-col gap-6 relative z-10">
                 {/* HEADER */}
                 <div className="flex flex-col md:flex-row items-center gap-6">
-                  <Skull className="w-16 h-16 text-error opacity-50 shrink-0" />
+                  <Skull className="hidden sm:inline w-16 h-16 text-error opacity-50 shrink-0" />
 
                   <div className="flex-1 text-center">
-                    <h3 className="font-header text-2xl sm:text-5xl text-primary uppercase tracking-wider mb-3">
+                    <motion.h3
+                      variants={fadeUp}
+                      className="font-header text-2xl sm:text-5xl text-primary uppercase tracking-wider mb-3"
+                    >
                       Hindrances &amp; Edges
-                    </h3>
+                    </motion.h3>
 
-                    <p className="text-base-content/80 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+                    <motion.p
+                      variants={fadeUp}
+                      className="text-base-content/80 text-sm sm:text-md md:text-lg leading-relaxed max-w-3xl mx-auto"
+                    >
                       Heroes are defined as much by their flaws as their
                       advantages.{" "}
                       <strong className="uppercase text-error">
@@ -400,12 +484,12 @@ export default function GettingStartedClient() {
                       shape personality, vulnerabilities, and roleplay
                       opportunities, while{" "}
                       <strong className="uppercase text-success">Edges</strong>{" "}
-                      represent unique talents, supernatural gifts, and
+                      represent unique abilities, supernatural gifts, and
                       legendary combat prowess.
-                    </p>
+                    </motion.p>
                   </div>
 
-                  <ShieldPlus className="w-16 h-16 text-success opacity-50 shrink-0" />
+                  <ShieldPlus className="hidden sm:inline w-16 h-16 text-success opacity-50 shrink-0" />
                 </div>
 
                 {/* CONTENT GRID */}
@@ -417,21 +501,26 @@ export default function GettingStartedClient() {
                     <div className="flex items-center gap-3 mb-4">
                       <Skull className="w-6 h-6 text-error" />
 
-                      <h4 className="font-header text-xl uppercase tracking-wide text-error">
+                      <h4 className="font-header text-xl sm:text-3xl tracking-wide text-error">
                         Hindrances
                       </h4>
                     </div>
 
-                    <p className="text-sm text-base-content/70 leading-relaxed mb-5">
-                      Taking Hindrances grants bonus character points while
-                      defining your hero's weaknesses, fears, flaws, and
-                      dangerous complications.
-                    </p>
+                    <motion.p
+                      variants={fadeUp}
+                      className="text-sm sm:text-md md:text-lg text-base-content/70 leading-relaxed mb-5"
+                    >
+                      Taking <strong className="uppercase">HINDRANCES</strong>{" "}
+                      grants bonus character points while defining your hero's
+                      weaknesses, fears, flaws, and dangerous complications. A
+                      hero may take a max of 4 points worth of{" "}
+                      <strong className="uppercase">HINDRANCES</strong>.
+                    </motion.p>
 
                     <ul className="space-y-4">
                       <li className="rounded-xl border border-warning/20 bg-warning/10 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-header uppercase text-warning text-[16px] tracking-wide">
+                          <span className="font-header uppercase text-warning text-sm sm:text-md md:text-lg tracking-wide">
                             Minor
                           </span>
 
@@ -440,16 +529,21 @@ export default function GettingStartedClient() {
                           </span>
                         </div>
 
-                        <p className="text-sm text-base-content/80 leading-relaxed">
-                          Minor Hindrances impose manageable penalties or
-                          roleplay obligations, such as being overly Curious,
-                          Greedy, or clumsy with delicate tasks.
-                        </p>
+                        <motion.p
+                          variants={fadeUp}
+                          className="text-xs sm:text-sm md:text-md text-base-content/80 leading-relaxed"
+                        >
+                          Minor{" "}
+                          <strong className="uppercase">HINDRANCES</strong>{" "}
+                          impose manageable penalties or roleplay obligations,
+                          such as being overly Curious, Greedy, or clumsy with
+                          delicate tasks.
+                        </motion.p>
                       </li>
 
                       <li className="rounded-xl border border-error/30 bg-error/20 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-header uppercase text-error text-[16px] tracking-wide">
+                          <span className="font-header uppercase text-error text-sm sm:text-md md:text-lg tracking-wide">
                             Major
                           </span>
 
@@ -458,12 +552,17 @@ export default function GettingStartedClient() {
                           </span>
                         </div>
 
-                        <p className="text-[16px] text-base-content/80 leading-relaxed">
-                          Major Hindrances represent severe burdens or dangerous
-                          flaws that constantly shape the character's life, such
-                          as blindness, chronic illness, or being hunted by
+                        <motion.p
+                          variants={fadeUp}
+                          className="text-xs sm:text-sm md:text-md text-base-content/80 leading-relaxed"
+                        >
+                          Major{" "}
+                          <strong className="uppercase">HINDRANCES</strong>{" "}
+                          represent severe burdens or dangerous flaws that
+                          constantly shape the character's life, such as
+                          blindness, chronic illness, or being hunted by
                           powerful enemies.
-                        </p>
+                        </motion.p>
                       </li>
                     </ul>
                   </div>
@@ -475,16 +574,23 @@ export default function GettingStartedClient() {
                     <div className="flex items-center gap-3 mb-4">
                       <ShieldPlus className="w-6 h-6 text-success" />
 
-                      <h4 className="font-header text-xl uppercase tracking-wide text-success">
+                      <h4 className="font-header text-xl sm:text-3xl tracking-wide text-success">
                         Edges
                       </h4>
                     </div>
 
-                    <p className="text-[16px] text-base-content/70 leading-relaxed mb-5">
-                      Edges are exceptional talents, combat techniques, mystical
-                      powers, and heroic abilities that make characters truly
-                      iconic.
-                    </p>
+                    <motion.p
+                      variants={fadeUp}
+                      className="text-sm sm:text-md md:text-lg text-base-content/70 leading-relaxed mb-5"
+                    >
+                      <strong className="uppercase">EDGES</strong> are
+                      exceptional talents, combat techniques, mystical powers,
+                      and heroic abilities that make characters truly iconic.{" "}
+                      <strong className="uppercase">EDGES</strong> may be taken
+                      with an <strong className="uppercase">ADVANCE</strong>, or
+                      by using <strong className="uppercase">HINDRANCE</strong>{" "}
+                      points. Categories include:
+                    </motion.p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {[
@@ -509,13 +615,16 @@ export default function GettingStartedClient() {
                           key={edge.title}
                           className="group rounded-xl border border-success/10 bg-base-200/40 p-4 transition-all duration-300 hover:border-success/30 hover:bg-success/5"
                         >
-                          <h5 className="font-header uppercase tracking-wide text-success text-[16px] mb-2 group-hover:translate-x-0.5 transition-transform">
+                          <h5 className="font-header uppercase tracking-wide text-success text-sm sm:text-md md:text-lg mb-2 group-hover:translate-x-0.5 transition-transform">
                             {edge.title}
                           </h5>
 
-                          <p className="text-xs sm:text-sm text-base-content/75 leading-relaxed">
+                          <motion.p
+                            variants={fadeUp}
+                            className="text-xs sm:text-sm md:text-md text-base-content/75 leading-relaxed"
+                          >
                             {edge.desc}
-                          </p>
+                          </motion.p>
                         </div>
                       ))}
                     </div>
@@ -525,7 +634,8 @@ export default function GettingStartedClient() {
             </Card>
           </motion.div>
         </motion.section>
-        {/* --- SECTION 3: ACTION AND DANGER --- */}
+
+        {/* --- SECTION 4: ACTION AND DANGER --- */}
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -557,24 +667,33 @@ export default function GettingStartedClient() {
                 variants={fadeUp}
                 className="h-full bg-base-200/60 backdrop-blur-md border border-base-300 rounded-3xl p-6 md:p-8 shadow-xl relative overflow-hidden group"
               >
-                <div className="absolute inset-0 bg-[url('/images/textures/darkpaper.png')] opacity-30 mix-blend-multiply group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-[url('/images/textures/darkpaper.png')] opacity-30 bg-bottom mix-blend-multiply group-hover:opacity-40 transition-opacity" />
                 <div className="relative z-10">
-                  <h3 className="font-header text-3xl text-accent mb-4">
+                  <motion.h3
+                    variants={fadeUp}
+                    className="font-header text-2xl sm:text-3xl text-accent mb-4"
+                  >
                     The Action Deck
-                  </h3>
-                  <p className="text-base-content/80 leading-relaxed mb-4">
+                  </motion.h3>
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed mb-4"
+                  >
                     Combat is fast and chaotic. Instead of rolling dice to see
                     who goes first, Savage Worlds uses a standard deck of
                     playing cards (with the Jokers left in) to determine
                     Initiative.
-                  </p>
-                  <p className="text-base-content/80 leading-relaxed">
+                  </motion.p>
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed"
+                  >
                     The GM deals cards every round, and characters act in
                     descending order. If you draw a{" "}
                     <strong className="uppercase">Joker</strong>, you can act
                     whenever you want <em>and</em> you gain massive bonuses to
                     your rolls that round!
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </Tilt>
@@ -596,28 +715,38 @@ export default function GettingStartedClient() {
                   <Star className="w-16 h-16 text-warning/20" />
                 </div>
                 <div className="relative z-10">
-                  <h3 className="font-header text-3xl text-warning mb-4 flex items-center gap-3">
+                  <motion.h3
+                    variants={fadeUp}
+                    className="font-header text-2xl sm:text-3xl text-warning mb-4 flex items-center gap-3"
+                  >
                     <Star className="w-6 h-6 text-warning fill-warning" />{" "}
                     Bennies
-                  </h3>
-                  <p className="text-base-content/80 leading-relaxed mb-4">
+                  </motion.h3>
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed mb-4"
+                  >
                     Heroes are lucky. This is represented by "Bennies"
                     (benefits). You start every session with a handful of these
                     tokens. You can spend a Benny to{" "}
                     <strong className="uppercase">reroll</strong> any{" "}
                     <strong className="uppercase">Trait roll</strong>, or to
                     instantly shrug off devastating damage.
-                  </p>
-                  <p className="text-base-content/80 leading-relaxed italic border-l-2 border-warning/50 pl-4">
+                  </motion.p>
+                  <motion.p
+                    variants={fadeUp}
+                    className="text-sm sm:text-md md:text-lg text-base-content/80 leading-relaxed italic border-l-2 border-warning/50 pl-4"
+                  >
                     When you roleplay well, make the table laugh, or do
                     something incredibly heroic, the GM will reward you with
                     more Bennies. Spend them freely!
-                  </p>
+                  </motion.p>
                 </div>
               </motion.div>
             </Tilt>
           </div>
         </motion.section>
+
         {/* --- ADVANCED INFO (ACCORDIONS) --- */}
         <motion.section
           initial="hidden"
@@ -627,16 +756,19 @@ export default function GettingStartedClient() {
           className="max-w-3xl mx-auto"
         >
           <motion.div variants={fadeUp}>
-            <h3 className="font-header text-2xl text-center text-base-content/50 uppercase tracking-widest mb-6">
+            <motion.h3
+              variants={fadeUp}
+              className="font-header text-xl sm:text-2xl text-center text-base-content/50 uppercase tracking-widest mb-6"
+            >
               Want to know more?
-            </h3>
+            </motion.h3>
             <Accordion
               type="single"
               collapsible
               className="w-full bg-base-200/50 rounded-2xl border border-base-300 px-4"
             >
               <AccordionItem value="item-1" className="border-b-base-300">
-                <AccordionTrigger className="font-header text-md md:text-lg hover:text-primary transition-colors">
+                <AccordionTrigger className="font-header text-sm sm:text-md md:text-lg hover:text-primary">
                   How do Modifiers work?
                 </AccordionTrigger>
                 <AccordionContent className="text-base-content/70 leading-relaxed">
@@ -648,7 +780,7 @@ export default function GettingStartedClient() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="border-b-base-300">
-                <AccordionTrigger className="font-header text-md md:text-lg hover:text-secondary transition-colors">
+                <AccordionTrigger className="font-header text-sm sm:text-md md:text-lg hover:text-secondary">
                   What happens when I take Wounds?
                 </AccordionTrigger>
                 <AccordionContent className="text-base-content/70 leading-relaxed">
@@ -663,7 +795,7 @@ export default function GettingStartedClient() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="border-none">
-                <AccordionTrigger className="font-header text-md md:text-lg hover:text-accent transition-colors">
+                <AccordionTrigger className="font-header text-sm sm:text-md md:text-lg hover:text-accent transition-colors">
                   What is an Extra?
                 </AccordionTrigger>
                 <AccordionContent className="text-base-content/70 leading-relaxed">
@@ -679,11 +811,22 @@ export default function GettingStartedClient() {
             </Accordion>
           </motion.div>
         </motion.section>
+
         <div
-          className="text-lg sm:text-4xl uppercase font-semibold font-header tracking-wider 
-            w-full mx-16 my-20 text-center"
+          className="flex flex-col mx-auto text-center justify-center items-center gap-y-2 sm:gap-y-6
+        border-3 border-base-200/40 rounded-3xl p-4 sm:p-10 mask-y-from-98% mask-x-from-98%
+        drop-shadow-md drop-shadow-base-50 max-w-2xl"
         >
-          Detailed Rules Coming Soon
+          <div className="absolute inset-0 bg-neutral/10 bg-bottom mix-blend-color-dodge group-hover:opacity-40 transition-opacity backdrop-blur-xs z-0 rounded-3xl" />
+          <div className="absolute inset-0 bg-primary/20 bg-bottom mix-blend-color-burn group-hover:opacity-40 transition-opacity backdrop-blur-xs z-0 rounded-3xl" />
+          <div className="absolute inset-0 bg-[url('/images/textures/glass.png')] opacity-10 mix-blend-color-dodge bg-center group-hover:opacity-40 transition-opacity rounded-3xl" />
+          <motion.h3
+            variants={fadeUp}
+            className="text-[22px] sm:text-3xl uppercase font-semibold font-header tracking-[0.02rem] z-1 opacity-80"
+          >
+            Complete Ruleset Coming Soon
+          </motion.h3>{" "}
+          <Image src={logo2} className="w-38 sm:w-48 opacity-65 " alt="Logo" />
         </div>
       </div>
     </div>

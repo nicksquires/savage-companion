@@ -2,7 +2,7 @@
 
 export default function Widgets() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-10 sm:mx-40 lg:mx-50 opacity-90">
+    <div className="grid grid-cols-1 lg:grid-cols-3 mx-0 sm:mx-24 md:mx-40 lg:mx-auto gap-6 lg:gap-10 xl:gap-18 opacity-90">
       {/* Widget 1: Adventure Pulse */}
       <div className="card bg-base-100 border-4 border-primary rounded-4xl mask-x-from-98% mask-y-from-98%">
         <div className="card-body rounded-4xl">

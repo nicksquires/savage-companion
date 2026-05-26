@@ -7,32 +7,34 @@ const Footer = () => {
   return (
     <footer className="bg-navbar text-navbar-content z-1 border-t border-navbar-content/10">
       {/* Main Grid Content */}
-      <div className="max-w-full mx-auto py-10 px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 text-center md:text-left">
+      <div className="max-w-full mx-auto py-10 px-6 lg:px-10 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 lg:gap-12 text-center md:text-left">
         {/* Brand / Logo Aside */}
-        <div className="flex flex-col items-center md:items-center text-center gap-3 sm:col-span-2 md:col-span-1">
+        <div className="flex flex-col items-center md:items-center text-center gap-3 col-span-2 md:col-span-1">
           <Image
             src={logo}
             alt="Savage Worlds logo"
-            className="w-36 object-contain"
+            className="w-44 object-contain"
           />
           <div>
-            <p className="font-header font-semibold text-lg leading-snug">
-              Savage Worlds Companion
+            <p className="font-header font-semibold text-[20px] tracking-wider leading-snug uppercase">
+              Savage Companion
             </p>
-            <p className="opacity-70 text-xs mt-1">
-              Virtual Tabletop Resource Manager
+            <p className="opacity-70 text-xs mt-0">
+              VTT &amp; Resource Manager for the
+              <br />
+              Savage Worlds Tabletop RPG Rulesets
             </p>
           </div>
         </div>
 
         {/* Play (Formerly Campaigns) */}
         <nav className="flex flex-col gap-2 w-full">
-          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg border-b border-navbar-content/10 pb-1 mb-1">
+          <h6 className="footer-title opacity-90 font-black tracking-wider text-lg border-b border-navbar-content/10 pb-1 mb-1">
             Play
           </h6>
           <Link
-            href="#"
-            className="link link-hover text-sm opacity-50 pointer-events-none"
+            href="/rules/getting-started"
+            className="link link-hover text-sm"
           >
             Getting Started
           </Link>
@@ -89,7 +91,7 @@ const Footer = () => {
             href="#"
             className="link link-hover text-sm opacity-50 pointer-events-none"
           >
-            Library
+            Compendium
           </Link>
         </nav>
 
@@ -136,7 +138,7 @@ const Footer = () => {
             Privacy Policy
           </Link>
           <Link href="/legal/terms" className="link link-hover text-sm">
-            Terms of Use
+            Terms of Service
           </Link>
         </nav>
       </div>

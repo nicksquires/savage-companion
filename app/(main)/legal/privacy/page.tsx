@@ -13,14 +13,14 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-center text-base-content/60">
-          Last updated: May 19, 2026
+          Last updated: May 21, 2026
         </p>
 
         <div className="prose prose-invert max-w-none mt-12 space-y-8 text-base-content/90">
           <p>
             At <strong className="text-primary">eSquires Studios</strong>, we
             respect your privacy. This Privacy Policy explains how we collect,
-            use, and protect your information when you use WildCard.
+            use, and protect your information when you use Savage Companion.
           </p>
 
           <section>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
               How We Use Your Information
             </h2>
             <p className="mx-4 my-1">
-              We use your data solely to provide and improve the service —
+              We use your data solely to provide and improve the service -
               specifically to save your characters, campaigns, and allow you to
               play with friends.
             </p>

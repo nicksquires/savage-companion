@@ -1,6 +1,6 @@
 // // lib/mechanics/evaluator.ts
 // // Savage Worlds VTT Modifier Evaluator Engine
-// // Modern VTT pattern (Foundry SWADE style) — single source of truth for all mutations
+// // Modern VTT pattern (Foundry SWADE style) - single source of truth for all mutations
 
 // // import { z } from "zod";
 // import type { Prisma } from "@prisma/client";

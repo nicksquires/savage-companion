@@ -63,14 +63,14 @@ export default function CreditsPage() {
             <h2 className="font-header text-3xl mb-6">Typography</h2>
             <ul className="space-y-3 text-lg">
               <li>
-                • Treacherous Corners, Bathory, Varnyx — Custom / Local fonts
+                • Treacherous Corners, Bathory, Varnyx - Custom / Local fonts
               </li>
               <li>
                 • Inter, Cinzel, Orbitron, Rajdhani, Crimson Text, Righteous,
                 Lato, Lora, Merriweather, Creepster, Roboto Slab, Amatic SC,
                 Quicksand, Playfair Display, PT Serif, Anton, Courier Prime,
                 Bebas Neue, Libre Baskerville, Montserrat, Open Sans, Press
-                Start 2P, Space Mono — Google Fonts
+                Start 2P, Space Mono - Google Fonts
               </li>
             </ul>
           </section>

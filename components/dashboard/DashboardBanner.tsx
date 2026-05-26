@@ -8,7 +8,7 @@ interface Props {
 
 export default function DashboardBanner({ user }: Props) {
   return (
-    <div className="bg-base-200/50 text-var(--theme-navbar-content) border-b-2 border-primary mask-b-from-92%">
+    <div className="bg-base-200/50 text-var(--theme-navbar-content) border-b-2 border-primary mask-b-from-96%">
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center gap-6">
         <div className="flex flex-row w-full">
           {/* Avatar */}

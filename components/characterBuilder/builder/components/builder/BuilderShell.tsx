@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { useCharacterBuilder } from "@/stores/characterBuilderStore";
@@ -18,7 +19,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { deleteCharacter } from "@/app/(main)/characters/[id]/builder/api/draft/characterActions";
 import DeleteModal from "../../modals/DeleteModal";
 import AdvancementBar from "./AdvancementBar";
-import { LaurelCorner, OrnateCorner } from "../ui/Corners";
+import { OrnateCorner } from "../ui/Corners";
+import BuilderGuide from "./BuilderGuide";
 
 export default function BuilderShell({
   children,
@@ -27,7 +29,9 @@ export default function BuilderShell({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+
   const { id } = useParams<{ id: string }>();
+
   const {
     name,
     edges,
@@ -52,7 +56,9 @@ export default function BuilderShell({
   const syncToServer = async (payload: any) => {
     await fetch(`/characters/${id}/builder/api/draft`, {
       method: "PATCH",
+
       headers: { "Content-Type": "application/json" },
+
       body: JSON.stringify(payload),
     });
   };
@@ -65,11 +71,13 @@ export default function BuilderShell({
 
   const goToTab = (newIndex: number) => {
     if (newIndex < 0 || newIndex >= tabIds.length) return;
+
     if (currentTab === "edges" && !isPowersEnabled && newIndex > currentIndex)
       router.push(`/characters/${id}/builder/${tabIds[newIndex++]}`);
 
     if (currentTab === "gear" && !isPowersEnabled && newIndex < currentIndex)
       router.push(`/characters/${id}/builder/${tabIds[newIndex--]}`);
+
     router.push(`/characters/${id}/builder/${tabIds[newIndex]}`);
   };
 
@@ -78,6 +86,7 @@ export default function BuilderShell({
 
   async function handleDeleteCharacter() {
     await deleteCharacter(id);
+
     router.push("/characters");
   }
 
@@ -88,7 +97,7 @@ export default function BuilderShell({
     {
       title: "Concept",
       content:
-        "What do you uniquely bring to the party? Savage Worlds is a fast, furious, and highly cinematic system, so lean into big ideas and archetypes. Before getting bogged down in numbers, decide who your character is and how they solve problems. Think about how your character will contribute to both social interactions and combat encounters. This tab sets the narrative foundation for all the mechanical choices you are about to make. Include which setting your character is from and their name.",
+        "What do you uniquely bring to the party? Don't be afraid to lean into archetypes or big ideas. Before getting bogged down in numbers, decide who your character is and how they solve problems. Think about how your character will contribute to both social interactions and combat encounters. This tab sets the narrative foundation for all the mechanical choices you are about to make. Include which setting your character is from and their name.",
     },
     {
       title: "Race",
@@ -136,14 +145,14 @@ export default function BuilderShell({
     <div className="min-h-full bg-base-100 text-base-content relative overflow-hidden pb-24">
       {/* Ambient Background Textures */}
       <div
-        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-10 
+        className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-10
         bg-[url('/images/textures/glass.png')] bg-fixed bg-cover bg-top-left z-0"
       />
-
       <div
-        className="pointer-events-none absolute inset-0 mix-blend-screen opacity-20 
+        className="pointer-events-none absolute inset-0 mix-blend-screen opacity-20
         bg-[url('/images/textures/darkpaper.png')] bg-fixed bg-cover z-0"
       />
+
       {/* Sticky Tabs */}
       <Tabs
         value={currentTab}
@@ -161,10 +170,12 @@ export default function BuilderShell({
               value={tab.id}
               disabled={tab.disabled}
               className="flex items-center text-md font-bold gap-1.5 data-[state=active]:text-primary data-[state=active]:hover:cursor-auto
+
                 rounded-3xl rounded-br-none rounded-bl-none hover:cursor-pointer"
               data-tip={tab.tooltip}
             >
               <tab.icon />
+
               <span className="hidden lg:inline">{tab.label}</span>
             </TabsTrigger>
           ))}
@@ -188,6 +199,7 @@ export default function BuilderShell({
             <div className="w-full h-full rounded-2xl border-2 border-dashed border-primary/60 bg-base-200 flex items-center justify-center overflow-hidden">
               <div className="text-center">
                 <User className="w-8 h-8 md:w-12 md:h-12 text-base-content/40 mx-auto" />
+
                 <button
                   onClick={() =>
                     alert("Avatar upload coming soon (Next.js + Cloudinary)")
@@ -207,6 +219,7 @@ export default function BuilderShell({
               <label className="text-[10px] md:text-xs font-medium tracking-widest text-base-content/60 mb-1 block">
                 CHARACTER NAME
               </label>
+
               <input
                 value={name}
                 onChange={(e) => setDraft({ name: e.target.value })}
@@ -226,6 +239,7 @@ export default function BuilderShell({
                 ) : (
                   <CircleIcon className="w-4 h-4 shrink-0" />
                 )}
+
                 <span className="text-[10px] sm:text-xs md:text-sm">
                   Advancement
                 </span>
@@ -236,6 +250,7 @@ export default function BuilderShell({
                 className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-secondary flex-1 md:flex-none px-0 md:px-3"
               >
                 <Info className="w-4 h-4 shrink-0" />
+
                 <span className="text-[10px] sm:text-xs md:text-sm">Guide</span>
               </button>
 
@@ -244,6 +259,7 @@ export default function BuilderShell({
                 className="btn btn-ghost btn-xs md:btn-sm flex items-center justify-center gap-0.5 md:gap-2 text-error hover:bg-error/10 flex-1 md:flex-none px-0 md:px-3"
               >
                 <Trash2 className="w-4 h-4 shrink-0" />
+
                 <span className="text-[10px] sm:text-xs md:text-sm leading-tight">
                   Delete
                 </span>
@@ -252,6 +268,7 @@ export default function BuilderShell({
           </div>
         </div>
       </div>
+
       {/* Page Navigation Arrows (Moved ABOVE Content) */}
       <div className="max-w-7xl mx-auto sticky top-10 px-4 md:px-6 mt-4 md:mt-8 mb-4 flex justify-between items-center z-10">
         <button
@@ -260,6 +277,7 @@ export default function BuilderShell({
           className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
         >
           <ChevronLeft className="w-5 h-5" />
+
           <span className="hidden sm:inline pr-2 tracking-wide">Prev</span>
         </button>
 
@@ -269,9 +287,11 @@ export default function BuilderShell({
           className="btn btn-md btn-primary shadow-md hover:opacity-100 disabled:opacity-30"
         >
           <span className="hidden sm:inline pl-2 tracking-wide">Next</span>
+
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
+
       {/* Main Content Area (Now spans full width without horizontal squishing) */}
       <div className="max-w-7xl mx-auto px-0 md:px-6 min-h-100">
         <AnimatePresence mode="wait">
@@ -286,6 +306,7 @@ export default function BuilderShell({
           </motion.div>
         </AnimatePresence>
       </div>
+
       {/* Delete Confirmation Modal */}
       <DeleteModal
         isOpen={showDeleteModal}
@@ -294,8 +315,13 @@ export default function BuilderShell({
         title="Delete Character?"
         message="This will permanently delete the character and all draft data. This action cannot be undone."
       />
+
       {/* Guide Drawer */}
-      <AnimatePresence>
+      <BuilderGuide
+        isOpen={isGuideOpen}
+        onClose={() => setIsGuideOpen(false)}
+      />
+      {/* <AnimatePresence>
         {isGuideOpen && (
           <motion.div
             initial={{ x: "100%" }}
@@ -305,6 +331,7 @@ export default function BuilderShell({
           >
             <div className="p-6 sticky top-0 bg-base-100 border-b flex justify-between items-center z-10">
               <h2 className="font-header text-2xl">Character Builder Guide</h2>
+
               <button
                 onClick={() => setIsGuideOpen(false)}
                 className="btn btn-ghost btn-circle"
@@ -320,9 +347,11 @@ export default function BuilderShell({
                   className="collapse collapse-arrow border border-base-300 bg-base-200"
                 >
                   <input type="checkbox" />
+
                   <div className="collapse-title font-medium text-primary">
                     {section.title}
                   </div>
+
                   <div className="collapse-content text-sm leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
@@ -331,7 +360,8 @@ export default function BuilderShell({
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
       {/* Backdrop */}
       {isGuideOpen && (
         <motion.div

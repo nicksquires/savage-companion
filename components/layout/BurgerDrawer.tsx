@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react"; // 1. Import useRef
 import Link from "next/link";
 import { Menu, ChevronUp, ChevronDown } from "lucide-react";
 
@@ -9,7 +9,11 @@ const navSections = [
   {
     title: "Play",
     links: [
-      { name: "Getting Started", href: "#", isDisabled: true },
+      {
+        name: "Getting Started",
+        href: "/rules/getting-started",
+        isDisabled: false,
+      },
       { name: "Campaigns", href: "#", isDisabled: true },
       { name: "Characters", href: "/characters", isDisabled: false },
       { name: "Game Rules", href: "/reference/edges", isDisabled: true },
@@ -23,7 +27,7 @@ const navSections = [
       { name: "Homebrew Portal", href: "#", isDisabled: true },
       { name: "Combat Assistant", href: "#", isDisabled: true },
       { name: "Encounters", href: "#", isDisabled: true },
-      { name: "Library", href: "#", isDisabled: true },
+      { name: "Compendium", href: "#", isDisabled: true },
     ],
   },
   {
@@ -44,22 +48,34 @@ const navSections = [
       { name: "About Us", href: "/about", isDisabled: false },
       { name: "Credits", href: "/legal/credits", isDisabled: false },
       { name: "Licenses", href: "/legal/licenses", isDisabled: false },
-      { name: "Privacy", href: "/legal/privacy", isDisabled: false },
-      { name: "Terms of Use", href: "/legal/terms", isDisabled: false },
+      { name: "Privacy Policy", href: "/legal/privacy", isDisabled: false },
+      { name: "Terms of Service", href: "/legal/terms", isDisabled: false },
     ],
   },
 ];
 
 export default function BurgerDrawer() {
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const drawerCheckboxRef = useRef<HTMLInputElement>(null);
 
   const toggleSection = (title: string) => {
     setOpenSection((prev) => (prev === title ? null : title));
   };
 
+  const closeDrawer = () => {
+    if (drawerCheckboxRef.current) {
+      drawerCheckboxRef.current.checked = false;
+    }
+  };
+
   return (
     <div className="drawer drawer-end lg:hidden z-50">
-      <input id="mobile-nav-drawer" type="checkbox" className="drawer-toggle" />
+      <input
+        id="mobile-nav-drawer"
+        type="checkbox"
+        className="drawer-toggle"
+        ref={drawerCheckboxRef}
+      />
 
       <div className="drawer-content">
         <label
@@ -106,6 +122,11 @@ export default function BurgerDrawer() {
                       <li key={link.name}>
                         <Link
                           href={link.href}
+                          onClick={() => {
+                            if (!link.isDisabled) {
+                              closeDrawer();
+                            }
+                          }}
                           // Conditionally apply disabled styles
                           className={`btn btn-ghost btn-sm w-full justify-start text-navbar-content font-normal 
                             ${link.isDisabled ? "opacity-50 pointer-events-none" : "hover:bg-neutral/20"}`}

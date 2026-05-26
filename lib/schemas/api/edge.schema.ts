@@ -5,7 +5,7 @@ export const edgeSchema = z.object({
   name: z.string().min(1, "Name is required"),
   category: z.string().optional(), // e.g., Background, Combat, Social
   rank: z.enum(['NOVICE', 'SEASONED', 'VETERAN', 'HEROIC', 'LEGENDARY']),
-  requirements: z.any().optional(), // stored as JSON — validate deeper if structure known
+  requirements: z.any().optional(), // stored as JSON - validate deeper if structure known
   effects: z.string().min(1, "Effects description is required"),
 
   description: z.string().optional(), // long description of edge

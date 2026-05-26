@@ -23,7 +23,7 @@ const NavBar = () => {
       md:sticky lg:static
       border-b-2 border-primary px-2 z-40"
     >
-      {/* LEFT — Logo */}
+      {/* LEFT - Logo */}
       <div className="navbar-start">
         <Link href="/" className="flex items-center">
           <Image
@@ -57,7 +57,7 @@ const NavBar = () => {
         </Link>
       </div>
 
-      {/* CENTER — Nav links */}
+      {/* CENTER - Nav links */}
       <div
         className="navbar-center hidden lg:flex gap-8 font-header
       text-lg"
@@ -124,7 +124,7 @@ const NavBar = () => {
               <Link href="#">Encounters</Link>
             </li>
             <li className="opacity-50 pointer-events-none">
-              <Link href="#">Library</Link>
+              <Link href="#">Compendium</Link>
             </li>
           </ul>
         </div>
@@ -181,21 +181,21 @@ const NavBar = () => {
               <Link href="/legal/licenses">Licenses</Link>
             </li>
             <li>
-              <Link href="/legal/privacy">Privacy</Link>
+              <Link href="/legal/privacy">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/legal/terms">Terms of Use</Link>
+              <Link href="/legal/terms">Terms of Service</Link>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* RIGHT — Theme & Mode Toggle + Auth */}
+      {/* RIGHT - Theme & Mode Toggle + Auth */}
       <div
         className="navbar-end flex items-center gap-3 md:gap-4 lg:gap-5 
                 lg:min-w-2/5 min-w-5/6"
       >
-        {/* Main action icons — 4 slots, evenly spaced */}
+        {/* Main action icons - 4 slots, evenly spaced */}
         <div className="flex items-center justify-end flex-1 gap-1 sm:gap-2 md:gap-4 lg:gap-6 min-w-0">
           <div className="lg:hidden items-center justify-center">
             <BurgerDrawer />
@@ -269,23 +269,26 @@ const NavBar = () => {
                 <li>
                   <Link href="/dashboard">Dashboard</Link>
                 </li>
-                <li>
+                <li className="opacity-50 pointer-events-none">
                   <Link href="#">Notifications</Link>
                 </li>
-                <li>
+                <li className="opacity-50 pointer-events-none">
                   <Link href="#">Messages</Link>
                 </li>
-                <li>
+                <li className="opacity-50 pointer-events-none">
                   <Link href="#">Profile</Link>
                 </li>
                 <li>
-                  <Link href="#">My Characters</Link>
+                  <Link href="/characters">My Characters</Link>
                 </li>
-                <li>
+                <li className="opacity-50 pointer-events-none">
                   <Link href="#">Settings</Link>
                 </li>
                 <li className="mt-2 pt-2 border-t-2 border-base-200/40">
-                  <Link href="#" className="text-navbar-content">
+                  <Link
+                    href="#"
+                    className="text-navbar-content opacity-50 pointer-events-none"
+                  >
                     Account
                   </Link>
                 </li>

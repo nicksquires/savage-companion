@@ -41,7 +41,7 @@ export function PrerequisiteList({
             );
 
           case "EDGE":
-            // Find the matching summary (O(n) — fine for small/medium lists)
+            // Find the matching summary (O(n) - fine for small/medium lists)
             const summaryObj = edgeSummaries.find(
               (s) => s.slug === requirement.edgeSlug,
             );

@@ -28,7 +28,7 @@ export default function LegalPage() {
                 <a href="https://game-icons.net" className="link-primary">
                   game-icons.net
                 </a>{" "}
-                — Licensed under{" "}
+                - Licensed under{" "}
                 <a
                   href="https://creativecommons.org/licenses/by/4.0/deed.en"
                   className="link-primary"
@@ -41,7 +41,7 @@ export default function LegalPage() {
                 <a href="https://texturelabs.org" className="link-primary">
                   texturelabs.org
                 </a>{" "}
-                — Used under their free commercial license
+                - Used under their free commercial license
               </li>
               <li>
                 Custom fonts used under their respective free/commercial-use

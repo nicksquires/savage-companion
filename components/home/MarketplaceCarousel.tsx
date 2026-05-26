@@ -92,14 +92,14 @@ export default function MarketplaceCarousel() {
                   >
                     <Card
                       className="overflow-hidden border-2 bg-[url('/images/textures/builder_bg.png')] bg-top-left 
-                            border-base-content/20 hover:border-base-content/50 transition-all group cursor-pointer 
+                            border-base-content/20 transition-all group cursor-pointer 
                             mask-y-from-98% mask-x-from-99% lg:h-115"
                     >
                       <div className="h-48 sm:h-64 lg:h-70 relative">
                         <img
                           src={item.img}
                           alt={item.title}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 rounded-xs"
+                          className="h-full w-full object-cover group-hover:scale-101 transition-transform duration-500 rounded-xs"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-base-900/80 to-transparent" />
                       </div>

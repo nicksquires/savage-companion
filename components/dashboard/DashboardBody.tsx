@@ -1,7 +1,7 @@
 import { User } from "next-auth";
 import DashboardCard from "./DashboardCard";
 import Widgets from "./Widgets";
-import characters from "@/public/images/icons/delapouite/character.svg";
+import characters from "@/public/images/icons/delapouite/meeple-group.svg";
 import campaigns from "@/public/images/icons/lorc/treasure-map.svg";
 import compendium from "@/public/images/icons/lorc/book-cover.svg";
 import homebrew from "@/public/images/icons/lorc/gear-hammer.svg";
@@ -13,11 +13,10 @@ interface Props {
 export default function DashboardBody({ user }: Props) {
   return (
     <>
-      <div className="w-full mx-auto mask-t-from-97% mask-b-from-94%">
-        <div
-          className="max-w-full mx-auto px-4 sm:px-10 md:px-10 xl:px-20 pt-20 pb-15 text-center
-      bg-[url('/images/textures/darkpaper.png')] mix-blend-exclusion bg-cover"
-        >
+      <div className="relative w-full mask-y-from-95% bg-base-100 flex justify-center">
+        <div className="absolute inset-0 bg-[url('/images/textures/darkpaper.png')] mix-blend-normal bg-cover opacity-20 pointer-events-none z-0" />
+
+        <div className="relative z-1 w-4/5 pt-20 pb-15 text-center">
           <p
             className="text-3xl md:text-4xl lg:text-5xl uppercase tracking-widest text-base-content/80 
           font-header font-medium border-b-2 border-b-base-content pb-2 px-6 lg:px-2.5 text-center md:text-left"
@@ -34,8 +33,8 @@ export default function DashboardBody({ user }: Props) {
 
           {/* Main Options Grid */}
           <div
-            className="min-w-80 grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-0 sm:gap-2 lg:gap-6 
-          lg:mx-5 xl:mx-24 2xl:mx-40 mb-24 items-center justify-center"
+            className="min-w-80 grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-0 gap-2 sm:gap-12 lg:gap-24 
+            mb-24 items-center justify-center"
           >
             <DashboardCard
               title="Characters"

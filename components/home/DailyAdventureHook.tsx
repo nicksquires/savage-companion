@@ -9,7 +9,7 @@ const hooks = [
   "The cyber-baron hires you to steal a dream. The target is a rogue AI.",
   "Goblin sappers have rigged the bridge with dynamite. The toll is an ancient secret.",
   "Your wild card draws a black joker; the dead rise in the graveyard next door.",
-  "A mysterious stranger offers you a map to a forgotten tomb — for a price.",
+  "A mysterious stranger offers you a map to a forgotten tomb - for a price.",
   "The river runs red at midnight. Something ancient is waking beneath the water.",
   "Your horse refuses to cross the old bridge. It hasn't moved in fifty years.",
   "The town mayor's shadow has started acting on its own.",

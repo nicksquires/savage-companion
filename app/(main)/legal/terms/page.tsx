@@ -18,7 +18,7 @@ export default function TermsPage() {
 
         <div className="prose prose-invert max-w-none mt-12 space-y-8 text-base-content/90">
           <p className="mx-4 mb-10">
-            Welcome to Savage Companion — an unofficial fan tool for the Savage
+            Welcome to Savage Companion - an unofficial fan tool for the Savage
             Worlds roleplaying game.
           </p>
 

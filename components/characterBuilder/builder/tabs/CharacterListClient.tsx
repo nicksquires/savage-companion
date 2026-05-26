@@ -352,7 +352,7 @@ function CharacterCard({
                 }
               `}
               >
-                {char.name || "Unknown Hero"} Bolowitz
+                {char.name || "Unknown Hero"}
               </h2>
               {/* DRAFT BADGE */}
               {isDraft ? (
@@ -363,7 +363,7 @@ function CharacterCard({
                   Draft
                 </button>
               ) : (
-                <p>hi</p>
+                <p className="hidden"></p>
               )}
             </div>
             <div className="text-xs sm:text-sm uppercase tracking-widest text-primary/90 mt-1 pl-1">
