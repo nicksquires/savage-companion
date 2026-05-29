@@ -24,8 +24,8 @@ export default function DashboardBody({ user }: Props) {
             Dashboard
           </p>
           {/* Welcome message */}
-          <div className="my-12 md:my-20 mx-2 text-2xl sm:text-3xl opacity-95">
-            Welcome back,{" "}
+          <div className="my-12 md:my-20 mx-2 text-lg sm:text-3xl opacity-95">
+            Welcome,{" "}
             <span className="font-semibold text-primary drop-shadow-xs drop-shadow-primary">
               {user.name || "Adventurer"}
             </span>

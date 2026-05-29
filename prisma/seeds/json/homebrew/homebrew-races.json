@@ -29,7 +29,7 @@
     "isHomebrew": true,
     "isPublic": true,
     "description": "Proud humanoids boasting dragon-like scales and elemental affinities.",
-    "racialAbilities": ["racial-ability:elemental-resistance", "racial-ability:frightening-visage", "racial-ability:armor", "hindrance:arrogant-minor"]
+    "racialAbilities": ["racial-ability:elemental-resistance", "racial-ability:frightening-visage", "racial-ability:armor", "hindrance:arrogant-major"]
   },
   {
     "name": "Tinkerer (Gnome)",
@@ -85,7 +85,7 @@
     "isHomebrew": true,
     "isPublic": true,
     "description": "Shapechangers afflicted by a primal curse, constantly balancing their humanity with the beast within.",
-    "racialAbilities": ["racial-ability:beast-speaker", "racial-ability:natural-camouflage", "racial-ability:claws-level-one", "hindrance:bloodthirsty-minor"]
+    "racialAbilities": ["racial-ability:beast-speaker", "racial-ability:natural-camouflage", "racial-ability:claws-level-one", "hindrance:bloodthirsty-major"]
   },
   {
     "name": "Siren",
@@ -197,6 +197,6 @@
     "isHomebrew": true,
     "isPublic": true,
     "description": "Hosts to alien or demonic symbiotes that grant them incredible, albeit draining, biological surges.",
-    "racialAbilities": ["racial-ability:symbiotic-surge", "racial-ability:soul-siphon", "hindrance:dependency-major"]
+    "racialAbilities": ["racial-ability:symbiotic-surge", "racial-ability:soul-siphon", "hindrance:dependency-minor"]
   }
 ]

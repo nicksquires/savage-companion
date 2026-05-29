@@ -31,11 +31,34 @@ export async function createNewCharacter() {
   if (!defaultRace) throw new Error("Default Human race not found.");
 
   // 2. Flatten relations into expandedAbilities format
+  // const expandedAbilities = [
+  //   ...defaultRace.raceRacialAbilities.map(rra => ({ ...rra.racialAbility, _type: 'ability' })),
+  //   ...defaultRace.raceHindrances.map(rh => ({ ...rh.hindrance, _type: 'hindrance' })),
+  //   ...defaultRace.raceEdges.map(re => ({ ...re.edge, _type: 'edge' }))
+  // ];
   const expandedAbilities = [
-    ...defaultRace.raceRacialAbilities.map(rra => ({ ...rra.racialAbility, _type: 'ability' })),
-    ...defaultRace.raceHindrances.map(rh => ({ ...rh.hindrance, _type: 'hindrance' })),
-    ...defaultRace.raceEdges.map(re => ({ ...re.edge, _type: 'edge' }))
-  ];
+  ...defaultRace.raceRacialAbilities.map(rra => ({
+    ...rra.racialAbility,
+    _type: 'ability' as const,
+  })),
+
+  ...defaultRace.raceHindrances.map(rh => ({
+    id: rh.hindrance.id,
+    name: rh.hindrance.name,
+    slug: rh.hindrance.slug,
+    severity: rh.hindrance.severity,
+    description: rh.hindrance.description,
+    summary: rh.hindrance.summary,
+    modifierData: rh.hindrance.modifierData,
+    value: undefined,
+    _type: 'hindrance' as const,
+  })),
+
+  ...defaultRace.raceEdges.map(re => ({
+    ...re.edge,
+    _type: 'edge' as const,
+  })),
+];
 
   const newChar = await prisma.playerCharacter.create({
     data: {
@@ -241,11 +264,28 @@ export async function getAvailableRaces(characterId: string) {
   const racesWithExpandedAbilities = races.map((race) => {
     // We tag them with '_type' just in case the UI wants to render them differently (e.g., red for hindrances)
     const expandedAbilities = [
-      ...race.raceRacialAbilities.map(rra => ({ ...rra.racialAbility, _type: 'ability' })),
-      ...race.raceHindrances.map(rh => ({ ...rh.hindrance, _type: 'hindrance' })),
-      ...race.raceEdges.map(re => ({ ...re.edge, _type: 'edge' }))
-      // Append race 'arcane backgrounds', race 'powers', etc. as appropriate
-    ];
+  ...race.raceRacialAbilities.map(rra => ({
+    ...rra.racialAbility,
+    _type: 'ability' as const,
+  })),
+
+  ...race.raceHindrances.map(rh => ({
+    id: rh.hindrance.id,
+    name: rh.hindrance.name,
+    slug: rh.hindrance.slug,
+    severity: rh.hindrance.severity,
+    description: rh.hindrance.description,
+    summary: rh.hindrance.summary,
+    modifierData: rh.hindrance.modifierData,
+    value: undefined,
+    _type: 'hindrance' as const,
+  })),
+
+  ...race.raceEdges.map(re => ({
+    ...re.edge,
+    _type: 'edge' as const,
+  })),
+];
 
     // Strip out the raw relational arrays so we don't send massive payloads to the client
     const { raceRacialAbilities, raceHindrances, raceEdges, ...cleanRace } = race;

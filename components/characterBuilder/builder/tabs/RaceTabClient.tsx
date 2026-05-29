@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Plus, CheckCircle, Sparkles, PersonStanding } from "lucide-react";
 import { useParams } from "next/navigation";
 import { RaceWithAbilities } from "@/lib/types/CharacterBuilder";
+import { RacialAbilityItem } from "../components/race/RacialAbilityItem";
 
 // --- CINEMATIC CARD COMPONENT ---
 function CinematicRaceCard({
@@ -86,7 +87,7 @@ function CinematicRaceCard({
               src={`/images/races/${race.slug}.jpg`}
               alt={race.name}
               fill
-              className="object-cover"
+              className="object-cover z-0"
             />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center text-base-content/20 bg-linear-to-br from-base-500 to-base-200">
@@ -101,11 +102,14 @@ function CinematicRaceCard({
           )}
 
           {/* Ornate Banner */}
-          <div className="absolute bottom-1/6 w-full bg-[url('/images/textures/builder_bg.png')] mix-blend-normal opacity-90 backdrop-blur-md border-y-2 border-primary/70 py-3 text-center shadow-2xl">
-            <h3 className="font-header text-4xl text-primary drop-shadow-md tracking-wider uppercase">
+          <div
+            className={`${isFlipped ? "z-0" : "z-1"}relative mt-70 justify-end align-bottom items-baseline w-full 
+          bg-background/90 backdrop-blur-[2px] border-y-2 border-primary/70 py-3 text-center shadow-2xl`}
+          >
+            <h3 className="font-header text-4xl text-primary/90 drop-shadow-md tracking-wider uppercase">
               {race.name}
             </h3>
-            <p className="text-xs tracking-[0.2em] text-white/80 mt-1">
+            <p className="text-xs tracking-[0.2em] text-white/70 mt-1">
               CLICK TO INSPECT
             </p>
           </div>
@@ -113,7 +117,7 @@ function CinematicRaceCard({
 
         {/* ================= BACK OF CARD ================= */}
         <div
-          className="absolute inset-0 w-full h-full bg-[url('/images/textures/builder_bg.png')] mix-blend-overlay rounded-2xl overflow-hidden border border-base-300 flex flex-col"
+          className="absolute inset-0 w-full h-full bg-[url('/images/textures/builder_bg.png')] rounded-2xl overflow-hidden border border-base-300 flex flex-col"
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
           {/* Back Header */}
@@ -131,7 +135,7 @@ function CinematicRaceCard({
           </div>
 
           {/* Scrollable Content */}
-          <div className="p-4 flex-1 overflow-y-auto custom-scrollbar space-y-4">
+          <div className="p-4 flex-1 overflow-y-auto custom-scrollbar space-y-4 pointer-events-auto">
             <p className="text-base-content/80 text-sm italic leading-relaxed">
               {race.description || "No specific lore description available."}
             </p>
@@ -144,35 +148,9 @@ function CinematicRaceCard({
                     Racial Traits
                   </p>
                 </div>
-                <div className="space-y-2">
-                  {race.expandedAbilities.map((ability, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-base-200 p-2 rounded-lg border border-base-300/50"
-                    >
-                      <div className="flex justify-between items-start">
-                        <span
-                          className={`text-sm font-bold capitalize ${
-                            ability._type === "hindrance" ||
-                            (ability.value && ability.value < 0)
-                              ? "text-error"
-                              : "text-success"
-                          }`}
-                        >
-                          {ability.name}
-                          {ability.value !== undefined &&
-                            ability.value !== null && (
-                              <span className="opacity-70 ml-1 font-normal text-xs">
-                                (
-                                {ability.value > 0
-                                  ? `+${ability.value}`
-                                  : ability.value}
-                                )
-                              </span>
-                            )}
-                        </span>
-                      </div>
-                    </div>
+                <div className="space-y-3 mt-4">
+                  {race.expandedAbilities.map((ability) => (
+                    <RacialAbilityItem key={ability.id} ability={ability} />
                   ))}
                 </div>
               </div>

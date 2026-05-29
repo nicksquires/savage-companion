@@ -25,7 +25,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute z-0 inset-0 bg-primary/15 opacity-30" />
       <div
-        className="absolute z-0 inset-0 bg-[url('/images/textures/builder_bg.png')] mix-blend-normal bg-top-left
+        className="absolute z-0 inset-0 bg-[url('/images/bg/sc_splash.png')] mix-blend-normal bg-top
       mask-t-from-94% mask-b-from-80% opacity-40"
       />
 
@@ -69,12 +69,15 @@ export default function HeroSection() {
             className="font-header text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text mask-type-alpha bg-[url('/images/textures/glass.png')] bg-center tracking-tighter mb-6
             drop-shadow-primary/10 drop-shadow-lg"
           >
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-base-content/75 to-base-content/75">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-base-content/75 to-base-content/75 px-2">
               Build Worlds.
             </span>
 
             <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary/75 to-info/75">
+            <span
+              className="text-transparent bg-clip-text bg-linear-to-r from-primary/75 to-info/75 text-[4.25rem] md:text-[5rem] px-2
+             "
+            >
               Roll Bold.
             </span>
           </h1>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { useCharacterBuilder } from "@/stores/characterBuilderStore";
-import { tabs } from "../../tabsConfig";
+import { tabs } from "../../tabs/tabsConfig";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ChevronLeft,

@@ -16,15 +16,14 @@ async function main() {
   await seedCoreTags();         // must run first
   await seedCoreEdges();
   await seedCoreHindrances();
+  await seedCoreSkills();
   await seedCorePowers();
+  await seedCoreArcaneBackgrounds();
 
   await seedCoreRacialAbilities();  // must run before seed core races
   await seedHomebrewRacialAbilities();  // must run before seed homebrew races
   await seedCoreRaces();
   await seedHomebrewRaces();
-
-  await seedCoreSkills();
-  await seedCoreArcaneBackgrounds();
 
   await seedCoreItems();
 }

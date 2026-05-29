@@ -25,8 +25,8 @@ import DeleteModal from "@/components/characterBuilder/builder/modals/DeleteModa
 import {
   createNewCharacter,
   deleteCharacter,
-} from "../../../../app/(main)/characters/[id]/builder/api/draft/characterActions";
-import { CharListCardOrnament } from "../components/ui/CharListCardOrnament";
+} from "../../app/(main)/characters/[id]/builder/api/draft/characterActions";
+import { CharListCardOrnament } from "./builder/components/ui/CharListCardOrnament";
 import { toRomanNumeral } from "@/lib/utils/toRomanNumeral";
 
 // --- ATTRIBUTE DATA MATRIX ---
@@ -174,7 +174,7 @@ export default function CharacterListClient({
           <div className="absolute bottom-0 left-0 w-1/3 h-px bg-linear-to-r from-primary via-primary/50 to-transparent shadow-[0_0_15px_rgba(var(--color-primary),0.8)]" />
 
           <div>
-            <h1 className="font-builder-header 2xl:text-7xl text-5xl tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-primary to-base-500 drop-shadow-lg">
+            <h1 className="font-builder-header 2xl:text-7xl md:text-6xl text-5xl tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-primary to-base-500 drop-shadow-lg">
               Character Collection
             </h1>
             <p className="font-body sm:inline hidden text-primary/80 mt-1 md:mt-2 text-lg md:text-xl italic">

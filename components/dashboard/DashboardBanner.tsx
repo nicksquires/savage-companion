@@ -45,19 +45,22 @@ export default function DashboardBanner({ user }: Props) {
               <span className="text-base-400">•</span>
               <a
                 href="/dashboard/subscription"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors pointer-events-none opacity-60"
               >
                 Manage Subscription
               </a>
               <span className="text-base-400">•</span>
               <a
                 href="/dashboard/settings"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors pointer-events-none opacity-60"
               >
                 Account Settings
               </a>
               <span className="text-base-400">•</span>
-              <a href="/help" className="hover:text-primary transition-colors">
+              <a
+                href="/help"
+                className="hover:text-primary transition-colors pointer-events-none opacity-60"
+              >
                 Help
               </a>
             </div>

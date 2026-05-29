@@ -25,16 +25,16 @@ export default function TermsPage() {
           <section className="px-4">
             <h2 className="font-header text-3xl">1. Acceptance of Terms</h2>
             <p className="mx-4 my-1">
-              By using WildCard, you agree to these Terms of Service. If you do
-              not agree, please do not use the service.
+              By using Savage Companion, you agree to these Terms of Service. If
+              you do not agree, please do not use the service.
             </p>
           </section>
 
           <section className="px-4">
             <h2 className="font-header text-3xl">2. Fan Content Disclaimer</h2>
             <p className="mx-4 my-1">
-              WildCard is an unofficial, fan-created application. It is not
-              affiliated with, endorsed by, or sponsored by Pinnacle
+              Savage Companion is an unofficial, fan-created application. It is
+              not affiliated with, endorsed by, or sponsored by Pinnacle
               Entertainment Group. Savage Worlds is © Pinnacle Entertainment
               Group.
             </p>

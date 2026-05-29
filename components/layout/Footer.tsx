@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Play (Formerly Campaigns) */}
         <nav className="flex flex-col gap-2 w-full">
-          <h6 className="footer-title opacity-90 font-black tracking-wider text-lg border-b border-navbar-content/10 pb-1 mb-1">
+          <h6 className="footer-title opacity-90 font-black tracking-wider text-lg pb-1 mb-1">
             Play
           </h6>
           <Link
@@ -63,7 +63,7 @@ const Footer = () => {
 
         {/* Tools */}
         <nav className="flex flex-col gap-2 w-full">
-          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg border-b border-navbar-content/10 pb-1 mb-1">
+          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg pb-1 mb-1">
             Tools
           </h6>
           <Link href="/characters" className="link link-hover text-sm">
@@ -97,7 +97,7 @@ const Footer = () => {
 
         {/* Shop */}
         <nav className="flex flex-col gap-2 w-full">
-          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg border-b border-navbar-content/10 pb-1 mb-1">
+          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg pb-1 mb-1">
             Shop
           </h6>
           <Link
@@ -122,7 +122,7 @@ const Footer = () => {
 
         {/* About */}
         <nav className="flex flex-col gap-2 w-full">
-          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg border-b border-navbar-content/10 pb-1 mb-1">
+          <h6 className="footer-title opacity-90 font-black tracking-wider text-md md:text-lg pb-1 mb-1">
             About
           </h6>
           <Link href="/about" className="link link-hover text-sm">

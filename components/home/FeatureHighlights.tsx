@@ -2,16 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Swords,
-  User,
-  Map,
-  Dice6,
-  BookOpen,
-  Zap,
-  Layers,
-  Users,
-} from "lucide-react";
+import { Map, Dice6, BookOpen, Zap } from "lucide-react";
 
 const features = [
   {
@@ -44,10 +35,10 @@ export default function FeatureHighlights() {
   return (
     <>
       <div
-        className=" bg-[url('/images/textures/darkerparchment.png')]
-       mask-y-from-84%"
+        className=" bg-[url('/images/textures/darkerparchment.png')] bg-cover
+       mask-y-from-82%"
       >
-        <div className="w-full h-full bg-primary/10 backdrop-blur-[2px] py-42 lg:py-36">
+        <div className="w-full h-full bg-primary/10 backdrop-blur-sm py-42 lg:py-36">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-8 sm:mb-16">
               <h2 className="text-5xl md:text-6xl font-bold text-base-content/90 mb-6">

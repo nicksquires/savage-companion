@@ -23,12 +23,13 @@ export default function DashboardCard({
     >
       <div
         className={`card shadow-xl hover:shadow-2xl transition-all duration-150 rounded-4xl opacity-90
-          border border-transparent hover:brightness-110 hover:border-${color}/30 w-42 h-64 sm:w-36 sm:h-46 md:w-42 md:h-54 lg:w-58 lg:h-70`}
+           border-2 border-base-300/80 hover:brightness-110 hover:border-${color}/30 w-42 h-64 sm:w-36 sm:h-46 md:w-42 md:h-54 lg:w-58 lg:h-70
+           mask-y-from-98% mask-x-from-98%`}
       >
-        <div className="w-full h-full mask-y-from-97% mask-x-from-97% inset-0 absolute bg-[url('/images/textures/darkparchment.png')] brightness-60 bg-cover rounded-4xl" />
-        <div className="w-full h-full mask-y-from-97% mask-x-from-97% inset-0 absolute bg-primary/20 bg-cover rounded-4xl" />
+        <div className="w-full h-full inset-0 absolute bg-[url('/images/textures/darkparchment.png')] brightness-80 bg-cover rounded-4xl z-0 backdrop-blur-[1px]" />
+        <div className="w-full h-full inset-0 absolute bg-primary/20 bg-cover rounded-4xl z-0 backdrop-blur-[1px]" />
 
-        <div className="lg:pb-6 lg:pt-4 lg:px-8 sm:pt-4 sm:pb-6 sm:px-1 pt-7 px-1 rounded-4xl backdrop-blur-[1px]">
+        <div className="lg:pb-6 lg:pt-4 lg:px-8 sm:pt-4 sm:pb-6 sm:px-1 pt-7 px-1 rounded-4xl z-1">
           <div
             className={`rounded-2xl flex text-3xl mb-2 transition-transform`}
           >
@@ -44,9 +45,9 @@ export default function DashboardCard({
           >
             {title}
           </h3>
-          <p className="text-base-content/75 text-xs lg:text-sm px-4">
+          <div className="text-base-content/75 text-xs lg:text-sm px-4">
             {description}
-          </p>
+          </div>
         </div>
       </div>
     </Link>

@@ -1,7 +1,7 @@
 import { prisma } from "@/prisma/client";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
-import CharacterListClient from "../../../components/characterBuilder/builder/tabs/CharacterListClient";
+import CharacterListClient from "../../../components/characterBuilder/CharacterListClient";
 
 export default async function CharactersPage() {
   const session = await auth();

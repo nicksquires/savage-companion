@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { motion, Variants } from "framer-motion";
 
 const assets = [
   {
@@ -60,6 +61,35 @@ const assets = [
   },
 ];
 
+// Animation variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+    scale: 0.95,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // smooth "gentle" easing
+    },
+  },
+};
+
 export default function MarketplaceCarousel() {
   return (
     <>
@@ -76,6 +106,7 @@ export default function MarketplaceCarousel() {
               </p>
             </div>
           </div>
+
           <div className="lg:mx-24 sm:mx-28 mx-20">
             <Carousel
               opts={{
@@ -84,50 +115,60 @@ export default function MarketplaceCarousel() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-mr-4">
-                {assets.map((item, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="px-4 basis-full md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
-                  >
-                    <Card
-                      className="overflow-hidden border-2 bg-[url('/images/textures/builder_bg.png')] bg-top-left 
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <CarouselContent className="-mr-4">
+                  {assets.map((item, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="px-4 basis-full md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+                    >
+                      <motion.div variants={cardVariants}>
+                        <Card
+                          className="overflow-hidden border-2 bg-[url('/images/textures/builder_bg.png')] bg-top-left 
                             border-base-content/20 transition-all group cursor-pointer 
                             mask-y-from-98% mask-x-from-99% lg:h-115"
-                    >
-                      <div className="h-48 sm:h-64 lg:h-70 relative">
-                        <img
-                          src={item.img}
-                          alt={item.title}
-                          className="h-full w-full object-cover group-hover:scale-101 transition-transform duration-500 rounded-xs"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-base-900/80 to-transparent" />
-                      </div>
-                      <CardContent className="px-3 sm:px-4 flex flex-col justify-between items-start max-h-1/3">
-                        <div>
-                          <h3 className="font-semibold text-lg text-base-content">
-                            {item.title}
-                          </h3>
-                          <p className="text-sm text-base-content/75">
-                            {item.type}
-                          </p>
-                        </div>
-                        <div className="flex w-full justify-end">
-                          <span
-                            className={`badge px-2.5 ${
-                              item.price === "Free"
-                                ? "badge-success"
-                                : "badge-primary"
-                            }`}
-                          >
-                            {item.price}
-                          </span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
+                        >
+                          <div className="h-48 sm:h-64 lg:h-70 relative">
+                            <img
+                              src={item.img}
+                              alt={item.title}
+                              className="h-full w-full object-cover group-hover:scale-101 transition-transform duration-500 rounded-xs"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-base-900/80 to-transparent" />
+                          </div>
+                          <CardContent className="px-3 sm:px-4 flex flex-col justify-between items-start max-h-1/3">
+                            <div>
+                              <h3 className="font-semibold text-lg text-base-content">
+                                {item.title}
+                              </h3>
+                              <p className="text-sm text-base-content/75">
+                                {item.type}
+                              </p>
+                            </div>
+                            <div className="flex w-full justify-end">
+                              <span
+                                className={`badge px-2.5 ${
+                                  item.price === "Free"
+                                    ? "badge-success"
+                                    : "badge-primary"
+                                }`}
+                              >
+                                {item.price}
+                              </span>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </motion.div>
+
               <CarouselPrevious
                 className="bg-base-800/40 hover:bg-base-800/70 hover:scale-105 
                 border-base-300/40 size-12 -left-18"

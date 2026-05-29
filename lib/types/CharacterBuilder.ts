@@ -1,4 +1,4 @@
-import { DieType, Attribute, Rank } from "@prisma/client";
+import { DieType, Attribute, Rank, HindranceType } from "@prisma/client";
 import { JsonValue } from "@prisma/client/runtime/library";
 
 export type CharacterDraft = {
@@ -90,11 +90,14 @@ export const initialDraft: CharacterDraft = {
   validationState: { isValid: true, errors: {}, tabStates: {} },
 };
 
-type ExpandedAbility = {
+export type ExpandedAbility = {
   id: string;
   name: string;
   slug: string;
   value?: number;
+  severity?: HindranceType;
+  description?: string;
+  summary?: string;
   modifierData: any;
   _type: "ability" | "hindrance" | "edge";
 };

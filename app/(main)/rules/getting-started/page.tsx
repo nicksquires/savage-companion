@@ -57,7 +57,7 @@ export default function GettingStartedClient() {
 
       {/* --- HERO SECTION --- */}
       <section className="relative w-full py-16 px-6 flex flex-col items-center justify-center text-center border-b border-primary/20 z-10">
-        <div className="absolute inset-0 bg-[url('/images/textures/builder_bg.png')] opacity-20 mix-blend-overlay bg-cover pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/images/bg/sc_splash.png')] opacity-30 mix-blend-overlay bg-top-left bg-cover pointer-events-none" />
         <div className="absolute inset-0 bg-linear-to-b from-base-100/10 via-base-100/50 to-base-100/70" />
 
         <motion.div
@@ -83,7 +83,7 @@ export default function GettingStartedClient() {
                 alt="Wildcard Icon"
                 width={240}
                 height={240}
-                className=" absolute top-0 w-full h-auto brightness-0 invert drop-shadow-secondary/20 drop-shadow-2xl opacity-80 animate-pulse"
+                className=" absolute top-0 w-full h-auto brightness-0 invert drop-shadow-secondary/20 drop-shadow-2xl opacity-90"
               />
             </div>
           </motion.div>
@@ -129,6 +129,9 @@ export default function GettingStartedClient() {
           </motion.p>
         </motion.div>
       </section>
+
+      <div className="absolute inset-0 bg-[url('/images/textures/darkerparchment.png')] opacity-30 mix-blend-normal bg-cover pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-base-100/10 via-base-100/50 to-base-100/70" />
 
       <div className="max-w-5xl mx-auto px-4 md:px-6 py-16 space-y-24 relative z-10">
         {/* --- SECTION 1: THE CORE RULES --- */}
